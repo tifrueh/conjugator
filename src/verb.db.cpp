@@ -7,8 +7,6 @@
 #include "verb.db.hpp"
 
 verbDB::Verb verbDB::acheter = {
-    typeER,
-
     "acheter",
     "achetant",
 

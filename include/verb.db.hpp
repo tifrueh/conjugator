@@ -67,14 +67,14 @@ namespace verbDB {
         std::string subjonctifIls;
         std::string subjonctifElles;
 
-        std::string contidionnelJe;
-        std::string contidionnelTu;
-        std::string contidionnelIl;
-        std::string contidionnelElle;
-        std::string contidionnelNous;
-        std::string contidionnelVous;
-        std::string contidionnelIls;
-        std::string contidionnelElles;
+        std::string conditionnelJe;
+        std::string conditionnelTu;
+        std::string conditionnelIl;
+        std::string conditionnelElle;
+        std::string conditionnelNous;
+        std::string conditionnelVous;
+        std::string conditionnelIls;
+        std::string conditionnelElles;
     };
 
     extern Verb acheter;

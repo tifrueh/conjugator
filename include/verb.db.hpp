@@ -8,7 +8,11 @@
 
 namespace verbDB {
 
+    enum VerbType { typeER, typeIR, typeOIR, typeRE };
+
     struct Verb {
+
+       VerbType verbType; 
 
         std::string infinitif;
         std::string participePresent;
@@ -76,10 +80,4 @@ namespace verbDB {
         std::string subjonctifIls;
         std::string subjonctifElles;
     };
-
-    std::vector<Verb*> erVerbs;
-    std::vector<Verb*> irVerbs;
-    std::vector<Verb*> oirVerbs;
-    std::vector<Verb*> reVerbs;
-
 };

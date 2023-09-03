@@ -8,7 +8,7 @@
 
 namespace verbDB {
 
-    struct verb {
+    struct Verb {
 
         std::string infinitif;
         std::string participePresent;
@@ -22,14 +22,14 @@ namespace verbDB {
         std::string presentIls;
         std::string presentElles;
 
-        std::string passe_composeJe;
-        std::string passe_composeTu;
-        std::string passe_composeIl;
-        std::string passe_composeElle;
-        std::string passe_composeNous;
-        std::string passe_composeVous;
-        std::string passe_composeIls;
-        std::string passe_composeElles;
+        std::string passeComposeJe;
+        std::string passeComposeTu;
+        std::string passeComposeIl;
+        std::string passeComposeElle;
+        std::string passeComposeNous;
+        std::string passeComposeVous;
+        std::string passeComposeIls;
+        std::string passeComposeElles;
 
         std::string imparfaitJe;
         std::string imparfaitTu;
@@ -77,9 +77,9 @@ namespace verbDB {
         std::string subjonctifElles;
     };
 
-    std::vector<verb> erVerbs;
-    std::vector<verb> irVerbs;
-    std::vector<verb> oirVerbs;
-    std::vector<verb> reVerbs;
+    std::vector<Verb*> erVerbs;
+    std::vector<Verb*> irVerbs;
+    std::vector<Verb*> oirVerbs;
+    std::vector<Verb*> reVerbs;
 
 };

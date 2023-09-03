@@ -14,7 +14,14 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+#include <string>
+#include <vector>
+#include <iostream>
+
+#include "verb.db.hpp"
+#include "verb.hpp"
 
 int main(int argc, char *argv[]) {
+    displayVerb(verbDB::acheter); 
     return 0;
 }

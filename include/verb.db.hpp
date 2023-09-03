@@ -26,15 +26,6 @@ namespace verbDB {
         std::string presentIls;
         std::string presentElles;
 
-        std::string passeComposeJe;
-        std::string passeComposeTu;
-        std::string passeComposeIl;
-        std::string passeComposeElle;
-        std::string passeComposeNous;
-        std::string passeComposeVous;
-        std::string passeComposeIls;
-        std::string passeComposeElles;
-
         std::string imparfaitJe;
         std::string imparfaitTu;
         std::string imparfaitIl;
@@ -43,15 +34,6 @@ namespace verbDB {
         std::string imparfaitVous;
         std::string imparfaitIls;
         std::string imparfaitElles;
-
-        std::string plusQueParfaitJe;
-        std::string plusQueParfaitTu;
-        std::string plusQueParfaitIl;
-        std::string plusQueParfaitElle;
-        std::string plusQueParfaitNous;
-        std::string plusQueParfaitVous;
-        std::string plusQueParfaitIls;
-        std::string plusQueParfaitElles;
 
         std::string futurJe;
         std::string futurTu;
@@ -62,14 +44,23 @@ namespace verbDB {
         std::string futurIls;
         std::string futurElles;
 
-        std::string contidionnelJe;
-        std::string contidionnelTu;
-        std::string contidionnelIl;
-        std::string contidionnelElle;
-        std::string contidionnelNous;
-        std::string contidionnelVous;
-        std::string contidionnelIls;
-        std::string contidionnelElles;
+        std::string passeComposeJe;
+        std::string passeComposeTu;
+        std::string passeComposeIl;
+        std::string passeComposeElle;
+        std::string passeComposeNous;
+        std::string passeComposeVous;
+        std::string passeComposeIls;
+        std::string passeComposeElles;
+
+        std::string plusQueParfaitJe;
+        std::string plusQueParfaitTu;
+        std::string plusQueParfaitIl;
+        std::string plusQueParfaitElle;
+        std::string plusQueParfaitNous;
+        std::string plusQueParfaitVous;
+        std::string plusQueParfaitIls;
+        std::string plusQueParfaitElles;
 
         std::string subjonctifJe;
         std::string subjonctifTu;
@@ -79,6 +70,15 @@ namespace verbDB {
         std::string subjonctifVous;
         std::string subjonctifIls;
         std::string subjonctifElles;
+
+        std::string contidionnelJe;
+        std::string contidionnelTu;
+        std::string contidionnelIl;
+        std::string contidionnelElle;
+        std::string contidionnelNous;
+        std::string contidionnelVous;
+        std::string contidionnelIls;
+        std::string contidionnelElles;
     };
 
     extern Verb acheter;

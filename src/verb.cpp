@@ -19,13 +19,13 @@ void displayVerb(verbDB::Verb verb) {
     out.append("présent\n");
     out.append("-------\n");
     out.append("je/j' " + verb.presentJe + "\n");
-    out.append("tu" + verb.presentTu + "\n");
-    out.append("il" + verb.presentIl + "\n");
-    out.append("elle" + verb.presentElle + "\n");
-    out.append("nous" + verb.presentNous + "\n");
-    out.append("vous" + verb.presentVous + "\n");
-    out.append("ils" + verb.presentIls + "\n");
-    out.append("elles" + verb.presentElles + "\n");
+    out.append("tu " + verb.presentTu + "\n");
+    out.append("il " + verb.presentIl + "\n");
+    out.append("elle " + verb.presentElle + "\n");
+    out.append("nous " + verb.presentNous + "\n");
+    out.append("vous " + verb.presentVous + "\n");
+    out.append("ils " + verb.presentIls + "\n");
+    out.append("elles " + verb.presentElles + "\n");
 
     std::cout << out;
 }

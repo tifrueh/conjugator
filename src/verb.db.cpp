@@ -26,7 +26,7 @@ verbDB::Verb verbDB::acheter = {
     "achetions",
     "achetiez",
     "achetaient",
-    "achetaient"
+    "achetaient",
 
     "achèterai",
     "achèteras",
@@ -35,7 +35,7 @@ verbDB::Verb verbDB::acheter = {
     "achèterons",
     "achèterez",
     "achèteront",
-    "achèteront"
+    "achèteront",
 
     "ai acheté",
     "as acheté",
@@ -44,7 +44,7 @@ verbDB::Verb verbDB::acheter = {
     "avons acheté",
     "avez acheté",
     "ont acheté",
-    "ont acheté"
+    "ont acheté",
 
     "avais acheté",
     "avais acheté",
@@ -71,4 +71,5 @@ verbDB::Verb verbDB::acheter = {
     "achèterions",
     "achèteriez",
     "achèteraient",
+    "achèteraient"
 };

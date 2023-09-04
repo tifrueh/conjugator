@@ -203,6 +203,6 @@ namespace verbDB {
     extern std::vector<Verb*> verbsOIR;
     extern std::vector<Verb*> verbsRE;
 
-    enum Tense { present, imparfait, futur, passeCompose, plusQueParfait, subjonctif, conditionnel };
+    enum Tense { infinitif, participePresent, present, imparfait, futur, passeCompose, plusQueParfait, subjonctif, conditionnel };
     enum Person { je, tu, il, elle, nous, vous, ils, elles };
 };

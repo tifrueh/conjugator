@@ -6,7 +6,7 @@
 
 #include "verb.db.hpp"
 
-#include "verb.hpp"
+#include "conjugateur.hpp"
 
 void conj::displayVerb(verbDB::Verb verb) {
     std::string out;

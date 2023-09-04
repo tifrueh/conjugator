@@ -19,7 +19,7 @@
 #include <iostream>
 
 #include "verb.db.hpp"
-#include "verb.hpp"
+#include "conjugateur.hpp"
 
 int main(int argc, char *argv[]) {
     displayVerb(verbDB::acheter); 

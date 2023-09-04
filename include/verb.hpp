@@ -7,4 +7,6 @@
 
 #include "verb.db.hpp"
 
-void displayVerb(verbDB::Verb verb);
+namespace conj {
+    void displayVerb(verbDB::Verb verb);
+}

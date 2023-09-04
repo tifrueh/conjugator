@@ -8,7 +8,7 @@
 
 #include "verb.hpp"
 
-void displayVerb(verbDB::Verb verb) {
+void conj::displayVerb(verbDB::Verb verb) {
     std::string out;
 
     out.append("+" + std::string(verb.infinitif.length(), '-') + "+\n");

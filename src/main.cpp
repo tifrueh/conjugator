@@ -22,6 +22,6 @@
 #include "conjugateur.hpp"
 
 int main(int argc, char *argv[]) {
-    displayVerb(verbDB::acheter); 
+    conj::displayVerb(verbDB::acheter); 
     return 0;
 }

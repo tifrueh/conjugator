@@ -10,7 +10,7 @@ incdir = include_directories([ 'include' ])
 srcs = [
     'src/main.cpp',
     'src/verb.db.cpp',
-    'src/verb.cpp'
+    'src/conjugateur.cpp'
 ]
 
 executable(

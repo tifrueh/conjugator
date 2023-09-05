@@ -207,26 +207,6 @@ namespace verbDB {
     enum Tense { infinitif, participePresent, present, imparfait, futur, passeCompose, plusQueParfait, subjonctif, conditionnel };
     enum Person { je, tu, il, elle, nous, vous, ils, elles };
 
-    std::array<std::string, 9> tenseStrings {
-        "infinitif",
-        "participe présent",
-        "présent",
-        "imparfait",
-        "futur",
-        "passé composé",
-        "plus-que-parfait",
-        "subjonctif",
-        "conditionnel"
-    };
-
-    std::array<std::string, 8> personStrings {
-        "je/j'",
-        "tu",
-        "il",
-        "elle",
-        "nous",
-        "vous",
-        "ils",
-        "elles"
-    };
+    extern std::array<std::string, 9> tenseStrings;
+    extern std::array<std::string, 8> personStrings;
 };

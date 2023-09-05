@@ -6,6 +6,29 @@
 
 #include "verb.db.hpp"
 
+std::array<std::string, 9> verbDB::tenseStrings {
+    "infinitif",
+    "participe présent",
+    "présent",
+    "imparfait",
+    "futur",
+    "passé composé",
+    "plus-que-parfait",
+    "subjonctif",
+    "conditionnel"
+};
+
+std::array<std::string, 8> verbDB::personStrings {
+    "je/j'",
+    "tu",
+    "il",
+    "elle",
+    "nous",
+    "vous",
+    "ils",
+    "elles"
+};
+
 verbDB::Verb verbDB::acheter = {
     "acheter",
     "achetant",

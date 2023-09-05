@@ -23,6 +23,6 @@
 
 int main(int argc, char *argv[]) {
     verbDB::initTypeVectors();
-    conj::displayVerb(verbDB::agir);
+    conj::displayVerb(verbDB::aller);
     return 0;
 }

@@ -323,7 +323,77 @@ verbDB::Verb verbDB::agir = {
     "agiraient"
 };
 
-verbDB::Verb verbDB::aller;
+verbDB::Verb verbDB::aller = {
+
+    verbDB::VerbType::er,
+
+    "aller",
+    "allant",
+
+    "vais",
+    "vas",
+    "va",
+    "va",
+    "allons",
+    "allez",
+    "vont",
+    "vont",
+
+    "allais",
+    "allais",
+    "allait",
+    "allait",
+    "allions",
+    "alliez",
+    "allaient",
+    "allaient",
+
+    "irai",
+    "iras",
+    "ira",
+    "ira",
+    "irons",
+    "irez",
+    "iront",
+    "iront",
+
+    "suis allé",
+    "es allé",
+    "est allé",
+    "est allée",
+    "sommes allés",
+    "êtes allés",
+    "sont allés",
+    "sont allées",
+
+    "étais allé",
+    "etais allé",
+    "etait allé",
+    "etait allée",
+    "étions allés",
+    "étiez allés",
+    "étaient allés",
+    "étaient allées",
+
+    "aille",
+    "ailles",
+    "aille",
+    "aille",
+    "allions",
+    "alliez",
+    "aillent",
+    "aillent",
+
+    "irais",
+    "irais",
+    "irait",
+    "irait",
+    "irions",
+    "iriez",
+    "iraient",
+    "iraient"
+};
+
 verbDB::Verb verbDB::amener;
 verbDB::Verb verbDB::apercevoir;
 verbDB::Verb verbDB::apparaitre;

@@ -74,6 +74,6 @@ verbDB::Verb verbDB::acheter = {
     "achèteraient"
 };
 
-std::vector<verbDB::Verb> verbDB::verbsER = {
-    verbDB::acheter,
+std::vector<verbDB::Verb*> verbDB::verbsER = {
+    &verbDB::acheter,
 };

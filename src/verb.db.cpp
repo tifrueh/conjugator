@@ -536,7 +536,76 @@ verbDB::Verb verbDB::apercevoir = {
     "apercevraient"
 };
 
-verbDB::Verb verbDB::apparaitre ;
+verbDB::Verb verbDB::apparaitre {
+
+    verbDB::VerbType::re,
+
+    "apparaître",
+    "apparaissant",
+
+    "apparais",
+    "apparais",
+    "apparait",
+    "apparait",
+    "apparaissons",
+    "apparaissez",
+    "apparaissent",
+    "apparaissent",
+
+    "apparaissais",
+    "apparaissais",
+    "apparaissait",
+    "apparaissait",
+    "apparaissions",
+    "apparaissiez",
+    "apparaissaient",
+    "apparaissaient",
+
+    "apparaîtrai",
+    "apparaîtras",
+    "apparaîtra",
+    "apparaîtra",
+    "apparaîtrons",
+    "apparaîtrez",
+    "apparaîtront",
+    "apparaîtront",
+
+    "ai apparu",
+    "as apparu",
+    "a apparu",
+    "a apparu",
+    "avons apparu",
+    "avez apparu",
+    "ont apparu",
+    "ont apparu",
+
+    "avais apparu",
+    "avais apparu",
+    "avait apparu",
+    "avait apparu",
+    "avions apparu",
+    "aviez apparu",
+    "avaient apparu",
+    "avaient apparu",
+
+    "apparaisse",
+    "apparaisses",
+    "apparaisse",
+    "apparaisse",
+    "apparaissions",
+    "apparaissiez",
+    "apparaissent",
+    "apparaissent",
+
+    "apparaîtrais",
+    "apparaîtrais",
+    "apparaîtrait",
+    "apparaîtrait",
+    "apparaîtrions",
+    "apparaîtriez",
+    "apparaîtraient",
+    "apparaîtraient"
+};
 
 verbDB::Verb verbDB::appeler;
 verbDB::Verb verbDB::applaudir;

@@ -749,7 +749,77 @@ verbDB::Verb verbDB::applaudir = {
     "applaudiraient"
 };
 
-verbDB::Verb verbDB::appuyer;
+verbDB::Verb verbDB::appuyer = {
+
+    verbDB::VerbType::er,
+
+    "appuyer",
+    "appuyant",
+
+    "appuie",
+    "appuies",
+    "appuie",
+    "appuie",
+    "appuyons",
+    "appuyez",
+    "appuient",
+    "appuient",
+
+    "appuyais",
+    "appuyais",
+    "appuyait",
+    "appuyait",
+    "appuyions",
+    "appuyiez",
+    "appuyaient",
+    "appuyaient",
+
+    "appuierai",
+    "appuieras",
+    "appuiera",
+    "appuiera",
+    "appuierons",
+    "appuierez",
+    "appuieront",
+    "appuieront",
+
+    "ai appuyé",
+    "as appuyé",
+    "a appuyé",
+    "a appuyé",
+    "avons appuyé",
+    "avez appuyé",
+    "ont appuye",
+    "ont appuye",
+
+    "avais appuyé",
+    "avais appuyé",
+    "avait appuyé",
+    "avait appuyé",
+    "avions appuyé",
+    "aviez appuyé",
+    "avaient appuyé",
+    "avaient appuyé",
+
+    "appuie",
+    "appuies",
+    "appuie",
+    "appuie",
+    "appuyions",
+    "appuyiez",
+    "appuient",
+    "appuient",
+
+    "appuierais",
+    "appuierais",
+    "appuierait",
+    "appuierait",
+    "appuierions",
+    "appuieriez",
+    "appuieraient",
+    "appuieraient"
+};
+
 verbDB::Verb verbDB::atteindre;
 verbDB::Verb verbDB::attendre;
 verbDB::Verb verbDB::avancer;

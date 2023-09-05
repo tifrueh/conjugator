@@ -17,6 +17,8 @@ class TopPanel : public wxPanel {
     private:
         wxBoxSizer* topsizer = nullptr;
         wxStaticText* verbTypeTitle = nullptr;
-        wxArrayString verbTypeChoices;
-        wxCheckListBox* verbTypeBox = nullptr;        
+        wxCheckBox* checkBoxER = nullptr;
+        wxCheckBox* checkBoxIR = nullptr;
+        wxCheckBox* checkBoxOIR = nullptr;
+        wxCheckBox* checkBoxRE = nullptr;
 };

@@ -19,8 +19,8 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     topPanelSizer->Add(
         topPanel,
         1,
-        wxEXPAND,
-        0
+        wxEXPAND | wxALL,
+        10
     );
 
     SetSizerAndFit(topPanelSizer);

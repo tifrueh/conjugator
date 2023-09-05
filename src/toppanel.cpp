@@ -10,29 +10,54 @@
 #include "toppanel.hpp"
 
 TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
+
     topsizer = new wxBoxSizer(wxVERTICAL);
 
     verbTypeTitle = new wxStaticText(this, wxID_ANY, wxT("Types de verbes"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
-    verbTypeChoices.Add(wxT("-er"));
-    verbTypeChoices.Add(wxT("-ir"));
-    verbTypeChoices.Add(wxT("-oir"));
-    verbTypeChoices.Add(wxT("-re"));
-    verbTypeBox = new wxCheckListBox(this, wxID_ANY, wxDefaultPosition, wxSize(wxDefaultSize.GetX(), 90), verbTypeChoices);
+
+    checkBoxER = new wxCheckBox(this, wxID_ANY, wxT("-er"));
+    checkBoxIR = new wxCheckBox(this, wxID_ANY, wxT("-ir"));
+    checkBoxOIR = new wxCheckBox(this, wxID_ANY, wxT("-oir"));
+    checkBoxRE = new wxCheckBox(this, wxID_ANY, wxT("-re"));
 
     topsizer->Add(
         verbTypeTitle,
         0,
         wxEXPAND |
-        wxALL,
+        wxTOP | wxBOTTOM,
         10
     );
 
     topsizer->Add(
-        verbTypeBox,
+        checkBoxER,
         0,
         wxEXPAND |
-        wxLEFT | wxRIGHT | wxBOTTOM,
-        10
+        wxTOP | wxBOTTOM,
+        5
+    );
+
+    topsizer->Add(
+        checkBoxIR,
+        0,
+        wxEXPAND |
+        wxTOP | wxBOTTOM,
+        5
+    );
+
+    topsizer->Add(
+        checkBoxOIR,
+        0,
+        wxEXPAND |
+        wxTOP | wxBOTTOM,
+        5
+    );
+
+    topsizer->Add(
+        checkBoxRE,
+        0,
+        wxEXPAND |
+        wxTOP | wxBOTTOM,
+        5
     );
 
     SetSizerAndFit(topsizer);

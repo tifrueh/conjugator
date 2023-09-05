@@ -22,8 +22,6 @@
 #include "conjugateur.hpp"
 
 int main(int argc, char *argv[]) {
-    conj::displayVerb(verbDB::acheter); 
-
-    std::cout << conj::getVerbForm(verbDB::acheter, verbDB::Tense::present, verbDB::Person::je);
+    verbDB::init();
     return 0;
 }

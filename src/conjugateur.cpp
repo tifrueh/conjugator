@@ -217,7 +217,7 @@ std::string conj::getVerbForm(verbDB::Verb verb, int tense, int person) {
 std::string conj::getVerbForm(verbDB::Verb verb, verbDB::Tense tense, verbDB::Person person) {
     int tenseInt = tense;
     int personInt = person;
-    getVerbForm(verb, tenseInt, personInt);
+    return getVerbForm(verb, tenseInt, personInt);
 }
 
 std::string conj::getTense(verbDB::Tense tense) {

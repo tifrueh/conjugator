@@ -14,6 +14,10 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     topsizer = new wxBoxSizer(wxVERTICAL);
 
     verbTypeTitle = new wxStaticText(this, wxID_ANY, wxT("Types de verbes"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
+    wxFont titleFont = verbTypeTitle->GetFont();
+    titleFont.Scale(1.1);
+    titleFont.MakeBold();
+    verbTypeTitle->SetFont(titleFont);
 
     checkBoxER = new wxCheckBox(this, wxID_ANY, wxT("-er"));
     checkBoxIR = new wxCheckBox(this, wxID_ANY, wxT("-ir"));
@@ -24,7 +28,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         verbTypeTitle,
         0,
         wxEXPAND |
-        wxTOP | wxBOTTOM,
+        wxBOTTOM,
         10
     );
 
@@ -33,7 +37,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         0,
         wxEXPAND |
         wxTOP | wxBOTTOM,
-        5
+        3
     );
 
     topsizer->Add(
@@ -41,7 +45,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         0,
         wxEXPAND |
         wxTOP | wxBOTTOM,
-        5
+        3
     );
 
     topsizer->Add(
@@ -49,7 +53,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         0,
         wxEXPAND |
         wxTOP | wxBOTTOM,
-        5
+        3
     );
 
     topsizer->Add(
@@ -57,7 +61,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         0,
         wxEXPAND |
         wxTOP | wxBOTTOM,
-        5
+        3
     );
 
     SetSizerAndFit(topsizer);

@@ -536,7 +536,7 @@ verbDB::Verb verbDB::apercevoir = {
     "apercevraient"
 };
 
-verbDB::Verb verbDB::apparaitre {
+verbDB::Verb verbDB::apparaitre = {
 
     verbDB::VerbType::re,
 
@@ -607,7 +607,77 @@ verbDB::Verb verbDB::apparaitre {
     "apparaîtraient"
 };
 
-verbDB::Verb verbDB::appeler;
+verbDB::Verb verbDB::appeler = {
+
+    verbDB::VerbType::er,
+
+    "appeler",
+    "appelant",
+
+    "appelle",
+    "appelles",
+    "appelle",
+    "appelle",
+    "appelons",
+    "appelez",
+    "appellent",
+    "appellent",
+
+    "appelais",
+    "appelais",
+    "appelait",
+    "appelait",
+    "appelions",
+    "appeliez",
+    "appelaient",
+    "appelaient",
+
+    "appellerai",
+    "appelleras",
+    "appellera",
+    "appellera",
+    "appellerons",
+    "appellerez",
+    "appelleront",
+    "appelleront",
+
+    "ai appelé",
+    "as appelé",
+    "a appelé",
+    "a appelé",
+    "avons appelé",
+    "avez appelé",
+    "ont appelé",
+    "ont appelé",
+
+    "avais appelé",
+    "avais appelé",
+    "avait appelé",
+    "avait appelé",
+    "avions appelé",
+    "aviez appelé",
+    "avaient appelé",
+    "avaient appelé",
+
+    "appelle",
+    "appelles",
+    "appelle",
+    "appelle",
+    "appelions",
+    "appeliez",
+    "appellent",
+    "appellent",
+
+    "appellerais",
+    "appellerais",
+    "appellerait",
+    "appellerait",
+    "appellerions",
+    "appelleriez",
+    "appelleraient",
+    "appelleraient"
+};
+
 verbDB::Verb verbDB::applaudir;
 verbDB::Verb verbDB::appuyer;
 verbDB::Verb verbDB::atteindre;

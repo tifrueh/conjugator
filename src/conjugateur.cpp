@@ -105,10 +105,7 @@ void conj::displayVerb(verbDB::Verb verb) {
 
 std::string conj::getVerbForm(verbDB::Verb verb, verbDB::Tense tense, verbDB::Person person) {
 
-    if (tense == verbDB::Tense::infinitif) {
-        return verb.infinitif;
-    }
-    else if (tense == verbDB::Tense::participePresent) {
+    if (tense == verbDB::Tense::participePresent) {
         return verb.participePresent;
     }
 

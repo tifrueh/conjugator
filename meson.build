@@ -10,9 +10,9 @@ project(
 incdir = include_directories([ 'include' ])
 
 srcs = [
-    'src/conjugateur.cpp'
+    'src/conjugateur.cpp',
     'src/main.cpp',
-    'src/verb.db.cpp',
+    'src/verb.db.cpp'
 ]
 
 wx = dependency('wxwidgets')

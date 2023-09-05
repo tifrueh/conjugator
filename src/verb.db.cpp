@@ -820,7 +820,77 @@ verbDB::Verb verbDB::appuyer = {
     "appuieraient"
 };
 
-verbDB::Verb verbDB::atteindre;
+verbDB::Verb verbDB::atteindre = {
+
+    verbDB::VerbType::re,
+
+    "atteindre",
+    "atteignant",
+
+    "atteins",
+    "atteins",
+    "atteint",
+    "atteint",
+    "atteignons",
+    "atteignez",
+    "atteignent",
+    "atteignent",
+
+    "atteignais",
+    "atteignais",
+    "attegnait",
+    "attegnait",
+    "atteignions",
+    "atteigniez",
+    "atteignaient",
+    "atteignaient",
+
+    "atteindrai",
+    "atteindras",
+    "atteindra",
+    "atteindra",
+    "atteindrons",
+    "atteindrez",
+    "atteindront",
+    "atteindront",
+
+    "ai atteint",
+    "as atteint",
+    "a atteint",
+    "a atteint",
+    "avons atteint",
+    "avez atteint",
+    "ont atteint",
+    "ont atteint",
+
+    "avais atteint",
+    "avais atteint",
+    "avait atteint",
+    "avait atteint",
+    "avions atteint",
+    "aviez atteint",
+    "avaient atteint",
+    "avaient atteint",
+
+    "atteigne",
+    "atteignes",
+    "aggeigne",
+    "aggeigne",
+    "atteignions",
+    "aggeigniez",
+    "atteignent",
+    "atteignent",
+
+    "atteindrais",
+    "atteindrais",
+    "atteindrait",
+    "atteindrait",
+    "atteindrions",
+    "atteindriez",
+    "atteindraient",
+    "atteindraient"
+};
+
 verbDB::Verb verbDB::attendre;
 verbDB::Verb verbDB::avancer;
 verbDB::Verb verbDB::avoir;

@@ -153,6 +153,34 @@ std::vector<verbDB::Verb*> verbDB::allVerbs {
     &verbDB::vouloir,
 };
 
+std::vector<verbDB::Verb*> verbDB::verbsER = {};
+std::vector<verbDB::Verb*> verbDB::verbsIR = {};
+std::vector<verbDB::Verb*> verbDB::verbsOIR = {};
+std::vector<verbDB::Verb*> verbDB::verbsRE = {};
+
+void verbDB::init() {
+    for (verbDB::Verb* pVerb : verbDB::allVerbs) {
+        switch (pVerb->verbType) {
+
+            case verbDB::VerbType::er :
+                verbDB::verbsER.push_back(pVerb);
+                break;
+        
+            case verbDB::VerbType::ir :
+                verbDB::verbsIR.push_back(pVerb);
+                break;
+            
+            case verbDB::VerbType::oir :
+                verbDB::verbsOIR.push_back(pVerb);
+                break;
+            
+            case verbDB::VerbType::re :
+                verbDB::verbsRE.push_back(pVerb);
+                break;
+        }
+    }
+}
+
 verbDB::Verb verbDB::acheter = {
 
     verbDB::VerbType::er,
@@ -223,3 +251,123 @@ verbDB::Verb verbDB::acheter = {
     "achèteraient",
     "achèteraient"
 };
+
+verbDB::Verb verbDB::agir;
+verbDB::Verb verbDB::aller;
+verbDB::Verb verbDB::amener;
+verbDB::Verb verbDB::apercevoir;
+verbDB::Verb verbDB::apparaitre;
+verbDB::Verb verbDB::appeler;
+verbDB::Verb verbDB::applaudir;
+verbDB::Verb verbDB::appuyer;
+verbDB::Verb verbDB::atteindre;
+verbDB::Verb verbDB::attendre;
+verbDB::Verb verbDB::avancer;
+verbDB::Verb verbDB::avoir;
+verbDB::Verb verbDB::battre;
+verbDB::Verb verbDB::bavarder;
+verbDB::Verb verbDB::boire;
+verbDB::Verb verbDB::choisir;
+verbDB::Verb verbDB::commencer;
+verbDB::Verb verbDB::conduire;
+verbDB::Verb verbDB::confondre;
+verbDB::Verb verbDB::connaitre;
+verbDB::Verb verbDB::construire;
+verbDB::Verb verbDB::courir;
+verbDB::Verb verbDB::couvrir;
+verbDB::Verb verbDB::craindre;
+verbDB::Verb verbDB::croire;
+verbDB::Verb verbDB::cueillir;
+verbDB::Verb verbDB::decevoir;
+verbDB::Verb verbDB::demolir;
+verbDB::Verb verbDB::detruire;
+verbDB::Verb verbDB::devoir;
+verbDB::Verb verbDB::dire;
+verbDB::Verb verbDB::disparaitre;
+verbDB::Verb verbDB::donner;
+verbDB::Verb verbDB::dormir;
+verbDB::Verb verbDB::ecrire;
+verbDB::Verb verbDB::effacer;
+verbDB::Verb verbDB::employer;
+verbDB::Verb verbDB::enlever;
+verbDB::Verb verbDB::entendre;
+verbDB::Verb verbDB::envoyer;
+verbDB::Verb verbDB::esperer;
+verbDB::Verb verbDB::essayer;
+verbDB::Verb verbDB::essuyer;
+verbDB::Verb verbDB::eteindre;
+verbDB::Verb verbDB::etre;
+verbDB::Verb verbDB::exagerer;
+verbDB::Verb verbDB::faire;
+verbDB::Verb verbDB::falloir;
+verbDB::Verb verbDB::fermer;
+verbDB::Verb verbDB::fuir;
+verbDB::Verb verbDB::grimper;
+verbDB::Verb verbDB::guerir;
+verbDB::Verb verbDB::inventer;
+verbDB::Verb verbDB::jeter;
+verbDB::Verb verbDB::joindre;
+verbDB::Verb verbDB::lancer;
+verbDB::Verb verbDB::laver;
+verbDB::Verb verbDB::lire;
+verbDB::Verb verbDB::maigrir;
+verbDB::Verb verbDB::manger;
+verbDB::Verb verbDB::mener;
+verbDB::Verb verbDB::mentir;
+verbDB::Verb verbDB::mettre;
+verbDB::Verb verbDB::mourir;
+verbDB::Verb verbDB::nager;
+verbDB::Verb verbDB::naitre;
+verbDB::Verb verbDB::nettoyer;
+verbDB::Verb verbDB::obéir;
+verbDB::Verb verbDB::offrir;
+verbDB::Verb verbDB::ouvrir;
+verbDB::Verb verbDB::paraitre;
+verbDB::Verb verbDB::partir;
+verbDB::Verb verbDB::payer;
+verbDB::Verb verbDB::peindre;
+verbDB::Verb verbDB::perdre;
+verbDB::Verb verbDB::peser;
+verbDB::Verb verbDB::placer;
+verbDB::Verb verbDB::plaire;
+verbDB::Verb verbDB::pleuvoir;
+verbDB::Verb verbDB::pouvoir;
+verbDB::Verb verbDB::preferer;
+verbDB::Verb verbDB::prendre;
+verbDB::Verb verbDB::produire;
+verbDB::Verb verbDB::proteger;
+verbDB::Verb verbDB::ranger;
+verbDB::Verb verbDB::reagir;
+verbDB::Verb verbDB::recevoir;
+verbDB::Verb verbDB::reduire;
+verbDB::Verb verbDB::reflechir;
+verbDB::Verb verbDB::remplir;
+verbDB::Verb verbDB::rendre;
+verbDB::Verb verbDB::repondre;
+verbDB::Verb verbDB::reussir;
+verbDB::Verb verbDB::rire;
+verbDB::Verb verbDB::rompre;
+verbDB::Verb verbDB::sAssoir;
+verbDB::Verb verbDB::sEnnuyer;
+verbDB::Verb verbDB::sInquieter;
+verbDB::Verb verbDB::savoir;
+verbDB::Verb verbDB::secher;
+verbDB::Verb verbDB::sentir;
+verbDB::Verb verbDB::sePlaindre;
+verbDB::Verb verbDB::sePromener;
+verbDB::Verb verbDB::seRejouir;
+verbDB::Verb verbDB::servir;
+verbDB::Verb verbDB::seTaire;
+verbDB::Verb verbDB::sortir;
+verbDB::Verb verbDB::souffrir;
+verbDB::Verb verbDB::suffire;
+verbDB::Verb verbDB::suivre;
+verbDB::Verb verbDB::tenir;
+verbDB::Verb verbDB::traduire;
+verbDB::Verb verbDB::valoir;
+verbDB::Verb verbDB::vendre;
+verbDB::Verb verbDB::venir;
+verbDB::Verb verbDB::vieillir;
+verbDB::Verb verbDB::vivre;
+verbDB::Verb verbDB::voir;
+verbDB::Verb verbDB::vouloir;

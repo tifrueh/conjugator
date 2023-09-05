@@ -214,4 +214,6 @@ namespace verbDB {
 
     extern std::array<std::string, 9> tenseStrings;
     extern std::array<std::string, 8> personStrings;
+
+    void init();
 };

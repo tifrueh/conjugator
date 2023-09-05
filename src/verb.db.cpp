@@ -465,7 +465,77 @@ verbDB::Verb verbDB::amener {
     "amèneraient"
 };
 
-verbDB::Verb verbDB::apercevoir;
+verbDB::Verb verbDB::apercevoir {
+
+    verbDB::VerbType::oir,
+
+    "apercevoir",
+    "apercevant",
+
+    "aperçois",
+    "aperçois",
+    "aperçoit",
+    "aperçoit",
+    "apercevons",
+    "apercevez",
+    "aperçoivent",
+    "aperçoivent",
+
+    "apercevais",
+    "apercevais",
+    "apercevait",
+    "apercevait",
+    "apercevions",
+    "aperceviez",
+    "apercevaient",
+    "apercevaient",
+
+    "apercevrai",
+    "apercevras",
+    "apercevra",
+    "apercevra",
+    "apercevrons",
+    "apercevrez",
+    "apercevront",
+    "apercevront",
+
+    "ai aperçu",
+    "as aperçu",
+    "a aperçu",
+    "a aperçu",
+    "avons aperçu",
+    "avez aperçu",
+    "ont aperçu",
+    "ont aperçu",
+
+    "avais aperçu",
+    "avais aperçu",
+    "avait aperçu",
+    "avait aperçu",
+    "avions aperçu",
+    "aviez aperçu",
+    "avaient aperçu",
+    "avaient aperçu",
+
+    "aperçoive",
+    "aperçoives",
+    "aperçoive",
+    "aperçoive",
+    "apercevions",
+    "aperceviez",
+    "aperçoivent",
+    "aperçoivent",
+
+    "apercevrais",
+    "apercevrais",
+    "apercevrait",
+    "apercevrait",
+    "apercevrions",
+    "apercevriez",
+    "apercevraient",
+    "apercevraient"
+};
+
 verbDB::Verb verbDB::apparaitre;
 verbDB::Verb verbDB::appeler;
 verbDB::Verb verbDB::applaudir;

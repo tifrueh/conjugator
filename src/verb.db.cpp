@@ -158,7 +158,7 @@ std::vector<verbDB::Verb*> verbDB::verbsIR = {};
 std::vector<verbDB::Verb*> verbDB::verbsOIR = {};
 std::vector<verbDB::Verb*> verbDB::verbsRE = {};
 
-void verbDB::init() {
+void verbDB::initTypeVectors() {
     for (verbDB::Verb* pVerb : verbDB::allVerbs) {
         switch (pVerb->verbType) {
 

@@ -22,6 +22,6 @@
 #include "conjugateur.hpp"
 
 int main(int argc, char *argv[]) {
-    verbDB::init();
+    verbDB::initTypeVectors();
     return 0;
 }

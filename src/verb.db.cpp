@@ -252,7 +252,77 @@ verbDB::Verb verbDB::acheter = {
     "achèteraient"
 };
 
-verbDB::Verb verbDB::agir;
+verbDB::Verb verbDB::agir = {
+
+    verbDB::VerbType::ir,
+
+    "agir",
+    "agissant",
+
+    "agis",
+    "agis",
+    "agit",
+    "agit",
+    "agissons",
+    "agissez",
+    "agissent",
+    "agissent",
+
+    "agissais",
+    "agissais",
+    "agissait",
+    "agissait",
+    "agissions",
+    "agissiez",
+    "agissaient",
+    "agissaient",
+
+    "agirai",
+    "agiras",
+    "agira",
+    "agira",
+    "agirons",
+    "agirez",
+    "agiront",
+    "agiront",
+
+    "ai agi",
+    "as agi",
+    "a agi",
+    "a agi",
+    "avons agi",
+    "avez agi",
+    "ont agi",
+    "ont agi",
+
+    "avais agi",
+    "avais agi",
+    "avait agi",
+    "avait agi",
+    "avions agi",
+    "aviez agi",
+    "avaient agi",
+    "avaient agi",
+
+    "agisse",
+    "agisses",
+    "agisse",
+    "agisse",
+    "agissions",
+    "agissiez",
+    "agissent",
+    "agissent",
+
+    "agirais",
+    "agirais",
+    "agirait",
+    "agirait",
+    "agirions",
+    "agiriez",
+    "agiraient",
+    "agiraient"
+};
+
 verbDB::Verb verbDB::aller;
 verbDB::Verb verbDB::amener;
 verbDB::Verb verbDB::apercevoir;

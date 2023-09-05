@@ -18,7 +18,7 @@ void conj::displayVerb(verbDB::Verb verb) {
     for (int i = verbDB::Tense::present; i <= verbDB::Tense::conditionnel; i++) {
         std::string tense = conj::getTense(i);
         out.append("\n");
-        out.append(tense);
+        out.append(tense + "\n");
         out.append(std::string(tense.length(), '-') + "\n");
 
         for (int j = verbDB::Person::je; j <= verbDB::Person::elles; j++) {

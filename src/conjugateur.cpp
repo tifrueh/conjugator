@@ -21,7 +21,7 @@ void conj::displayVerb(verbDB::Verb verb) {
         out.append(tense);
         out.append(std::string(tense.length(), '-') + "\n");
 
-        for (int j = verbDB::Person::je; i <= verbDB::Person::elles; j++) {
+        for (int j = verbDB::Person::je; j <= verbDB::Person::elles; j++) {
             out.append(conj::getPerson(j) + " " + conj::getVerbForm(verb, i, j) + "\n");
         }
     }

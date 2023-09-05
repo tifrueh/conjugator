@@ -9,7 +9,10 @@
     #include <wx/wx.h>
 #endif
 
+
 #include <wx/aboutdlg.h>
+
+#include "toppanel.hpp"
 
 
 class MainFrame : public wxFrame {
@@ -19,5 +22,6 @@ class MainFrame : public wxFrame {
     
     private:
         wxAboutDialogInfo info;
-
+        wxBoxSizer* topPanelSizer = nullptr;
+        TopPanel* topPanel = nullptr;
 };

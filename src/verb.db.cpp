@@ -394,7 +394,7 @@ verbDB::Verb verbDB::aller = {
     "iraient"
 };
 
-verbDB::Verb verbDB::amener {
+verbDB::Verb verbDB::amener = {
 
     verbDB::VerbType::er,
 
@@ -465,7 +465,7 @@ verbDB::Verb verbDB::amener {
     "amèneraient"
 };
 
-verbDB::Verb verbDB::apercevoir {
+verbDB::Verb verbDB::apercevoir = {
 
     verbDB::VerbType::oir,
 
@@ -536,7 +536,8 @@ verbDB::Verb verbDB::apercevoir {
     "apercevraient"
 };
 
-verbDB::Verb verbDB::apparaitre;
+verbDB::Verb verbDB::apparaitre ;
+
 verbDB::Verb verbDB::appeler;
 verbDB::Verb verbDB::applaudir;
 verbDB::Verb verbDB::appuyer;

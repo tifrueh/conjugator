@@ -203,6 +203,7 @@ namespace verbDB {
     extern Verb voir;
     extern Verb vouloir;
 
+    extern std::vector<Verb*> allVerbs;
     extern std::vector<Verb*> verbsER;
     extern std::vector<Verb*> verbsIR;
     extern std::vector<Verb*> verbsOIR;

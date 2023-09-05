@@ -394,7 +394,77 @@ verbDB::Verb verbDB::aller = {
     "iraient"
 };
 
-verbDB::Verb verbDB::amener;
+verbDB::Verb verbDB::amener {
+
+    verbDB::VerbType::er,
+
+    "amener",
+    "amenant",
+
+    "amène",
+    "amènes",
+    "amène",
+    "amène",
+    "amenons",
+    "amenez",
+    "amènent",
+    "amènent",
+
+    "amenais",
+    "amenais",
+    "amenait",
+    "amenait",
+    "amenions",
+    "ameniez",
+    "amenaient",
+    "amenaient",
+
+    "amènerai",
+    "amèneras",
+    "amènera",
+    "amènera",
+    "amènerons",
+    "amènerez",
+    "amèneront",
+    "amèneront",
+
+    "ai amené",
+    "as amené",
+    "a amené",
+    "a amené",
+    "avons amené",
+    "avez amené",
+    "ont amené",
+    "ont amené",
+
+    "avais amené",
+    "avais amené",
+    "avait amené",
+    "avait amené",
+    "avions amené",
+    "aviez amené",
+    "avaient amené",
+    "avaient amené",
+
+    "amène",
+    "amènes",
+    "amène",
+    "amène",
+    "amenions",
+    "ameniez",
+    "amènent",
+    "amènent",
+
+    "amènerais",
+    "amènerais",
+    "amènerait",
+    "amènerait",
+    "amènerions",
+    "amèneriez",
+    "amèneraient",
+    "amèneraient"
+};
+
 verbDB::Verb verbDB::apercevoir;
 verbDB::Verb verbDB::apparaitre;
 verbDB::Verb verbDB::appeler;

@@ -9,7 +9,11 @@
 
 namespace verbDB {
 
+    enum VerbType { er, ir, oir, re };
+
     struct Verb {
+
+        VerbType verbType;
 
         std::string infinitif;
         std::string participePresent;

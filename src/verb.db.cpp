@@ -30,6 +30,9 @@ std::array<std::string, 8> verbDB::personStrings {
 };
 
 verbDB::Verb verbDB::acheter = {
+
+    verbDB::VerbType::er,
+
     "acheter",
     "achetant",
 
@@ -95,8 +98,4 @@ verbDB::Verb verbDB::acheter = {
     "achèteriez",
     "achèteraient",
     "achèteraient"
-};
-
-std::vector<verbDB::Verb*> verbDB::verbsER = {
-    &verbDB::acheter,
 };

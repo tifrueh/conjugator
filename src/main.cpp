@@ -14,15 +14,33 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+#include <wx/wxprec.h>
+ 
+#ifndef WX_PRECOMP
+    #include <wx/wx.h>
+#endif
+
+#include <wx/aboutdlg.h>
+#include <wx/intl.h>
+
 #include <string>
 #include <vector>
 #include <iostream>
 
 #include "verb.db.hpp"
 #include "conjugateur.hpp"
+#include "mainframe.hpp"
 
-int main(int argc, char *argv[]) {
-    verbDB::initTypeVectors();
-    conj::displayVerb(verbDB::atteindre);
-    return 0;
+class Conjugateur : public wxApp {
+    public:
+        virtual bool OnInit();
+};
+
+wxIMPLEMENT_APP(Conjugateur);
+
+bool Conjugateur::OnInit() {
+    this->SetAppDisplayName(wxT("Conjugateur"));
+    MainFrame* window = new MainFrame("Conjugateur");
+    window->Show();
+    return true;
 }

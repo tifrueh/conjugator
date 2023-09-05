@@ -12,6 +12,7 @@ incdir = include_directories([ 'include' ])
 srcs = [
     'src/conjugateur.cpp',
     'src/main.cpp',
+    'src/mainframe.cpp',
     'src/verb.db.cpp'
 ]
 

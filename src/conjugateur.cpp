@@ -287,3 +287,11 @@ std::string conj::getVerbForm(verbDB::Verb verb, verbDB::Tense tense, verbDB::Pe
         return verb.infinitif;
     }
 };
+
+std::string conj::getTense(verbDB::Tense tense) {
+    return verbDB::tenseStrings.at(tense);
+}
+
+std::string conj::getPerson(verbDB::Person person) {
+    return verbDB::personStrings.at(person);
+}

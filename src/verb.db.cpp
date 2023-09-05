@@ -678,7 +678,77 @@ verbDB::Verb verbDB::appeler = {
     "appelleraient"
 };
 
-verbDB::Verb verbDB::applaudir;
+verbDB::Verb verbDB::applaudir = {
+    
+    verbDB::VerbType::ir,
+
+    "applaudir",
+    "applaudissant",
+
+    "applaudis",
+    "applaudis",
+    "applaudit",
+    "applaudit",
+    "applaudissons",
+    "applaudissez",
+    "applaudissent",
+    "applaudissent",
+
+    "applaudissais",
+    "applaudissais",
+    "applaudissait",
+    "applaudissait",
+    "applaudissions",
+    "applaudissiez",
+    "applaudissaient",
+    "applaudissaient",
+
+    "applaudirai",
+    "applaudiras",
+    "applaudira",
+    "applaudira",
+    "applaudirons",
+    "applaudirez",
+    "applaudiront",
+    "applaudiront",
+
+    "ai applaudi",
+    "as applaudi",
+    "a applaudi",
+    "a applaudi",
+    "avons applaudi",
+    "avez applaudi",
+    "ont applaudi",
+    "ont applaudi",
+
+    "avais applaudi",
+    "avais applaudi",
+    "avait applaudi",
+    "avait applaudi",
+    "avions applaudi",
+    "aviez applaudi",
+    "avaient applaudi",
+    "avaient applaudi",
+
+    "applaudisse",
+    "applaudisses",
+    "applaudisse",
+    "applaudisse",
+    "applaudissions",
+    "applaudissiez",
+    "applaudissent",
+    "applaudissent",
+
+    "applaudirais",
+    "applaudirais",
+    "applaudirait",
+    "applaudirait",
+    "applaudirions",
+    "applaudiriez",
+    "applaudiraient",
+    "applaudiraient"
+};
+
 verbDB::Verb verbDB::appuyer;
 verbDB::Verb verbDB::atteindre;
 verbDB::Verb verbDB::attendre;

@@ -248,5 +248,5 @@ std::string conj::getPerson(const int& person) {
 }
 
 bool conj::VerbForm::operator==(const conj::VerbForm& verbForm) {
-    return this->infinitif == verbForm.infinitif && this->person == verbForm.person && this->form == verbForm.form;
+    return this->infinitif == verbForm.infinitif && this->person == verbForm.person && this->form == verbForm.form && this->tense == verbForm.tense;
 }

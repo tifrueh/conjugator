@@ -7,6 +7,10 @@
     #include <wx/wx.h>
 #endif
 
+
+#include <vector>
+#include <ctime>
+
 #include "conjugateur.hpp"
 #include "id.hpp"
 #include "verb.db.hpp"
@@ -183,6 +187,82 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     );
 
     SetSizerAndFit(topsizer);
+}
+
+std::vector<conj::VerbForm> TopPanel::GetVerbForms(const int& count) {
+    std::vector<const verbDB::Verb*> usableVerbs;
+    std::vector<verbDB::Tense> usableTenses;
+    std::vector<conj::VerbForm> verbForms;
+
+    if (checkBoxER->GetValue()) {
+        usableVerbs.insert(std::end(usableVerbs), std::begin(verbDB::verbsER), std::end(verbDB::verbsER));
+    }
+
+    if (checkBoxIR->GetValue()) {
+        usableVerbs.insert(std::end(usableVerbs), std::begin(verbDB::verbsIR), std::end(verbDB::verbsIR));
+    }
+
+    if (checkBoxOIR->GetValue()) {
+        usableVerbs.insert(std::end(usableVerbs), std::begin(verbDB::verbsOIR), std::end(verbDB::verbsOIR));
+    }
+
+    if (checkBoxRE->GetValue()) {
+        usableVerbs.insert(std::end(usableVerbs), std::begin(verbDB::verbsRE), std::end(verbDB::verbsRE));
+    }
+
+
+    if (checkBoxParticipePresent->GetValue()) {
+        usableTenses.push_back(verbDB::Tense::participePresent);
+    }
+
+    if (checkBoxPresent->GetValue()) {
+        usableTenses.push_back(verbDB::Tense::present);
+    }
+
+    if (checkBoxImparfait->GetValue()) {
+        usableTenses.push_back(verbDB::Tense::imparfait);
+    }
+
+    if (checkBoxFutur->GetValue()) {
+        usableTenses.push_back(verbDB::Tense::futur);
+    }
+
+    if (checkBoxPasseCompose->GetValue()) {
+        usableTenses.push_back(verbDB::Tense::passeCompose);
+    }
+
+    if (checkBoxPlusQueParfait->GetValue()) {
+        usableTenses.push_back(verbDB::Tense::plusQueParfait);
+    }
+
+    if (checkBoxSubjonctif->GetValue()) {
+        usableTenses.push_back(verbDB::Tense::subjonctif);
+    }
+
+    if (checkBoxConditionnel->GetValue()) {
+        usableTenses.push_back(verbDB::Tense::conditionnel);
+    }
+
+    const verbDB::Verb* verb;
+    verbDB::Tense tense;
+    int randomPosVerb;
+    int randomPosTense;
+    int randomPers;
+    
+    for (int i = 0; i < count; i++) {
+        std::srand(std::time(0));
+        randomPosVerb = std::rand() % usableVerbs.size();
+        randomPosTense = std::rand() % usableTenses.size();
+
+        randomPers = std::rand() % verbDB::Person::elles;
+
+        verb = usableVerbs.at(randomPosVerb);
+        tense = usableTenses.at(randomPosTense);
+
+        verbForms.push_back(conj::getVerbForm(*verb, tense, randomPers));
+    }
+
+    return verbForms;
 }
 
 void TopPanel::Reset() {

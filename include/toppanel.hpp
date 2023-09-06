@@ -17,7 +17,7 @@
 class TopPanel : public wxPanel {
     public:
         TopPanel(wxWindow* parent);
-        std::vector<conj::VerbForm> GetVerbs(int& count);
+        std::vector<conj::VerbForm> GetVerbForms(const int& count);
         void Reset();
 
     private:

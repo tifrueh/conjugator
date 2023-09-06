@@ -15,11 +15,11 @@ namespace conj {
         std::string form;
     };
     
-    void displayVerb(verbDB::Verb& verb);
-    VerbForm getVerbForm(verbDB::Verb& verb, verbDB::Tense& tense, verbDB::Person& person);
-    VerbForm getVerbForm(verbDB::Verb& verb, int& tense, int& person);
-    std::string getTense(verbDB::Tense& tense);
-    std::string getTense(int& tense);
-    std::string getPerson(verbDB::Person& person);
-    std::string getPerson(int& person);
+    void displayVerb(const verbDB::Verb& verb);
+    VerbForm getVerbForm(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person);
+    VerbForm getVerbForm(const verbDB::Verb& verb, const int& tense, const int& person);
+    std::string getTense(const verbDB::Tense& tense);
+    std::string getTense(const int& tense);
+    std::string getPerson(const verbDB::Person& person);
+    std::string getPerson(const int& person);
 };

@@ -175,9 +175,9 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     topsizer->Add(
         buttonSizer,
         0,
-        wxEXPAND |
-        wxTOP | wxBOTTOM,
-        10
+        wxCENTER |
+        wxTOP,
+        15
     );
 
     SetSizerAndFit(topsizer);

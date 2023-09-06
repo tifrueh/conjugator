@@ -20,7 +20,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title, wxDefaultP
         topPanel,
         1,
         wxEXPAND | wxALL,
-        10
+        20
     );
 
     SetSizerAndFit(topPanelSizer);

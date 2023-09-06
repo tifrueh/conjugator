@@ -35,7 +35,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title, wxDefaultP
 }
 
 void MainFrame::OnOkay(wxCommandEvent& event) {
-    std::vector<conj::VerbForm> verbForms = topPanel->GetVerbForms(30);
+    std::vector<conj::VerbForm> verbForms = topPanel->GetVerbForms(10);
 
     for (conj::VerbForm verbForm : verbForms) {
         std::cout << verbForm.tense + ": " + verbForm.person + " " + verbForm.form + "\n";

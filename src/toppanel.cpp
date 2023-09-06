@@ -7,6 +7,7 @@
     #include <wx/wx.h>
 #endif
 
+#include "conjugateur.hpp"
 #include "id.hpp"
 #include "verb.db.hpp"
 #include "toppanel.hpp"
@@ -182,4 +183,20 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     );
 
     SetSizerAndFit(topsizer);
+}
+
+void TopPanel::Reset() {
+    checkBoxER->SetValue(false);
+    checkBoxIR->SetValue(false);
+    checkBoxOIR->SetValue(false);
+    checkBoxRE->SetValue(false);
+
+    checkBoxParticipePresent->SetValue(false);
+    checkBoxPresent->SetValue(false);
+    checkBoxImparfait->SetValue(false);
+    checkBoxFutur->SetValue(false);
+    checkBoxPasseCompose->SetValue(false);
+    checkBoxPlusQueParfait->SetValue(false);
+    checkBoxSubjonctif->SetValue(false);
+    checkBoxConditionnel->SetValue(false);
 }

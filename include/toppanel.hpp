@@ -10,9 +10,15 @@
 #endif
 
 
+#include <vector>
+
+#include "conjugateur.hpp"
+
 class TopPanel : public wxPanel {
     public:
         TopPanel(wxWindow* parent);
+        std::vector<conj::VerbForm> GetVerbs(int& count);
+        void Reset();
 
     private:
         wxBoxSizer* topsizer = nullptr;

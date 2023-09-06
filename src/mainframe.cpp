@@ -35,5 +35,5 @@ void MainFrame::OnOkay(wxCommandEvent& event) {
 }
 
 void MainFrame::OnReset(wxCommandEvent& event) {
-    std::cout << "Reset!";
+    topPanel->Reset();
 }

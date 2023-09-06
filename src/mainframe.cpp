@@ -7,6 +7,10 @@
     #include <wx/wx.h>
 #endif
 
+
+#include <vector>
+
+#include "conjugateur.hpp"
 #include "id.hpp"
 #include "mainframe.hpp"
 #include "toppanel.hpp"
@@ -31,7 +35,11 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title, wxDefaultP
 }
 
 void MainFrame::OnOkay(wxCommandEvent& event) {
-    std::cout << "Okay!";
+    std::vector<conj::VerbForm> verbForms = topPanel->GetVerbForms(30);
+
+    for (conj::VerbForm verbForm : verbForms) {
+        std::cout << verbForm.tense + ": " + verbForm.person + " " + verbForm.form + "\n";
+    }
 }
 
 void MainFrame::OnReset(wxCommandEvent& event) {

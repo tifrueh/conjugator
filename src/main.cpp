@@ -23,7 +23,7 @@
 #include <wx/aboutdlg.h>
 #include <wx/intl.h>
 
-
+#include "verb.db.hpp"
 #include "mainframe.hpp"
 
 class Conjugateur : public wxApp {
@@ -34,6 +34,8 @@ class Conjugateur : public wxApp {
 wxIMPLEMENT_APP(Conjugateur);
 
 bool Conjugateur::OnInit() {
+
+    verbDB::initTypeVectors();
 
     this->SetAppDisplayName(wxT("Conjugateur"));
     

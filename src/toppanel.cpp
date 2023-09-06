@@ -10,6 +10,7 @@
 
 #include <vector>
 #include <ctime>
+#include <cstdlib>
 
 #include "conjugateur.hpp"
 #include "id.hpp"
@@ -248,13 +249,14 @@ std::vector<conj::VerbForm> TopPanel::GetVerbForms(const int& count) {
     int randomPosVerb;
     int randomPosTense;
     int randomPers;
+    std::srand(std::time(nullptr));
     
     for (int i = 0; i < count; i++) {
-        std::srand(std::time(0));
         randomPosVerb = std::rand() % usableVerbs.size();
+
         randomPosTense = std::rand() % usableTenses.size();
 
-        randomPers = std::rand() % verbDB::Person::elles;
+        randomPers = std::rand() % (int) verbDB::Person::elles;
 
         verb = usableVerbs.at(randomPosVerb);
         tense = usableTenses.at(randomPosTense);

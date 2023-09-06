@@ -13,6 +13,7 @@ namespace conj {
         std::string infinitif;
         std::string person;
         std::string form;
+        bool operator==(const VerbForm& verbForm);
     };
     
     void displayVerb(const verbDB::Verb& verb);

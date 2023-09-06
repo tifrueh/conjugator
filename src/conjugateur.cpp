@@ -243,3 +243,7 @@ std::string conj::getPerson(const verbDB::Person& person) {
 std::string conj::getPerson(const int& person) {
     return verbDB::personStrings.at(person);
 }
+
+bool conj::VerbForm::operator==(const conj::VerbForm& verbForm) {
+    return this->infinitif == verbForm.infinitif && this->person == verbForm.person && this->form == verbForm.form;
+}

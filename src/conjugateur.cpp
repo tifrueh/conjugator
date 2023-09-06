@@ -36,6 +36,7 @@ conj::VerbForm conj::getVerbForm(const verbDB::Verb& verb, const int& tense, con
     conj::VerbForm verbForm;
     verbForm.infinitif = verb.infinitif;
     verbForm.person = conj::getPerson(person);
+    verbForm.tense = conj::getTense(tense);
 
     if (tense == verbDB::Tense::participePresent) {
         verbForm.form = verb.participePresent;

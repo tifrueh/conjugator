@@ -11,6 +11,7 @@ namespace conj {
 
     struct VerbForm {
         std::string infinitif;
+        std::string tense;
         std::string person;
         std::string form;
         bool operator==(const VerbForm& verbForm);

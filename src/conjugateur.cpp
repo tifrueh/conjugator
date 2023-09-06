@@ -10,6 +10,7 @@
 
 void conj::displayVerb(verbDB::Verb verb) {
     std::string out;
+    conj::VerbForm verbForm;
 
     out.append("+" + std::string(verb.infinitif.length(), '-') + "+\n");
     out.append("|" + verb.infinitif + "|\n");
@@ -22,199 +23,204 @@ void conj::displayVerb(verbDB::Verb verb) {
         out.append(std::string(tense.length(), '-') + "\n");
 
         for (int j = verbDB::Person::je; j <= verbDB::Person::elles; j++) {
-            out.append(conj::getPerson(j) + " " + conj::getVerbForm(verb, i, j) + "\n");
+            verbForm = conj::getVerbForm(verb, i, j);
+            out.append(verbForm.person + " " + verbForm.form + "\n");
         }
     }
 
     std::cout << out;
 }
 
-std::string conj::getVerbForm(verbDB::Verb verb, int tense, int person) {
+conj::VerbForm conj::getVerbForm(verbDB::Verb verb, int tense, int person) {
+
+    conj::VerbForm verbForm;
+    verbForm.infinitif = verb.infinitif;
+    verbForm.person = conj::getPerson(person);
 
     if (tense == verbDB::Tense::participePresent) {
-        return verb.participePresent;
+        verbForm.form = verb.participePresent;
     }
 
     else if (tense == verbDB::Tense::present && person == verbDB::Person::je) {
-        return verb.presentJe;
+        verbForm.form = verb.presentJe;
     }
     else if (tense == verbDB::Tense::present && person == verbDB::Person::tu) {
-        return verb.presentTu;
+        verbForm.form = verb.presentTu;
     }
     else if (tense == verbDB::Tense::present && person == verbDB::Person::il) {
-        return verb.presentIl;
+        verbForm.form = verb.presentIl;
     }
     else if (tense == verbDB::Tense::present && person == verbDB::Person::elle) {
-        return verb.presentElle;
+        verbForm.form = verb.presentElle;
     }
     else if (tense == verbDB::Tense::present && person == verbDB::Person::nous) {
-        return verb.presentNous;
+        verbForm.form = verb.presentNous;
     }
     else if (tense == verbDB::Tense::present && person == verbDB::Person::vous) {
-        return verb.presentVous;
+        verbForm.form = verb.presentVous;
     }
     else if (tense == verbDB::Tense::present && person == verbDB::Person::ils) {
-        return verb.presentIls;
+        verbForm.form = verb.presentIls;
     }
     else if (tense == verbDB::Tense::present && person == verbDB::Person::elles) {
-        return verb.presentElles;
+        verbForm.form = verb.presentElles;
     }
 
     else if (tense == verbDB::Tense::imparfait && person == verbDB::Person::je) {
-        return verb.imparfaitJe;
+        verbForm.form = verb.imparfaitJe;
     }
     else if (tense == verbDB::Tense::imparfait && person == verbDB::Person::tu) {
-        return verb.imparfaitTu;
+        verbForm.form = verb.imparfaitTu;
     }
     else if (tense == verbDB::Tense::imparfait && person == verbDB::Person::il) {
-        return verb.imparfaitIl;
+        verbForm.form = verb.imparfaitIl;
     }
     else if (tense == verbDB::Tense::imparfait && person == verbDB::Person::elle) {
-        return verb.imparfaitElle;
+        verbForm.form = verb.imparfaitElle;
     }
     else if (tense == verbDB::Tense::imparfait && person == verbDB::Person::nous) {
-        return verb.imparfaitNous;
+        verbForm.form = verb.imparfaitNous;
     }
     else if (tense == verbDB::Tense::imparfait && person == verbDB::Person::vous) {
-        return verb.imparfaitVous;
+        verbForm.form = verb.imparfaitVous;
     }
     else if (tense == verbDB::Tense::imparfait && person == verbDB::Person::ils) {
-        return verb.imparfaitIls;
+        verbForm.form = verb.imparfaitIls;
     }
     else if (tense == verbDB::Tense::imparfait && person == verbDB::Person::elles) {
-        return verb.imparfaitElles;
+        verbForm.form = verb.imparfaitElles;
     }
 
     else if (tense == verbDB::Tense::futur && person == verbDB::Person::je) {
-        return verb.futurJe;
+        verbForm.form = verb.futurJe;
     }
     else if (tense == verbDB::Tense::futur && person == verbDB::Person::tu) {
-        return verb.futurTu;
+        verbForm.form = verb.futurTu;
     }
     else if (tense == verbDB::Tense::futur && person == verbDB::Person::il) {
-        return verb.futurIl;
+        verbForm.form = verb.futurIl;
     }
     else if (tense == verbDB::Tense::futur && person == verbDB::Person::elle) {
-        return verb.futurElle;
+        verbForm.form = verb.futurElle;
     }
     else if (tense == verbDB::Tense::futur && person == verbDB::Person::nous) {
-        return verb.futurNous;
+        verbForm.form = verb.futurNous;
     }
     else if (tense == verbDB::Tense::futur && person == verbDB::Person::vous) {
-        return verb.futurVous;
+        verbForm.form = verb.futurVous;
     }
     else if (tense == verbDB::Tense::futur && person == verbDB::Person::ils) {
-        return verb.futurIls;
+        verbForm.form = verb.futurIls;
     }
     else if (tense == verbDB::Tense::futur && person == verbDB::Person::elles) {
-        return verb.futurElles;
+        verbForm.form = verb.futurElles;
     }
 
     else if (tense == verbDB::Tense::passeCompose && person == verbDB::Person::je) {
-        return verb.passeComposeJe;
+        verbForm.form = verb.passeComposeJe;
     }
     else if (tense == verbDB::Tense::passeCompose && person == verbDB::Person::tu) {
-        return verb.passeComposeTu;
+        verbForm.form = verb.passeComposeTu;
     }
     else if (tense == verbDB::Tense::passeCompose && person == verbDB::Person::il) {
-        return verb.passeComposeIl;
+        verbForm.form = verb.passeComposeIl;
     }
     else if (tense == verbDB::Tense::passeCompose && person == verbDB::Person::elle) {
-        return verb.passeComposeElle;
+        verbForm.form = verb.passeComposeElle;
     }
     else if (tense == verbDB::Tense::passeCompose && person == verbDB::Person::nous) {
-        return verb.passeComposeNous;
+        verbForm.form = verb.passeComposeNous;
     }
     else if (tense == verbDB::Tense::passeCompose && person == verbDB::Person::vous) {
-        return verb.passeComposeVous;
+        verbForm.form = verb.passeComposeVous;
     }
     else if (tense == verbDB::Tense::passeCompose && person == verbDB::Person::ils) {
-        return verb.passeComposeIls;
+        verbForm.form = verb.passeComposeIls;
     }
     else if (tense == verbDB::Tense::passeCompose && person == verbDB::Person::elles) {
-        return verb.passeComposeElles;
+        verbForm.form = verb.passeComposeElles;
     }
 
     else if (tense == verbDB::Tense::plusQueParfait && person == verbDB::Person::je) {
-        return verb.plusQueParfaitJe;
+        verbForm.form = verb.plusQueParfaitJe;
     }
     else if (tense == verbDB::Tense::plusQueParfait && person == verbDB::Person::tu) {
-        return verb.plusQueParfaitTu;
+        verbForm.form = verb.plusQueParfaitTu;
     }
     else if (tense == verbDB::Tense::plusQueParfait && person == verbDB::Person::il) {
-        return verb.plusQueParfaitIl;
+        verbForm.form = verb.plusQueParfaitIl;
     }
     else if (tense == verbDB::Tense::plusQueParfait && person == verbDB::Person::elle) {
-        return verb.plusQueParfaitElle;
+        verbForm.form = verb.plusQueParfaitElle;
     }
     else if (tense == verbDB::Tense::plusQueParfait && person == verbDB::Person::nous) {
-        return verb.plusQueParfaitNous;
+        verbForm.form = verb.plusQueParfaitNous;
     }
     else if (tense == verbDB::Tense::plusQueParfait && person == verbDB::Person::vous) {
-        return verb.plusQueParfaitVous;
+        verbForm.form = verb.plusQueParfaitVous;
     }
     else if (tense == verbDB::Tense::plusQueParfait && person == verbDB::Person::ils) {
-        return verb.plusQueParfaitIls;
+        verbForm.form = verb.plusQueParfaitIls;
     }
     else if (tense == verbDB::Tense::plusQueParfait && person == verbDB::Person::elles) {
-        return verb.plusQueParfaitElles;
+        verbForm.form = verb.plusQueParfaitElles;
     }
 
     else if (tense == verbDB::Tense::subjonctif && person == verbDB::Person::je) {
-        return verb.subjonctifJe;
+        verbForm.form = verb.subjonctifJe;
     }
     else if (tense == verbDB::Tense::subjonctif && person == verbDB::Person::tu) {
-        return verb.subjonctifTu;
+        verbForm.form = verb.subjonctifTu;
     }
     else if (tense == verbDB::Tense::subjonctif && person == verbDB::Person::il) {
-        return verb.subjonctifIl;
+        verbForm.form = verb.subjonctifIl;
     }
     else if (tense == verbDB::Tense::subjonctif && person == verbDB::Person::elle) {
-        return verb.subjonctifElle;
+        verbForm.form = verb.subjonctifElle;
     }
     else if (tense == verbDB::Tense::subjonctif && person == verbDB::Person::nous) {
-        return verb.subjonctifNous;
+        verbForm.form = verb.subjonctifNous;
     }
     else if (tense == verbDB::Tense::subjonctif && person == verbDB::Person::vous) {
-        return verb.subjonctifVous;
+        verbForm.form = verb.subjonctifVous;
     }
     else if (tense == verbDB::Tense::subjonctif && person == verbDB::Person::ils) {
-        return verb.subjonctifIls;
+        verbForm.form = verb.subjonctifIls;
     }
     else if (tense == verbDB::Tense::subjonctif && person == verbDB::Person::elles) {
-        return verb.subjonctifElles;
+        verbForm.form = verb.subjonctifElles;
     }
 
     else if (tense == verbDB::Tense::conditionnel && person == verbDB::Person::je) {
-        return verb.conditionnelJe;
+        verbForm.form = verb.conditionnelJe;
     }
     else if (tense == verbDB::Tense::conditionnel && person == verbDB::Person::tu) {
-        return verb.conditionnelTu;
+        verbForm.form = verb.conditionnelTu;
     }
     else if (tense == verbDB::Tense::conditionnel && person == verbDB::Person::il) {
-        return verb.conditionnelIl;
+        verbForm.form = verb.conditionnelIl;
     }
     else if (tense == verbDB::Tense::conditionnel && person == verbDB::Person::elle) {
-        return verb.conditionnelElle;
+        verbForm.form = verb.conditionnelElle;
     }
     else if (tense == verbDB::Tense::conditionnel && person == verbDB::Person::nous) {
-        return verb.conditionnelNous;
+        verbForm.form = verb.conditionnelNous;
     }
     else if (tense == verbDB::Tense::conditionnel && person == verbDB::Person::vous) {
-        return verb.conditionnelVous;
+        verbForm.form = verb.conditionnelVous;
     }
     else if (tense == verbDB::Tense::conditionnel && person == verbDB::Person::ils) {
-        return verb.conditionnelIls;
+        verbForm.form = verb.conditionnelIls;
     }
     else if (tense == verbDB::Tense::conditionnel && person == verbDB::Person::elles) {
-        return verb.conditionnelElles;
+        verbForm.form = verb.conditionnelElles;
     }
     else {
-        return verb.infinitif;
+        verbForm.form = verb.infinitif;
     }
 };
 
-std::string conj::getVerbForm(verbDB::Verb verb, verbDB::Tense tense, verbDB::Person person) {
+conj::VerbForm conj::getVerbForm(verbDB::Verb verb, verbDB::Tense tense, verbDB::Person person) {
     int tenseInt = tense;
     int personInt = person;
     return getVerbForm(verb, tenseInt, personInt);

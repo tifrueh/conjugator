@@ -8,7 +8,7 @@
 
 #include "conjugateur.hpp"
 
-void conj::displayVerb(verbDB::Verb verb) {
+void conj::displayVerb(verbDB::Verb& verb) {
     std::string out;
     conj::VerbForm verbForm;
 
@@ -31,7 +31,7 @@ void conj::displayVerb(verbDB::Verb verb) {
     std::cout << out;
 }
 
-conj::VerbForm conj::getVerbForm(verbDB::Verb verb, int tense, int person) {
+conj::VerbForm conj::getVerbForm(verbDB::Verb& verb, int& tense, int& person) {
 
     conj::VerbForm verbForm;
     verbForm.infinitif = verb.infinitif;
@@ -222,24 +222,24 @@ conj::VerbForm conj::getVerbForm(verbDB::Verb verb, int tense, int person) {
     return verbForm;
 };
 
-conj::VerbForm conj::getVerbForm(verbDB::Verb verb, verbDB::Tense tense, verbDB::Person person) {
+conj::VerbForm conj::getVerbForm(verbDB::Verb& verb, verbDB::Tense& tense, verbDB::Person& person) {
     int tenseInt = tense;
     int personInt = person;
     return getVerbForm(verb, tenseInt, personInt);
 }
 
-std::string conj::getTense(verbDB::Tense tense) {
+std::string conj::getTense(verbDB::Tense& tense) {
     return verbDB::tenseStrings.at(tense);
 }
 
-std::string conj::getTense(int tense) {
+std::string conj::getTense(int& tense) {
     return verbDB::tenseStrings.at(tense);
 }
 
-std::string conj::getPerson(verbDB::Person person) {
+std::string conj::getPerson(verbDB::Person& person) {
     return verbDB::personStrings.at(person);
 }
 
-std::string conj::getPerson(int person) {
+std::string conj::getPerson(int& person) {
     return verbDB::personStrings.at(person);
 }

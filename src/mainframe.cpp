@@ -7,6 +7,7 @@
     #include <wx/wx.h>
 #endif
 
+#include "id.hpp"
 #include "mainframe.hpp"
 #include "toppanel.hpp"
 
@@ -23,5 +24,16 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title, wxDefaultP
         20
     );
 
+    Bind(wxEVT_BUTTON, &MainFrame::OnOkay, this, winID::okayButton);
+    Bind(wxEVT_BUTTON, &MainFrame::OnReset, this, winID::resetButton);
+
     SetSizerAndFit(topPanelSizer);
+}
+
+void MainFrame::OnOkay(wxCommandEvent& event) {
+    std::cout << "Okay!";
+}
+
+void MainFrame::OnReset(wxCommandEvent& event) {
+    std::cout << "Reset!";
 }

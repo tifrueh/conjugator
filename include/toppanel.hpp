@@ -21,4 +21,16 @@ class TopPanel : public wxPanel {
         wxCheckBox* checkBoxIR = nullptr;
         wxCheckBox* checkBoxOIR = nullptr;
         wxCheckBox* checkBoxRE = nullptr;
+        wxStaticText* tenseTitle = nullptr;
+        wxCheckBox* checkBoxParticipePresent = nullptr;
+        wxCheckBox* checkBoxPresent = nullptr;
+        wxCheckBox* checkBoxImparfait = nullptr;
+        wxCheckBox* checkBoxFutur = nullptr;
+        wxCheckBox* checkBoxPasseCompose = nullptr;
+        wxCheckBox* checkBoxPlusQueParfait = nullptr;
+        wxCheckBox* checkBoxSubjonctif = nullptr;
+        wxCheckBox* checkBoxConditionnel = nullptr;
+        wxBoxSizer* buttonSizer = nullptr;
+        wxButton* okayButton = nullptr;
+        wxButton* resetButton = nullptr;
 };

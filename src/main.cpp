@@ -1,4 +1,4 @@
-// conjugateur: French verb conjugation trainer
+// Conjugateur: French verb conjugation trainer
 // Copyright (C) 2023 Timo Früh
 
 // This program is free software: you can redistribute it and/or modify

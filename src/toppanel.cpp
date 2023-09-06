@@ -11,6 +11,7 @@
 #include <vector>
 #include <ctime>
 #include <cstdlib>
+#include <algorithm>
 
 #include "conjugateur.hpp"
 #include "id.hpp"
@@ -246,6 +247,7 @@ std::vector<conj::VerbForm> TopPanel::GetVerbForms(const int& count) {
 
     const verbDB::Verb* verb;
     verbDB::Tense tense;
+    conj::VerbForm verbForm;
     int randomPosVerb;
     int randomPosTense;
     int randomPers;
@@ -261,7 +263,13 @@ std::vector<conj::VerbForm> TopPanel::GetVerbForms(const int& count) {
         verb = usableVerbs.at(randomPosVerb);
         tense = usableTenses.at(randomPosTense);
 
-        verbForms.push_back(conj::getVerbForm(*verb, tense, randomPers));
+        verbForm = conj::getVerbForm(*verb, tense, randomPers);
+
+        if (std::find(std::begin(verbForms), std::end(verbForms), verbForm) == std::end(verbForms)) {
+            verbForms.push_back(conj::getVerbForm(*verb, tense, randomPers));
+        } else {
+            i--;
+        }
     }
 
     return verbForms;

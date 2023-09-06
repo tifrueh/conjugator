@@ -218,6 +218,8 @@ conj::VerbForm conj::getVerbForm(verbDB::Verb verb, int tense, int person) {
     else {
         verbForm.form = verb.infinitif;
     }
+
+    return verbForm;
 };
 
 conj::VerbForm conj::getVerbForm(verbDB::Verb verb, verbDB::Tense tense, verbDB::Person person) {

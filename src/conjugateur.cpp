@@ -40,6 +40,7 @@ conj::VerbForm conj::getVerbForm(const verbDB::Verb& verb, const int& tense, con
 
     if (tense == verbDB::Tense::participePresent) {
         verbForm.form = verb.participePresent;
+        verbForm.person = "";
     }
 
     else if (tense == verbDB::Tense::present && person == verbDB::Person::je) {
@@ -218,6 +219,7 @@ conj::VerbForm conj::getVerbForm(const verbDB::Verb& verb, const int& tense, con
     }
     else {
         verbForm.form = verb.infinitif;
+        verbForm.person = "";
     }
 
     return verbForm;

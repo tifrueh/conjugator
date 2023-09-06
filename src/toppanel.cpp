@@ -12,6 +12,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <algorithm>
+#include <stdexcept>
 
 #include "conjugateur.hpp"
 #include "id.hpp"
@@ -212,37 +213,50 @@ std::vector<conj::VerbForm> TopPanel::GetVerbForms(const int& count) {
         usableVerbs.insert(std::end(usableVerbs), std::begin(verbDB::verbsRE), std::end(verbDB::verbsRE));
     }
 
+    int usableFormCount = 0;
 
     if (checkBoxParticipePresent->GetValue()) {
         usableTenses.push_back(verbDB::Tense::participePresent);
+        usableFormCount += usableVerbs.size();
     }
 
     if (checkBoxPresent->GetValue()) {
         usableTenses.push_back(verbDB::Tense::present);
+        usableFormCount += usableVerbs.size() * 8;
     }
 
     if (checkBoxImparfait->GetValue()) {
         usableTenses.push_back(verbDB::Tense::imparfait);
+        usableFormCount += usableVerbs.size() * 8;
     }
 
     if (checkBoxFutur->GetValue()) {
         usableTenses.push_back(verbDB::Tense::futur);
+        usableFormCount += usableVerbs.size() * 8;
     }
 
     if (checkBoxPasseCompose->GetValue()) {
         usableTenses.push_back(verbDB::Tense::passeCompose);
+        usableFormCount += usableVerbs.size() * 8;
     }
 
     if (checkBoxPlusQueParfait->GetValue()) {
         usableTenses.push_back(verbDB::Tense::plusQueParfait);
+        usableFormCount += usableVerbs.size() * 8;
     }
 
     if (checkBoxSubjonctif->GetValue()) {
         usableTenses.push_back(verbDB::Tense::subjonctif);
+        usableFormCount += usableVerbs.size() * 8;
     }
 
     if (checkBoxConditionnel->GetValue()) {
         usableTenses.push_back(verbDB::Tense::conditionnel);
+        usableFormCount += usableVerbs.size() * 8;
+    }
+
+    if (usableFormCount < count) {
+        throw std::invalid_argument( "More forms requested than possible" );
     }
 
     const verbDB::Verb* verb;

@@ -24,4 +24,5 @@ namespace conj {
     std::string getTense(const int& tense);
     std::string getPerson(const verbDB::Person& person);
     std::string getPerson(const int& person);
+    std::string strip(const std::string& string);
 };

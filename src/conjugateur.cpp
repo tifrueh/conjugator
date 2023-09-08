@@ -2,6 +2,7 @@
 // The full copyright notice can be found in main.cpp
 
 #include <string>
+#include <algorithm>
 #include <iostream>
 
 #include "verb.db.hpp"
@@ -249,4 +250,19 @@ std::string conj::getPerson(const int& person) {
 
 bool conj::VerbForm::operator==(const conj::VerbForm& verbForm) {
     return this->infinitif == verbForm.infinitif && this->person == verbForm.person && this->form == verbForm.form && this->tense == verbForm.tense;
+}
+
+std::string conj::strip(const std::string& string) {
+    std::string outstring = string;
+    
+    const long unsigned int begin = outstring.find_first_not_of(" ");
+    const long unsigned int end = outstring.find_last_not_of(" ");
+    const long unsigned int count = end + 1 - begin;
+
+    if (outstring == "" || begin == std::string::npos) {
+        return "";
+    } else {
+        outstring = outstring.substr(begin, count);
+        return outstring;
+    }
 }

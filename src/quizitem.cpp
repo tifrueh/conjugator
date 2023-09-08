@@ -51,6 +51,12 @@ QuizItem::QuizItem(wxWindow* parent, const conj::VerbForm& verbForm) : wxBoxSize
     );
 }
 
+void QuizItem::setVerbForm(const conj::VerbForm& verbForm) {
+    this->verbForm = verbForm;
+
+    question->SetLabelText(verbForm.infinitif + ": " + verbForm.tense + " – " + verbForm.person);
+}
+
 bool QuizItem::evaluate() {
     bool correct;
     std::string textCtrlString = std::string(textCtrl->GetLineText(0).mb_str());

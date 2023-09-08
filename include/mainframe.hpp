@@ -22,6 +22,7 @@ class MainFrame : public wxFrame {
     
     private:
         wxAboutDialogInfo info;
+        wxMenuBar* menuBar;
         wxBoxSizer* topPanelSizer = nullptr;
         TopPanel* topPanel = nullptr;
         void OnOkay(wxCommandEvent& event);

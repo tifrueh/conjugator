@@ -219,6 +219,22 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     SetSizerAndFit(topsizer);
 }
 
+void TopPanel::GenerateQuiz() {
+    std::vector<conj::VerbForm> verbs = GetVerbForms(25);
+    QuizItem* itemPtr = nullptr;
+
+    for (int i = 0; i < 25; i++) {
+        itemPtr = new QuizItem(this, verbs.at(i));
+
+        quizSizer->Add(
+            itemPtr,
+            1,
+            wxEXPAND | wxALL,
+            3
+        );
+    }
+}
+
 std::vector<conj::VerbForm> TopPanel::GetVerbForms(const int& count) {
     std::vector<const verbDB::Verb*> usableVerbs;
     std::vector<verbDB::Tense> usableTenses;

@@ -6,10 +6,6 @@
 	<string>conjugateur</string>
 	<key>CFBundleIconFile</key>
 	<string>conjugateur.icns</string>
-	<key>CFBundleLocalizations</key>
-	<array>
-		<string>fr</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>fr</string>
 	<key>LSMinimumSystemVersion</key>

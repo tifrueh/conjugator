@@ -243,7 +243,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 void TopPanel::GenerateQuiz() {
     std::vector<cjgt::VerbForm> verbForms = GetVerbForms(quizItems.size());
 
-    for (int i = 0; i < quizItems.size(); i++) {
+    for (long unsigned int i = 0; i < quizItems.size(); i++) {
         quizItems.at(i)->setVerbForm(verbForms.at(i));
     }
 }

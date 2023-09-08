@@ -27,6 +27,8 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
     quizSizer = new wxStaticBoxSizer(wxVERTICAL, this, wxT("Quiz"));
 
+    quizItemCount = 20;
+
     verbTypeTitle = new wxStaticText(this, wxID_ANY, wxT("Types de verbes"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
     wxFont titleFont = verbTypeTitle->GetFont();
     titleFont.Scale(1.1);
@@ -49,6 +51,9 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     checkBoxPlusQueParfait = new wxCheckBox(this, winID::checkBoxPlusQueParfait, wxString(verbDB::tenseStrings.at(6)));
     checkBoxSubjonctif = new wxCheckBox(this, winID::checkBoxSubjonctif, wxString(verbDB::tenseStrings.at(7)));
     checkBoxConditionnel = new wxCheckBox(this, winID::checkBoxConditionnel, wxString(verbDB::tenseStrings.at(8)));
+
+    checkBoxER->SetValue(true);
+    checkBoxPresent->SetValue(true);
 
     buttonSizer = new wxBoxSizer(wxHORIZONTAL);
 
@@ -193,14 +198,21 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         15
     );
 
-    item1 = new QuizItem(this, conj::getVerbForm(verbDB::acheter, verbDB::Tense::present, verbDB::Person::tu));
+    std::vector<conj::VerbForm> verbs = GetVerbForms(quizItemCount);
+    QuizItem* itemPtr = nullptr;
 
-    quizSizer->Add(
-        item1,
-        1,
-        wxEXPAND | wxALL,
-        3
-    );
+    for (int i = 0; i < quizItemCount; i++) {
+        itemPtr = new QuizItem(this, verbs.at(i));
+
+        quizItems.push_back(itemPtr);
+
+        quizSizer->Add(
+            itemPtr,
+            1,
+            wxEXPAND | wxALL,
+            3
+        );
+    }
 
     topsizer->Add(
         formSelectionSizer,
@@ -220,18 +232,10 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 }
 
 void TopPanel::GenerateQuiz() {
-    std::vector<conj::VerbForm> verbs = GetVerbForms(25);
-    QuizItem* itemPtr = nullptr;
+    std::vector<conj::VerbForm> verbForms = GetVerbForms(quizItems.size());
 
-    for (int i = 0; i < 25; i++) {
-        itemPtr = new QuizItem(this, verbs.at(i));
-
-        quizSizer->Add(
-            itemPtr,
-            1,
-            wxEXPAND | wxALL,
-            3
-        );
+    for (int i = 0; i < quizItems.size(); i++) {
+        quizItems.at(i)->setVerbForm(verbForms.at(i));
     }
 }
 

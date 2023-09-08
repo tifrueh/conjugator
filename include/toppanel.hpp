@@ -23,6 +23,7 @@ class TopPanel : public wxPanel {
         void Reset();
 
     private:
+        int quizItemCount;
         wxBoxSizer* topsizer = nullptr;
         wxStaticBoxSizer* formSelectionSizer = nullptr;
         wxStaticBoxSizer* quizSizer = nullptr;
@@ -43,5 +44,5 @@ class TopPanel : public wxPanel {
         wxBoxSizer* buttonSizer = nullptr;
         wxButton* okayButton = nullptr;
         wxButton* resetButton = nullptr;
-        QuizItem* item1 = nullptr;
+        std::vector<QuizItem*> quizItems;
 };

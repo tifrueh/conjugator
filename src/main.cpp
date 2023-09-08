@@ -29,11 +29,18 @@
 class Conjugateur : public wxApp {
     public:
         virtual bool OnInit();
+        wxLocale* locale;
 };
 
 wxIMPLEMENT_APP(Conjugateur);
 
 bool Conjugateur::OnInit() {
+
+    locale = new wxLocale();
+
+    locale->Init(wxLANGUAGE_FRENCH);
+
+    locale->AddCatalog(wxT("wxstd"));
 
     verbDB::initTypeVectors();
 

@@ -40,7 +40,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     menuQuiz->Append(winID::menuQuizCheck, wxT("Contrôler\tCtrl-Shift-Enter"));
     menuQuiz->Append(winID::menuQuizSolution, wxT("Solutions\tCtrl-S"));
 
-    menuHelp->Append(wxID_ABOUT);
+    menuHelp->Append(wxID_ABOUT, wxT("À propos Conjugateur"));
 
     this->SetMenuBar(menuBar);
 

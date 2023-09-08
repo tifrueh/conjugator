@@ -19,7 +19,7 @@ QuizItem::QuizItem(wxWindow* parent, const conj::VerbForm& verbForm) : wxBoxSize
         wxID_ANY, 
         wxString(verbForm.infinitif + ": " + verbForm.tense + " – " + verbForm.person),
         wxDefaultPosition,
-        wxSize(100, wxDefaultSize.GetY()),
+        wxSize(200, wxDefaultSize.GetY()),
         wxALIGN_CENTER_VERTICAL
     );
 
@@ -30,21 +30,21 @@ QuizItem::QuizItem(wxWindow* parent, const conj::VerbForm& verbForm) : wxBoxSize
     this->Add(
         question,
         0,
-        wxEXPAND | wxRIGHT,
+        wxALIGN_CENTER_VERTICAL | wxRIGHT,
         10
     );
 
     this->Add(
         textCtrl,
         0,
-        wxEXPAND | wxRIGHT,
+        wxRIGHT,
         10
     );
 
    this->Add(
         solution,
         0,
-        wxEXPAND | wxRIGHT,
+        wxALIGN_CENTER_VERTICAL | wxRIGHT,
         10
     );
 }

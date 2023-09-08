@@ -247,7 +247,7 @@ void TopPanel::GenerateQuiz() {
     try {
         verbForms = GetVerbForms(quizItems.size());
     } catch(const std::invalid_argument& exception) {
-        wxMessageDialog* dlg = new wxMessageDialog(this, wxT("La sélection actuelle n'est pas valable."));
+        wxMessageDialog* dlg = new wxMessageDialog(this, wxT("Il n'est pas possible de générer suffisamment de questions de quiz à partir de votre sélection. Veuillez sélectionner plus de verbes ou plus de temps."));
         dlg->ShowModal();
         return;
     }

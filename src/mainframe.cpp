@@ -35,11 +35,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
 }
 
 void MainFrame::OnOkay(wxCommandEvent& event) {
-    std::vector<conj::VerbForm> verbForms = topPanel->GetVerbForms(10);
-
-    for (conj::VerbForm verbForm : verbForms) {
-        std::cout << verbForm.tense + ": " + verbForm.person + " " + verbForm.form + "\n";
-    }
+   topPanel->GenerateQuiz(); 
 }
 
 void MainFrame::OnReset(wxCommandEvent& event) {

@@ -38,14 +38,14 @@ QuizItem::QuizItem(wxWindow* parent, const conj::VerbForm& verbForm) : wxBoxSize
 
     this->Add(
         textCtrl,
-        0,
+        1,
         wxRIGHT,
         10
     );
 
    this->Add(
         solution,
-        0,
+        1,
         wxALIGN_CENTER_VERTICAL | wxRIGHT,
         10
     );

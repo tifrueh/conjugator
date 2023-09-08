@@ -197,8 +197,9 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
     quizSizer->Add(
         item1,
+        1,
         wxEXPAND | wxALL,
-        10
+        3
     );
 
     topsizer->Add(
@@ -210,7 +211,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
     topsizer->Add(
         quizSizer,
-        0,
+        1,
         wxLEFT,
         10
     );

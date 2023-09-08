@@ -357,3 +357,36 @@ void TopPanel::ShowSolutions() {
         item->showSolution();
     }
 }
+
+void TopPanel::SelectAllVerbs() {
+    checkBoxER->SetValue(true);
+    checkBoxIR->SetValue(true);
+    checkBoxOIR->SetValue(true);
+    checkBoxRE->SetValue(true);
+}
+
+void TopPanel::SelectAllTenses() {
+    checkBoxParticipePresent->SetValue(true);
+    checkBoxPresent->SetValue(true);
+    checkBoxImparfait->SetValue(true);
+    checkBoxFutur->SetValue(true);
+    checkBoxPasseCompose->SetValue(true);
+    checkBoxPlusQueParfait->SetValue(true);
+    checkBoxSubjonctif->SetValue(true);
+    checkBoxConditionnel->SetValue(true);
+}
+
+void TopPanel::UnselectAll() {
+    checkBoxER->SetValue(false);
+    checkBoxIR->SetValue(false);
+    checkBoxOIR->SetValue(false);
+    checkBoxRE->SetValue(false);
+    checkBoxParticipePresent->SetValue(false);
+    checkBoxPresent->SetValue(false);
+    checkBoxImparfait->SetValue(false);
+    checkBoxFutur->SetValue(false);
+    checkBoxPasseCompose->SetValue(false);
+    checkBoxPlusQueParfait->SetValue(false);
+    checkBoxSubjonctif->SetValue(false);
+    checkBoxConditionnel->SetValue(false);
+}

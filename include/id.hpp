@@ -27,7 +27,9 @@ enum winID {
     solutionButton,
     menuQuizSelectVerbs,
     menuQuizSelectTenses,
+    menuQuizUnselectAll,
     menuQuizOkay,
     menuQuizCheck,
-    menuQuizSolution
+    menuQuizSolution,
+    menuHelpGitHub
 };

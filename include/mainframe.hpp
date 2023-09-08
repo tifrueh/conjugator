@@ -31,4 +31,8 @@ class MainFrame : public wxFrame {
         void OnCheck(wxCommandEvent& event);
         void OnSolution(wxCommandEvent& event);
         void OnAbout(wxCommandEvent& event);
+        void OnSelectVerbs(wxCommandEvent& event);
+        void OnSelectTenses(wxCommandEvent& event);
+        void OnUnselectAll(wxCommandEvent& event);
+        void OnGitHub(wxCommandEvent& event);
 };

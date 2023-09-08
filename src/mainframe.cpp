@@ -35,12 +35,14 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
 
     menuQuiz->Append(winID::menuQuizSelectVerbs, wxT("Sélectionner tous les verbes\tCtrl-1"));
     menuQuiz->Append(winID::menuQuizSelectTenses, wxT("Sélectionner tous les temps\tCtrl-2"));
+    menuQuiz->Append(winID::menuQuizUnselectAll, wxT("Désélectionner tout\tCtrl-0"));
     menuQuiz->AppendSeparator();
     menuQuiz->Append(winID::menuQuizOkay, wxT("Gérer\tCtrl-Enter"));
     menuQuiz->Append(winID::menuQuizCheck, wxT("Contrôler\tCtrl-Shift-Enter"));
     menuQuiz->Append(winID::menuQuizSolution, wxT("Solutions\tCtrl-S"));
 
     menuHelp->Append(wxID_ABOUT, wxT("À propos Conjugateur"));
+    menuHelp->Append(winID::menuHelpGitHub, wxT("GitHub"));
 
     this->SetMenuBar(menuBar);
 
@@ -61,7 +63,11 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnOkay, this, winID::menuQuizOkay);
     Bind(wxEVT_MENU, &MainFrame::OnCheck, this, winID::menuQuizCheck);
     Bind(wxEVT_MENU, &MainFrame::OnSolution, this, winID::menuQuizSolution);
+    Bind(wxEVT_MENU, &MainFrame::OnSelectVerbs, this, winID::menuQuizSelectVerbs);
+    Bind(wxEVT_MENU, &MainFrame::OnSelectTenses, this, winID::menuQuizSelectTenses);
+    Bind(wxEVT_MENU, &MainFrame::OnUnselectAll, this, winID::menuQuizUnselectAll);
     Bind(wxEVT_MENU, &MainFrame::OnAbout, this, wxID_ABOUT);
+    Bind(wxEVT_MENU, &MainFrame::OnGitHub, this, winID::menuHelpGitHub);
 
     SetSizerAndFit(topPanelSizer);
 }
@@ -80,6 +86,22 @@ void MainFrame::OnSolution(wxCommandEvent& event) {
 
 void MainFrame::OnAbout(wxCommandEvent& event) {
    wxAboutBox(GetInfo(), this);
+}
+
+void MainFrame::OnSelectVerbs(wxCommandEvent& event) {
+    topPanel->SelectAllVerbs();
+}
+
+void MainFrame::OnSelectTenses(wxCommandEvent& event) {
+    topPanel->SelectAllTenses();
+}
+
+void MainFrame::OnUnselectAll(wxCommandEvent& event) {
+    topPanel->UnselectAll();
+}
+
+void MainFrame::OnGitHub(wxCommandEvent& event) {
+    wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/conjugateur"));
 }
 
 wxAboutDialogInfo MainFrame::GetInfo() {

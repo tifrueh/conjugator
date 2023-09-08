@@ -22,6 +22,9 @@ class TopPanel : public wxPanel {
         void GenerateQuiz();
         void Check();
         void ShowSolutions();
+        void SelectAllVerbs();
+        void SelectAllTenses();
+        void UnselectAll();
 
     private:
         int quizItemCount;

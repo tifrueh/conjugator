@@ -24,5 +24,10 @@ enum winID {
     checkBoxConditionnel,
     okayButton,
     checkButton,
-    solutionButton
+    solutionButton,
+    menuQuizSelectVerbs,
+    menuQuizSelectTenses,
+    menuQuizOkay,
+    menuQuizCheck,
+    menuQuizSolution
 };

@@ -54,6 +54,10 @@ QuizItem::QuizItem(wxWindow* parent, const conj::VerbForm& verbForm) : wxBoxSize
 void QuizItem::setVerbForm(const conj::VerbForm& verbForm) {
     this->verbForm = verbForm;
 
+    textCtrl->SetForegroundColour(wxNullColour);
+
+    textCtrl->Clear();
+
     question->SetLabelText(verbForm.infinitif + ": " + verbForm.tense + " – " + verbForm.person);
 }
 
@@ -64,9 +68,9 @@ bool QuizItem::evaluate() {
     correct = verbForm.form == conj::strip(textCtrlString);
 
     if (correct) {
-        textCtrl->SetForegroundColour(wxColor("green"));
+        textCtrl->SetForegroundColour(*wxGREEN);
     } else {
-        textCtrl->SetForegroundColour(wxColor("red"));
+        textCtrl->SetForegroundColour(*wxRED);
     }
 
     return correct;

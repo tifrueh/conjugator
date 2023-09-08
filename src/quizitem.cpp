@@ -17,11 +17,17 @@
 QuizItem::QuizItem(wxWindow* parent, const conj::VerbForm& verbForm) : wxBoxSizer(wxHORIZONTAL) {
     this->verbForm = verbForm;
 
+    if (verbForm.tense == conj::getTense(verbDB::Tense::participePresent)) {
+        questionString = verbForm.infinitif + ": " + verbForm.tense;
+    } else {
+        questionString = verbForm.infinitif + ": " + verbForm.tense + " – " + verbForm.person;
+    }
+
     question = new wxStaticText(parent, 
         wxID_ANY, 
-        wxString(verbForm.infinitif + ": " + verbForm.tense + " – " + verbForm.person),
+        wxString(questionString),
         wxDefaultPosition,
-        wxSize(200, wxDefaultSize.GetY()),
+        wxSize(250, wxDefaultSize.GetY()),
         wxALIGN_CENTER_VERTICAL
     );
 
@@ -54,13 +60,19 @@ QuizItem::QuizItem(wxWindow* parent, const conj::VerbForm& verbForm) : wxBoxSize
 void QuizItem::setVerbForm(const conj::VerbForm& verbForm) {
     this->verbForm = verbForm;
 
+    if (verbForm.tense == conj::getTense(verbDB::Tense::participePresent)) {
+        questionString = verbForm.infinitif + ": " + verbForm.tense;
+    } else {
+        questionString = verbForm.infinitif + ": " + verbForm.tense + " – " + verbForm.person;
+    }
+
     textCtrl->SetForegroundColour(wxNullColour);
 
     textCtrl->Clear();
 
     solution->SetLabelText(wxEmptyString);
 
-    question->SetLabelText(verbForm.infinitif + ": " + verbForm.tense + " – " + verbForm.person);
+    question->SetLabelText(questionString);
 }
 
 bool QuizItem::evaluate() {

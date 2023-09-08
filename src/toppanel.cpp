@@ -58,7 +58,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     buttonSizer = new wxBoxSizer(wxHORIZONTAL);
 
     okayButton = new wxButton(this, winID::okayButton, wxT("gérer"));
-    checkButton = new wxButton(this, winID::checkButton, wxT("corriger"));
+    checkButton = new wxButton(this, winID::checkButton, wxT("contrôler"));
     solutionButton = new wxButton(this, winID::solutionButton, wxT("solutions"));
 
     buttonSizer->Add(

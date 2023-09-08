@@ -10,6 +10,8 @@
 #endif
 
 
+#include <string>
+
 #include "conjugateur.hpp"
 
 class QuizItem : public wxBoxSizer {
@@ -24,4 +26,5 @@ class QuizItem : public wxBoxSizer {
         wxStaticText* question = nullptr;
         wxTextCtrl* textCtrl = nullptr;
         wxStaticText* solution = nullptr;
+        std::string questionString;
 };

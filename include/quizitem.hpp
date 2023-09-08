@@ -16,6 +16,7 @@ class QuizItem : public wxBoxSizer {
     public:
         QuizItem(wxWindow* parent, const conj::VerbForm& verbForm);
         bool evaluate();
+        void showSolution();
 
     private:
         conj::VerbForm verbForm;

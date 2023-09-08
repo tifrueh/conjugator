@@ -62,3 +62,7 @@ bool QuizItem::evaluate() {
 
     return correct;
 }
+
+void QuizItem::showSolution() {
+    solution->SetLabelText(verbForm.form);
+}

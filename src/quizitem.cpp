@@ -48,3 +48,17 @@ QuizItem::QuizItem(wxWindow* parent, const conj::VerbForm& verbForm) : wxBoxSize
         10
     );
 }
+
+bool QuizItem::evaluate() {
+    bool correct;
+
+    correct = verbForm.form == textCtrl->GetLineText(0);
+
+    if (correct) {
+        textCtrl->SetForegroundColour(wxColor("green"));
+    } else {
+        textCtrl->SetForegroundColour(wxColor("red"));
+    }
+
+    return correct;
+}

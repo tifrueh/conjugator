@@ -350,3 +350,10 @@ void TopPanel::Check() {
         item->evaluate();
     }
 }
+
+void TopPanel::ShowSolutions() {
+    for (QuizItem* item : quizItems) {
+        item->evaluate();
+        item->showSolution();
+    }
+}

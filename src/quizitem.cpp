@@ -58,6 +58,8 @@ void QuizItem::setVerbForm(const conj::VerbForm& verbForm) {
 
     textCtrl->Clear();
 
+    solution->SetLabelText(wxEmptyString);
+
     question->SetLabelText(verbForm.infinitif + ": " + verbForm.tense + " – " + verbForm.person);
 }
 

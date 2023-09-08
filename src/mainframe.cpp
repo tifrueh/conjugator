@@ -30,6 +30,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
 
     Bind(wxEVT_BUTTON, &MainFrame::OnOkay, this, winID::okayButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnCheck, this, winID::checkButton);
+    Bind(wxEVT_BUTTON, &MainFrame::OnSolution, this, winID::solutionButton);
 
     SetSizerAndFit(topPanelSizer);
 }
@@ -40,4 +41,8 @@ void MainFrame::OnOkay(wxCommandEvent& event) {
 
 void MainFrame::OnCheck(wxCommandEvent& event) {
     topPanel->Check();
+}
+
+void MainFrame::OnSolution(wxCommandEvent& event) {
+    topPanel->ShowSolutions();
 }

@@ -26,4 +26,5 @@ class MainFrame : public wxFrame {
         TopPanel* topPanel = nullptr;
         void OnOkay(wxCommandEvent& event);
         void OnCheck(wxCommandEvent& event);
+        void OnSolution(wxCommandEvent& event);
 };

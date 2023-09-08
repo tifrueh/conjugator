@@ -13,6 +13,7 @@
 #include <vector>
 
 #include "conjugateur.hpp"
+#include "quizitem.hpp"
 
 class TopPanel : public wxPanel {
     public:
@@ -41,4 +42,5 @@ class TopPanel : public wxPanel {
         wxBoxSizer* buttonSizer = nullptr;
         wxButton* okayButton = nullptr;
         wxButton* resetButton = nullptr;
+        QuizItem* item1 = nullptr;
 };

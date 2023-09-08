@@ -13,6 +13,7 @@ srcs = [
     'src/conjugateur.cpp',
     'src/main.cpp',
     'src/mainframe.cpp',
+    'src/quizitem.cpp',
     'src/toppanel.cpp',
     'src/verb.db.cpp'
 ]

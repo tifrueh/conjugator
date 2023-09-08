@@ -7,7 +7,7 @@
 
 #include "verb.db.hpp"
 
-namespace conj {
+namespace cjgt {
 
     struct VerbForm {
         std::string infinitif;

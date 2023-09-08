@@ -14,10 +14,10 @@
 #include "conjugateur.hpp"
 #include "quizitem.hpp"
 
-QuizItem::QuizItem(wxWindow* parent, const conj::VerbForm& verbForm) : wxBoxSizer(wxHORIZONTAL) {
+QuizItem::QuizItem(wxWindow* parent, const cjgt::VerbForm& verbForm) : wxBoxSizer(wxHORIZONTAL) {
     this->verbForm = verbForm;
 
-    if (verbForm.tense == conj::getTense(verbDB::Tense::participePresent)) {
+    if (verbForm.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
         questionString = verbForm.infinitif + ": " + verbForm.tense;
     } else {
         questionString = verbForm.infinitif + ": " + verbForm.tense + " – " + verbForm.person;
@@ -57,10 +57,10 @@ QuizItem::QuizItem(wxWindow* parent, const conj::VerbForm& verbForm) : wxBoxSize
     );
 }
 
-void QuizItem::setVerbForm(const conj::VerbForm& verbForm) {
+void QuizItem::setVerbForm(const cjgt::VerbForm& verbForm) {
     this->verbForm = verbForm;
 
-    if (verbForm.tense == conj::getTense(verbDB::Tense::participePresent)) {
+    if (verbForm.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
         questionString = verbForm.infinitif + ": " + verbForm.tense;
     } else {
         questionString = verbForm.infinitif + ": " + verbForm.tense + " – " + verbForm.person;
@@ -79,7 +79,7 @@ bool QuizItem::evaluate() {
     bool correct;
     std::string textCtrlString = std::string(textCtrl->GetLineText(0).mb_str());
 
-    correct = verbForm.form == conj::strip(textCtrlString);
+    correct = verbForm.form == cjgt::strip(textCtrlString);
 
     if (correct) {
         textCtrl->SetForegroundColour(*wxGREEN);

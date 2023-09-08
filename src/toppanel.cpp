@@ -207,7 +207,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         15
     );
 
-    std::vector<conj::VerbForm> verbs = GetVerbForms(quizItemCount);
+    std::vector<cjgt::VerbForm> verbs = GetVerbForms(quizItemCount);
     QuizItem* itemPtr = nullptr;
 
     for (int i = 0; i < quizItemCount; i++) {
@@ -241,17 +241,17 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 }
 
 void TopPanel::GenerateQuiz() {
-    std::vector<conj::VerbForm> verbForms = GetVerbForms(quizItems.size());
+    std::vector<cjgt::VerbForm> verbForms = GetVerbForms(quizItems.size());
 
     for (int i = 0; i < quizItems.size(); i++) {
         quizItems.at(i)->setVerbForm(verbForms.at(i));
     }
 }
 
-std::vector<conj::VerbForm> TopPanel::GetVerbForms(const int& count) {
+std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
     std::vector<const verbDB::Verb*> usableVerbs;
     std::vector<verbDB::Tense> usableTenses;
-    std::vector<conj::VerbForm> verbForms;
+    std::vector<cjgt::VerbForm> verbForms;
 
     if (checkBoxER->GetValue()) {
         usableVerbs.insert(std::end(usableVerbs), std::begin(verbDB::verbsER), std::end(verbDB::verbsER));
@@ -317,7 +317,7 @@ std::vector<conj::VerbForm> TopPanel::GetVerbForms(const int& count) {
 
     const verbDB::Verb* verb;
     verbDB::Tense tense;
-    conj::VerbForm verbForm;
+    cjgt::VerbForm verbForm;
     int randomPosVerb;
     int randomPosTense;
     int randomPers;
@@ -333,10 +333,10 @@ std::vector<conj::VerbForm> TopPanel::GetVerbForms(const int& count) {
         verb = usableVerbs.at(randomPosVerb);
         tense = usableTenses.at(randomPosTense);
 
-        verbForm = conj::getVerbForm(*verb, tense, randomPers);
+        verbForm = cjgt::getVerbForm(*verb, tense, randomPers);
 
         if (std::find(std::begin(verbForms), std::end(verbForms), verbForm) == std::end(verbForms)) {
-            verbForms.push_back(conj::getVerbForm(*verb, tense, randomPers));
+            verbForms.push_back(cjgt::getVerbForm(*verb, tense, randomPers));
         } else {
             i--;
         }

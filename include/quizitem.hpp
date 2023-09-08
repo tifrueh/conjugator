@@ -16,13 +16,13 @@
 
 class QuizItem : public wxBoxSizer {
     public:
-        QuizItem(wxWindow* parent, const conj::VerbForm& verbForm);
+        QuizItem(wxWindow* parent, const cjgt::VerbForm& verbForm);
         bool evaluate();
         void showSolution();
-        void setVerbForm(const conj::VerbForm& verbForm);
+        void setVerbForm(const cjgt::VerbForm& verbForm);
 
     private:
-        conj::VerbForm verbForm;
+        cjgt::VerbForm verbForm;
         wxStaticText* question = nullptr;
         wxTextCtrl* textCtrl = nullptr;
         wxStaticText* solution = nullptr;

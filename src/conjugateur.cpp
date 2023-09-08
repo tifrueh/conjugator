@@ -9,22 +9,22 @@
 
 #include "conjugateur.hpp"
 
-void conj::displayVerb(const verbDB::Verb& verb) {
+void cjgt::displayVerb(const verbDB::Verb& verb) {
     std::string out;
-    conj::VerbForm verbForm;
+    cjgt::VerbForm verbForm;
 
     out.append("+" + std::string(verb.infinitif.length(), '-') + "+\n");
     out.append("|" + verb.infinitif + "|\n");
     out.append("+" + std::string(verb.infinitif.length(), '-') + "+\n");
 
     for (int i = verbDB::Tense::present; i <= verbDB::Tense::conditionnel; i++) {
-        std::string tense = conj::getTense(i);
+        std::string tense = cjgt::getTense(i);
         out.append("\n");
         out.append(tense + "\n");
         out.append(std::string(tense.length(), '-') + "\n");
 
         for (int j = verbDB::Person::je; j <= verbDB::Person::elles; j++) {
-            verbForm = conj::getVerbForm(verb, i, j);
+            verbForm = cjgt::getVerbForm(verb, i, j);
             out.append(verbForm.person + " " + verbForm.form + "\n");
         }
     }
@@ -32,12 +32,12 @@ void conj::displayVerb(const verbDB::Verb& verb) {
     std::cout << out;
 }
 
-conj::VerbForm conj::getVerbForm(const verbDB::Verb& verb, const int& tense, const int& person) {
+cjgt::VerbForm cjgt::getVerbForm(const verbDB::Verb& verb, const int& tense, const int& person) {
 
-    conj::VerbForm verbForm;
+    cjgt::VerbForm verbForm;
     verbForm.infinitif = verb.infinitif;
-    verbForm.person = conj::getPerson(person);
-    verbForm.tense = conj::getTense(tense);
+    verbForm.person = cjgt::getPerson(person);
+    verbForm.tense = cjgt::getTense(tense);
 
     if (tense == verbDB::Tense::participePresent) {
         verbForm.form = verb.participePresent;
@@ -226,33 +226,33 @@ conj::VerbForm conj::getVerbForm(const verbDB::Verb& verb, const int& tense, con
     return verbForm;
 };
 
-conj::VerbForm conj::getVerbForm(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person) {
+cjgt::VerbForm cjgt::getVerbForm(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person) {
     int tenseInt = tense;
     int personInt = person;
     return getVerbForm(verb, tenseInt, personInt);
 }
 
-std::string conj::getTense(const verbDB::Tense& tense) {
+std::string cjgt::getTense(const verbDB::Tense& tense) {
     return verbDB::tenseStrings.at(tense);
 }
 
-std::string conj::getTense(const int& tense) {
+std::string cjgt::getTense(const int& tense) {
     return verbDB::tenseStrings.at(tense);
 }
 
-std::string conj::getPerson(const verbDB::Person& person) {
+std::string cjgt::getPerson(const verbDB::Person& person) {
     return verbDB::personStrings.at(person);
 }
 
-std::string conj::getPerson(const int& person) {
+std::string cjgt::getPerson(const int& person) {
     return verbDB::personStrings.at(person);
 }
 
-bool conj::VerbForm::operator==(const conj::VerbForm& verbForm) {
+bool cjgt::VerbForm::operator==(const cjgt::VerbForm& verbForm) {
     return this->infinitif == verbForm.infinitif && this->person == verbForm.person && this->form == verbForm.form && this->tense == verbForm.tense;
 }
 
-std::string conj::strip(const std::string& string) {
+std::string cjgt::strip(const std::string& string) {
     std::string outstring = string;
     
     const long unsigned int begin = outstring.find_first_not_of(" ");

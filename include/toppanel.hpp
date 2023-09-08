@@ -18,7 +18,7 @@
 class TopPanel : public wxPanel {
     public:
         TopPanel(wxWindow* parent);
-        std::vector<conj::VerbForm> GetVerbForms(const int& count);
+        std::vector<cjgt::VerbForm> GetVerbForms(const int& count);
         void GenerateQuiz();
         void Check();
         void ShowSolutions();

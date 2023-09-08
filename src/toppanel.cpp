@@ -23,6 +23,8 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
     topsizer = new wxBoxSizer(wxVERTICAL);
 
+    formSelectionSizer = new wxStaticBoxSizer(wxVERTICAL, this, wxT("Sélection de verbes/temps"));
+
     verbTypeTitle = new wxStaticText(this, wxID_ANY, wxT("Types de verbes"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
     wxFont titleFont = verbTypeTitle->GetFont();
     titleFont.Scale(1.1);
@@ -67,7 +69,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         5
     );
 
-    topsizer->Add(
+    formSelectionSizer->Add(
         verbTypeTitle,
         0,
         wxEXPAND |
@@ -75,7 +77,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         10
     );
 
-    topsizer->Add(
+    formSelectionSizer->Add(
         checkBoxER,
         0,
         wxEXPAND |
@@ -83,7 +85,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         3
     );
 
-    topsizer->Add(
+    formSelectionSizer->Add(
         checkBoxIR,
         0,
         wxEXPAND |
@@ -91,7 +93,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         3
     );
 
-    topsizer->Add(
+    formSelectionSizer->Add(
         checkBoxOIR,
         0,
         wxEXPAND |
@@ -99,7 +101,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         3
     );
 
-    topsizer->Add(
+    formSelectionSizer->Add(
         checkBoxRE,
         0,
         wxEXPAND |
@@ -107,9 +109,9 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         3
     );
 
-    topsizer->AddSpacer(15);
+    formSelectionSizer->AddSpacer(15);
 
-    topsizer->Add(
+    formSelectionSizer->Add(
         tenseTitle,
         0,
         wxEXPAND |
@@ -117,7 +119,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         10
     );
 
-    topsizer->Add(
+    formSelectionSizer->Add(
         checkBoxParticipePresent,
         0,
         wxEXPAND |
@@ -125,7 +127,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         3
     );
 
-    topsizer->Add(
+    formSelectionSizer->Add(
         checkBoxPresent,
         0,
         wxEXPAND |
@@ -133,7 +135,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         3
     );
 
-    topsizer->Add(
+    formSelectionSizer->Add(
         checkBoxImparfait,
         0,
         wxEXPAND |
@@ -141,7 +143,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         3
     );
 
-    topsizer->Add(
+    formSelectionSizer->Add(
         checkBoxFutur,
         0,
         wxEXPAND |
@@ -149,7 +151,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         3
     );
 
-    topsizer->Add(
+    formSelectionSizer->Add(
         checkBoxPasseCompose,
         0,
         wxEXPAND |
@@ -157,7 +159,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         3
     );
 
-    topsizer->Add(
+    formSelectionSizer->Add(
         checkBoxPlusQueParfait,
         0,
         wxEXPAND |
@@ -165,7 +167,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         3
     );
 
-    topsizer->Add(
+    formSelectionSizer->Add(
         checkBoxSubjonctif,
         0,
         wxEXPAND |
@@ -173,7 +175,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         3
     );
 
-    topsizer->Add(
+    formSelectionSizer->Add(
         checkBoxConditionnel,
         0,
         wxEXPAND |
@@ -181,12 +183,19 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         3
     );
 
-    topsizer->Add(
+    formSelectionSizer->Add(
         buttonSizer,
         0,
         wxCENTER |
         wxTOP,
         15
+    );
+
+    topsizer->Add(
+        formSelectionSizer,
+        0,
+        wxALL,
+        0
     );
 
     SetSizerAndFit(topsizer);

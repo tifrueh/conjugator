@@ -15,7 +15,7 @@
 #include "mainframe.hpp"
 #include "toppanel.hpp"
 
-MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER | wxMAXIMIZE_BOX)) {
+MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
 
     topPanel = new TopPanel(this);
 

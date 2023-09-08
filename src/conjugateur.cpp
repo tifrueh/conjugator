@@ -9,29 +9,6 @@
 
 #include "conjugateur.hpp"
 
-void cjgt::displayVerb(const verbDB::Verb& verb) {
-    std::string out;
-    cjgt::VerbForm verbForm;
-
-    out.append("+" + std::string(verb.infinitif.length(), '-') + "+\n");
-    out.append("|" + verb.infinitif + "|\n");
-    out.append("+" + std::string(verb.infinitif.length(), '-') + "+\n");
-
-    for (int i = verbDB::Tense::present; i <= verbDB::Tense::conditionnel; i++) {
-        std::string tense = cjgt::getTense(i);
-        out.append("\n");
-        out.append(tense + "\n");
-        out.append(std::string(tense.length(), '-') + "\n");
-
-        for (int j = verbDB::Person::je; j <= verbDB::Person::elles; j++) {
-            verbForm = cjgt::getVerbForm(verb, i, j);
-            out.append(verbForm.person + " " + verbForm.form + "\n");
-        }
-    }
-
-    std::cout << out;
-}
-
 cjgt::VerbForm cjgt::getVerbForm(const verbDB::Verb& verb, const int& tense, const int& person) {
 
     cjgt::VerbForm verbForm;
@@ -41,7 +18,7 @@ cjgt::VerbForm cjgt::getVerbForm(const verbDB::Verb& verb, const int& tense, con
 
     if (tense == verbDB::Tense::participePresent) {
         verbForm.form = verb.participePresent;
-        verbForm.person = "";
+        verbForm.person = L"";
     }
 
     else if (tense == verbDB::Tense::present && person == verbDB::Person::je) {
@@ -220,7 +197,7 @@ cjgt::VerbForm cjgt::getVerbForm(const verbDB::Verb& verb, const int& tense, con
     }
     else {
         verbForm.form = verb.infinitif;
-        verbForm.person = "";
+        verbForm.person = L"";
     }
 
     return verbForm;
@@ -232,19 +209,19 @@ cjgt::VerbForm cjgt::getVerbForm(const verbDB::Verb& verb, const verbDB::Tense& 
     return getVerbForm(verb, tenseInt, personInt);
 }
 
-std::string cjgt::getTense(const verbDB::Tense& tense) {
+std::wstring cjgt::getTense(const verbDB::Tense& tense) {
     return verbDB::tenseStrings.at(tense);
 }
 
-std::string cjgt::getTense(const int& tense) {
+std::wstring cjgt::getTense(const int& tense) {
     return verbDB::tenseStrings.at(tense);
 }
 
-std::string cjgt::getPerson(const verbDB::Person& person) {
+std::wstring cjgt::getPerson(const verbDB::Person& person) {
     return verbDB::personStrings.at(person);
 }
 
-std::string cjgt::getPerson(const int& person) {
+std::wstring cjgt::getPerson(const int& person) {
     return verbDB::personStrings.at(person);
 }
 
@@ -252,15 +229,15 @@ bool cjgt::VerbForm::operator==(const cjgt::VerbForm& verbForm) {
     return this->infinitif == verbForm.infinitif && this->person == verbForm.person && this->form == verbForm.form && this->tense == verbForm.tense;
 }
 
-std::string cjgt::strip(const std::string& string) {
-    std::string outstring = string;
+std::wstring cjgt::strip(const std::wstring& string) {
+    std::wstring outstring = string;
     
-    const long unsigned int begin = outstring.find_first_not_of(" ");
-    const long unsigned int end = outstring.find_last_not_of(" ");
+    const long unsigned int begin = outstring.find_first_not_of(L" ");
+    const long unsigned int end = outstring.find_last_not_of(L" ");
     const long unsigned int count = end + 1 - begin;
 
-    if (outstring == "" || begin == std::string::npos) {
-        return "";
+    if (outstring == L"" || begin == std::wstring::npos) {
+        return L"";
     } else {
         outstring = outstring.substr(begin, count);
         return outstring;

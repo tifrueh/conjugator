@@ -18,9 +18,9 @@ QuizItem::QuizItem(wxWindow* parent, const cjgt::VerbForm& verbForm) : wxBoxSize
     this->verbForm = verbForm;
 
     if (verbForm.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
-        questionString = verbForm.infinitif + ": " + verbForm.tense;
+        questionString = verbForm.infinitif + L": " + verbForm.tense;
     } else {
-        questionString = verbForm.infinitif + ": " + verbForm.tense + " – " + verbForm.person;
+        questionString = verbForm.infinitif + L": " + verbForm.tense + L" – " + verbForm.person;
     }
 
     question = new wxStaticText(parent, 
@@ -61,9 +61,9 @@ void QuizItem::setVerbForm(const cjgt::VerbForm& verbForm) {
     this->verbForm = verbForm;
 
     if (verbForm.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
-        questionString = verbForm.infinitif + ": " + verbForm.tense;
+        questionString = verbForm.infinitif + L": " + verbForm.tense;
     } else {
-        questionString = verbForm.infinitif + ": " + verbForm.tense + " – " + verbForm.person;
+        questionString = verbForm.infinitif + L": " + verbForm.tense + L" – " + verbForm.person;
     }
 
     textCtrl->SetForegroundColour(wxNullColour);
@@ -77,7 +77,7 @@ void QuizItem::setVerbForm(const cjgt::VerbForm& verbForm) {
 
 bool QuizItem::evaluate() {
     bool correct;
-    std::string textCtrlString = std::string(textCtrl->GetLineText(0).mb_str());
+    std::wstring textCtrlString = std::wstring(textCtrl->GetLineText(0).wchar_str());
 
     correct = verbForm.form == cjgt::strip(textCtrlString);
 

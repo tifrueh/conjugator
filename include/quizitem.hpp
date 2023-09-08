@@ -26,5 +26,5 @@ class QuizItem : public wxBoxSizer {
         wxStaticText* question = nullptr;
         wxTextCtrl* textCtrl = nullptr;
         wxStaticText* solution = nullptr;
-        std::string questionString;
+        std::wstring questionString;
 };

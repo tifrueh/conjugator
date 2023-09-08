@@ -15,71 +15,71 @@ namespace verbDB {
 
         VerbType verbType;
 
-        std::string infinitif;
-        std::string participePresent;
+        std::wstring infinitif;
+        std::wstring participePresent;
 
-        std::string presentJe;
-        std::string presentTu;
-        std::string presentIl;
-        std::string presentElle;
-        std::string presentNous;
-        std::string presentVous;
-        std::string presentIls;
-        std::string presentElles;
+        std::wstring presentJe;
+        std::wstring presentTu;
+        std::wstring presentIl;
+        std::wstring presentElle;
+        std::wstring presentNous;
+        std::wstring presentVous;
+        std::wstring presentIls;
+        std::wstring presentElles;
 
-        std::string imparfaitJe;
-        std::string imparfaitTu;
-        std::string imparfaitIl;
-        std::string imparfaitElle;
-        std::string imparfaitNous;
-        std::string imparfaitVous;
-        std::string imparfaitIls;
-        std::string imparfaitElles;
+        std::wstring imparfaitJe;
+        std::wstring imparfaitTu;
+        std::wstring imparfaitIl;
+        std::wstring imparfaitElle;
+        std::wstring imparfaitNous;
+        std::wstring imparfaitVous;
+        std::wstring imparfaitIls;
+        std::wstring imparfaitElles;
 
-        std::string futurJe;
-        std::string futurTu;
-        std::string futurIl;
-        std::string futurElle;
-        std::string futurNous;
-        std::string futurVous;
-        std::string futurIls;
-        std::string futurElles;
+        std::wstring futurJe;
+        std::wstring futurTu;
+        std::wstring futurIl;
+        std::wstring futurElle;
+        std::wstring futurNous;
+        std::wstring futurVous;
+        std::wstring futurIls;
+        std::wstring futurElles;
 
-        std::string passeComposeJe;
-        std::string passeComposeTu;
-        std::string passeComposeIl;
-        std::string passeComposeElle;
-        std::string passeComposeNous;
-        std::string passeComposeVous;
-        std::string passeComposeIls;
-        std::string passeComposeElles;
+        std::wstring passeComposeJe;
+        std::wstring passeComposeTu;
+        std::wstring passeComposeIl;
+        std::wstring passeComposeElle;
+        std::wstring passeComposeNous;
+        std::wstring passeComposeVous;
+        std::wstring passeComposeIls;
+        std::wstring passeComposeElles;
 
-        std::string plusQueParfaitJe;
-        std::string plusQueParfaitTu;
-        std::string plusQueParfaitIl;
-        std::string plusQueParfaitElle;
-        std::string plusQueParfaitNous;
-        std::string plusQueParfaitVous;
-        std::string plusQueParfaitIls;
-        std::string plusQueParfaitElles;
+        std::wstring plusQueParfaitJe;
+        std::wstring plusQueParfaitTu;
+        std::wstring plusQueParfaitIl;
+        std::wstring plusQueParfaitElle;
+        std::wstring plusQueParfaitNous;
+        std::wstring plusQueParfaitVous;
+        std::wstring plusQueParfaitIls;
+        std::wstring plusQueParfaitElles;
 
-        std::string subjonctifJe;
-        std::string subjonctifTu;
-        std::string subjonctifIl;
-        std::string subjonctifElle;
-        std::string subjonctifNous;
-        std::string subjonctifVous;
-        std::string subjonctifIls;
-        std::string subjonctifElles;
+        std::wstring subjonctifJe;
+        std::wstring subjonctifTu;
+        std::wstring subjonctifIl;
+        std::wstring subjonctifElle;
+        std::wstring subjonctifNous;
+        std::wstring subjonctifVous;
+        std::wstring subjonctifIls;
+        std::wstring subjonctifElles;
 
-        std::string conditionnelJe;
-        std::string conditionnelTu;
-        std::string conditionnelIl;
-        std::string conditionnelElle;
-        std::string conditionnelNous;
-        std::string conditionnelVous;
-        std::string conditionnelIls;
-        std::string conditionnelElles;
+        std::wstring conditionnelJe;
+        std::wstring conditionnelTu;
+        std::wstring conditionnelIl;
+        std::wstring conditionnelElle;
+        std::wstring conditionnelNous;
+        std::wstring conditionnelVous;
+        std::wstring conditionnelIls;
+        std::wstring conditionnelElles;
     };
 
     extern const Verb acheter;
@@ -212,8 +212,8 @@ namespace verbDB {
     enum Tense { infinitif, participePresent, present, imparfait, futur, passeCompose, plusQueParfait, subjonctif, conditionnel };
     enum Person { je, tu, il, elle, nous, vous, ils, elles };
 
-    extern const std::array<std::string, 9> tenseStrings;
-    extern const std::array<std::string, 8> personStrings;
+    extern const std::array<std::wstring, 9> tenseStrings;
+    extern const std::array<std::wstring, 8> personStrings;
 
     void initTypeVectors();
 };

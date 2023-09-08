@@ -241,7 +241,16 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 }
 
 void TopPanel::GenerateQuiz() {
-    std::vector<cjgt::VerbForm> verbForms = GetVerbForms(quizItems.size());
+
+    std::vector<cjgt::VerbForm> verbForms;
+
+    try {
+        verbForms = GetVerbForms(quizItems.size());
+    } catch(const std::invalid_argument& exception) {
+        wxMessageDialog* dlg = new wxMessageDialog(this, wxT("La sélection actuelle n'est pas valable."));
+        dlg->ShowModal();
+        return;
+    }
 
     for (long unsigned int i = 0; i < quizItems.size(); i++) {
         quizItems.at(i)->setVerbForm(verbForms.at(i));

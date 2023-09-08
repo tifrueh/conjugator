@@ -42,5 +42,7 @@ bool Conjugateur::OnInit() {
     MainFrame* window = new MainFrame(wxT("Conjugateur"));
     window->Show();
 
+    window->Center();
+
     return true;
 }

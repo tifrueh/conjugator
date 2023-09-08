@@ -23,6 +23,7 @@ class TopPanel : public wxPanel {
     private:
         wxBoxSizer* topsizer = nullptr;
         wxStaticBoxSizer* formSelectionSizer = nullptr;
+        wxStaticBoxSizer* quizSizer = nullptr;
         wxStaticText* verbTypeTitle = nullptr;
         wxCheckBox* checkBoxER = nullptr;
         wxCheckBox* checkBoxIR = nullptr;

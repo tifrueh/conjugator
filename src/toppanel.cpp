@@ -21,9 +21,11 @@
 
 TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
-    topsizer = new wxBoxSizer(wxVERTICAL);
+    topsizer = new wxBoxSizer(wxHORIZONTAL);
 
     formSelectionSizer = new wxStaticBoxSizer(wxVERTICAL, this, wxT("Sélection de verbes/temps"));
+
+    quizSizer = new wxStaticBoxSizer(wxVERTICAL, this, wxT("Qui"));
 
     verbTypeTitle = new wxStaticText(this, wxID_ANY, wxT("Types de verbes"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
     wxFont titleFont = verbTypeTitle->GetFont();
@@ -196,6 +198,13 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         0,
         wxALL,
         0
+    );
+
+    topsizer->Add(
+        quizSizer,
+        0,
+        wxLEFT,
+        10
     );
 
     SetSizerAndFit(topsizer);

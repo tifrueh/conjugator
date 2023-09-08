@@ -43,6 +43,7 @@ class TopPanel : public wxPanel {
         wxCheckBox* checkBoxConditionnel = nullptr;
         wxBoxSizer* buttonSizer = nullptr;
         wxButton* okayButton = nullptr;
-        wxButton* resetButton = nullptr;
+        wxButton* checkButton = nullptr;
+        wxButton* solutionButton = nullptr;
         std::vector<QuizItem*> quizItems;
 };

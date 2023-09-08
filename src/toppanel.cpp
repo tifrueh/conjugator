@@ -58,7 +58,8 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     buttonSizer = new wxBoxSizer(wxHORIZONTAL);
 
     okayButton = new wxButton(this, winID::okayButton, wxT("gérer"));
-    resetButton = new wxButton(this, winID::resetButton, wxT("réinitialiser"));
+    checkButton = new wxButton(this, winID::checkButton, wxT("corriger"));
+    solutionButton = new wxButton(this, winID::solutionButton, wxT("solutions"));
 
     buttonSizer->Add(
         okayButton,
@@ -69,7 +70,15 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     );
 
     buttonSizer->Add(
-        resetButton,
+        checkButton,
+        0,
+        wxEXPAND |
+        wxALL,
+        5
+    );
+
+    buttonSizer->Add(
+        solutionButton,
         0,
         wxEXPAND |
         wxALL,

@@ -25,5 +25,5 @@ class MainFrame : public wxFrame {
         wxBoxSizer* topPanelSizer = nullptr;
         TopPanel* topPanel = nullptr;
         void OnOkay(wxCommandEvent& event);
-        void OnReset(wxCommandEvent& event);
+        void OnCheck(wxCommandEvent& event);
 };

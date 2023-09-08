@@ -23,5 +23,6 @@ enum winID {
     checkBoxSubjonctif,
     checkBoxConditionnel,
     okayButton,
-    resetButton,
+    checkButton,
+    solutionButton
 };

@@ -29,7 +29,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     );
 
     Bind(wxEVT_BUTTON, &MainFrame::OnOkay, this, winID::okayButton);
-    Bind(wxEVT_BUTTON, &MainFrame::OnReset, this, winID::resetButton);
+    Bind(wxEVT_BUTTON, &MainFrame::OnCheck, this, winID::checkButton);
 
     SetSizerAndFit(topPanelSizer);
 }
@@ -38,6 +38,6 @@ void MainFrame::OnOkay(wxCommandEvent& event) {
    topPanel->GenerateQuiz(); 
 }
 
-void MainFrame::OnReset(wxCommandEvent& event) {
+void MainFrame::OnCheck(wxCommandEvent& event) {
     topPanel->Reset();
 }

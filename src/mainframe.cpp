@@ -39,5 +39,5 @@ void MainFrame::OnOkay(wxCommandEvent& event) {
 }
 
 void MainFrame::OnCheck(wxCommandEvent& event) {
-    topPanel->Reset();
+    topPanel->Check();
 }

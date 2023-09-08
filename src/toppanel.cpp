@@ -345,18 +345,8 @@ std::vector<conj::VerbForm> TopPanel::GetVerbForms(const int& count) {
     return verbForms;
 }
 
-void TopPanel::Reset() {
-    checkBoxER->SetValue(false);
-    checkBoxIR->SetValue(false);
-    checkBoxOIR->SetValue(false);
-    checkBoxRE->SetValue(false);
-
-    checkBoxParticipePresent->SetValue(false);
-    checkBoxPresent->SetValue(false);
-    checkBoxImparfait->SetValue(false);
-    checkBoxFutur->SetValue(false);
-    checkBoxPasseCompose->SetValue(false);
-    checkBoxPlusQueParfait->SetValue(false);
-    checkBoxSubjonctif->SetValue(false);
-    checkBoxConditionnel->SetValue(false);
+void TopPanel::Check() {
+    for (QuizItem* item : quizItems) {
+        item->evaluate();
+    }
 }

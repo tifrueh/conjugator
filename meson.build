@@ -4,7 +4,7 @@ project(
     default_options: [ 'cpp_std=c++17' ],
     license: 'GPL-3.0-or-later',
     license_files: 'LICENSE',
-    version: 'dev'
+    version: 'dev-1.0.0-alpha'
 )
 
 incdir = include_directories([ 'include' ])

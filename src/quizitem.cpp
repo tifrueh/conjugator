@@ -8,6 +8,8 @@
 #endif
 
 
+#include <string>
+
 #include "verb.db.hpp"
 #include "conjugateur.hpp"
 #include "quizitem.hpp"
@@ -51,8 +53,9 @@ QuizItem::QuizItem(wxWindow* parent, const conj::VerbForm& verbForm) : wxBoxSize
 
 bool QuizItem::evaluate() {
     bool correct;
+    std::string textCtrlString = std::string(textCtrl->GetLineText(0).mb_str());
 
-    correct = verbForm.form == textCtrl->GetLineText(0);
+    correct = verbForm.form == conj::strip(textCtrlString);
 
     if (correct) {
         textCtrl->SetForegroundColour(wxColor("green"));

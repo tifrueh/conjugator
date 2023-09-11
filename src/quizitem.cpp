@@ -81,7 +81,10 @@ bool QuizItem::evaluate() {
 
     correct = verbForm.form == cjgt::strip(textCtrlString);
 
-    if (correct) {
+    if (cjgt::strip(textCtrlString) == "") {
+        textCtrl->SetForegroundColour(wxNullColour);
+    }
+    else if (correct) {
         textCtrl->SetForegroundColour(*wxGREEN);
     } else {
         textCtrl->SetForegroundColour(*wxRED);

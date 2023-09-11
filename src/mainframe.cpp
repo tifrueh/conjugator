@@ -73,7 +73,10 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
 }
 
 void MainFrame::OnOkay(wxCommandEvent& event) {
-   topPanel->GenerateQuiz(); 
+    topPanel->GenerateQuiz(); 
+
+    Layout();
+    SendSizeEvent();
 }
 
 void MainFrame::OnCheck(wxCommandEvent& event) {
@@ -82,6 +85,9 @@ void MainFrame::OnCheck(wxCommandEvent& event) {
 
 void MainFrame::OnSolution(wxCommandEvent& event) {
     topPanel->ShowSolutions();
+
+    Layout();
+    SendSizeEvent();
 }
 
 void MainFrame::OnAbout(wxCommandEvent& event) {

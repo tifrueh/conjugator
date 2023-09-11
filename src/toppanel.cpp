@@ -257,6 +257,8 @@ void TopPanel::GenerateQuiz() {
     for (long unsigned int i = 0; i < quizItems.size(); i++) {
         quizItems.at(i)->setVerbForm(verbForms.at(i));
     }
+
+    Layout();
 }
 
 std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
@@ -367,6 +369,9 @@ void TopPanel::ShowSolutions() {
         item->evaluate();
         item->showSolution();
     }
+
+    Layout();
+
 }
 
 void TopPanel::SelectAllVerbs() {

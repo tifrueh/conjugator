@@ -43,7 +43,7 @@ QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbFor
 
     sizer->Add(
         textCtrl,
-        1,
+        0,
         wxEXPAND | wxALIGN_CENTER_VERTICAL,
         0
     );
@@ -72,6 +72,8 @@ void QuizItem::setVerbForm(const cjgt::VerbForm& verbForm) {
     solution->SetLabelText(wxEmptyString);
 
     question->SetLabelText(questionString);
+
+    sizer->Layout();
 }
 
 bool QuizItem::evaluate() {
@@ -94,4 +96,5 @@ bool QuizItem::evaluate() {
 
 void QuizItem::showSolution() {
     solution->SetLabelText(verbForm.form);
+    sizer->Layout();
 }

@@ -25,7 +25,10 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
     formSelectionSizer = new wxStaticBoxSizer(wxVERTICAL, this, wxT("Sélection de verbes/temps"));
 
-    quizSizer = new wxStaticBoxSizer(wxVERTICAL, this, wxT("Quiz"));
+    quizBoxSizer = new wxStaticBoxSizer(wxVERTICAL, this, wxT("Quiz"));
+
+    quizSizer = new wxFlexGridSizer(3, wxSize(10, 3));
+    quizSizer->AddGrowableCol(1, 1);
 
     quizItemCount = 20;
 
@@ -211,27 +214,26 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     QuizItem* itemPtr = nullptr;
 
     for (int i = 0; i < quizItemCount; i++) {
-        itemPtr = new QuizItem(this, verbs.at(i));
-
+        itemPtr = new QuizItem(this, quizSizer, verbs.at(i));
         quizItems.push_back(itemPtr);
-
-        quizSizer->Add(
-            itemPtr,
-            1,
-            wxEXPAND | wxALL,
-            3
-        );
     }
+
+    quizBoxSizer->Add(
+        quizSizer,
+        1,
+        wxEXPAND | wxALL,
+        10
+    );
 
     topsizer->Add(
         formSelectionSizer,
         0,
-        wxALL,
+        0,
         0
     );
 
     topsizer->Add(
-        quizSizer,
+        quizBoxSizer,
         1,
         wxLEFT,
         10

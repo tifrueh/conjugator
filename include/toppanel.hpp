@@ -30,7 +30,8 @@ class TopPanel : public wxPanel {
         int quizItemCount;
         wxBoxSizer* topsizer = nullptr;
         wxStaticBoxSizer* formSelectionSizer = nullptr;
-        wxStaticBoxSizer* quizSizer = nullptr;
+        wxStaticBoxSizer* quizBoxSizer = nullptr;
+        wxFlexGridSizer* quizSizer = nullptr;
         wxStaticText* verbTypeTitle = nullptr;
         wxCheckBox* checkBoxER = nullptr;
         wxCheckBox* checkBoxIR = nullptr;

@@ -14,8 +14,10 @@
 #include "conjugateur.hpp"
 #include "quizitem.hpp"
 
-QuizItem::QuizItem(wxWindow* parent, const cjgt::VerbForm& verbForm) : wxBoxSizer(wxHORIZONTAL) {
+QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbForm& verbForm) {
     this->verbForm = verbForm;
+    this->sizer = sizer;
+    this->parent = parent;
 
     if (verbForm.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
         questionString = verbForm.infinitif + L": " + verbForm.tense;
@@ -25,35 +27,32 @@ QuizItem::QuizItem(wxWindow* parent, const cjgt::VerbForm& verbForm) : wxBoxSize
 
     question = new wxStaticText(parent, 
         wxID_ANY, 
-        wxString(questionString),
-        wxDefaultPosition,
-        wxSize(250, wxDefaultSize.GetY()),
-        wxALIGN_CENTER_VERTICAL
+        wxString(questionString)
     );
 
     textCtrl = new wxTextCtrl(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
 
-    solution = new wxStaticText(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()), wxALIGN_CENTER_VERTICAL);
+    solution = new wxStaticText(parent, wxID_ANY, wxEmptyString);
 
-    this->Add(
+    sizer->Add(
         question,
         0,
-        wxALIGN_CENTER_VERTICAL | wxRIGHT,
-        10
+        wxALIGN_CENTER_VERTICAL,
+        0
     );
 
-    this->Add(
+    sizer->Add(
         textCtrl,
         1,
-        wxRIGHT,
-        10
+        wxEXPAND | wxALIGN_CENTER_VERTICAL,
+        0
     );
 
-   this->Add(
+   sizer->Add(
         solution,
-        1,
-        wxALIGN_CENTER_VERTICAL | wxRIGHT,
-        10
+        0,
+        wxALIGN_CENTER_VERTICAL | wxALIGN_LEFT,
+        0
     );
 }
 

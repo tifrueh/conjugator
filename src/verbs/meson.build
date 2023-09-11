@@ -12,5 +12,11 @@ srcs += files(
     'avancer.verb.cpp',
     'avoir.verb.cpp',
     'battre.verb.cpp',
-    'bavarder.verb.cpp'
+    'bavarder.verb.cpp',
+    'boire.verb.cpp',
+    'choisir.verb.cpp',
+    'commencer.verb.cpp',
+    'commenceretre.verb.cpp',
+    'conduire.verb.cpp',
+    'confondre.verb.cpp'
 )

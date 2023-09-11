@@ -73,5 +73,5 @@ const verbDB::Verb verbDB::VERBNAME = {
     L"conditionnelNous",
     L"conditionnelVous",
     L"conditionnelIls",
-    L"conditionnelElles",
+    L"conditionnelElles"
 };

@@ -8,5 +8,9 @@ srcs += files(
     'appeler.verb.cpp',
     'applaudir.verb.cpp',
     'appuyer.verb.cpp',
-    'atteindre.verb.cpp'
+    'atteindre.verb.cpp',
+    'avancer.verb.cpp',
+    'avoir.verb.cpp',
+    'battre.verb.cpp',
+    'bavarder.verb.cpp'
 )

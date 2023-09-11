@@ -9,8 +9,8 @@ const verbDB::Verb verbDB::VERBNAME = {
 
     verbDB::VerbType::TYPE,
 
-    L"participePresent",
     L"infinitif",
+    L"participePresent",
 
     L"presentJe",
     L"presentTu",

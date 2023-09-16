@@ -14,14 +14,16 @@
 
 #include "conjugateur.hpp"
 
-class QuizItem : public wxBoxSizer {
+class QuizItem {
     public:
-        QuizItem(wxWindow* parent, const cjgt::VerbForm& verbForm);
+        QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbForm& verbForm);
         bool evaluate();
         void showSolution();
         void setVerbForm(const cjgt::VerbForm& verbForm);
 
     private:
+        wxFlexGridSizer* sizer;
+        wxWindow* parent;
         cjgt::VerbForm verbForm;
         wxStaticText* question = nullptr;
         wxTextCtrl* textCtrl = nullptr;

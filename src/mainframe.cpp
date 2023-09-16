@@ -18,7 +18,7 @@
 MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
 
     info.SetName(wxT("Conjugateur"));
-    info.SetVersion(wxT("dev"));
+    info.SetVersion(wxT("1.0.0-alpha"));
     info.SetCopyright(wxT(
         "Copyright (C) 2023 Timo Früh\n"
         "This program is free and open source software, licensed under the GNU General Public License 3.0. "
@@ -72,8 +72,20 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     SetSizerAndFit(topPanelSizer);
 }
 
+void MainFrame::computeNewSize() {
+    topPanelSizer->Layout();
+
+    if (this->GetClientSize().GetX() < topPanelSizer->GetMinSize().GetX()) {
+        topPanelSizer->SetSizeHints(this);
+    } else {
+        this->SetMinClientSize(topPanelSizer->ComputeFittingClientSize(this));
+    }
+}
+
 void MainFrame::OnOkay(wxCommandEvent& event) {
-   topPanel->GenerateQuiz(); 
+    topPanel->GenerateQuiz(); 
+
+    computeNewSize();
 }
 
 void MainFrame::OnCheck(wxCommandEvent& event) {
@@ -82,6 +94,8 @@ void MainFrame::OnCheck(wxCommandEvent& event) {
 
 void MainFrame::OnSolution(wxCommandEvent& event) {
     topPanel->ShowSolutions();
+
+    computeNewSize();
 }
 
 void MainFrame::OnAbout(wxCommandEvent& event) {

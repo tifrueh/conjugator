@@ -25,9 +25,16 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
     formSelectionSizer = new wxStaticBoxSizer(wxVERTICAL, this, wxT("Sélection de verbes/temps"));
 
-    quizSizer = new wxStaticBoxSizer(wxVERTICAL, this, wxT("Quiz"));
+    quizBoxSizer = new wxStaticBoxSizer(wxVERTICAL, this, wxT("Quiz"));
+
+    quizSizer = new wxFlexGridSizer(3, wxSize(10, 3));
+    quizSizer->AddGrowableCol(1, 1);
 
     quizItemCount = 20;
+
+    for (int i = 0; i < quizItemCount; i++) {
+        quizSizer->AddGrowableRow(i, 1);
+    }
 
     verbTypeTitle = new wxStaticText(this, wxID_ANY, wxT("Types de verbes"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
     wxFont titleFont = verbTypeTitle->GetFont();
@@ -199,6 +206,8 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         3
     );
 
+    formSelectionSizer->AddStretchSpacer();
+
     formSelectionSizer->Add(
         buttonSizer,
         0,
@@ -211,29 +220,28 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     QuizItem* itemPtr = nullptr;
 
     for (int i = 0; i < quizItemCount; i++) {
-        itemPtr = new QuizItem(this, verbs.at(i));
-
+        itemPtr = new QuizItem(this, quizSizer, verbs.at(i));
         quizItems.push_back(itemPtr);
-
-        quizSizer->Add(
-            itemPtr,
-            1,
-            wxEXPAND | wxALL,
-            3
-        );
     }
+
+    quizBoxSizer->Add(
+        quizSizer,
+        1,
+        wxEXPAND | wxALL,
+        10
+    );
 
     topsizer->Add(
         formSelectionSizer,
         0,
-        wxALL,
+        wxEXPAND,
         0
     );
 
     topsizer->Add(
-        quizSizer,
+        quizBoxSizer,
         1,
-        wxLEFT,
+        wxEXPAND | wxLEFT,
         10
     );
 
@@ -255,6 +263,8 @@ void TopPanel::GenerateQuiz() {
     for (long unsigned int i = 0; i < quizItems.size(); i++) {
         quizItems.at(i)->setVerbForm(verbForms.at(i));
     }
+
+    topsizer->SetSizeHints(this);
 }
 
 std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
@@ -365,6 +375,9 @@ void TopPanel::ShowSolutions() {
         item->evaluate();
         item->showSolution();
     }
+
+    topsizer->SetSizeHints(this);
+
 }
 
 void TopPanel::SelectAllVerbs() {

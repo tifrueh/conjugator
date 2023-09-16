@@ -27,6 +27,7 @@ class MainFrame : public wxFrame {
         wxMenu* menuHelp;
         wxBoxSizer* topPanelSizer = nullptr;
         TopPanel* topPanel = nullptr;
+        void computeNewSize();
         void OnOkay(wxCommandEvent& event);
         void OnCheck(wxCommandEvent& event);
         void OnSolution(wxCommandEvent& event);

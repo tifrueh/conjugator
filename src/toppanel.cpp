@@ -202,6 +202,8 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         3
     );
 
+    formSelectionSizer->AddStretchSpacer();
+
     formSelectionSizer->Add(
         buttonSizer,
         0,
@@ -228,7 +230,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     topsizer->Add(
         formSelectionSizer,
         0,
-        0,
+        wxEXPAND,
         0
     );
 

@@ -75,7 +75,11 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
 void MainFrame::OnOkay(wxCommandEvent& event) {
     topPanel->GenerateQuiz(); 
 
-    topPanelSizer->SetSizeHints(this);
+    topPanelSizer->Layout();
+
+    if (this->GetSize().GetX() < topPanelSizer->GetMinSize().GetX()) {
+        topPanelSizer->SetSizeHints(this);
+    }
 }
 
 void MainFrame::OnCheck(wxCommandEvent& event) {
@@ -85,7 +89,12 @@ void MainFrame::OnCheck(wxCommandEvent& event) {
 void MainFrame::OnSolution(wxCommandEvent& event) {
     topPanel->ShowSolutions();
 
-    topPanelSizer->SetSizeHints(this);
+    topPanelSizer->Layout();
+
+    if (this->GetSize().GetX() < topPanelSizer->GetMinSize().GetX()) {
+        topPanelSizer->SetSizeHints(this);
+    }
+
 }
 
 void MainFrame::OnAbout(wxCommandEvent& event) {

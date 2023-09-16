@@ -77,8 +77,10 @@ void MainFrame::OnOkay(wxCommandEvent& event) {
 
     topPanelSizer->Layout();
 
-    if (this->GetSize().GetX() < topPanelSizer->GetMinSize().GetX()) {
+    if (this->GetClientSize().GetX() < topPanelSizer->GetMinSize().GetX()) {
         topPanelSizer->SetSizeHints(this);
+    } else {
+        this->SetMinClientSize(topPanelSizer->ComputeFittingClientSize(this));
     }
 }
 
@@ -91,8 +93,10 @@ void MainFrame::OnSolution(wxCommandEvent& event) {
 
     topPanelSizer->Layout();
 
-    if (this->GetSize().GetX() < topPanelSizer->GetMinSize().GetX()) {
+    if (this->GetClientSize().GetX() < topPanelSizer->GetMinSize().GetX()) {
         topPanelSizer->SetSizeHints(this);
+    } else {
+        this->SetMinClientSize(topPanelSizer->ComputeFittingClientSize(this));
     }
 
 }

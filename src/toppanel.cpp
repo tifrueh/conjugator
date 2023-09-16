@@ -258,7 +258,7 @@ void TopPanel::GenerateQuiz() {
         quizItems.at(i)->setVerbForm(verbForms.at(i));
     }
 
-    Layout();
+    topsizer->Fit(this);
 }
 
 std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
@@ -370,7 +370,7 @@ void TopPanel::ShowSolutions() {
         item->showSolution();
     }
 
-    Layout();
+    topsizer->Fit(this);
 
 }
 

@@ -72,8 +72,6 @@ void QuizItem::setVerbForm(const cjgt::VerbForm& verbForm) {
     solution->SetLabelText(wxEmptyString);
 
     question->SetLabelText(questionString);
-
-    sizer->Layout();
 }
 
 bool QuizItem::evaluate() {
@@ -96,5 +94,4 @@ bool QuizItem::evaluate() {
 
 void QuizItem::showSolution() {
     solution->SetLabelText(verbForm.form);
-    sizer->Layout();
 }

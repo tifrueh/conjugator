@@ -53,7 +53,8 @@ const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::construire,
     &verbDB::courir,
     &verbDB::couvrir,
-    &verbDB::craindre
+    &verbDB::craindre,
+    &verbDB::croire
 };
 
 std::vector<const verbDB::Verb*> verbDB::verbsER = {};

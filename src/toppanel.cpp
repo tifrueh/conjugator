@@ -32,6 +32,10 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
     quizItemCount = 20;
 
+    for (int i = 0; i < quizItemCount; i++) {
+        quizSizer->AddGrowableRow(i, 1);
+    }
+
     verbTypeTitle = new wxStaticText(this, wxID_ANY, wxT("Types de verbes"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
     wxFont titleFont = verbTypeTitle->GetFont();
     titleFont.Scale(1.1);
@@ -237,7 +241,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     topsizer->Add(
         quizBoxSizer,
         1,
-        wxLEFT,
+        wxEXPAND | wxLEFT,
         10
     );
 

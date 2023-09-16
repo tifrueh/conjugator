@@ -85,7 +85,7 @@ void MainFrame::OnCheck(wxCommandEvent& event) {
 void MainFrame::OnSolution(wxCommandEvent& event) {
     topPanel->ShowSolutions();
 
-   topPanelSizer->SetSizeHints(this);
+    topPanelSizer->SetSizeHints(this);
 }
 
 void MainFrame::OnAbout(wxCommandEvent& event) {

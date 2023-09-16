@@ -50,7 +50,8 @@ const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::conduire,
     &verbDB::confondre,
     &verbDB::connaitre,
-    &verbDB::construire
+    &verbDB::construire,
+    &verbDB::courir
 };
 
 std::vector<const verbDB::Verb*> verbDB::verbsER = {};

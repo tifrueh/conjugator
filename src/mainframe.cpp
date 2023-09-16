@@ -75,7 +75,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
 void MainFrame::OnOkay(wxCommandEvent& event) {
     topPanel->GenerateQuiz(); 
 
-    SetSizerAndFit(topPanelSizer, false);
+    topPanelSizer->SetSizeHints(this);
 }
 
 void MainFrame::OnCheck(wxCommandEvent& event) {
@@ -85,7 +85,7 @@ void MainFrame::OnCheck(wxCommandEvent& event) {
 void MainFrame::OnSolution(wxCommandEvent& event) {
     topPanel->ShowSolutions();
 
-    SetSizerAndFit(topPanelSizer, false);
+   topPanelSizer->SetSizeHints(this);
 }
 
 void MainFrame::OnAbout(wxCommandEvent& event) {

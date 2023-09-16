@@ -17,7 +17,7 @@ $ brew tap tifrueh/mytap
 2. Install Conjugateur
 
 ~~~
-$ brew install --cask conjugateur
+$ brew install --cask tifrueh/mytap/conjugateur
 ~~~
 
 ### macOS (manual install)

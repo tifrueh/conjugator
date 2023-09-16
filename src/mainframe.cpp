@@ -72,9 +72,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     SetSizerAndFit(topPanelSizer);
 }
 
-void MainFrame::OnOkay(wxCommandEvent& event) {
-    topPanel->GenerateQuiz(); 
-
+void MainFrame::computeNewSize() {
     topPanelSizer->Layout();
 
     if (this->GetClientSize().GetX() < topPanelSizer->GetMinSize().GetX()) {
@@ -82,6 +80,12 @@ void MainFrame::OnOkay(wxCommandEvent& event) {
     } else {
         this->SetMinClientSize(topPanelSizer->ComputeFittingClientSize(this));
     }
+}
+
+void MainFrame::OnOkay(wxCommandEvent& event) {
+    topPanel->GenerateQuiz(); 
+
+    computeNewSize();
 }
 
 void MainFrame::OnCheck(wxCommandEvent& event) {
@@ -91,14 +95,7 @@ void MainFrame::OnCheck(wxCommandEvent& event) {
 void MainFrame::OnSolution(wxCommandEvent& event) {
     topPanel->ShowSolutions();
 
-    topPanelSizer->Layout();
-
-    if (this->GetClientSize().GetX() < topPanelSizer->GetMinSize().GetX()) {
-        topPanelSizer->SetSizeHints(this);
-    } else {
-        this->SetMinClientSize(topPanelSizer->ComputeFittingClientSize(this));
-    }
-
+    computeNewSize();
 }
 
 void MainFrame::OnAbout(wxCommandEvent& event) {

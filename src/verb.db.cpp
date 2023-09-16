@@ -47,8 +47,6 @@ const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::bavarder,
     &verbDB::boire,
     &verbDB::choisir,
-    &verbDB::commencer,
-    &verbDB::commencerEtre,
     &verbDB::conduire,
     &verbDB::confondre,
     &verbDB::connaitre

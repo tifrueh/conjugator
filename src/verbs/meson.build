@@ -19,5 +19,6 @@ srcs += files(
     'commenceretre.verb.cpp',
     'conduire.verb.cpp',
     'confondre.verb.cpp',
-    'connaitre.verb.cpp'
+    'connaitre.verb.cpp',
+    'construire.verb.cpp'
 )

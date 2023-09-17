@@ -23,3 +23,8 @@ executable(
     dependencies: deps,
     include_directories: incdir
 )
+
+run_target(
+    'bundleMacOS',
+    command: 'dist/macOS/bundle.sh'
+)

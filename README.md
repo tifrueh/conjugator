@@ -47,13 +47,13 @@ Additional software components needed:
 
 There are two distinct sections in the application's GUI:
 
-1. [**Sélection des verbes/tems**](#sélection-des-verbestemps)
+1. [**Sélection des verbes/temps**](#sélection-des-verbestemps)
 
 2. [**Quiz**](#quiz)
 
 ### Sélection des verbes/temps
 
-This panel is used to control the **Quiz** section of the app. Firstly, under the header **Types de verbes** you can select which kinds of verbs will be used in the quiz and under the header **Tems** you can select the tenses which will be used in the quiz.
+This panel is used to control the **Quiz** section of the app. Firstly, under the header **Types de verbes** you can select which kinds of verbs will be used in the quiz and under the header **Temps** you can select the tenses which will be used in the quiz.
 
 The button **Gérer** generates a new quiz.
 

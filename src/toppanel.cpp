@@ -92,44 +92,48 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         5
     );
 
+    formSelectionSizer->AddSpacer(10);
+
     formSelectionSizer->Add(
         verbTypeTitle,
         0,
         wxEXPAND |
-        wxBOTTOM,
+        wxLEFT | wxRIGHT,
         10
     );
+
+    formSelectionSizer->AddSpacer(10);
 
     formSelectionSizer->Add(
         checkBoxER,
         0,
         wxEXPAND |
-        wxTOP | wxBOTTOM,
-        3
+        wxLEFT | wxRIGHT,
+        10
     );
 
     formSelectionSizer->Add(
         checkBoxIR,
         0,
         wxEXPAND |
-        wxTOP | wxBOTTOM,
-        3
+        wxLEFT | wxRIGHT,
+        10
     );
 
     formSelectionSizer->Add(
         checkBoxOIR,
         0,
         wxEXPAND |
-        wxTOP | wxBOTTOM,
-        3
+        wxLEFT | wxRIGHT,
+        10
     );
 
     formSelectionSizer->Add(
         checkBoxRE,
         0,
         wxEXPAND |
-        wxTOP | wxBOTTOM,
-        3
+        wxLEFT | wxRIGHT,
+        10
     );
 
     formSelectionSizer->AddSpacer(15);
@@ -138,72 +142,74 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         tenseTitle,
         0,
         wxEXPAND |
-        wxTOP | wxBOTTOM,
+        wxLEFT | wxRIGHT,
         10
     );
+
+    formSelectionSizer->AddSpacer(10);
 
     formSelectionSizer->Add(
         checkBoxParticipePresent,
         0,
         wxEXPAND |
-        wxTOP | wxBOTTOM,
-        3
+        wxLEFT | wxRIGHT,
+        10
     );
 
     formSelectionSizer->Add(
         checkBoxPresent,
         0,
         wxEXPAND |
-        wxTOP | wxBOTTOM,
-        3
+        wxLEFT | wxRIGHT,
+        10
     );
 
     formSelectionSizer->Add(
         checkBoxImparfait,
         0,
         wxEXPAND |
-        wxTOP | wxBOTTOM,
-        3
+        wxLEFT | wxRIGHT,
+        10
     );
 
     formSelectionSizer->Add(
         checkBoxFutur,
         0,
         wxEXPAND |
-        wxTOP | wxBOTTOM,
-        3
+        wxLEFT | wxRIGHT,
+        10
     );
 
     formSelectionSizer->Add(
         checkBoxPasseCompose,
         0,
         wxEXPAND |
-        wxTOP | wxBOTTOM,
-        3
+        wxLEFT | wxRIGHT,
+        10
     );
 
     formSelectionSizer->Add(
         checkBoxPlusQueParfait,
         0,
         wxEXPAND |
-        wxTOP | wxBOTTOM,
-        3
+        wxLEFT | wxRIGHT,
+        10
     );
 
     formSelectionSizer->Add(
         checkBoxSubjonctif,
         0,
         wxEXPAND |
-        wxTOP | wxBOTTOM,
-        3
+        wxLEFT | wxRIGHT,
+        10
     );
 
     formSelectionSizer->Add(
         checkBoxConditionnel,
         0,
         wxEXPAND |
-        wxTOP | wxBOTTOM,
-        3
+        wxLEFT | wxRIGHT,
+        10
     );
 
     formSelectionSizer->AddStretchSpacer();
@@ -234,14 +240,14 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     topsizer->Add(
         formSelectionSizer,
         0,
-        wxEXPAND,
-        0
+        wxEXPAND | wxALL,
+        10
     );
 
     topsizer->Add(
         quizBoxSizer,
         1,
-        wxEXPAND | wxLEFT,
+        wxEXPAND | wxALL,
         10
     );
 

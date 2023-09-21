@@ -54,7 +54,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
         topPanel,
         1,
         wxEXPAND | wxALL,
-        20
+        0
     );
 
     Bind(wxEVT_BUTTON, &MainFrame::OnOkay, this, winID::okayButton);

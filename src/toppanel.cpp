@@ -240,15 +240,17 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     topsizer->Add(
         formSelectionSizer,
         0,
-        wxEXPAND | wxALL,
-        10
+        wxEXPAND | wxTOP | wxBOTTOM | wxLEFT,
+        20
     );
+
+    topsizer->AddSpacer(10);
 
     topsizer->Add(
         quizBoxSizer,
         1,
-        wxEXPAND | wxALL,
-        10
+        wxEXPAND | wxTOP | wxBOTTOM | wxRIGHT,
+        20
     );
 
     SetSizerAndFit(topsizer);

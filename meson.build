@@ -21,7 +21,8 @@ executable(
     'conjugateur',
     srcs,
     dependencies: deps,
-    include_directories: incdir
+    include_directories: incdir,
+    win_subsystem: 'windows'
 )
 
 run_target(

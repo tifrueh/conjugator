@@ -151,7 +151,7 @@ namespace verbDB {
     extern const Verb nager;
     extern const Verb naitre;
     extern const Verb nettoyer;
-    extern const Verb obéir;
+    extern const Verb obeir;
     extern const Verb offrir;
     extern const Verb ouvrir;
     extern const Verb paraitre;

@@ -1,2 +1,2 @@
-appicon ICON "conjugateur.ico"
+conjugateur ICON "conjugateur.ico"
 #include "wx/msw/wx.rc"

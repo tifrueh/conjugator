@@ -20,13 +20,14 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
-LicenseFile=C:\msys64\home\tifrueh\Documents\Code\conjugateur\LICENSE
+SourceDir=..\..\
+LicenseFile=LICENSE
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
-OutputDir=C:\msys64\home\tifrueh\Documents\Code\conjugateur\dist\win
-OutputBaseFilename=conjsetup
-SetupIconFile=C:\msys64\home\tifrueh\Documents\Code\conjugateur\resources\conjugateur.ico
+OutputDir=dist\win
+OutputBaseFilename=Conjugateur-w64-v1.0.0-dev-setup
+SetupIconFile=resources\conjugateur.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -39,8 +40,8 @@ Name: "french"; MessagesFile: "compiler:Languages\French.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\msys64\home\tifrueh\Documents\Code\conjugateur\build\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\msys64\home\tifrueh\Documents\Code\conjugateur\resources\lang\fr\LC_MESSAGES\wxstd.mo"; DestDir: "{app}\fr"; Flags: ignoreversion
+Source: "build\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "resources\lang\fr\LC_MESSAGES\wxstd.mo"; DestDir: "{app}\fr"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

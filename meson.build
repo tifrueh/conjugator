@@ -38,7 +38,7 @@ if build_machine.system() == 'windows'
 
 endif
 
-executable(
+conjugateur = executable(
     'conjugateur',
     srcs,
     dependencies: deps,
@@ -46,7 +46,8 @@ executable(
     win_subsystem: 'windows'
 )
 
-run_target(
-    'bundleMacOS',
-    command: 'dist/macOS/bundle.sh'
+bundle_mac = run_target(
+    'bundle_mac',
+    command: 'dist/macOS/bundle.sh',
+    depends: [ conjugateur ]
 )

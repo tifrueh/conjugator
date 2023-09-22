@@ -15,7 +15,11 @@
 #include "mainframe.hpp"
 #include "toppanel.hpp"
 
+#include "conjugateur.xpm"
+
 MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
+
+    SetIcon(wxICON(conjugateur));
 
     info.SetName(wxT("Conjugateur"));
     info.SetVersion(wxT("1.0.0-dev"));

@@ -3,7 +3,7 @@
 
 #define MyAppName "Conjugateur"
 #define MyAppVersion "1.0.0-dev"
-#define MyAppPublisher "Timo Früh"
+#define MyAppPublisher "Timo Frï¿½h"
 #define MyAppURL "https://github.com/tifrueh/conjugateur"
 #define MyAppExeName "conjugateur.exe"
 
@@ -26,7 +26,7 @@ LicenseFile=LICENSE
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=dist\win
-OutputBaseFilename=Conjugateur-w64-v1.0.0-dev-setup
+OutputBaseFilename=Conjugateur-w64-{#MyAppVersion}-setup
 SetupIconFile=resources\conjugateur.ico
 Compression=lzma
 SolidCompression=yes
@@ -50,4 +50,3 @@ Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: de
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
-

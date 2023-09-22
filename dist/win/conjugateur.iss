@@ -3,7 +3,7 @@
 
 #define MyAppName "Conjugateur"
 #define MyAppVersion "1.0.0-dev"
-#define MyAppPublisher "Timo Frï¿½h"
+#define MyAppPublisher "Timo Früh"
 #define MyAppURL "https://github.com/tifrueh/conjugateur"
 #define MyAppExeName "conjugateur.exe"
 

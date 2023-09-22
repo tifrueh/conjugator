@@ -17,7 +17,7 @@ $ brew tap tifrueh/mytap
 2. Install Conjugateur
 
 ~~~
-$ brew install --cask conjugateur
+$ brew install --cask tifrueh/mytap/conjugateur
 ~~~
 
 ### macOS (manual install)
@@ -32,12 +32,23 @@ If you don't have homebrew you can also use the installer package for macOS from
 
 ### Windows
 
-Unfortunately there is no Windows version at the moment, but you should be able to compile the application using the source code provided in the [latest release](https://github.com/tifrueh/conjugateur/releases/latest) nonetheless.
+An installer executable for x86_64 Windows can be downloaded from the [latest release](https://github.com/tifrueh/conjugateur/releases/latest).
 
-Additional software components needed:
+1. Download the installer executable
 
-- [meson](https://mesonbuild.com/SimpleStart.html)
-- [wxWidgets](https://www.wxwidgets.org/downloads/)
+2. Double click the EXE
+
+3. Follow the installer's instructions
+
+_Note: As the EXE is not signed, Windows is probably going to warn you about installing untrusted software and it is absolutely right. I'm going to fix this issue in the future, but for the moment, this admittedly insecure installation procedure will have to do._
+
+### Build from source
+
+If your system is neither macOS nor x86_64 Windows, you'll have to compile and install the program yourself. Additional sofware components you'll need for that are the following:
+
+- [meson build system](https://mesonbuild.com/)
+
+- [wxwidgets](https://www.wxwidgets.org/)
 
 ## Preview (macOS)
 
@@ -47,13 +58,13 @@ Additional software components needed:
 
 There are two distinct sections in the application's GUI:
 
-1. [**Sélection des verbes/tems**](#sélection-des-verbestemps)
+1. [**Sélection des verbes/temps**](#sélection-des-verbestemps)
 
 2. [**Quiz**](#quiz)
 
 ### Sélection des verbes/temps
 
-This panel is used to control the **Quiz** section of the app. Firstly, under the header **Types de verbes** you can select which kinds of verbs will be used in the quiz and under the header **Tems** you can select the tenses which will be used in the quiz.
+This panel is used to control the **Quiz** section of the app. Firstly, under the header **Types de verbes** you can select which kinds of verbs will be used in the quiz and under the header **Temps** you can select the tenses which will be used in the quiz.
 
 The button **Gérer** generates a new quiz.
 

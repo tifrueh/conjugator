@@ -89,6 +89,8 @@ bool QuizItem::evaluate() {
         textCtrl->SetForegroundColour(*wxRED);
     }
 
+    textCtrl->Refresh();
+
     return correct;
 }
 

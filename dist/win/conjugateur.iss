@@ -40,7 +40,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "C:\msys64\home\tifrueh\Documents\Code\conjugateur\build\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\msys64\home\tifrueh\Documents\Code\conjugateur\resources\lang\fr\LC_MESSAGES\wxstd.mo"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\msys64\home\tifrueh\Documents\Code\conjugateur\resources\lang\fr\LC_MESSAGES\wxstd.mo"; DestDir: "{app}\fr"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

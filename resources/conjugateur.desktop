@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.5
+Name=Conjugateur
+Comment=French verb conjugation trainer
+Exec=conjugateur
+Icon=conjugateur
+Terminal=false
+Categories=Education;Languages;

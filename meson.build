@@ -38,12 +38,16 @@ if build_machine.system() == 'windows'
 
 endif
 
+install_data('resources/conjugateur.png')
+install_data('resources/conjugateur.desktop')
+
 conjugateur = executable(
     'conjugateur',
     srcs,
     dependencies: deps,
     include_directories: incdir,
-    win_subsystem: 'windows'
+    win_subsystem: 'windows',
+    install: true
 )
 
 bundle_mac = run_target(

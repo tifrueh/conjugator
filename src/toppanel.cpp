@@ -365,7 +365,7 @@ std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
         usableFormCount += usableVerbs.size() * 8;
     }
 
-    if (usableFormCount < count) {
+    if (usableFormCount < (unsigned long) count) {
         throw std::invalid_argument( "More forms requested than possible" );
     }
 

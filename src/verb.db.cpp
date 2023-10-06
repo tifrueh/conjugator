@@ -41,6 +41,7 @@ const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::applaudir,
     &verbDB::appuyer,
     &verbDB::atteindre,
+    &verbDB::attendre,
     &verbDB::avancer,
     &verbDB::avoir,
     &verbDB::battre,

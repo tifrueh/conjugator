@@ -17,7 +17,6 @@ namespace cjgt {
         bool operator==(const VerbForm& verbForm);
     };
     
-    void displayVerb(const verbDB::Verb& verb);
     VerbForm getVerbForm(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person);
     VerbForm getVerbForm(const verbDB::Verb& verb, const int& tense, const int& person);
     std::wstring getTense(const verbDB::Tense& tense);

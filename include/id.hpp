@@ -9,6 +9,7 @@
     #include <wx/wx.h>
 #endif
 
+
 enum winID {
     checkBoxER,
     checkBoxIR,

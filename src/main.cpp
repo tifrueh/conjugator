@@ -20,6 +20,7 @@
     #include <wx/wx.h>
 #endif
 
+
 #include <wx/aboutdlg.h>
 #include <wx/intl.h>
 

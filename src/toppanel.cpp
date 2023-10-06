@@ -17,6 +17,7 @@
 #include "conjugateur.hpp"
 #include "id.hpp"
 #include "verb.db.hpp"
+
 #include "toppanel.hpp"
 
 TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {

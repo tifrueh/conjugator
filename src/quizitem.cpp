@@ -12,6 +12,7 @@
 
 #include "verb.db.hpp"
 #include "conjugateur.hpp"
+
 #include "quizitem.hpp"
 
 QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbForm& verbForm) {

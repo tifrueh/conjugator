@@ -2,8 +2,6 @@
 // The full copyright notice can be found in main.cpp
 
 #include <string>
-#include <algorithm>
-#include <iostream>
 
 #include "verb.db.hpp"
 

@@ -10,10 +10,10 @@
 
 #include <vector>
 
-#include "conjugateur.hpp"
 #include "id.hpp"
-#include "mainframe.hpp"
 #include "toppanel.hpp"
+
+#include "mainframe.hpp"
 
 #include "conjugateur.xpm"
 

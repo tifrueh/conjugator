@@ -232,11 +232,11 @@ bool cjgt::VerbForm::operator==(const cjgt::VerbForm& verbForm) {
 std::wstring cjgt::strip(const std::wstring& string) {
     std::wstring outstring = string;
     
-    const long unsigned int begin = outstring.find_first_not_of(L" ");
-    const long unsigned int end = outstring.find_last_not_of(L" ");
+    const long unsigned int begin = outstring.find_first_not_of(' ');
+    const long unsigned int end = outstring.find_last_not_of(' ');
     const long unsigned int count = end + 1 - begin;
 
-    if (outstring == L"" || begin == std::wstring::npos) {
+    if (outstring.empty() || begin == std::string::npos) {
         return L"";
     } else {
         outstring = outstring.substr(begin, count);

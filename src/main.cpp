@@ -29,7 +29,7 @@
 
 class Conjugateur : public wxApp {
     public:
-        virtual bool OnInit();
+        bool OnInit() override;
         wxLocale* locale;
 };
 
@@ -47,7 +47,7 @@ bool Conjugateur::OnInit() {
 
     this->SetAppDisplayName(wxT("Conjugateur"));
     
-    MainFrame* window = new MainFrame(wxT("Conjugateur"));
+    auto window = new MainFrame(wxT("Conjugateur"));
     window->Center();
 
     window->Show();

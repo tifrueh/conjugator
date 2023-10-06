@@ -217,4 +217,4 @@ namespace verbDB {
     extern const std::array<std::wstring, 8> personStrings;
 
     void initTypeVectors();
-};
+}

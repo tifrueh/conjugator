@@ -17,7 +17,7 @@
 
 class MainFrame : public wxFrame {
     public:
-        MainFrame(const wxString& title);
+        explicit MainFrame(const wxString& title);
         wxAboutDialogInfo GetInfo();
     
     private:

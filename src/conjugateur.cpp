@@ -199,7 +199,7 @@ cjgt::VerbForm cjgt::getVerbForm(const verbDB::Verb& verb, const int& tense, con
     }
 
     return verbForm;
-};
+}
 
 cjgt::VerbForm cjgt::getVerbForm(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person) {
     int tenseInt = tense;
@@ -223,7 +223,7 @@ std::wstring cjgt::getPerson(const int& person) {
     return verbDB::personStrings.at(person);
 }
 
-bool cjgt::VerbForm::operator==(const cjgt::VerbForm& verbForm) {
+bool cjgt::VerbForm::operator==(const cjgt::VerbForm& verbForm) const {
     return this->infinitif == verbForm.infinitif && this->person == verbForm.person && this->form == verbForm.form && this->tense == verbForm.tense;
 }
 

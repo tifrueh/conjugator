@@ -1,0 +1,25 @@
+// Copyright (C) 2023 Timo Früh
+// The full copyright notice can be found in ../src/main.cpp
+
+#pragma once
+
+
+#include <wx/wxprec.h>
+
+#ifndef WX_PRECOMP
+    #include <wx/wx.h>
+#endif
+
+#include <wx/srchctrl.h>
+
+#include "inspectorpanel.hpp"
+
+
+class InspectorFrame : public wxFrame {
+    public:
+        InspectorFrame(wxWindow* parent, const wxWindowID& winID, const wxString& title);
+
+    private:
+        wxBoxSizer* topSizer;
+        InspectorPanel* inspectorPanel;
+};

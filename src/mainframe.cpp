@@ -12,6 +12,7 @@
 
 #include "id.hpp"
 #include "toppanel.hpp"
+#include "inspectorframe.hpp"
 
 #include "mainframe.hpp"
 
@@ -46,6 +47,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     menuQuiz->Append(winID::menuQuizSolution, wxT("Solutions\tCtrl-S"));
 
     menuHelp->Append(wxID_ABOUT, wxT("À propos Conjugateur"));
+    menuHelp->Append(winID::menuHelpInspecteur, wxT("Inspecteur"));
     menuHelp->Append(winID::menuHelpGitHub, wxT("GitHub"));
 
     this->SetMenuBar(menuBar);
@@ -72,6 +74,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnUnselectAll, this, winID::menuQuizUnselectAll);
     Bind(wxEVT_MENU, &MainFrame::OnAbout, this, wxID_ABOUT);
     Bind(wxEVT_MENU, &MainFrame::OnGitHub, this, winID::menuHelpGitHub);
+    Bind(wxEVT_MENU, &MainFrame::OnInspector, this, winID::menuHelpInspecteur);
 
     SetSizerAndFit(topPanelSizer);
 }
@@ -120,6 +123,11 @@ void MainFrame::OnUnselectAll(wxCommandEvent& event) {
 
 void MainFrame::OnGitHub(wxCommandEvent& event) {
     wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/conjugateur"));
+}
+
+void MainFrame::OnInspector(wxCommandEvent &event) {
+    inspector = new InspectorFrame(this, wxID_ANY, wxT("Inspecteur"));
+    inspector->Show();
 }
 
 wxAboutDialogInfo MainFrame::GetInfo() {

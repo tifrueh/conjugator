@@ -1,5 +1,7 @@
 srcs += files(
     'conjugateur.cpp',
+    'inspectorframe.cpp',
+    'inspectorpanel.cpp',
     'main.cpp',
     'mainframe.cpp',
     'quizitem.cpp',

@@ -18,6 +18,7 @@
 class InspectorFrame : public wxFrame {
     public:
         InspectorFrame(wxWindow* parent, const wxWindowID& winID, const wxString& title);
+        void updateVerb();
 
     private:
         wxBoxSizer* topSizer;

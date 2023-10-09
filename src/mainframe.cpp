@@ -76,6 +76,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnAbout, this, wxID_ABOUT);
     Bind(wxEVT_MENU, &MainFrame::OnGitHub, this, winID::menuHelpGitHub);
     Bind(wxEVT_MENU, &MainFrame::OnInspector, this, winID::menuHelpInspecteur);
+    Bind(wxEVT_LISTBOX, &MainFrame::OnVerbBox, this, winID::inspectorVerbBox);
 
     SetSizerAndFit(topPanelSizer);
 }
@@ -129,6 +130,10 @@ void MainFrame::OnGitHub(wxCommandEvent& event) {
 void MainFrame::OnInspector(wxCommandEvent &event) {
     inspector = new InspectorFrame(this, wxID_ANY, wxT("Inspecteur"));
     inspector->Show();
+}
+
+void MainFrame::OnVerbBox(wxCommandEvent &event) {
+    inspector->updateVerb();
 }
 
 wxAboutDialogInfo MainFrame::GetInfo() {

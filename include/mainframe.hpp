@@ -39,4 +39,5 @@ class MainFrame : public wxFrame {
         void OnUnselectAll(wxCommandEvent& event);
         void OnGitHub(wxCommandEvent& event);
         void OnInspector(wxCommandEvent& event);
+        void OnVerbBox(wxCommandEvent& event);
 };

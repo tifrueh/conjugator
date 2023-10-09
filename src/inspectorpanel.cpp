@@ -34,3 +34,7 @@ InspectorPanel::InspectorPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
     this->SetSizerAndFit(topsizer);
 }
+
+void InspectorPanel::setVerbFromBox() {
+    verbView->setVerb(*cjgt::getVerb(verbBox->GetStringSelection().ToStdWstring()));
+}

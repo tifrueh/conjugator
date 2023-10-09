@@ -44,7 +44,7 @@ VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : 
 
     setVerb(verb);
 
-    this->SetMinSize(wxSize(200, 100));
+    this->SetMinSize(wxSize(200, 300));
 
     this->SetSizer(sizer);
     this->FitInside();
@@ -53,8 +53,9 @@ VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : 
 }
 
 void VerbView::setVerb(const verbDB::Verb &inputVerb) {
-    formLabels.at({verbDB::Tense::infinitif, verbDB::Person::none})->SetLabel(inputVerb.infinitif);
-    formLabels.at({verbDB::Tense::participePresent, verbDB::Person::none})->SetLabel(inputVerb.participePresent);
+    verb = inputVerb;
+    formLabels.at({verbDB::Tense::infinitif, verbDB::Person::none})->SetLabel(verb.infinitif);
+    formLabels.at({verbDB::Tense::participePresent, verbDB::Person::none})->SetLabel(verb.participePresent);
 
     for (int tense = verbDB::Tense::present; tense <= verbDB::Tense::conditionnel; tense++) {
         for (int person = verbDB::Person::je; person <= verbDB::Person::elles; person++) {

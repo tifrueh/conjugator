@@ -10,11 +10,14 @@
     #include <wx/wx.h>
 #endif
 
+#include "verb.db.hpp"
+
 #include "verbview.hpp"
 
 class InspectorPanel : public wxPanel {
     public:
         explicit InspectorPanel(wxWindow* parent);
+        void setVerbFromBox();
 
     private:
         wxArrayString verbs;

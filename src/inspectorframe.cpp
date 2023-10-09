@@ -16,3 +16,7 @@ InspectorFrame::InspectorFrame(wxWindow *parent, const wxWindowID &winID, const 
 
     this->SetSizerAndFit(topSizer);
 }
+
+void InspectorFrame::updateVerb() {
+    inspectorPanel->setVerbFromBox();
+}

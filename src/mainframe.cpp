@@ -48,6 +48,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
 
     menuHelp->Append(wxID_ABOUT, wxT("À propos Conjugateur"));
     menuHelp->Append(winID::menuHelpInspecteur, wxT("Inspecteur"));
+    menuHelp->AppendSeparator();
     menuHelp->Append(winID::menuHelpGitHub, wxT("GitHub"));
 
     this->SetMenuBar(menuBar);

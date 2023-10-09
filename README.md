@@ -90,60 +90,14 @@ This panel displays a total of 20 text entries plus the infitinive, a tense and 
 
 `Ctrl+S`: Show solutions
 
+`Ctrl+I`: Open **Inspecteur**
+
 _Note: `Ctrl` corresponds to `Cmd` on macOS systems_
 
-## Verbs
+### Inspector
 
-The following verbs are being used by the application as of this version:
+![Inspector preview](./resources/preview-inspector.png)
 
-- acheter
+There is also an additional window, called **Inspecteur**, which can be used to display the whole conjugation of a verb. This window is primarily intended to be used by poofreaders who, by using the **Inspecteur**, can view the entirety of the database used by the app and therefore find mistakes (of which I'm sure there are plenty) faster than by simply using the app. The **Inspecteur** can of course also be used to help out while learning the conjugations.
 
-- agir
-
-- aller
-
-- amener
-
-- apercevoir
-
-- apparaître
-
-- appeler
-
-- applaudir
-
-- appuyer
-
-- atteindre
-
-- avancer
-
-- avoir
-
-- battre
-
-- bavarder
-
-- boire
-
-- choisir
-
-- conduire
-
-- confondre
-
-- connaître
-
-- construire
-
-- courir
-
-- couvrir
-
-- craindre
-
-- coire
-
-- cueillir
-
-More verbs will be added in the near future.
+_Note to proofreaders: If you were to find any misspelled forms via the **Inspecteur** or otherwhise, please do not hesitate to open an [issue](https://github.com/tifrueh/conjugateur/issues) to let me know. I'll try to fix it as soon as possible._

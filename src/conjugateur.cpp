@@ -2,10 +2,22 @@
 // The full copyright notice can be found in main.cpp
 
 #include <string>
+#include <stdexcept>
 
 #include "verb.db.hpp"
 
 #include "conjugateur.hpp"
+
+const verbDB::Verb* cjgt::getVerb(const std::wstring &infinitif) {
+    for (const verbDB::Verb* verb : verbDB::allVerbs) {
+        if (verb->infinitif == infinitif) {
+            return verb;
+        }
+    }
+
+    throw std::invalid_argument("Verb not found");
+
+}
 
 cjgt::VerbForm cjgt::getVerbForm(const verbDB::Verb& verb, const int& tense, const int& person) {
 

@@ -10,6 +10,7 @@
     #include <wx/wx.h>
 #endif
 
+#include "verbview.hpp"
 
 class InspectorPanel : public wxPanel {
     public:
@@ -19,4 +20,5 @@ class InspectorPanel : public wxPanel {
         wxArrayString verbs;
         wxListBox* verbBox;
         wxBoxSizer* topsizer;
+        VerbView* verbView;
 };

@@ -19,7 +19,8 @@ const std::array<std::wstring, 9> verbDB::tenseStrings {
     L"conditionnel"
 };
 
-const std::array<std::wstring, 8> verbDB::personStrings {
+const std::array<std::wstring, 9> verbDB::personStrings {
+    L"",
     L"je/j'",
     L"tu",
     L"il",

@@ -380,7 +380,7 @@ std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
     std::mt19937 randomGenerator(randomDevice());
     std::uniform_int_distribution<> verbDistributor(0, (int) usableVerbs.size() - 1);
     std::uniform_int_distribution<> tensesDistributor(0, (int) usableTenses.size() - 1);
-    std::uniform_int_distribution<> persDistributor(0, (int) verbDB::Person::elles);
+    std::uniform_int_distribution<> persDistributor(verbDB::Person::je, (int) verbDB::Person::elles);
 
     for (int i = 0; i < count; i++) {
         randomPosVerb = verbDistributor(randomGenerator);

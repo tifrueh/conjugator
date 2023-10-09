@@ -9,6 +9,7 @@
 
 #include "verb.db.hpp"
 #include "id.hpp"
+#include "conjugateur.hpp"
 
 #include "inspectorpanel.hpp"
 
@@ -26,6 +27,10 @@ InspectorPanel::InspectorPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     verbBox->SetSelection(0, true);
 
     topsizer->Add(verbBox, 0, wxEXPAND, 0);
+
+    verbView = new VerbView(this, wxID_ANY, *cjgt::getVerb(verbBox->GetStringSelection().ToStdWstring()));
+
+    topsizer->Add(verbView, 1, wxEXPAND | wxALL, 5);
 
     this->SetSizerAndFit(topsizer);
 }

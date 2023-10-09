@@ -16,7 +16,8 @@ namespace cjgt {
         std::wstring form;
         bool operator==(const VerbForm& verbForm) const;
     };
-    
+
+    const verbDB::Verb* getVerb(const std::wstring& infinitif);
     VerbForm getVerbForm(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person);
     VerbForm getVerbForm(const verbDB::Verb& verb, const int& tense, const int& person);
     std::wstring getTense(const verbDB::Tense& tense);

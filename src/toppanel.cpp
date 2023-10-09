@@ -30,7 +30,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     quizSizer = new wxFlexGridSizer(3, wxSize(10, 3));
     quizSizer->AddGrowableCol(1, 1);
 
-    quizItemCount = 20;
+    quizItemCount = 15;
 
     for (int i = 0; i < quizItemCount; i++) {
         quizSizer->AddGrowableRow(i, 1);

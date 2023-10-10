@@ -26,5 +26,6 @@ srcs += files(
     'couvrir.verb.cpp',
     'craindre.verb.cpp',
     'croire.verb.cpp',
-    'cueillir.verb.cpp'
+    'cueillir.verb.cpp',
+    'decevoir.verb.cpp'
 )

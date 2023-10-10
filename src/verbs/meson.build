@@ -27,5 +27,6 @@ srcs += files(
     'craindre.verb.cpp',
     'croire.verb.cpp',
     'cueillir.verb.cpp',
-    'decevoir.verb.cpp'
+    'decevoir.verb.cpp',
+    'demolir.verb.cpp'
 )

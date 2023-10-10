@@ -34,5 +34,8 @@
 # Visual Studio Code
 .vscode
 
+# CLion
+.idea
+
 # macOS
 .DS_Store

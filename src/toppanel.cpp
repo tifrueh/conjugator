@@ -9,14 +9,14 @@
 
 
 #include <vector>
-#include <ctime>
-#include <cstdlib>
 #include <algorithm>
 #include <stdexcept>
+#include <random>
 
 #include "conjugateur.hpp"
 #include "id.hpp"
 #include "verb.db.hpp"
+
 #include "toppanel.hpp"
 
 TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
@@ -30,7 +30,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     quizSizer = new wxFlexGridSizer(3, wxSize(10, 3));
     quizSizer->AddGrowableCol(1, 1);
 
-    quizItemCount = 20;
+    quizItemCount = 15;
 
     for (int i = 0; i < quizItemCount; i++) {
         quizSizer->AddGrowableRow(i, 1);
@@ -288,9 +288,9 @@ void TopPanel::GenerateQuiz() {
     std::vector<cjgt::VerbForm> verbForms;
 
     try {
-        verbForms = GetVerbForms(quizItems.size());
+        verbForms = GetVerbForms((int) quizItems.size());
     } catch(const std::invalid_argument& exception) {
-        wxMessageDialog* dlg = new wxMessageDialog(this, wxT("Il n'est pas possible de générer suffisamment de questions de quiz à partir de votre sélection. Veuillez sélectionner plus de verbes ou plus de temps."));
+        auto dlg = new wxMessageDialog(this, wxT("Il n'est pas possible de générer suffisamment de questions de quiz à partir de votre sélection. Veuillez sélectionner plus de verbes ou plus de temps."));
         dlg->ShowModal();
         return;
     }
@@ -323,7 +323,7 @@ std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
         usableVerbs.insert(std::end(usableVerbs), std::begin(verbDB::verbsRE), std::end(verbDB::verbsRE));
     }
 
-    int usableFormCount = 0;
+    unsigned long usableFormCount = 0;
 
     if (checkBoxParticipePresent->GetValue()) {
         usableTenses.push_back(verbDB::Tense::participePresent);
@@ -365,7 +365,7 @@ std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
         usableFormCount += usableVerbs.size() * 8;
     }
 
-    if (usableFormCount < count) {
+    if (usableFormCount < (unsigned long) count) {
         throw std::invalid_argument( "More forms requested than possible" );
     }
 
@@ -375,14 +375,19 @@ std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
     int randomPosVerb;
     int randomPosTense;
     int randomPers;
-    std::srand(std::time(nullptr));
-    
+
+    std::random_device randomDevice;
+    std::mt19937 randomGenerator(randomDevice());
+    std::uniform_int_distribution<> verbDistributor(0, (int) usableVerbs.size() - 1);
+    std::uniform_int_distribution<> tensesDistributor(0, (int) usableTenses.size() - 1);
+    std::uniform_int_distribution<> persDistributor(verbDB::Person::je, (int) verbDB::Person::elles);
+
     for (int i = 0; i < count; i++) {
-        randomPosVerb = std::rand() % usableVerbs.size();
+        randomPosVerb = verbDistributor(randomGenerator);
 
-        randomPosTense = std::rand() % usableTenses.size();
+        randomPosTense = tensesDistributor(randomGenerator);
 
-        randomPers = std::rand() % (int) verbDB::Person::elles;
+        randomPers = persDistributor(randomGenerator);
 
         verb = usableVerbs.at(randomPosVerb);
         tense = usableTenses.at(randomPosTense);

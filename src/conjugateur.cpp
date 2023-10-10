@@ -2,12 +2,22 @@
 // The full copyright notice can be found in main.cpp
 
 #include <string>
-#include <algorithm>
-#include <iostream>
+#include <stdexcept>
 
 #include "verb.db.hpp"
 
 #include "conjugateur.hpp"
+
+const verbDB::Verb* cjgt::getVerb(const std::wstring &infinitif) {
+    for (const verbDB::Verb* verb : verbDB::allVerbs) {
+        if (verb->infinitif == infinitif) {
+            return verb;
+        }
+    }
+
+    throw std::invalid_argument("Verb not found");
+
+}
 
 cjgt::VerbForm cjgt::getVerbForm(const verbDB::Verb& verb, const int& tense, const int& person) {
 
@@ -201,7 +211,7 @@ cjgt::VerbForm cjgt::getVerbForm(const verbDB::Verb& verb, const int& tense, con
     }
 
     return verbForm;
-};
+}
 
 cjgt::VerbForm cjgt::getVerbForm(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person) {
     int tenseInt = tense;
@@ -225,18 +235,18 @@ std::wstring cjgt::getPerson(const int& person) {
     return verbDB::personStrings.at(person);
 }
 
-bool cjgt::VerbForm::operator==(const cjgt::VerbForm& verbForm) {
+bool cjgt::VerbForm::operator==(const cjgt::VerbForm& verbForm) const {
     return this->infinitif == verbForm.infinitif && this->person == verbForm.person && this->form == verbForm.form && this->tense == verbForm.tense;
 }
 
 std::wstring cjgt::strip(const std::wstring& string) {
     std::wstring outstring = string;
     
-    const long unsigned int begin = outstring.find_first_not_of(L" ");
-    const long unsigned int end = outstring.find_last_not_of(L" ");
+    const long unsigned int begin = outstring.find_first_not_of(' ');
+    const long unsigned int end = outstring.find_last_not_of(' ');
     const long unsigned int count = end + 1 - begin;
 
-    if (outstring == L"" || begin == std::wstring::npos) {
+    if (outstring.empty() || begin == std::string::npos) {
         return L"";
     } else {
         outstring = outstring.substr(begin, count);

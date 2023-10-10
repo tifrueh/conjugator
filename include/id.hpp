@@ -9,6 +9,7 @@
     #include <wx/wx.h>
 #endif
 
+
 enum winID {
     checkBoxER,
     checkBoxIR,
@@ -31,5 +32,7 @@ enum winID {
     menuQuizOkay,
     menuQuizCheck,
     menuQuizSolution,
-    menuHelpGitHub
+    menuHelpGitHub,
+    menuHelpInspecteur,
+    inspectorVerbBox
 };

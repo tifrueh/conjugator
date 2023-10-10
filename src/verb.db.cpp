@@ -19,7 +19,8 @@ const std::array<std::wstring, 9> verbDB::tenseStrings {
     L"conditionnel"
 };
 
-const std::array<std::wstring, 8> verbDB::personStrings {
+const std::array<std::wstring, 9> verbDB::personStrings {
+    L"",
     L"je/j'",
     L"tu",
     L"il",
@@ -41,6 +42,7 @@ const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::applaudir,
     &verbDB::appuyer,
     &verbDB::atteindre,
+    &verbDB::attendre,
     &verbDB::avancer,
     &verbDB::avoir,
     &verbDB::battre,
@@ -55,7 +57,11 @@ const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::couvrir,
     &verbDB::craindre,
     &verbDB::croire,
-    &verbDB::cueillir
+    &verbDB::cueillir,
+    &verbDB::decevoir,
+    &verbDB::demolir,
+    &verbDB::detruire,
+    &verbDB::devoir
 };
 
 std::vector<const verbDB::Verb*> verbDB::verbsER = {};

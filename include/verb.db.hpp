@@ -211,10 +211,10 @@ namespace verbDB {
     extern std::vector<const Verb*> verbsRE;
 
     enum Tense { infinitif, participePresent, present, imparfait, futur, passeCompose, plusQueParfait, subjonctif, conditionnel };
-    enum Person { je, tu, il, elle, nous, vous, ils, elles };
+    enum Person {none, je, tu, il, elle, nous, vous, ils, elles };
 
     extern const std::array<std::wstring, 9> tenseStrings;
-    extern const std::array<std::wstring, 8> personStrings;
+    extern const std::array<std::wstring, 9> personStrings;
 
     void initTypeVectors();
-};
+}

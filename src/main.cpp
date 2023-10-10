@@ -20,6 +20,7 @@
     #include <wx/wx.h>
 #endif
 
+
 #include <wx/aboutdlg.h>
 #include <wx/intl.h>
 
@@ -28,7 +29,7 @@
 
 class Conjugateur : public wxApp {
     public:
-        virtual bool OnInit();
+        bool OnInit() override;
         wxLocale* locale;
 };
 
@@ -46,10 +47,10 @@ bool Conjugateur::OnInit() {
 
     this->SetAppDisplayName(wxT("Conjugateur"));
     
-    MainFrame* window = new MainFrame(wxT("Conjugateur"));
-    window->Show();
-
+    auto window = new MainFrame(wxT("Conjugateur"));
     window->Center();
+
+    window->Show();
 
     return true;
 }

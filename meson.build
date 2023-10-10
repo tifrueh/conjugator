@@ -4,7 +4,7 @@ project(
     default_options: [ 'cpp_std=c++17' ],
     license: 'GPL-3.0-or-later',
     license_files: 'LICENSE',
-    version: '1.0.0-alpha-2'
+    version: '1.0.0-alpha-3'
 )
 
 incdir = include_directories([ 'include' ])
@@ -38,12 +38,16 @@ if build_machine.system() == 'windows'
 
 endif
 
+install_data('resources/conjugateur.png')
+install_data('resources/conjugateur.desktop')
+
 conjugateur = executable(
     'conjugateur',
     srcs,
     dependencies: deps,
     include_directories: incdir,
-    win_subsystem: 'windows'
+    win_subsystem: 'windows',
+    install: true
 )
 
 bundle_mac = run_target(

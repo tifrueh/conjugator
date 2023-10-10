@@ -10,19 +10,20 @@
 
 #include <vector>
 
-#include "conjugateur.hpp"
 #include "id.hpp"
-#include "mainframe.hpp"
 #include "toppanel.hpp"
+#include "inspectorframe.hpp"
+
+#include "mainframe.hpp"
 
 #include "conjugateur.xpm"
 
-MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
+MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
 
     SetIcon(wxICON(conjugateur));
 
     info.SetName(wxT("Conjugateur"));
-    info.SetVersion(wxT("1.0.0-alpha-2"));
+    info.SetVersion(wxT("1.0.0-alpha-3"));
     info.SetCopyright(wxT(
         "Copyright (C) 2023 Timo Früh\n"
         "This program is free and open source software, licensed under the GNU General Public License 3.0. "
@@ -46,6 +47,8 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     menuQuiz->Append(winID::menuQuizSolution, wxT("Solutions\tCtrl-S"));
 
     menuHelp->Append(wxID_ABOUT, wxT("À propos Conjugateur"));
+    menuHelp->Append(winID::menuHelpInspecteur, wxT("Inspecteur\tCtrl-I"));
+    menuHelp->AppendSeparator();
     menuHelp->Append(winID::menuHelpGitHub, wxT("GitHub"));
 
     this->SetMenuBar(menuBar);
@@ -72,6 +75,8 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnUnselectAll, this, winID::menuQuizUnselectAll);
     Bind(wxEVT_MENU, &MainFrame::OnAbout, this, wxID_ABOUT);
     Bind(wxEVT_MENU, &MainFrame::OnGitHub, this, winID::menuHelpGitHub);
+    Bind(wxEVT_MENU, &MainFrame::OnInspector, this, winID::menuHelpInspecteur);
+    Bind(wxEVT_LISTBOX, &MainFrame::OnVerbBox, this, winID::inspectorVerbBox);
 
     SetSizerAndFit(topPanelSizer);
 }
@@ -120,6 +125,15 @@ void MainFrame::OnUnselectAll(wxCommandEvent& event) {
 
 void MainFrame::OnGitHub(wxCommandEvent& event) {
     wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/conjugateur"));
+}
+
+void MainFrame::OnInspector(wxCommandEvent &event) {
+    inspector = new InspectorFrame(this, wxID_ANY, wxT("Inspecteur"));
+    inspector->Show();
+}
+
+void MainFrame::OnVerbBox(wxCommandEvent &event) {
+    inspector->updateVerb();
 }
 
 wxAboutDialogInfo MainFrame::GetInfo() {

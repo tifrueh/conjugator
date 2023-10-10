@@ -9,6 +9,7 @@ srcs += files(
     'applaudir.verb.cpp',
     'appuyer.verb.cpp',
     'atteindre.verb.cpp',
+    'attendre.verb.cpp',
     'avancer.verb.cpp',
     'avoir.verb.cpp',
     'battre.verb.cpp',
@@ -25,5 +26,9 @@ srcs += files(
     'couvrir.verb.cpp',
     'craindre.verb.cpp',
     'croire.verb.cpp',
-    'cueillir.verb.cpp'
+    'cueillir.verb.cpp',
+    'decevoir.verb.cpp',
+    'demolir.verb.cpp',
+    'detruire.verb.cpp',
+    'devoir.verb.cpp'
 )

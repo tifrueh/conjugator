@@ -12,6 +12,7 @@
 
 #include "verb.db.hpp"
 #include "conjugateur.hpp"
+
 #include "quizitem.hpp"
 
 QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbForm& verbForm) {
@@ -56,13 +57,13 @@ QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbFor
     );
 }
 
-void QuizItem::setVerbForm(const cjgt::VerbForm& verbForm) {
-    this->verbForm = verbForm;
+void QuizItem::setVerbForm(const cjgt::VerbForm& form) {
+    this->verbForm = form;
 
-    if (verbForm.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
-        questionString = verbForm.infinitif + L": " + verbForm.tense;
+    if (form.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
+        questionString = form.infinitif + L": " + form.tense;
     } else {
-        questionString = verbForm.infinitif + L": " + verbForm.tense + L" – " + verbForm.person;
+        questionString = form.infinitif + L": " + form.tense + L" – " + form.person;
     }
 
     textCtrl->SetForegroundColour(wxNullColour);
@@ -80,7 +81,7 @@ bool QuizItem::evaluate() {
 
     correct = verbForm.form == cjgt::strip(textCtrlString);
 
-    if (cjgt::strip(textCtrlString) == "") {
+    if (cjgt::strip(textCtrlString).empty()) {
         textCtrl->SetForegroundColour(wxNullColour);
     }
     else if (correct) {

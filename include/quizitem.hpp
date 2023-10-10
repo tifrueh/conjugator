@@ -19,7 +19,7 @@ class QuizItem {
         QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbForm& verbForm);
         bool evaluate();
         void showSolution();
-        void setVerbForm(const cjgt::VerbForm& verbForm);
+        void setVerbForm(const cjgt::VerbForm& form);
 
     private:
         wxFlexGridSizer* sizer;

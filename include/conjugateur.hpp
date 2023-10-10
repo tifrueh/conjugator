@@ -14,10 +14,10 @@ namespace cjgt {
         std::wstring tense;
         std::wstring person;
         std::wstring form;
-        bool operator==(const VerbForm& verbForm);
+        bool operator==(const VerbForm& verbForm) const;
     };
-    
-    void displayVerb(const verbDB::Verb& verb);
+
+    const verbDB::Verb* getVerb(const std::wstring& infinitif);
     VerbForm getVerbForm(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person);
     VerbForm getVerbForm(const verbDB::Verb& verb, const int& tense, const int& person);
     std::wstring getTense(const verbDB::Tense& tense);
@@ -25,4 +25,4 @@ namespace cjgt {
     std::wstring getPerson(const verbDB::Person& person);
     std::wstring getPerson(const int& person);
     std::wstring strip(const std::wstring& string);
-};
+}

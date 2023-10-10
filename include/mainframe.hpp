@@ -13,11 +13,12 @@
 #include <wx/aboutdlg.h>
 
 #include "toppanel.hpp"
+#include "inspectorframe.hpp"
 
 
 class MainFrame : public wxFrame {
     public:
-        MainFrame(wxString title);
+        explicit MainFrame(const wxString& title);
         wxAboutDialogInfo GetInfo();
     
     private:
@@ -27,6 +28,7 @@ class MainFrame : public wxFrame {
         wxMenu* menuHelp;
         wxBoxSizer* topPanelSizer = nullptr;
         TopPanel* topPanel = nullptr;
+        InspectorFrame* inspector = nullptr;
         void computeNewSize();
         void OnOkay(wxCommandEvent& event);
         void OnCheck(wxCommandEvent& event);
@@ -36,4 +38,6 @@ class MainFrame : public wxFrame {
         void OnSelectTenses(wxCommandEvent& event);
         void OnUnselectAll(wxCommandEvent& event);
         void OnGitHub(wxCommandEvent& event);
+        void OnInspector(wxCommandEvent& event);
+        void OnVerbBox(wxCommandEvent& event);
 };

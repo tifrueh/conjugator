@@ -30,5 +30,6 @@ srcs += files(
     'decevoir.verb.cpp',
     'demolir.verb.cpp',
     'detruire.verb.cpp',
-    'devoir.verb.cpp'
+    'devoir.verb.cpp',
+    'dire.verb.cpp'
 )

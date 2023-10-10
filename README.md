@@ -74,7 +74,7 @@ The button **Solutions** checks the verbs and also shows the correct solutions.
 
 ### Quiz
 
-This panel displays a total of 20 text entries plus the infitinive, a tense and a personal pronoun. You can now try to put the correct verb form into the text entry and then use the buttons to the bottom left (see [previous section](#sélection-des-verbestemps)) to check your answers or show the solutions.
+This panel displays a total of 15 text entries plus the infitinive, a tense and a personal pronoun. You can now try to put the correct verb form into the text entry and then use the buttons to the bottom left (see [previous section](#sélection-des-verbestemps)) to check your answers or show the solutions.
 
 ### Keyboard shortcuts
 

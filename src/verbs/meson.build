@@ -33,5 +33,6 @@ srcs += files(
     'devoir.verb.cpp',
     'dire.verb.cpp',
     'disparaitre.verb.cpp',
-    'donner.verb.cpp'
+    'donner.verb.cpp',
+    'dormir.verb.cpp'
 )

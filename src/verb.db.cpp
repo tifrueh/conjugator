@@ -64,7 +64,8 @@ const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::devoir,
     &verbDB::dire,
     &verbDB::disparaitre,
-    &verbDB::donner
+    &verbDB::donner,
+    &verbDB::dormir
 };
 
 std::vector<const verbDB::Verb*> verbDB::verbsER = {};

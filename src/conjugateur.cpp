@@ -235,6 +235,29 @@ std::wstring cjgt::getPerson(const int& person) {
     return verbDB::personStrings.at(person);
 }
 
+std::wstring cjgt::getFormString(const cjgt::VerbForm& verbForm) {
+    std::wstring out;
+
+    wchar_t firstChar = verbForm.form.at(0);
+
+    bool concatJe = firstChar == L'a' | firstChar == L'à' | firstChar == L'â' |
+                    firstChar == L'e' | firstChar == L'é' | firstChar == L'è' | firstChar == L'ê' |
+                    firstChar == L'i' | firstChar == L'î' |
+                    firstChar == L'o' |
+                    firstChar == L'u' |
+                    firstChar == L'h';
+
+    if (concatJe && verbForm.person == L"je/j'") {
+        out = L"j'" + verbForm.form;
+    } else if (!concatJe && verbForm.person == L"je/j'") {
+        out = L"je " + verbForm.form;
+    } else {
+        out = verbForm.person + L" " + verbForm.form;
+    }
+
+    return out;
+}
+
 bool cjgt::VerbForm::operator==(const cjgt::VerbForm& verbForm) const {
     return this->infinitif == verbForm.infinitif && this->person == verbForm.person && this->form == verbForm.form && this->tense == verbForm.tense;
 }

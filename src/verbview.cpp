@@ -60,7 +60,7 @@ void VerbView::setVerb(const verbDB::Verb &inputVerb) {
     for (int tense = verbDB::Tense::present; tense <= verbDB::Tense::conditionnel; tense++) {
         for (int person = verbDB::Person::je; person <= verbDB::Person::elles; person++) {
             cjgt::VerbForm verbForm = cjgt::getVerbForm(verb, tense, person);
-            formLabels.at({tense, person})->SetLabel(wxString(verbForm.person + " " + verbForm.form));
+            formLabels.at({tense, person})->SetLabel(wxString(cjgt::getFormString(verbForm)));
         }
     }
 }

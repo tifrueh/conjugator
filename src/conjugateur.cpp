@@ -240,12 +240,12 @@ std::wstring cjgt::getFormString(const cjgt::VerbForm& verbForm) {
 
     wchar_t firstChar = verbForm.form.at(0);
 
-    bool concatJe = firstChar == L'a' | firstChar == L'à' | firstChar == L'â' |
-                    firstChar == L'e' | firstChar == L'é' | firstChar == L'è' | firstChar == L'ê' |
-                    firstChar == L'i' | firstChar == L'î' |
-                    firstChar == L'o' |
-                    firstChar == L'u' |
-                    firstChar == L'h';
+    bool concatJe = (firstChar == L'a') | (firstChar == L'à') | (firstChar == L'â') |
+                    (firstChar == L'e') | (firstChar == L'é') | (firstChar == L'è') | (firstChar == L'ê') |
+                    (firstChar == L'i') | (firstChar == L'î') |
+                    (firstChar == L'o') |
+                    (firstChar == L'u') |
+                    (firstChar == L'h');
 
     if (concatJe && verbForm.person == L"je/j'") {
         out = L"j'" + verbForm.form;

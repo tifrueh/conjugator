@@ -77,7 +77,7 @@ void QuizItem::setVerbForm(const cjgt::VerbForm& form) {
 
 bool QuizItem::evaluate() {
     bool correct;
-    std::wstring textCtrlString = std::wstring(textCtrl->GetLineText(0).wchar_str());
+    std::wstring textCtrlString = std::wstring(textCtrl->GetValue().wchar_str());
 
     correct = verbForm.form == cjgt::strip(textCtrlString);
 

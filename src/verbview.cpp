@@ -12,7 +12,7 @@
 
 #include "verbview.hpp"
 
-VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : wxScrolledWindow(parent, id) {
+VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : wxScrolled<wxWindow>(parent, id) {
     this->verb = verb;
     sizer = new wxBoxSizer(wxVERTICAL);
 
@@ -48,7 +48,7 @@ VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : 
 
     this->SetSizer(sizer);
     this->FitInside();
-    this->SetScrollRate(5, 5);
+    this->SetScrollRate(3, 3);
 
 }
 

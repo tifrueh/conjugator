@@ -17,7 +17,7 @@
 #include "verb.db.hpp"
 
 
-class VerbView : public wxScrolledWindow {
+class VerbView : public wxScrolled<wxWindow> {
     public:
         VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb);
         void setVerb(const verbDB::Verb& inputVerb);

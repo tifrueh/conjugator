@@ -18,6 +18,7 @@ class QuizItem {
     public:
         QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbForm& verbForm);
         bool evaluate();
+        void SetFocus();
         void showSolution();
         void setVerbForm(const cjgt::VerbForm& form);
 

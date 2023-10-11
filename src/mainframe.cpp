@@ -54,6 +54,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     this->SetMenuBar(menuBar);
 
     topPanel = new TopPanel(this);
+    topPanel->ResetFocus();
 
     topPanelSizer = new wxBoxSizer(wxVERTICAL);
 
@@ -93,7 +94,8 @@ void MainFrame::computeNewSize() {
 }
 
 void MainFrame::OnOkay(wxCommandEvent& event) {
-    topPanel->GenerateQuiz(); 
+    topPanel->GenerateQuiz();
+    topPanel->ResetFocus();
 
     computeNewSize();
 }
@@ -132,6 +134,7 @@ void MainFrame::OnInspector(wxCommandEvent &event) {
     if (inspector == nullptr) {
         inspector = new InspectorFrame(this, winID::inspector, wxT("Inspecteur"));
     }
+    topPanel->SetFocusIgnoringChildren();
     topPanel->Disable();
     inspector->Show();
 }
@@ -139,6 +142,7 @@ void MainFrame::OnInspector(wxCommandEvent &event) {
 void MainFrame::OnInspectorClose(wxWindowDestroyEvent& event) {
     inspector = nullptr;
     topPanel->Enable();
+    topPanel->ResetFocus();
 }
 
 void MainFrame::OnVerbBox(wxCommandEvent &event) {

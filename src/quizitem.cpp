@@ -57,6 +57,10 @@ QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbFor
     );
 }
 
+void QuizItem::SetFocus() {
+    textCtrl->SetFocus();
+}
+
 void QuizItem::setVerbForm(const cjgt::VerbForm& form) {
     this->verbForm = form;
 

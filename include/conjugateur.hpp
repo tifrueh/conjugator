@@ -24,5 +24,6 @@ namespace cjgt {
     std::wstring getTense(const int& tense);
     std::wstring getPerson(const verbDB::Person& person);
     std::wstring getPerson(const int& person);
+    std::wstring getFormString(const VerbForm& verbForm);
     std::wstring strip(const std::wstring& string);
 }

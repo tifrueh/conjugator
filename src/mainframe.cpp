@@ -23,7 +23,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     SetIcon(wxICON(conjugateur));
 
     info.SetName(wxT("Conjugateur"));
-    info.SetVersion(wxT("1.0.0-alpha-3"));
+    info.SetVersion(wxT("1.0.0-alpha-4"));
     info.SetCopyright(wxT(
         "Copyright (C) 2023 Timo Früh\n"
         "This program is free and open source software, licensed under the GNU General Public License 3.0. "
@@ -54,6 +54,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     this->SetMenuBar(menuBar);
 
     topPanel = new TopPanel(this);
+    topPanel->ResetFocus();
 
     topPanelSizer = new wxBoxSizer(wxVERTICAL);
 
@@ -77,6 +78,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnGitHub, this, winID::menuHelpGitHub);
     Bind(wxEVT_MENU, &MainFrame::OnInspector, this, winID::menuHelpInspecteur);
     Bind(wxEVT_LISTBOX, &MainFrame::OnVerbBox, this, winID::inspectorVerbBox);
+    Bind(wxEVT_DESTROY, &MainFrame::OnInspectorClose, this, winID::inspector);
 
     SetSizerAndFit(topPanelSizer);
 }
@@ -92,7 +94,8 @@ void MainFrame::computeNewSize() {
 }
 
 void MainFrame::OnOkay(wxCommandEvent& event) {
-    topPanel->GenerateQuiz(); 
+    topPanel->GenerateQuiz();
+    topPanel->ResetFocus();
 
     computeNewSize();
 }
@@ -128,8 +131,18 @@ void MainFrame::OnGitHub(wxCommandEvent& event) {
 }
 
 void MainFrame::OnInspector(wxCommandEvent &event) {
-    inspector = new InspectorFrame(this, wxID_ANY, wxT("Inspecteur"));
+    if (inspector == nullptr) {
+        inspector = new InspectorFrame(this, winID::inspector, wxT("Inspecteur"));
+    }
+    topPanel->SetFocusIgnoringChildren();
+    topPanel->Disable();
     inspector->Show();
+}
+
+void MainFrame::OnInspectorClose(wxWindowDestroyEvent& event) {
+    inspector = nullptr;
+    topPanel->Enable();
+    topPanel->ResetFocus();
 }
 
 void MainFrame::OnVerbBox(wxCommandEvent &event) {

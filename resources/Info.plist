@@ -13,13 +13,13 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright (C) 2023 Timo Früh This program is free and open source software, licensed under the GNU General Public License 3.0. For further information, see &lt;https:://www.gnu.org/licenses&gt;.</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.0-alpha-3</string>
+	<string>1.0.0-alpha-4</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.0-alpha-3</string>
+	<string>1.0.0-alpha-4</string>
 	<key>CFBundleName</key>
 	<string>Conjugateur</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.tifrueh.conjugateur</string>
+	<string>ch.tifrueh.conjugateur</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.education</string>
 	<key>CFBundlePackageType</key>

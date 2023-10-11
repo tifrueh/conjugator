@@ -283,6 +283,10 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     SetSizerAndFit(topsizer);
 }
 
+void TopPanel::ResetFocus() {
+    quizItems.at(0)->SetFocus();
+}
+
 void TopPanel::GenerateQuiz() {
 
     std::vector<cjgt::VerbForm> verbForms;

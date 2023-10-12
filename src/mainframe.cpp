@@ -107,7 +107,7 @@ void MainFrame::OnSolution(wxCommandEvent& event) {
 }
 
 void MainFrame::OnAbout(wxCommandEvent& event) {
-   wxAboutBox(GetInfo());
+   wxAboutBox(GetInfo(), this);
 }
 
 void MainFrame::OnSelectVerbs(wxCommandEvent& event) {

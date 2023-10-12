@@ -53,11 +53,21 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
 
     menuBar = new wxMenuBar();
 
+    menuEdit = new wxMenu();
     menuQuiz = new wxMenu();
+    menuInspecteur = new wxMenu();
     menuHelp = new wxMenu();
 
+    menuBar->Append(menuEdit, wxT("Édition"));
     menuBar->Append(menuQuiz, wxT("Quiz"));
+    menuBar->Append(menuInspecteur, wxT("Inspecteur"));
     menuBar->Append(menuHelp, wxT("Aide"));
+
+    menuEdit->Append(wxID_CUT);
+    menuEdit->Append(wxID_COPY);
+    menuEdit->Append(wxID_PASTE);
+    menuEdit->AppendSeparator();
+    menuEdit->Append(wxID_SELECTALL);
 
     menuQuiz->Append(winID::menuQuizSelectVerbs, wxT("Sélectionner tous les verbes\tCtrl-1"));
     menuQuiz->Append(winID::menuQuizSelectTenses, wxT("Sélectionner tous les temps\tCtrl-2"));
@@ -67,8 +77,9 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     menuQuiz->Append(winID::menuQuizCheck, wxT("Contrôler\tCtrl-Shift-Enter"));
     menuQuiz->Append(winID::menuQuizSolution, wxT("Solutions\tCtrl-S"));
 
-    menuHelp->Append(wxID_ABOUT, wxT("À propos de Conjugateur"));
-    menuHelp->Append(winID::menuHelpInspecteur, wxT("Inspecteur\tCtrl-I"));
+    menuInspecteur->Append(winID::menuInspectorOpen, wxT("Ouvrir Inspecteur\tCtrl-I"));
+
+    menuHelp->Append(wxID_ABOUT);
     menuHelp->AppendSeparator();
     menuHelp->Append(winID::menuHelpGitHub, wxT("GitHub"));
 
@@ -97,7 +108,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnUnselectAll, this, winID::menuQuizUnselectAll);
     Bind(wxEVT_MENU, &MainFrame::OnAbout, this, wxID_ABOUT);
     Bind(wxEVT_MENU, &MainFrame::OnGitHub, this, winID::menuHelpGitHub);
-    Bind(wxEVT_MENU, &MainFrame::OnInspector, this, winID::menuHelpInspecteur);
+    Bind(wxEVT_MENU, &MainFrame::OnInspector, this, winID::menuInspectorOpen);
     Bind(wxEVT_LISTBOX, &MainFrame::OnVerbBox, this, winID::inspectorVerbBox);
     Bind(wxEVT_DESTROY, &MainFrame::OnInspectorClose, this, winID::inspector);
 

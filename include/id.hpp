@@ -32,8 +32,8 @@ enum winID {
     menuQuizOkay,
     menuQuizCheck,
     menuQuizSolution,
+    menuInspectorOpen,
     menuHelpGitHub,
-    menuHelpInspecteur,
     inspectorVerbBox,
     inspector
 };

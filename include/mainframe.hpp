@@ -24,7 +24,9 @@ class MainFrame : public wxFrame {
     private:
         wxAboutDialogInfo info;
         wxMenuBar* menuBar;
+        wxMenu* menuEdit;
         wxMenu* menuQuiz;
+        wxMenu* menuInspecteur;
         wxMenu* menuHelp;
         wxBoxSizer* topPanelSizer = nullptr;
         TopPanel* topPanel = nullptr;

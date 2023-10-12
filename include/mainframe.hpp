@@ -26,7 +26,6 @@ class MainFrame : public wxFrame {
         wxMenuBar* menuBar;
         wxMenu* menuEdit;
         wxMenu* menuQuiz;
-        wxMenu* menuInspecteur;
         wxMenu* menuHelp;
         wxBoxSizer* topPanelSizer = nullptr;
         TopPanel* topPanel = nullptr;
@@ -42,6 +41,5 @@ class MainFrame : public wxFrame {
         void OnGitHub(wxCommandEvent& event);
         void OnInspector(wxCommandEvent& event);
         void OnInspectorClose(wxWindowDestroyEvent& event);
-        void OnInspectorMenuClose(wxCommandEvent& event);
         void OnVerbBox(wxCommandEvent& event);
 };

@@ -55,12 +55,10 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
 
     menuEdit = new wxMenu();
     menuQuiz = new wxMenu();
-    menuInspecteur = new wxMenu();
     menuHelp = new wxMenu();
 
     menuBar->Append(menuEdit, wxT("Édition"));
     menuBar->Append(menuQuiz, wxT("Quiz"));
-    menuBar->Append(menuInspecteur, wxT("Inspecteur"));
     menuBar->Append(menuHelp, wxT("Aide"));
 
     menuEdit->Append(wxID_CUT);
@@ -76,9 +74,8 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     menuQuiz->Append(winID::menuQuizOkay, wxT("Gérer\tCtrl-Enter"));
     menuQuiz->Append(winID::menuQuizCheck, wxT("Contrôler\tCtrl-Shift-Enter"));
     menuQuiz->Append(winID::menuQuizSolution, wxT("Solutions\tCtrl-S"));
-
-    menuInspecteur->Append(winID::menuInspectorOpen, wxT("Ouvrir Inspecteur\tCtrl-I"));
-    menuInspecteur->Append(winID::menuInspectorClose, wxT("Fermer Inspecteur\tCtrl-W"));
+    menuQuiz->AppendSeparator();
+    menuQuiz->Append(winID::menuInspectorOpen, wxT("Ouvrir Inspecteur\tCtrl-I"));
 
     menuHelp->Append(wxID_ABOUT, wxT("À propos de Conjugateur"));
     menuHelp->AppendSeparator();
@@ -112,7 +109,6 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnInspector, this, winID::menuInspectorOpen);
     Bind(wxEVT_LISTBOX, &MainFrame::OnVerbBox, this, winID::inspectorVerbBox);
     Bind(wxEVT_DESTROY, &MainFrame::OnInspectorClose, this, winID::inspector);
-    Bind(wxEVT_MENU, &MainFrame::OnInspectorMenuClose, this, winID::menuInspectorClose);
 
     SetSizerAndFit(topPanelSizer);
 }
@@ -177,14 +173,6 @@ void MainFrame::OnInspectorClose(wxWindowDestroyEvent& event) {
     inspector = nullptr;
     topPanel->Enable();
     topPanel->ResetFocus();
-}
-
-void MainFrame::OnInspectorMenuClose(wxCommandEvent& event) {
-    if (inspector == nullptr) {
-        return;
-    } else {
-        inspector->Close();
-    }
 }
 
 void MainFrame::OnVerbBox(wxCommandEvent &event) {

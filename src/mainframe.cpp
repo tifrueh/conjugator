@@ -26,6 +26,14 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     info.SetVersion(wxT("1.0.0-dev"));
     info.SetCopyright(wxT("Copyright © 2023 Timo Früh"));
 
+    #ifdef __WXGTK__
+        info.SetIcon(wxICON(conjugateur));
+        info.SetDescription(wxT("Entraîneur de conjugaison des verbes français"));
+        info.AddTranslator(wxT("Stephane Junique"));
+        info.AddTranslator(wxT("Nicolas Velin"));
+        info.AddTranslator(wxT("Gérard Durand"));
+    #endif
+
     menuBar = new wxMenuBar();
 
     menuQuiz = new wxMenu();

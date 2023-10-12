@@ -79,7 +79,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
 
     menuInspecteur->Append(winID::menuInspectorOpen, wxT("Ouvrir Inspecteur\tCtrl-I"));
 
-    menuHelp->Append(wxID_ABOUT);
+    menuHelp->Append(wxID_ABOUT, wxT("À propos de Conjugateur"));
     menuHelp->AppendSeparator();
     menuHelp->Append(winID::menuHelpGitHub, wxT("GitHub"));
 

@@ -42,7 +42,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     menuQuiz->Append(winID::menuQuizCheck, wxT("Contrôler\tCtrl-Shift-Enter"));
     menuQuiz->Append(winID::menuQuizSolution, wxT("Solutions\tCtrl-S"));
 
-    menuHelp->Append(wxID_ABOUT, wxT("À propos Conjugateur"));
+    menuHelp->Append(wxID_ABOUT, wxT("À propos de Conjugateur"));
     menuHelp->Append(winID::menuHelpInspecteur, wxT("Inspecteur\tCtrl-I"));
     menuHelp->AppendSeparator();
     menuHelp->Append(winID::menuHelpGitHub, wxT("GitHub"));

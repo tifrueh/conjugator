@@ -24,11 +24,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
 
     info.SetName(wxT("Conjugateur"));
     info.SetVersion(wxT("1.0.0-dev"));
-    info.SetCopyright(wxT(
-        "Copyright (C) 2023 Timo Früh\n"
-        "This program is free and open source software, licensed under the GNU General Public License 3.0. "
-        "For further information, see <https://www.gnu.org/licenses>."
-    ));
+    info.SetCopyright(wxT("Copyright © 2023 Timo Früh"));
 
     menuBar = new wxMenuBar();
 

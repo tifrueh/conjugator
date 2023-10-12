@@ -42,5 +42,6 @@ class MainFrame : public wxFrame {
         void OnGitHub(wxCommandEvent& event);
         void OnInspector(wxCommandEvent& event);
         void OnInspectorClose(wxWindowDestroyEvent& event);
+        void OnInspectorMenuClose(wxCommandEvent& event);
         void OnVerbBox(wxCommandEvent& event);
 };

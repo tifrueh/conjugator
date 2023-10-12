@@ -7,7 +7,11 @@
 #include "inspectorpanel.hpp"
 #include "inspectorframe.hpp"
 
+#include "inspecteur.xpm"
+
 InspectorFrame::InspectorFrame(wxWindow *parent, const wxWindowID &winID, const wxString &title) : wxFrame(parent, winID, title) {
+    SetIcon(wxICON(inspecteur));
+
     topSizer = new wxBoxSizer(wxHORIZONTAL);
 
     inspectorPanel = new InspectorPanel(this);

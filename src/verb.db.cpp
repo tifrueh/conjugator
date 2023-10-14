@@ -74,7 +74,8 @@ const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::envoyer,
     &verbDB::esperer,
     &verbDB::essayer,
-    &verbDB::essuyer
+    &verbDB::essuyer,
+    &verbDB::eteindre
 };
 
 std::vector<const verbDB::Verb*> verbDB::verbsER = {};

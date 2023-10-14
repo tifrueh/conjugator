@@ -43,5 +43,6 @@ srcs += files(
     'envoyer.verb.cpp',
     'esperer.verb.cpp',
     'essayer.verb.cpp',
-    'essuyer.verb.cpp'
+    'essuyer.verb.cpp',
+    'eteindre.verb.cpp'
 )

@@ -40,10 +40,10 @@ const verbDB::Verb verbDB::choisir = {
     L"ai choisi",
     L"as choisi",
     L"a choisi",
+    L"a choisi",
     L"avons choisi",
     L"avez choisi",
-    L"avons choisi",
-    L"avez choisi",
+    L"ont choisi",
     L"ont choisi",
 
     L"avais choisi",

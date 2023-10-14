@@ -23,20 +23,49 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     SetIcon(wxICON(conjugateur));
 
     info.SetName(wxT("Conjugateur"));
-    info.SetVersion(wxT("1.0.0-alpha-4"));
-    info.SetCopyright(wxT(
-        "Copyright (C) 2023 Timo Früh\n"
-        "This program is free and open source software, licensed under the GNU General Public License 3.0. "
-        "For further information, see <https:://www.gnu.org/licenses>."
-    ));
+    info.SetVersion(wxT("1.0.0-beta"));
+    info.SetCopyright(wxT("Copyright © 2023 Timo Früh"));
+
+    #ifdef __WXGTK__
+        info.SetIcon(wxICON(conjugateur));
+        info.SetDescription(wxT("Entraîneur de conjugaison des verbes français"));
+        info.SetWebSite(wxT("https://github.com/tifrueh/conjugateur"), wxT("GitHub"));
+        info.AddDeveloper(wxT("Timo Früh"));
+
+        info.SetLicense(wxT("This program is free software: you can redistribute it and/or modify\n"
+                            "it under the terms of the GNU General Public License as published by\n"
+                            "the Free Software Foundation, either version 3 of the License, or\n"
+                            "(at your option) any later version.\n"
+                            "\n"
+                            "This program is distributed in the hope that it will be useful,\n"
+                            "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+                            "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+                            "GNU General Public License for more details.\n"
+                            "\n"
+                            "You should have received a copy of the GNU General Public License\n"
+                            "along with this program.  If not, see <https://www.gnu.org/licenses/>."));
+
+
+        info.AddTranslator(wxT("Stephane Junique"));
+        info.AddTranslator(wxT("Nicolas Velin"));
+        info.AddTranslator(wxT("Gérard Durand"));
+    #endif
 
     menuBar = new wxMenuBar();
 
+    menuEdit = new wxMenu();
     menuQuiz = new wxMenu();
     menuHelp = new wxMenu();
 
+    menuBar->Append(menuEdit, wxT("Édition"));
     menuBar->Append(menuQuiz, wxT("Quiz"));
     menuBar->Append(menuHelp, wxT("Aide"));
+
+    menuEdit->Append(wxID_CUT);
+    menuEdit->Append(wxID_COPY);
+    menuEdit->Append(wxID_PASTE);
+    menuEdit->AppendSeparator();
+    menuEdit->Append(wxID_SELECTALL);
 
     menuQuiz->Append(winID::menuQuizSelectVerbs, wxT("Sélectionner tous les verbes\tCtrl-1"));
     menuQuiz->Append(winID::menuQuizSelectTenses, wxT("Sélectionner tous les temps\tCtrl-2"));
@@ -45,9 +74,10 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     menuQuiz->Append(winID::menuQuizOkay, wxT("Gérer\tCtrl-Enter"));
     menuQuiz->Append(winID::menuQuizCheck, wxT("Contrôler\tCtrl-Shift-Enter"));
     menuQuiz->Append(winID::menuQuizSolution, wxT("Solutions\tCtrl-S"));
+    menuQuiz->AppendSeparator();
+    menuQuiz->Append(winID::menuInspectorOpen, wxT("Ouvrir Inspecteur\tCtrl-I"));
 
-    menuHelp->Append(wxID_ABOUT, wxT("À propos Conjugateur"));
-    menuHelp->Append(winID::menuHelpInspecteur, wxT("Inspecteur\tCtrl-I"));
+    menuHelp->Append(wxID_ABOUT, wxT("À propos de Conjugateur"));
     menuHelp->AppendSeparator();
     menuHelp->Append(winID::menuHelpGitHub, wxT("GitHub"));
 
@@ -76,7 +106,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnUnselectAll, this, winID::menuQuizUnselectAll);
     Bind(wxEVT_MENU, &MainFrame::OnAbout, this, wxID_ABOUT);
     Bind(wxEVT_MENU, &MainFrame::OnGitHub, this, winID::menuHelpGitHub);
-    Bind(wxEVT_MENU, &MainFrame::OnInspector, this, winID::menuHelpInspecteur);
+    Bind(wxEVT_MENU, &MainFrame::OnInspector, this, winID::menuInspectorOpen);
     Bind(wxEVT_LISTBOX, &MainFrame::OnVerbBox, this, winID::inspectorVerbBox);
     Bind(wxEVT_DESTROY, &MainFrame::OnInspectorClose, this, winID::inspector);
 

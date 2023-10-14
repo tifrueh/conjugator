@@ -14,12 +14,15 @@
 #include <array>
 #include <string>
 
+#include <wx/vscroll.h>
+
 #include "verb.db.hpp"
 
 
-class VerbView : public wxScrolledWindow {
+class VerbView : public wxVScrolledWindow {
     public:
         VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb);
+        wxCoord OnGetRowHeight(size_t row) const;
         void setVerb(const verbDB::Verb& inputVerb);
 
     private:

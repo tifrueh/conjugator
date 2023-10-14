@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
 	<key>CFBundleExecutable</key>
 	<string>conjugateur</string>
 	<key>CFBundleIconFile</key>
@@ -11,11 +13,11 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>11</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright (C) 2023 Timo Früh This program is free and open source software, licensed under the GNU General Public License 3.0. For further information, see &lt;https:://www.gnu.org/licenses&gt;.</string>
+	<string>Copyright © 2023 Timo Früh</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.0-alpha-4</string>
+	<string>1.0.0-beta</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.0-alpha-4</string>
+	<string>1.0.0-beta</string>
 	<key>CFBundleName</key>
 	<string>Conjugateur</string>
 	<key>CFBundleIdentifier</key>

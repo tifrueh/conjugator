@@ -37,5 +37,6 @@ srcs += files(
     'dormir.verb.cpp',
     'ecrire.verb.cpp',
     'effacer.verb.cpp',
-    'employer.verb.cpp'
+    'employer.verb.cpp',
+    'enlever.verb.cpp'
 )

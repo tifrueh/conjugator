@@ -70,7 +70,8 @@ const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::effacer,
     &verbDB::employer,
     &verbDB::enlever,
-    &verbDB::entendre
+    &verbDB::entendre,
+    &verbDB::envoyer
 };
 
 std::vector<const verbDB::Verb*> verbDB::verbsER = {};

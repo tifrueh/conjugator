@@ -1,6 +1,6 @@
 # Conjugateur
 
-This application was designed to help students study french verbs. Version 1.0.0 is currently at the end of its development stage and a dowload of the alpha version can be found in the [releases of the GitHub repo](https://github.com/tifrueh/conjugateur/releases). 
+This application was designed to help students study french verbs. Version 1.0.0 is currently at the end of its development stage and a dowload of the beta version can be found in the [releases of the GitHub repo](https://github.com/tifrueh/conjugateur/releases). 
 
 ## Installation
 

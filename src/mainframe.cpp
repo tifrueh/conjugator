@@ -23,7 +23,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     SetIcon(wxICON(conjugateur));
 
     info.SetName(wxT("Conjugateur"));
-    info.SetVersion(wxT("1.0.0-beta"));
+    info.SetVersion(wxT("1.0.0-beta-2"));
     info.SetCopyright(wxT("Copyright © 2023 Timo Früh"));
 
     #ifdef __WXGTK__
@@ -166,11 +166,13 @@ void MainFrame::OnInspector(wxCommandEvent &event) {
     }
     topPanel->SetFocusIgnoringChildren();
     topPanel->Disable();
+    menuBar->Disable();
     inspector->Show();
 }
 
 void MainFrame::OnInspectorClose(wxWindowDestroyEvent& event) {
     inspector = nullptr;
+    menuBar->Enable();
     topPanel->Enable();
     topPanel->ResetFocus();
 }

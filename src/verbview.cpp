@@ -42,12 +42,11 @@ VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : 
         }
     }
 
-    setVerb(verb);
-
     this->SetMinSize(wxSize(200, 300));
 
     this->SetSizer(sizer);
-    this->FitInside();
+
+    setVerb(verb);
 
     this->SetRowCount(sizer->GetItemCount());
     this->EnablePhysicalScrolling();
@@ -59,6 +58,7 @@ wxCoord VerbView::OnGetRowHeight(size_t row) const {
 }
 
 void VerbView::setVerb(const verbDB::Verb &inputVerb) {
+    this->ScrollToRow(0);
     verb = inputVerb;
     formLabels.at({verbDB::Tense::infinitif, verbDB::Person::none})->SetLabel(verb.infinitif);
     formLabels.at({verbDB::Tense::participePresent, verbDB::Person::none})->SetLabel(verb.participePresent);
@@ -69,4 +69,5 @@ void VerbView::setVerb(const verbDB::Verb &inputVerb) {
             formLabels.at({tense, person})->SetLabel(wxString(cjgt::getFormString(verbForm)));
         }
     }
+    sizer->FitInside(this);
 }

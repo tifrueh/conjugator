@@ -2,8 +2,8 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Conjugateur"
-#define MyAppVersion "1.0.0-alpha-2"
-#define MyAppPublisher "Timo Früh"
+#define MyAppVersion "1.0.0-beta-2"
+#define MyAppPublisher "Timo Frueh"
 #define MyAppURL "https://github.com/tifrueh/conjugateur"
 #define MyAppExeName "conjugateur.exe"
 
@@ -21,12 +21,12 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
 SourceDir=..\..\
-LicenseFile=LICENSE
+LicenseFile=LICENSE.txt
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=dist\win
-OutputBaseFilename=Conjugateur-w64-{#MyAppVersion}-setup
+OutputBaseFilename=Conjugateur-Windows-64bit-{#MyAppVersion}-setup
 SetupIconFile=resources\conjugateur.ico
 Compression=lzma
 SolidCompression=yes

@@ -59,6 +59,7 @@ wxCoord VerbView::OnGetRowHeight(size_t row) const {
 }
 
 void VerbView::setVerb(const verbDB::Verb &inputVerb) {
+    this->ScrollToRow(0);
     verb = inputVerb;
     formLabels.at({verbDB::Tense::infinitif, verbDB::Person::none})->SetLabel(verb.infinitif);
     formLabels.at({verbDB::Tense::participePresent, verbDB::Person::none})->SetLabel(verb.participePresent);

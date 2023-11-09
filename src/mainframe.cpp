@@ -166,11 +166,13 @@ void MainFrame::OnInspector(wxCommandEvent &event) {
     }
     topPanel->SetFocusIgnoringChildren();
     topPanel->Disable();
+    menuBar->Disable();
     inspector->Show();
 }
 
 void MainFrame::OnInspectorClose(wxWindowDestroyEvent& event) {
     inspector = nullptr;
+    menuBar->Enable();
     topPanel->Enable();
     topPanel->ResetFocus();
 }

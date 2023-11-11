@@ -52,6 +52,6 @@ conjugateur = executable(
 
 run_target(
     'bundle_mac',
-    command: 'dist/macOS/bundle.sh',
+    command: 'scripts/bundle_mac.sh',
     depends: [ conjugateur ]
 )

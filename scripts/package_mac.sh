@@ -19,11 +19,13 @@ DISTFILE_PATH="${DIST_PATH}/distfile.plist"
 PKG_PATH="${DIST_PATH}/Conjugateur-macOS-${MIN_MACOS}-universal-v${1}.pkg"
 BUNDLE_PATH="${MESON_BUILD_ROOT}/Conjugateur.app"
 
-codesign --sign "${CERT_APPL}" \
-	--options "runtime" \
-	--bundle-version "${1}" \
-	--force --timestamp \
-	"${BUNDLE_PATH}"
+if [ ${CODESIGN} ]; then
+	codesign --sign "${CERT_APPL}" \
+		--options "runtime" \
+		--bundle-version "${1}" \
+		--force --timestamp \
+		"${BUNDLE_PATH}"
+fi
 
 
 pkgbuild --component "${BUNDLE_PATH}"\
@@ -47,9 +49,15 @@ awk -v MSRT=${MESON_SOURCE_ROOT} '
 
 mv -f "${DISTFILE_PATH}.new" "${DISTFILE_PATH}"
 
-productbuild --distribution "${DISTFILE_PATH}" \
-	--package-path "${DIST_PATH}" \
-	--sign "${CERT_PKG}" \
-	"${PKG_PATH}"
+if [ ${CODESIGN} ]; then
+	productbuild --distribution "${DISTFILE_PATH}" \
+		--package-path "${DIST_PATH}" \
+		--sign "${CERT_PKG}" \
+		"${PKG_PATH}"
+else
+	productbuild --distribution "${DISTFILE_PATH}" \
+		--package-path "${DIST_PATH}" \
+		"${PKG_PATH}"
+fi
 
 rm -r "${DISTFILE_PATH}" "${BUNDLE_PATH}" "${COMPONENT_PKG_PATH}"

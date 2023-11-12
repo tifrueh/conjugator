@@ -48,5 +48,6 @@ srcs += files(
     'faire.verb.cpp',
     'fermer.verb.cpp',
     'fuir.verb.cpp',
-    'grimper.verb.cpp'
+    'grimper.verb.cpp',
+    'guerir.verb.cpp'
 )

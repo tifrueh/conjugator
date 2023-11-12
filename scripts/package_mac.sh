@@ -40,7 +40,7 @@ productbuild --synthesize \
 
 awk -v MSRT=${MESON_SOURCE_ROOT} '
 /<\/installer-gui-script>/ {
-   print "    <license file=\""MSRT"/LICENSE.txt\"\/>"
+   print "    <license file=\""MSRT"/resources/LICENSE.html\"\/>"
 }
 { print }
 ' ${DISTFILE_PATH} > "${DISTFILE_PATH}.new"

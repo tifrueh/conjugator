@@ -79,7 +79,8 @@ const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::etre,
     &verbDB::exagerer,
     &verbDB::faire,
-    &verbDB::fermer
+    &verbDB::fermer,
+    &verbDB::fuir
 };
 
 std::vector<const verbDB::Verb*> verbDB::verbsER = {};

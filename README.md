@@ -1,9 +1,10 @@
-<h1 align="center">
+<div align="center">
     <img src="./resources/conjugateur.svg" alt="Conjugateur icon" width=256 height=256>
-    <p>Conjugateur</p>
+    <h1>Conjugateur</h1>
     <img alt="GitHub" src="https://img.shields.io/github/license/tifrueh/conjugateur">
     <img alt="GitHub tag (with filter)" src="https://img.shields.io/github/v/tag/tifrueh/conjugateur">
-</h1>
+    <p></p>
+</div>
 
 This application was designed to help students study french verbs. Version 1.0.0 is currently at the end of its development stage and a dowload of the beta version can be found in the [releases of the GitHub repo](https://github.com/tifrueh/conjugateur/releases). 
 
@@ -101,7 +102,7 @@ _Note: `Ctrl` corresponds to `Cmd` on macOS systems_
 
 ### Inspector
 
-![Inspector preview](./resources/preview-inspector.png)
+<div align=center><img src="./resources/preview-inspector.png" width=400 height=400></div>
 
 There is also an additional window, called **Inspecteur**, which can be used to display the whole conjugation of a verb. This window is primarily intended to be used by poofreaders who, by using the **Inspecteur**, can view the entirety of the database used by the app and therefore find mistakes (of which I'm sure there are plenty) faster than by simply using the app. The **Inspecteur** can of course also be used to help out while learning the conjugations.
 

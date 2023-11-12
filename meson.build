@@ -50,13 +50,13 @@ conjugateur = executable(
     install: true
 )
 
-bundle_mac = run_target(
+run_target(
     'bundle_mac',
     command: 'scripts/bundle_mac.sh',
     depends: [ conjugateur ]
 )
 
-package_mac = run_target(
+run_target(
     'package_mac',
     command: [ 
       'scripts/package_mac.sh', meson.project_version().substring(1)],

@@ -46,5 +46,6 @@ srcs += files(
     'essuyer.verb.cpp',
     'eteindre.verb.cpp',
     'etre.verb.cpp',
-    'exagerer.verb.cpp'
+    'exagerer.verb.cpp',
+    'faire.verb.cpp'
 )

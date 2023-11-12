@@ -1,4 +1,9 @@
-# Conjugateur
+<h1 align="center">
+    <img src="./resources/conjugateur.svg" alt="Conjugateur icon" width=256 height=256>
+    <p>Conjugateur</p>
+    <img alt="GitHub" src="https://img.shields.io/github/license/tifrueh/conjugateur">
+    <img alt="GitHub tag (with filter)" src="https://img.shields.io/github/v/tag/tifrueh/conjugateur">
+</h1>
 
 This application was designed to help students study french verbs. Version 1.0.0 is currently at the end of its development stage and a dowload of the beta version can be found in the [releases of the GitHub repo](https://github.com/tifrueh/conjugateur/releases). 
 

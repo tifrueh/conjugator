@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Conjugateur"
-#define MyAppVersion "1.0.0-beta-3"
+#define MyAppVersion "1.0.0-dev"
 #define MyAppPublisher "Timo Frueh"
 #define MyAppURL "https://github.com/tifrueh/conjugateur"
 #define MyAppExeName "conjugateur.exe"

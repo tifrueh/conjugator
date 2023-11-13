@@ -1,8 +1,8 @@
 <div align="center">
     <img src="./resources/conjugateur.svg" alt="Conjugateur icon" width=256 height=256>
     <h1>Conjugateur</h1>
-    <img alt="GitHub" src="https://img.shields.io/github/license/tifrueh/conjugateur">
-    <img alt="GitHub tag (with filter)" src="https://img.shields.io/github/v/tag/tifrueh/conjugateur">
+    <a href="https://www.gnu.org/licenses/gpl-3.0.en.html"><img alt="GitHub" src="https://img.shields.io/github/license/tifrueh/conjugateur"></a>
+    <a href="https://github.com/tifrueh/conjugateur/releases"><img alt="GitHub tag (with filter)" src="https://img.shields.io/github/v/tag/tifrueh/conjugateur"></a>
     <p></p>
 </div>
 

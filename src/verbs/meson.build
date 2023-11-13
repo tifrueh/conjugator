@@ -16,8 +16,6 @@ srcs += files(
     'bavarder.verb.cpp',
     'boire.verb.cpp',
     'choisir.verb.cpp',
-    'commencer.verb.cpp',
-    'commenceretre.verb.cpp',
     'conduire.verb.cpp',
     'confondre.verb.cpp',
     'connaitre.verb.cpp',
@@ -46,5 +44,10 @@ srcs += files(
     'essuyer.verb.cpp',
     'eteindre.verb.cpp',
     'etre.verb.cpp',
-    'exagerer.verb.cpp'
+    'exagerer.verb.cpp',
+    'faire.verb.cpp',
+    'fermer.verb.cpp',
+    'fuir.verb.cpp',
+    'grimper.verb.cpp',
+    'guerir.verb.cpp'
 )

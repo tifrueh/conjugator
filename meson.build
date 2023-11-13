@@ -4,7 +4,7 @@ project(
     default_options: [ 'cpp_std=c++17' ],
     license: 'GPL-3.0-or-later',
     license_files: 'LICENSE.txt',
-    version: 'v1.0.0-beta-2'
+    version: 'v1.0.0-beta-3'
 )
 
 incdir = include_directories([ 'include' ])
@@ -52,6 +52,13 @@ conjugateur = executable(
 
 run_target(
     'bundle_mac',
-    command: 'dist/macOS/bundle.sh',
+    command: 'scripts/bundle_mac.sh',
+    depends: [ conjugateur ]
+)
+
+run_target(
+    'package_mac',
+    command: [ 
+      'scripts/package_mac.sh', meson.project_version().substring(1)],
     depends: [ conjugateur ]
 )

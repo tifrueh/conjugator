@@ -1,6 +1,12 @@
-# Conjugateur
+<div align="center">
+    <img src="./resources/conjugateur.svg" alt="Conjugateur icon" width=256 height=256>
+    <h1>Conjugateur</h1>
+    <a href="https://www.gnu.org/licenses/gpl-3.0.en.html"><img alt="GitHub" src="https://img.shields.io/github/license/tifrueh/conjugateur"></a>
+    <a href="https://github.com/tifrueh/conjugateur/releases"><img alt="GitHub tag (with filter)" src="https://img.shields.io/github/v/tag/tifrueh/conjugateur"></a>
+    <p></p>
+</div>
 
-This application was designed to help students study french verbs. Version 1.0.0 is currently at the end of its development stage and a dowload of the beta version can be found in the [releases of the GitHub repo](https://github.com/tifrueh/conjugateur/releases). 
+This application was designed to help students study French verbs. Version 1.0.0 is currently at the end of its development stage and a download of the beta version can be found in the [releases of the GitHub repo](https://github.com/tifrueh/conjugateur/releases). 
 
 ## Installation
 
@@ -36,15 +42,15 @@ An installer executable for x86_64 Windows can be downloaded from the [latest re
 
 1. Download the installer executable
 
-2. Double click the EXE
+2. Double-click the EXE
 
 3. Follow the installer's instructions
 
-_Note: As the EXE is not signed, Windows is probably going to warn you about installing untrusted software and it is absolutely right. I'm going to fix this issue in the future, but for the moment, this admittedly insecure installation procedure will have to do._
+_Note: As the EXE is not signed, Windows is probably going to warn you about installing untrusted software and it is absolutely right. I'm going to fix this issue in the future, but for the moment, this admittedly insecure installation procedure will have to suffice. I'd recommend you check the integrity of the EXE via the provided SHASUM and choose an installation only for your user, so as not to give the installer root permissions._
 
 ### Build from source
 
-If your system is neither macOS nor x86_64 Windows, you'll have to compile and install the program yourself. Additional sofware components you'll need for that are the following:
+If your system is neither macOS nor x86_64 Windows, you'll have to compile and install the program yourself. Additional software components you'll need for that are the following:
 
 - [meson build system](https://mesonbuild.com/)
 
@@ -74,7 +80,7 @@ The button **Solutions** checks the verbs and also shows the correct solutions.
 
 ### Quiz
 
-This panel displays a total of 15 text entries plus the infitinive, a tense and a personal pronoun. You can now try to put the correct verb form into the text entry and then use the buttons to the bottom left (see [previous section](#sélection-des-verbestemps)) to check your answers or show the solutions.
+This panel displays a total of 15 text entries plus the infinitive, tense and personal pronoun. You can now try to put the correct verb form into the text entry and then use the buttons to the bottom left (see [previous section](#sélection-des-verbestemps)) to check your answers or show the solutions.
 
 ### Keyboard shortcuts
 
@@ -96,8 +102,8 @@ _Note: `Ctrl` corresponds to `Cmd` on macOS systems_
 
 ### Inspector
 
-![Inspector preview](./resources/preview-inspector.png)
+<div align=center><img src="./resources/preview-inspector.png" width=400 height=400></div>
 
-There is also an additional window, called **Inspecteur**, which can be used to display the whole conjugation of a verb. This window is primarily intended to be used by poofreaders who, by using the **Inspecteur**, can view the entirety of the database used by the app and therefore find mistakes (of which I'm sure there are plenty) faster than by simply using the app. The **Inspecteur** can of course also be used to help out while learning the conjugations.
+There is also an additional window, called **Inspecteur**, which can be used to display the whole conjugation of a verb. This window is primarily intended to be used by proofreaders who, by using the **Inspecteur**, can view the entirety of the database used by the app and therefore find mistakes (of which I'm sure there are plenty) faster than by simply using the app. The **Inspecteur** can of course also be used to help out while learning the conjugations.
 
-_Note to proofreaders: If you were to find any misspelled forms via the **Inspecteur** or otherwhise, please do not hesitate to open an [issue](https://github.com/tifrueh/conjugateur/issues) to let me know. I'll try to fix it as soon as possible._
+_Note to proofreaders: If you were to find any misspelt forms via the **Inspecteur** or otherwise, please do not hesitate to open an [issue](https://github.com/tifrueh/conjugateur/issues) to let me know. I'll try to fix it as soon as possible._

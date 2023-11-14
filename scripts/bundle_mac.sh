@@ -11,6 +11,8 @@ RES_PATH="${CONTENTS_PATH}/Resources"
 EXE_PATH="${CONTENTS_PATH}/MacOS"
 LC_FR_PATH="${RES_PATH}/fr.lproj"
 
+echo "bundle_mac: bundling ${APP_PATH}"
+
 rm -rf "${APP_PATH}"
 mkdir "${APP_PATH}"
 

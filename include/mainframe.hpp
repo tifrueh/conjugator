@@ -30,6 +30,8 @@ class MainFrame : public wxFrame {
         wxBoxSizer* topPanelSizer = nullptr;
         TopPanel* topPanel = nullptr;
         InspectorFrame* inspector = nullptr;
+        void enableMenuBar();
+        void disableMenuBar();
         void computeNewSize();
         void OnOkay(wxCommandEvent& event);
         void OnCheck(wxCommandEvent& event);

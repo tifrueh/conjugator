@@ -5,6 +5,7 @@
 #define MyAppVersion "1.0.0-dev"
 #define MyAppPublisher "Timo Frueh"
 #define MyAppURL "https://github.com/tifrueh/conjugateur"
+#define MyAppCopyright "Copyright (c) 2023 Timo Frueh"
 #define MyAppExeName "conjugateur.exe"
 
 [Setup]
@@ -18,6 +19,7 @@ AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
+AppCopyright={#MyAppCopyright}
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
 SourceDir=..\..\

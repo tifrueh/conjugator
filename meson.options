@@ -1,0 +1,5 @@
+option('static_wxwidgets', 
+  type: 'combo', 
+  choices: [ 'auto', 'enabled' ], value: 'auto',
+  description: 'Whether to link with static wxWidgets'
+)

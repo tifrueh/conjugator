@@ -13,7 +13,11 @@ srcs = files()
 
 subdir('src')
 
-wx = dependency('wxwidgets')
+if get_option('static_wxwidgets') == 'auto'
+  wx = dependency('wxwidgets')
+elif get_option('static_wxwidgets') == 'enabled'
+  wx = dependency('wxwidgets', modules: '--static')
+endif
 
 deps = [ wx ]
 

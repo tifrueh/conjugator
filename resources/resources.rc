@@ -13,7 +13,7 @@ PRODUCTVERSION 1,0,0,0
             VALUE "CompanyName",        "Timo Frueh\0"
             VALUE "FileDescription",    "French verb conjugation trainer\0"
             VALUE "FileVersion",        "1.0.0-dev\0"
-            VALUE "LegalCopyright",     "Copyright (c) Timo Frueh\0"
+            VALUE "LegalCopyright",     "Copyright (c) 2023 Timo Frueh\0"
             VALUE "OriginalFilename",   "conjugateur.exe\0"
             VALUE "ProductName",        "Conjugateur\0"
             VALUE "ProductVersion",     "1.0.0-dev\0"

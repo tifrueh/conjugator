@@ -21,16 +21,18 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
 SourceDir=..\..\
-LicenseFile=LICENSE.md
+LicenseFile=resources\LICENSE.rtf
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=dist\win
-OutputBaseFilename=Conjugateur-Windows-64bit-{#MyAppVersion}-setup
+OutputBaseFilename=Conjugateur-Windows-x86_64-v{#MyAppVersion}-setup
 SetupIconFile=resources\conjugateur.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
+UninstallDisplayIcon={app}\conjugateur.ico
+UninstallDisplayName={#MyAppName}
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -41,7 +43,10 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "build\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "LICENSE.md"; DestDir: "{app}"; Flags: ignoreversion
 Source: "resources\lang\fr\LC_MESSAGES\wxstd.mo"; DestDir: "{app}\fr"; Flags: ignoreversion
+Source: "resources\conjugateur.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "resources\inspecteur.ico"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

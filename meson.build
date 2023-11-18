@@ -11,12 +11,21 @@ incdir = include_directories([ 'include' ])
 
 srcs = files()
 
+env = environment()
+
 subdir('src')
 
 if get_option('static_wxwidgets') == 'auto'
   wx = dependency('wxwidgets')
 elif get_option('static_wxwidgets') == 'enabled'
   wx = dependency('wxwidgets', modules: '--static')
+endif
+
+if build_machine.system() == 'darwin'
+  env.set('MACOSX_DEPLOYMENT_TARGET', get_option('macos_min'))
+  macos_min_arg = '-mmacosx-version-min=@0@'
+  add_global_arguments(macos_min_arg.format(get_option('macos_min')), language: 'cpp')
+  add_global_link_arguments(macos_min_arg.format(get_option('macos_min')), language: 'cpp')
 endif
 
 deps = [ wx ]
@@ -57,12 +66,14 @@ conjugateur = executable(
 run_target(
     'bundle_mac',
     command: 'scripts/bundle_mac.sh',
-    depends: [ conjugateur ]
+    depends: [ conjugateur ],
+    env: env
 )
 
 run_target(
     'package_mac',
     command: [ 
       'scripts/package_mac.sh', meson.project_version().substring(1)],
-    depends: [ conjugateur ]
+    depends: [ conjugateur ],
+    env: env
 )

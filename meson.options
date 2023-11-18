@@ -3,3 +3,9 @@ option('static_wxwidgets',
   choices: [ 'auto', 'enabled' ], value: 'auto',
   description: 'Whether to link with static wxWidgets'
 )
+
+option('macos_min',
+  type: 'string',
+  value: '11',
+  description: 'The minimum macOS version supported'
+)

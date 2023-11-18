@@ -7,17 +7,33 @@ if [ ! ${1} ]; then
 	exit
 fi
 
-/bin/sh "${MESON_SOURCE_ROOT}/scripts/bundle_mac.sh"
-
 CERT_PKG=${CERT_PKG:-"Installer"}
 CERT_APPL=${CERT_APPL:-"Application"}
-MIN_MACOS=${MIN_MACOS:-"14"}
+MACOSX_DEPLOYMENT_TARGET=${MACOSX_DEPLOYMENT_TARGET:-"11"}
+
+echo "package_mac: setting minimum macOS version to \"${MACOSX_DEPLOYMENT_TARGET}\""
+
+if [ ${CODESIGN} ]; then
+	echo "package_mac: enabling codesigning"
+	echo "package_mac: using Developer ID Installer Certificate \"${CERT_PKG}\""
+	echo "package_mac: using Depeloper ID Application Certificate \"${CERT_APPL}\""
+
+else
+	echo "package_mac: disabling codesigning"
+fi
 
 DIST_PATH="${MESON_SOURCE_ROOT}/dist/macOS"
-COMPONENT_PKG_PATH="${DIST_PATH}/Conjugateur-macOS-${MIN_MACOS}-universal-v${1}.component.pkg"
+COMPONENT_PKG_PATH="${DIST_PATH}/Conjugateur-macOS-universal-v${1}.component.pkg"
 DISTFILE_PATH="${DIST_PATH}/distfile.plist"
-PKG_PATH="${DIST_PATH}/Conjugateur-macOS-${MIN_MACOS}-universal-v${1}.pkg"
+PKG_PATH="${DIST_PATH}/Conjugateur-macOS-universal-v${1}.pkg"
 BUNDLE_PATH="${MESON_BUILD_ROOT}/Conjugateur.app"
+
+if [ -d ${BUNDLE_PATH} ]; then
+	echo "package_mac: bundle \"Conjugateur.app\" exists, not rebundling"
+else
+	echo "package_mac: rebundling \"Conjugateur.app\""
+	/bin/sh "${MESON_SOURCE_ROOT}/scripts/bundle_mac.sh"
+fi
 
 if [ ${CODESIGN} ]; then
 	codesign --sign "${CERT_APPL}" \
@@ -33,7 +49,7 @@ pkgbuild --component "${BUNDLE_PATH}"\
 	--version "${1}" \
 	--install-location "/Applications" \
 	--compression "latest" \
-	--min-os-version "${MIN_MACOS}" \
+	--min-os-version "${MACOSX_DEPLOYMENT_TARGET}" \
 	"${COMPONENT_PKG_PATH}"
 
 productbuild --synthesize \

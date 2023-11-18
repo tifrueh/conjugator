@@ -12,7 +12,7 @@ This application was designed to help students study French verbs. Version 1.0.0
 
 ### macOS (homebrew)
 
-A precompiled version and packaged version for macOS can be downloaded and installed via my homebrew repository:
+A precompiled version and packaged version for macOS (`>=12`) can be downloaded and installed via my homebrew repository:
 
 1. Tap my homebrew tap
 
@@ -28,7 +28,7 @@ $ brew install --cask tifrueh/mytap/conjugateur
 
 ### macOS (manual install)
 
-If you don't have homebrew you can also use the installer package for macOS from the [latest release](https://github.com/tifrueh/conjugateur/releases/latest).
+If you don't have homebrew you can also use the installer package for macOS (`>=12`) from the [latest release](https://github.com/tifrueh/conjugateur/releases/latest).
 
 1. Download the installer package
 
@@ -55,6 +55,8 @@ If your system is neither macOS nor x86_64 Windows, you'll have to compile and i
 - [meson build system](https://mesonbuild.com/)
 
 - [wxwidgets](https://www.wxwidgets.org/)
+
+_Note: If you're building on macOS 10.15 or lower, you'll need to manually set the meson option `macos_min`, as its default value is 11._
 
 ## Preview (macOS)
 

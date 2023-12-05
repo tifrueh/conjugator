@@ -55,5 +55,6 @@ srcs += files(
     'sEnnuyer.verb.cpp',
     'sInquieter.verb.cpp',
     'savoir.verb.cpp',
-    'secher.verb.cpp'
+    'secher.verb.cpp',
+    'sentir.verb.cpp'
 )

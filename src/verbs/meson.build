@@ -60,5 +60,6 @@ srcs += files(
     'sePlaindre.verb.cpp',
     'sePromener.verb.cpp',
     'seRejouir.verb.cpp',
-    'servir.verb.cpp'
+    'servir.verb.cpp',
+    'seTaire.verb.cpp'
 )

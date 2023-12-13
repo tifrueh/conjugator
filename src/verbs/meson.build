@@ -64,5 +64,6 @@ srcs += files(
     'seTaire.verb.cpp',
     'souffrir.verb.cpp',
     'suffire.verb.cpp',
-    'suivre.verb.cpp'
+    'suivre.verb.cpp',
+    'tenir.verb.cpp'
 )

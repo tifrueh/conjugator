@@ -97,7 +97,8 @@ const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::seTaire,
     &verbDB::souffrir,
     &verbDB::suffire,
-    &verbDB::suivre
+    &verbDB::suivre,
+    &verbDB::tenir
 };
 
 std::vector<const verbDB::Verb*> verbDB::verbsER = {};

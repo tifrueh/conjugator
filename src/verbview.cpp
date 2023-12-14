@@ -48,7 +48,7 @@ VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : 
 
     setVerb(verb);
 
-    this->SetRowCount(sizer->GetItemCount() - 1);
+    this->SetRowCount(sizer->GetItemCount());
     this->EnablePhysicalScrolling();
 
 }

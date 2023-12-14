@@ -100,7 +100,8 @@ const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::suivre,
     &verbDB::tenir,
     &verbDB::traduire,
-    &verbDB::valoir
+    &verbDB::valoir,
+    &verbDB::vendre
 };
 
 std::vector<const verbDB::Verb*> verbDB::verbsER = {};

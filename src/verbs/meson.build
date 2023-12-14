@@ -69,5 +69,6 @@ srcs += files(
     'traduire.verb.cpp',
     'valoir.verb.cpp',
     'vendre.verb.cpp',
-    'venir.verb.cpp'
+    'venir.verb.cpp',
+    'vivre.verb.cpp'
 )

@@ -66,5 +66,6 @@ srcs += files(
     'suffire.verb.cpp',
     'suivre.verb.cpp',
     'tenir.verb.cpp',
-    'traduire.verb.cpp'
+    'traduire.verb.cpp',
+    'valoir.verb.cpp',
 )

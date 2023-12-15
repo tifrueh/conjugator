@@ -10,6 +10,8 @@
 
 #include <vector>
 
+#include "config.h"
+
 #include "id.hpp"
 #include "toppanel.hpp"
 #include "inspectorframe.hpp"
@@ -26,7 +28,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     info.SetCopyright(wxT("Copyright © 2023 Timo Früh"));
     
     #ifndef __WXOSX__
-        info.SetVersion(wxT("1.0.0-dev"));
+        info.SetVersion(VERSION_STR);
     #endif
 
     #ifdef __WXGTK__

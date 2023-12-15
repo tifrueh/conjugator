@@ -7,7 +7,7 @@ project(
     version: 'v1.0.0-dev'
 )
 
-incdir = include_directories([ 'include' ])
+incdir = include_directories([ 'include' , 'configuration-files' ])
 
 srcs = files()
 

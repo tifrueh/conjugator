@@ -21,16 +21,16 @@ elif get_option('static_wxwidgets') == 'enabled'
   wx = dependency('wxwidgets', modules: '--static')
 endif
 
+deps = [ wx ]
+
 if build_machine.system() == 'darwin'
+
   env.set('MACOSX_DEPLOYMENT_TARGET', get_option('macos_min'))
   macos_min_arg = '-mmacosx-version-min=@0@'
   add_global_arguments(macos_min_arg.format(get_option('macos_min')), language: 'cpp')
   add_global_link_arguments(macos_min_arg.format(get_option('macos_min')), language: 'cpp')
-endif
 
-deps = [ wx ]
-
-if build_machine.system() == 'windows' 
+elif build_machine.system() == 'windows' 
 
   raw_wx_windres_args = wx.get_variable(configtool: 'rescomp').split()
 

@@ -21,6 +21,14 @@ elif get_option('static_wxwidgets') == 'enabled'
   wx = dependency('wxwidgets', modules: '--static')
 endif
 
+conf_data = configuration_data()
+conf_data.set(
+  'version', meson.project_version()
+)
+conf_data.set(
+  'mac_bundle_version', meson.project_version() + '-' + host_machine.system() + '-' + host_machine.cpu()
+)
+
 deps = [ wx ]
 
 if host_machine.system() == 'darwin'

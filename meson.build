@@ -32,7 +32,7 @@ conf_data.set(
   'mac_bundle_version', meson.project_version() + '-' + host_machine.system() + '-' + host_machine.cpu()
 )
 
-subdir('resources')
+subdir('configuration-files')
 
 deps = [ wx ]
 

@@ -71,10 +71,12 @@ if [ ${CODESIGN} ]; then
 	productbuild --distribution "${DISTFILE_PATH}" \
 		--package-path "${DIST_PATH}" \
 		--sign "${CERT_PKG}" \
+		--version "${1}" \
 		"${PKG_PATH}"
 else
 	productbuild --distribution "${DISTFILE_PATH}" \
 		--package-path "${DIST_PATH}" \
+		--version "${1}" \
 		"${PKG_PATH}"
 fi
 

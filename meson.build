@@ -23,14 +23,14 @@ endif
 
 deps = [ wx ]
 
-if build_machine.system() == 'darwin'
+if host_machine.system() == 'darwin'
 
   env.set('MACOSX_DEPLOYMENT_TARGET', get_option('macos_min'))
   macos_min_arg = '-mmacosx-version-min=@0@'
   add_global_arguments(macos_min_arg.format(get_option('macos_min')), language: 'cpp')
   add_global_link_arguments(macos_min_arg.format(get_option('macos_min')), language: 'cpp')
 
-elif build_machine.system() == 'windows' 
+elif host_machine.system() == 'windows' 
 
   raw_wx_windres_args = wx.get_variable(configtool: 'rescomp').split()
 
@@ -63,7 +63,7 @@ conjugateur = executable(
     install: true
 )
 
-if build_machine.system() == 'darwin'
+if host_machine.system() == 'darwin'
   run_target(
       'bundle_mac',
       command: 'scripts/bundle_mac.sh',

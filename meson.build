@@ -29,16 +29,12 @@ conf_data.set(
   'mac_bundle_version', meson.project_version() + '-' + host_machine.system() + '-' + host_machine.cpu()
 )
 
+subdir('resources')
+
 deps = [ wx ]
 
 if host_machine.system() == 'darwin'
   
-  configure_file(
-    input: 'resources/Info.plist.in',
-    output: 'resources/Info.plist',
-    configuration: conf_data
-  )
-
   env.set('MACOSX_DEPLOYMENT_TARGET', get_option('macos_min'))
   macos_min_arg = '-mmacosx-version-min=@0@'
   add_global_arguments(macos_min_arg.format(get_option('macos_min')), language: 'cpp')
@@ -46,12 +42,6 @@ if host_machine.system() == 'darwin'
 
 elif host_machine.system() == 'windows' 
   
-  configure_file(
-    input: 'resources/resources.rc.in',
-    output: 'resources/resources.rc',
-    configuration: conf_data
-  )
-
   raw_wx_windres_args = wx.get_variable(configtool: 'rescomp').split()
 
   wx_windres_args = []

@@ -26,6 +26,9 @@ conf_data.set(
   'version', meson.project_version()
 )
 conf_data.set(
+  'mac_version', meson.project_version().substring(1)
+)
+conf_data.set(
   'mac_bundle_version', meson.project_version() + '-' + host_machine.system() + '-' + host_machine.cpu()
 )
 

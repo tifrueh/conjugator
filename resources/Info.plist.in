@@ -13,7 +13,7 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2023 Timo Früh</string>
 	<key>CFBundleShortVersionString</key>
-	<string>@version@</string>
+	<string>@mac_version@</string>
 	<key>CFBundleVersion</key>
 	<string>@mac_bundle_version@</string>
 	<key>CFBundleName</key>

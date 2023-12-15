@@ -7,6 +7,8 @@ if [ ! ${1} ]; then
 	exit
 fi
 
+echo "package_mac: packaging Conjugateur version ${1}"
+
 CERT_PKG=${CERT_PKG:-"Installer"}
 CERT_APPL=${CERT_APPL:-"Application"}
 MACOSX_DEPLOYMENT_TARGET=${MACOSX_DEPLOYMENT_TARGET:-"11"}

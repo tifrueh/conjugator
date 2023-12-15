@@ -7,10 +7,12 @@
     #include <wx/wx.h>
 #endif
 
+#ifndef __WXOSX__
+    #include "config.h"
+#endif
+
 
 #include <vector>
-
-#include "config.h"
 
 #include "id.hpp"
 #include "toppanel.hpp"

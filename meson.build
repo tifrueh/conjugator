@@ -87,7 +87,7 @@ if host_machine.system() == 'darwin'
   run_target(
       'package_mac',
       command: [ 
-        'scripts/package_mac.sh', meson.project_version().substring(1)],
+        'scripts/package_mac.sh', conf_data.get('mac_version')],
       depends: [ conjugateur ],
       env: env
   )

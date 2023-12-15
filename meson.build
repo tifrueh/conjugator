@@ -31,6 +31,9 @@ conf_data.set(
 conf_data.set(
   'mac_bundle_version', conf_data.get('mac_version') + '-' + host_machine.system() + '-' + host_machine.cpu()
 )
+conf_data.set(
+  'resources_dir', meson.project_source_root() + '/resources'
+)
 
 subdir('configuration-files')
 
@@ -57,11 +60,15 @@ elif host_machine.system() == 'windows'
 
   windows = import('windows')
 
-  srcs += windows.compile_resources(
-    'resources/resources.rc',
+  resources = windows.compile_resources(
+    meson.current_build_dir() + '/configuration-files/resources.rc',
     args: wx_windres_args,
-    depend_files: [ 'resources/conjugateur.ico' ]) 
+    depend_files: [ meson.project_source_root() + '/resources/conjugateur.ico', 
+      meson.project_source_root() + '/resources/inspecteur.ico' ]
+  )
 
+  srcs += resources
+    
 endif
 
 install_data('resources/conjugateur.png')

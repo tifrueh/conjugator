@@ -1,5 +1,5 @@
-conjugateur ICON "conjugateur.ico"
-inspecteur ICON "inspecteur.ico"
+conjugateur ICON "@resources_dir@/conjugateur.ico"
+inspecteur ICON "@resources_dir@/inspecteur.ico"
 #include "wx/msw/wx.rc"
 
 VS_VERSION_INFO VERSIONINFO

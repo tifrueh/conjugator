@@ -32,6 +32,9 @@ conf_data.set(
   'mac_bundle_version', conf_data.get('mac_version') + '-' + host_machine.system() + '-' + host_machine.cpu()
 )
 conf_data.set(
+  'project_source_root', meson.project_source_root()
+)
+conf_data.set(
   'resources_dir', meson.project_source_root() + '/resources'
 )
 

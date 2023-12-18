@@ -14,6 +14,12 @@ elif host_machine.system() == 'windows'
     configuration: conf_data
   )
 
+  configure_file(
+    input: 'conjugateur.iss.in',
+    output: 'conjugateur.iss',
+    configuration: conf_data
+  )
+
 endif
 
 if host_machine.system() != 'darwin'

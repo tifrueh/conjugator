@@ -22,7 +22,7 @@ VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : 
     setVerb(verb);
     
     this->SetVirtualSize(verbViewPanel->GetSize());
-    this->SetScrollRate(5, 5);
+    this->SetScrollRate(0, 4);
 
 }
 

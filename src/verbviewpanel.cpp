@@ -24,8 +24,10 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
     titleFont.MakeBold();
     formLabels.at({verbDB::Tense::infinitif, verbDB::Person::none})->SetFont(titleFont);
 
-    sizer->Add(formLabels.at({verbDB::Tense::infinitif, verbDB::Person::none}), 0, wxEXPAND, 3);
-    sizer->Add(formLabels.at({verbDB::Tense::participePresent, verbDB::Person::none}), 0, wxEXPAND, 3);
+    sizer->AddSpacer(5);
+
+    sizer->Add(formLabels.at({verbDB::Tense::infinitif, verbDB::Person::none}), 0, wxEXPAND | wxLEFT | wxRIGHT, 10);
+    sizer->Add(formLabels.at({verbDB::Tense::participePresent, verbDB::Person::none}), 0, wxEXPAND | wxLEFT | wxRIGHT, 10);
 
     sizer->AddSpacer(10);
 
@@ -34,13 +36,15 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
         titleLabels.insert({tense, new wxStaticText(this, wxID_ANY, wxString(cjgt::getTense((int) tense)))});
         titleLabels.at(tense)->SetFont(titleFont);
 
-        sizer->Add(titleLabels.at(tense), 0, wxEXPAND, 3);
+        sizer->Add(titleLabels.at(tense), 0, wxEXPAND | wxLEFT | wxRIGHT, 10);
 
         for (int person = verbDB::Person::je; person <= verbDB::Person::elles; person++) {
             formLabels.insert({{tense, person}, new wxStaticText(this, wxID_ANY, wxEmptyString)});
-            sizer->Add(formLabels.at({tense, person}), 0, wxEXPAND, 3);
+            sizer->Add(formLabels.at({tense, person}), 0, wxEXPAND | wxLEFT | wxRIGHT, 10);
         }
     }
+    
+    sizer->AddSpacer(5);
 
     this->SetMinSize(wxSize(200, 300));
 

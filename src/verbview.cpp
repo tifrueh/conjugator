@@ -17,7 +17,7 @@ VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : 
     this->verb = verb;
     verbViewPanel = new VerbViewPanel(this, wxID_ANY, this->verb);
 
-    this->SetMinSize(wxSize(200, 300));
+    this->SetMinSize(wxSize(225, 300));
 
     setVerb(verb);
     

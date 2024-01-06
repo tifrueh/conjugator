@@ -9,65 +9,25 @@
 
 #include "verb.db.hpp"
 #include "conjugateur.hpp"
+#include "verbviewpanel.hpp"
 
 #include "verbview.hpp"
 
-VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : wxVScrolledWindow(parent, id) {
+VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : wxScrolled<wxWindow>(parent, id) {
     this->verb = verb;
-    sizer = new wxBoxSizer(wxVERTICAL);
-
-    formLabels.insert({{verbDB::Tense::infinitif, verbDB::Person::none}, new wxStaticText(this, wxID_ANY, wxEmptyString)});
-    formLabels.insert({{verbDB::Tense::participePresent, verbDB::Person::none}, new wxStaticText(this, wxID_ANY, wxEmptyString)});
-
-    wxFont titleFont = formLabels.at({verbDB::Tense::infinitif, verbDB::Person::none})->GetFont();
-    titleFont.Scale(1.5);
-    titleFont.MakeBold();
-    formLabels.at({verbDB::Tense::infinitif, verbDB::Person::none})->SetFont(titleFont);
-
-    sizer->Add(formLabels.at({verbDB::Tense::infinitif, verbDB::Person::none}), 0, wxEXPAND, 3);
-    sizer->Add(formLabels.at({verbDB::Tense::participePresent, verbDB::Person::none}), 0, wxEXPAND, 3);
-
-    sizer->AddSpacer(10);
-
-    for (int tense = verbDB::Tense::present; tense <= verbDB::Tense::conditionnel; tense++) {
-        sizer->AddSpacer(10);
-        titleLabels.insert({tense, new wxStaticText(this, wxID_ANY, wxString(cjgt::getTense((int) tense)))});
-        titleLabels.at(tense)->SetFont(titleFont);
-
-        sizer->Add(titleLabels.at(tense), 0, wxEXPAND, 3);
-
-        for (int person = verbDB::Person::je; person <= verbDB::Person::elles; person++) {
-            formLabels.insert({{tense, person}, new wxStaticText(this, wxID_ANY, wxEmptyString)});
-            sizer->Add(formLabels.at({tense, person}), 0, wxEXPAND, 3);
-        }
-    }
+    verbViewPanel = new VerbViewPanel(this, wxID_ANY, this->verb);
 
     this->SetMinSize(wxSize(200, 300));
 
-    this->SetSizer(sizer);
-
     setVerb(verb);
+    
+    this->SetVirtualSize(verbViewPanel->GetSize());
+    this->SetScrollRate(5, 5);
 
-    this->SetRowCount(sizer->GetItemCount());
-    this->EnablePhysicalScrolling();
-
-}
-
-wxCoord VerbView::OnGetRowHeight(size_t row) const {
-    return sizer->GetItem(row)->GetSize().GetY();
 }
 
 void VerbView::setVerb(const verbDB::Verb &inputVerb) {
-    this->ScrollToRow(0);
     verb = inputVerb;
-    formLabels.at({verbDB::Tense::infinitif, verbDB::Person::none})->SetLabel(verb.infinitif);
-    formLabels.at({verbDB::Tense::participePresent, verbDB::Person::none})->SetLabel(verb.participePresent);
-
-    for (int tense = verbDB::Tense::present; tense <= verbDB::Tense::conditionnel; tense++) {
-        for (int person = verbDB::Person::je; person <= verbDB::Person::elles; person++) {
-            cjgt::VerbForm verbForm = cjgt::getVerbForm(verb, tense, person);
-            formLabels.at({tense, person})->SetLabel(wxString(cjgt::getFormString(verbForm)));
-        }
-    }
-    sizer->FitInside(this);
+    verbViewPanel->setVerb(verb);
+    this->SetVirtualSize(verbViewPanel->GetSize());
 }

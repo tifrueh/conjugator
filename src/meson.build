@@ -7,7 +7,8 @@ srcs += files(
     'quizitem.cpp',
     'toppanel.cpp',
     'verb.db.cpp',
-    'verbview.cpp'
+    'verbview.cpp',
+    'verbviewpanel.cpp'
 )
 
 subdir('verbs')

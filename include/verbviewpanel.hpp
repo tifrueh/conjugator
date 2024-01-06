@@ -14,20 +14,19 @@
 #include <array>
 #include <string>
 
-#include <wx/vscroll.h>
-
-#include "verbviewpanel.hpp"
-
 #include "verb.db.hpp"
 
 
-class VerbView : public wxScrolled<wxWindow> {
+class VerbViewPanel : public wxPanel {
     public:
-        VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb);
+        VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb);
         void setVerb(const verbDB::Verb& inputVerb);
 
     private:
-        VerbViewPanel* verbViewPanel;
+        wxBoxSizer* sizer;
 
         verbDB::Verb verb;
+
+        std::map<std::array<int, 2>, wxStaticText*> formLabels;
+        std::map<int, wxStaticText*> titleLabels;
 };

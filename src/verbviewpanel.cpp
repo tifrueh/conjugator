@@ -60,5 +60,5 @@ void VerbViewPanel::setVerb(const verbDB::Verb &inputVerb) {
             formLabels.at({tense, person})->SetLabel(wxString(cjgt::getFormString(verbForm)));
         }
     }
-    sizer->Fit(this);
+    this->Fit();
 }

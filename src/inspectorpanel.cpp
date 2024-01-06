@@ -30,7 +30,7 @@ InspectorPanel::InspectorPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
     verbView = new VerbView(this, wxID_ANY, *cjgt::getVerb(verbBox->GetStringSelection().ToStdWstring()));
 
-    topsizer->Add(verbView, 1, wxEXPAND | wxALL, 5);
+    topsizer->Add(verbView, 1, wxEXPAND | wxALL, 0);
 
     this->SetSizerAndFit(topsizer);
 }

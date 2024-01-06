@@ -46,8 +46,6 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
     
     sizer->AddSpacer(5);
 
-    this->SetMinSize(wxSize(200, 300));
-
     this->SetSizerAndFit(sizer);
 
     setVerb(verb);

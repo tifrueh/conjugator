@@ -42,10 +42,10 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
         formLabels.insert({person, new wxStaticText(this, wxID_ANY, wxEmptyString)});
         sizer->Add(formLabels.at(person), 0, wxEXPAND, 0);
     }
-    
-    this->setVerb(verb);
 
     this->SetSizerAndFit(sizer);
+    
+    this->setVerb(verb);
 }
 
 

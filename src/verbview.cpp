@@ -7,27 +7,34 @@
     #include <wx/wx.h>
 #endif
 
+#include <wx/choicebk.h>
+
 #include "verb.db.hpp"
 #include "conjugateur.hpp"
 #include "verbviewpanel.hpp"
 
 #include "verbview.hpp"
 
-VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : wxScrolled<wxWindow>(parent, id) {
+VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : wxPanel(parent, id) {
     this->verb = verb;
-    verbViewPanel = new VerbViewPanel(this, wxID_ANY, this->verb);
-
-    this->SetMinSize(wxSize(225, 300));
-
-    setVerb(verb);
     
-    this->SetVirtualSize(verbViewPanel->GetSize());
-    this->SetScrollRate(0, 10);
+    tensebook = new wxChoicebook(this, wxID_ANY);
+
+    for (int tense = verbDB::Tense::present; tense <= verbDB::Tense::conditionnel; tense++) {
+        pages.insert({tense, new VerbViewPanel(this, wxID_ANY, verb, tense)});
+        tensebook->InsertPage(tense - verbDB::Tense::present, pages.at(tense), wxString(cjgt::getTense(tense)));
+    }
+
+    this->Fit();
 
 }
 
 void VerbView::setVerb(const verbDB::Verb &inputVerb) {
     verb = inputVerb;
-    verbViewPanel->setVerb(verb);
-    this->SetVirtualSize(verbViewPanel->GetSize());
+    
+    for (int tense = verbDB::Tense::present; tense <= verbDB::Tense::conditionnel; tense ++) {
+        pages.at(tense)->setVerb(verb);
+    }
+    
+    this->Fit();
 }

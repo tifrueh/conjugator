@@ -10,8 +10,9 @@
     #include <wx/wx.h>
 #endif
 
+#include <wx/choicebk.h>
+
 #include <map>
-#include <array>
 #include <string>
 
 #include <wx/vscroll.h>
@@ -21,13 +22,14 @@
 #include "verb.db.hpp"
 
 
-class VerbView : public wxScrolled<wxWindow> {
+class VerbView : public wxPanel {
     public:
         VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb);
         void setVerb(const verbDB::Verb& inputVerb);
 
     private:
-        VerbViewPanel* verbViewPanel;
+        wxChoicebook* tensebook;
+        std::map<int, VerbViewPanel*> pages;
 
         verbDB::Verb verb;
 };

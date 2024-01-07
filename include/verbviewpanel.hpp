@@ -11,7 +11,6 @@
 #endif
 
 #include <map>
-#include <array>
 #include <string>
 
 #include "verb.db.hpp"
@@ -19,14 +18,17 @@
 
 class VerbViewPanel : public wxPanel {
     public:
-        VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb);
+        VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb, const int &tense);
+        VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb, const verbDB::Tense& tense);
         void setVerb(const verbDB::Verb& inputVerb);
 
     private:
         wxBoxSizer* sizer;
 
         verbDB::Verb verb;
+        int tense;
+        std::wstring tenseString;
 
-        std::map<std::array<int, 2>, wxStaticText*> formLabels;
-        std::map<int, wxStaticText*> titleLabels;
+        wxStaticText* titleLabel;
+        std::map<int, wxStaticText*> formLabels;
 };

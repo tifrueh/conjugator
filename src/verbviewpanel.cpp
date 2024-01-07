@@ -20,6 +20,7 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
     tenseString = cjgt::getTense(tense);
     
     titleLabel = new wxStaticText(this, wxID_ANY, wxString(tenseString));
+    titleLabel->SetMinSize(wxSize(200, titleLabel->GetMinHeight()));
     formLabels.insert({verbDB::Person::none, new wxStaticText(this, wxID_ANY, wxEmptyString)});
 
     wxFont titleFont = titleLabel->GetFont();

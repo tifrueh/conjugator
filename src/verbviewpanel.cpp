@@ -43,8 +43,6 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
         sizer->Add(formLabels.at(person), 0, wxEXPAND | wxLEFT | wxRIGHT, 10);
     }
     
-    sizer->AddSpacer(5);
-    
     this->setVerb(verb);
 
     this->SetSizerAndFit(sizer);

@@ -30,9 +30,10 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
     sizer->AddSpacer(5);
 
     sizer->Add(titleLabel, 0, wxEXPAND | wxLEFT | wxRIGHT, 10);
+    sizer->Add(formLabels.at(verbDB::Person::none), 0, wxEXPAND | wxLEFT | wxRIGHT, 10);
     
-    if (tense == verbDB::Tense::present) {
-        sizer->Add(formLabels.at(verbDB::Person::none), 0, wxEXPAND | wxLEFT | wxRIGHT, 10);
+    if (tense != verbDB::Tense::present) {
+        sizer->Hide(2);
     }
 
     sizer->AddSpacer(10);

@@ -30,6 +30,8 @@ class VerbView : public wxPanel {
     private:
         wxChoicebook* tensebook;
         std::map<int, VerbViewPanel*> pages;
+        
+        wxBoxSizer* sizer;
 
         verbDB::Verb verb;
 };

@@ -27,7 +27,7 @@ VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : 
         tensebook->InsertPage(tense - verbDB::Tense::present, pages.at(tense), wxString(cjgt::getTense(tense)));
     }
     
-    sizer->Add(tensebook, 0, wxEXPAND, 0);
+    sizer->Add(tensebook, 0, wxEXPAND | wxALL, 10);
 
     this->SetSizerAndFit(sizer);
 

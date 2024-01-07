@@ -25,4 +25,5 @@ InspectorFrame::InspectorFrame(wxWindow *parent, const wxWindowID &winID, const 
 
 void InspectorFrame::updateVerb() {
     inspectorPanel->setVerbFromBox();
+    topSizer->SetSizeHints(this);
 }

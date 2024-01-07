@@ -64,5 +64,5 @@ void VerbViewPanel::setVerb(const verbDB::Verb& inputVerb) {
         formLabels.at(person)->SetLabel(wxString(cjgt::getFormString(verbForm)));
     }
     
-    this->Fit();
+    sizer->SetSizeHints(this);
 }

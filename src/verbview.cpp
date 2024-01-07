@@ -40,5 +40,5 @@ void VerbView::setVerb(const verbDB::Verb &inputVerb) {
         pages.at(tense)->setVerb(verb);
     }
     
-    this->Fit();
+    sizer->SetSizeHints(this);
 }

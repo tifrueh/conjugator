@@ -1,4 +1,4 @@
-// Copyright (C) 2023 Timo Früh
+// Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in ../src/main.cpp
 
 #pragma once
@@ -190,7 +190,8 @@ namespace verbDB {
     extern const Verb seRejouir;
     extern const Verb servir;
     extern const Verb seTaire;
-    extern const Verb sortir;
+    extern const Verb sortirAvoir;
+    extern const Verb sortirEtre;
     extern const Verb souffrir;
     extern const Verb suffire;
     extern const Verb suivre;
@@ -199,7 +200,8 @@ namespace verbDB {
     extern const Verb valoir;
     extern const Verb vendre;
     extern const Verb venir;
-    extern const Verb vieillir;
+    extern const Verb vieillirAvoir;
+    extern const Verb vieillirEtre;
     extern const Verb vivre;
     extern const Verb voir;
     extern const Verb vouloir;

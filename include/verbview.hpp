@@ -1,4 +1,4 @@
-// Copyright (C) 2023 Timo Früh
+// Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in ../src/main.cpp
 
 #pragma once
@@ -10,26 +10,28 @@
     #include <wx/wx.h>
 #endif
 
+#include <wx/choicebk.h>
+
 #include <map>
-#include <array>
 #include <string>
 
 #include <wx/vscroll.h>
 
+#include "verbviewpanel.hpp"
+
 #include "verb.db.hpp"
 
 
-class VerbView : public wxVScrolledWindow {
+class VerbView : public wxPanel {
     public:
         VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb);
-        wxCoord OnGetRowHeight(size_t row) const;
         void setVerb(const verbDB::Verb& inputVerb);
 
     private:
+        wxChoicebook* tensebook;
+        std::map<int, VerbViewPanel*> pages;
+        
         wxBoxSizer* sizer;
 
         verbDB::Verb verb;
-
-        std::map<std::array<int, 2>, wxStaticText*> formLabels;
-        std::map<int, wxStaticText*> titleLabels;
 };

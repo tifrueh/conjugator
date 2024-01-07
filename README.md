@@ -104,7 +104,7 @@ _Note: `Ctrl` corresponds to `Cmd` on macOS systems_
 
 ### Inspector
 
-<div align=center><img src="./resources/preview-inspector.png" width=400 height=400></div>
+<div align=center><img src="./resources/preview-inspector.png" width=400 height=373.67></div>
 
 There is also an additional window, called **Inspecteur**, which can be used to display the whole conjugation of a verb. This window is primarily intended to be used by proofreaders who, by using the **Inspecteur**, can view the entirety of the database used by the app and therefore find mistakes (of which I'm sure there are plenty) faster than by simply using the app. The **Inspecteur** can of course also be used to help out while learning the conjugations.
 

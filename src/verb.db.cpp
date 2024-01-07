@@ -1,4 +1,4 @@
-// Copyright (C) 2023 Timo Früh
+// Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
 #include <string>
@@ -82,7 +82,30 @@ const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::fermer,
     &verbDB::fuir,
     &verbDB::grimper,
-    &verbDB::guerir
+    &verbDB::guerir,
+
+    &verbDB::sAssoir,
+    &verbDB::sEnnuyer,
+    &verbDB::sInquieter,
+    &verbDB::savoir,
+    &verbDB::secher,
+    &verbDB::sentir,
+    &verbDB::sePlaindre,
+    &verbDB::sePromener,
+    &verbDB::seRejouir,
+    &verbDB::servir,
+    &verbDB::seTaire,
+    &verbDB::souffrir,
+    &verbDB::suffire,
+    &verbDB::suivre,
+    &verbDB::tenir,
+    &verbDB::traduire,
+    &verbDB::valoir,
+    &verbDB::vendre,
+    &verbDB::venir,
+    &verbDB::vivre,
+    &verbDB::voir,
+    &verbDB::vouloir
 };
 
 std::vector<const verbDB::Verb*> verbDB::verbsER = {};

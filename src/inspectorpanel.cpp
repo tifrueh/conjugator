@@ -1,4 +1,4 @@
-// Copyright (C) 2023 Timo Früh
+// Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
 #include <wx/wxprec.h>
@@ -30,11 +30,13 @@ InspectorPanel::InspectorPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
     verbView = new VerbView(this, wxID_ANY, *cjgt::getVerb(verbBox->GetStringSelection().ToStdWstring()));
 
-    topsizer->Add(verbView, 1, wxEXPAND | wxALL, 5);
+    topsizer->Add(verbView, 1, wxEXPAND | wxALL, 0);
 
     this->SetSizerAndFit(topsizer);
 }
 
 void InspectorPanel::setVerbFromBox() {
     verbView->setVerb(*cjgt::getVerb(verbBox->GetStringSelection().ToStdWstring()));
+    
+    topsizer->SetSizeHints(this);
 }

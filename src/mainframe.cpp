@@ -1,10 +1,14 @@
-// Copyright (C) 2023 Timo Früh
+// Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
 #include <wx/wxprec.h>
  
 #ifndef WX_PRECOMP
     #include <wx/wx.h>
+#endif
+
+#ifndef __WXOSX__
+    #include "config.h"
 #endif
 
 
@@ -23,8 +27,11 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     SetIcon(wxICON(conjugateur));
 
     info.SetName(wxT("Conjugateur"));
-    info.SetVersion(wxT("1.0.0-beta-4"));
     info.SetCopyright(wxT("Copyright © 2023 Timo Früh"));
+    
+    #ifndef __WXOSX__
+        info.SetVersion(VERSION_STR);
+    #endif
 
     #ifdef __WXGTK__
         info.SetIcon(wxICON(conjugateur));

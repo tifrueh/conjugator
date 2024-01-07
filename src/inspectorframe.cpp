@@ -1,4 +1,4 @@
-// Copyright (C) 2023 Timo Früh
+// Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
 #include "verb.db.hpp"
@@ -25,4 +25,5 @@ InspectorFrame::InspectorFrame(wxWindow *parent, const wxWindowID &winID, const 
 
 void InspectorFrame::updateVerb() {
     inspectorPanel->setVerbFromBox();
+    topSizer->SetSizeHints(this);
 }

@@ -75,6 +75,7 @@ elif host_machine.system() == 'windows'
 endif
 
 install_data('resources/conjugateur.png')
+install_data('resources/conjugateur.svg')
 install_data('resources/conjugateur.desktop')
 
 conjugateur = executable(

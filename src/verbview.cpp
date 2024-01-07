@@ -23,7 +23,7 @@ VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : 
     tensebook = new wxChoicebook(this, wxID_ANY);
 
     for (int tense = verbDB::Tense::present; tense <= verbDB::Tense::conditionnel; tense++) {
-        pages.insert({tense, new VerbViewPanel(this, wxID_ANY, verb, tense)});
+        pages.insert({tense, new VerbViewPanel(tensebook, wxID_ANY, verb, tense)});
         tensebook->InsertPage(tense - verbDB::Tense::present, pages.at(tense), wxString(cjgt::getTense(tense)));
     }
     

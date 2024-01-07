@@ -57,7 +57,7 @@ void VerbViewPanel::setVerb(const verbDB::Verb& inputVerb) {
     this->verb = inputVerb;
 
     cjgt::VerbForm participePresent = cjgt::getVerbForm(verb, verbDB::Tense::participePresent, verbDB::Person::none);
-    formLabels.at(verbDB::Person::none)->SetLabel(wxString("participe present: " + cjgt::getFormString(participePresent)));
+    formLabels.at(verbDB::Person::none)->SetLabel(wxString(cjgt::getFormString(participePresent)));
     
     for (int person = verbDB::Person::je; person <= verbDB::Person::elles; person++) {
         cjgt::VerbForm verbForm = cjgt::getVerbForm(verb, tense, person);

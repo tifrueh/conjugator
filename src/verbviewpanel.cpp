@@ -29,8 +29,8 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
 
     sizer->AddSpacer(5);
 
-    sizer->Add(titleLabel, 0, wxEXPAND | wxLEFT | wxRIGHT, 10);
-    sizer->Add(formLabels.at(verbDB::Person::none), 0, wxEXPAND | wxLEFT | wxRIGHT, 10);
+    sizer->Add(titleLabel, 0, wxEXPAND, 0);
+    sizer->Add(formLabels.at(verbDB::Person::none), 0, wxEXPAND, 0);
     
     if (tense != verbDB::Tense::present) {
         sizer->Hide(2);
@@ -40,7 +40,7 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
 
     for (int person = verbDB::Person::je; person <= verbDB::Person::elles; person++) {
         formLabels.insert({person, new wxStaticText(this, wxID_ANY, wxEmptyString)});
-        sizer->Add(formLabels.at(person), 0, wxEXPAND | wxLEFT | wxRIGHT, 10);
+        sizer->Add(formLabels.at(person), 0, wxEXPAND, 0);
     }
     
     this->setVerb(verb);

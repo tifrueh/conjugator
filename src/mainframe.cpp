@@ -27,7 +27,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     SetIcon(wxICON(conjugateur));
 
     info.SetName(wxT("Conjugateur"));
-    info.SetCopyright(wxT("Copyright © 2023 Timo Früh"));
+    info.SetCopyright(wxT("Copyright © 2023-2024 Timo Früh"));
     
     #ifndef __WXOSX__
         info.SetVersion(VERSION_STR);

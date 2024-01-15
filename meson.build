@@ -98,7 +98,7 @@ if host_machine.system() == 'darwin'
   run_target(
       'package_mac',
       command: [ 
-        'scripts/package_mac.sh', conf_data.get('mac_version')],
+        'scripts/package_mac.sh', conf_data.get('semver')],
       depends: [ conjugateur ],
       env: env
   )

@@ -9,3 +9,9 @@ option('macos_min',
   value: '11',
   description: 'The minimum macOS version supported'
 )
+
+option('macos_universal',
+  type: 'combo',
+  choices: [ 'false', 'true' ], value: 'false',
+  description: 'Whether to build a macOS Universal binary (arm64, x86_64)'
+)

@@ -21,6 +21,11 @@ elif get_option('static_wxwidgets') == 'enabled'
   wx = dependency('wxwidgets', modules: '--static')
 endif
 
+if get_option('macos_universal') == 'true'
+  add_project_arguments('-arch', 'x86_64', '-arch', 'arm64', language: 'cpp')
+  add_project_link_arguments('-arch', 'x86_64', '-arch', 'arm64', language: 'cpp')
+endif
+
 conf_data = configuration_data()
 conf_data.set(
   'tag', meson.project_version()
@@ -29,14 +34,21 @@ conf_data.set(
   'semver', meson.project_version().substring(1)
 )
 conf_data.set(
-  'mac_bundle_version', conf_data.get('semver') + '-' + host_machine.cpu()
-)
-conf_data.set(
   'project_source_root', meson.project_source_root()
 )
 conf_data.set(
   'resources_dir', meson.project_source_root() + '/resources'
 )
+
+if get_option('macos_universal') == "true"
+  conf_data.set(
+    'mac_bundle_version', conf_data.get('semver') + '-universal'
+  )
+else
+  conf_data.set(
+    'mac_bundle_version', conf_data.get('semver') + '-' + host_machine.cpu()
+  )
+endif
 
 subdir('configuration-files')
 

@@ -8,23 +8,8 @@ project(
 )
 
 incdir = include_directories([ 'include' , 'configuration-files' ])
-
 srcs = files()
-
 env = environment()
-
-subdir('src')
-
-if get_option('static_wxwidgets') == 'auto'
-  wx = dependency('wxwidgets')
-elif get_option('static_wxwidgets') == 'enabled'
-  wx = dependency('wxwidgets', modules: '--static')
-endif
-
-if get_option('macos_universal') == 'true'
-  add_project_arguments('-arch', 'x86_64', '-arch', 'arm64', language: 'cpp')
-  add_project_link_arguments('-arch', 'x86_64', '-arch', 'arm64', language: 'cpp')
-endif
 
 conf_data = configuration_data()
 conf_data.set(
@@ -40,7 +25,9 @@ conf_data.set(
   'resources_dir', meson.project_source_root() + '/resources'
 )
 
-if get_option('macos_universal') == "true"
+if get_option('macos_universal') == 'true'
+  add_project_arguments('-arch', 'x86_64', '-arch', 'arm64', language: 'cpp')
+  add_project_link_arguments('-arch', 'x86_64', '-arch', 'arm64', language: 'cpp')
   conf_data.set(
     'mac_bundle_version', conf_data.get('semver') + '-universal'
   )
@@ -50,9 +37,13 @@ else
   )
 endif
 
-subdir('configuration-files')
+if get_option('static_wxwidgets') == 'auto'
+  wx = dependency('wxwidgets')
+elif get_option('static_wxwidgets') == 'enabled'
+  wx = dependency('wxwidgets', modules: '--static')
+endif
 
-deps = [ wx ]
+subdir('configuration-files')
 
 if host_machine.system() == 'darwin'
   
@@ -85,6 +76,10 @@ elif host_machine.system() == 'windows'
   srcs += resources
     
 endif
+
+subdir('src')
+
+deps = [ wx ]
 
 install_data('resources/conjugateur.png')
 install_data('resources/conjugateur.svg')

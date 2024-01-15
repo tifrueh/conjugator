@@ -23,13 +23,13 @@ endif
 
 conf_data = configuration_data()
 conf_data.set(
-  'version', meson.project_version()
+  'tag', meson.project_version()
 )
 conf_data.set(
-  'mac_version', meson.project_version().substring(1)
+  'semver', meson.project_version().substring(1)
 )
 conf_data.set(
-  'mac_bundle_version', conf_data.get('mac_version') + '-' + host_machine.system() + '-' + host_machine.cpu()
+  'mac_bundle_version', conf_data.get('semver') + '-' + host_machine.cpu()
 )
 conf_data.set(
   'project_source_root', meson.project_source_root()

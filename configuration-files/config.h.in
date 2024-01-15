@@ -1,1 +1,1 @@
-#define VERSION_STR "@version@"
+#define VERSION_STR "@tag@"

@@ -31,8 +31,6 @@ elif get_option('static_wxwidgets') == 'enabled'
   wx = dependency('wxwidgets', modules: '--static')
 endif
 
-subdir('configuration-files')
-
 if host_machine.system() == 'darwin'
   
   env.set('MACOSX_DEPLOYMENT_TARGET', get_option('macos_min'))
@@ -76,6 +74,8 @@ elif host_machine.system() == 'windows'
   srcs += resources
     
 endif
+
+subdir('configuration-files')
 
 subdir('src')
 

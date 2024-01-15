@@ -25,18 +25,6 @@ conf_data.set(
   'resources_dir', meson.project_source_root() + '/resources'
 )
 
-if get_option('macos_universal') == 'true'
-  add_project_arguments('-arch', 'x86_64', '-arch', 'arm64', language: 'cpp')
-  add_project_link_arguments('-arch', 'x86_64', '-arch', 'arm64', language: 'cpp')
-  conf_data.set(
-    'mac_bundle_version', conf_data.get('semver') + '-universal'
-  )
-else
-  conf_data.set(
-    'mac_bundle_version', conf_data.get('semver') + '-' + host_machine.cpu()
-  )
-endif
-
 if get_option('static_wxwidgets') == 'auto'
   wx = dependency('wxwidgets')
 elif get_option('static_wxwidgets') == 'enabled'
@@ -51,6 +39,18 @@ if host_machine.system() == 'darwin'
   macos_min_arg = '-mmacosx-version-min=@0@'
   add_global_arguments(macos_min_arg.format(get_option('macos_min')), language: 'cpp')
   add_global_link_arguments(macos_min_arg.format(get_option('macos_min')), language: 'cpp')
+
+  if get_option('macos_universal') == 'true'
+    add_project_arguments('-arch', 'x86_64', '-arch', 'arm64', language: 'cpp')
+    add_project_link_arguments('-arch', 'x86_64', '-arch', 'arm64', language: 'cpp')
+    conf_data.set(
+      'mac_bundle_version', conf_data.get('semver') + '-universal'
+    )
+  else
+    conf_data.set(
+      'mac_bundle_version', conf_data.get('semver') + '-' + host_machine.cpu()
+    )
+  endif
 
 elif host_machine.system() == 'windows' 
   

@@ -16,15 +16,15 @@ A precompiled version and packaged version for macOS (`>=12`) can be downloaded 
 
 1. Tap my homebrew tap
 
-~~~
-$ brew tap tifrueh/mytap
-~~~
+    ~~~
+    $ brew tap tifrueh/mytap
+    ~~~
 
 2. Install Conjugateur
 
-~~~
-$ brew install --cask tifrueh/mytap/conjugateur
-~~~
+    ~~~
+    $ brew install --cask tifrueh/mytap/conjugateur
+    ~~~
 
 ### macOS (manual install)
 

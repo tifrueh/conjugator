@@ -15,11 +15,15 @@
 
 #include "quizitem.hpp"
 
+// Construct a new quiz item consisting of a question, a text entry for the
+// answer and a hidden solution text. It will add itself to the wxFlexGridSizer
+// provided as parameter automatically.
 QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbForm& verbForm) {
     this->verbForm = verbForm;
     this->sizer = sizer;
     this->parent = parent;
 
+    // Don't show a person if the question is prompting for a participe present form.
     if (verbForm.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
         questionString = verbForm.infinitif + L": " + verbForm.tense;
     } else {
@@ -31,6 +35,7 @@ QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbFor
         wxString(questionString)
     );
 
+    // Create a text control with a minimum width of 150.
     textCtrl = new wxTextCtrl(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(150, wxDefaultSize.GetY()));
 
     solution = new wxStaticText(parent, wxID_ANY, wxEmptyString);
@@ -57,10 +62,12 @@ QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbFor
     );
 }
 
+// Set the focus to the text control.
 void QuizItem::SetFocus() {
     textCtrl->SetFocus();
 }
 
+// Reset the verb form this quiz item should ask for.
 void QuizItem::setVerbForm(const cjgt::VerbForm& form) {
     this->verbForm = form;
 
@@ -70,6 +77,7 @@ void QuizItem::setVerbForm(const cjgt::VerbForm& form) {
         questionString = form.infinitif + L": " + form.tense + L" – " + form.person;
     }
 
+    // Set the text colour back to default.
     textCtrl->SetForegroundColour(wxNullColour);
 
     textCtrl->Clear();
@@ -79,6 +87,8 @@ void QuizItem::setVerbForm(const cjgt::VerbForm& form) {
     question->SetLabelText(questionString);
 }
 
+// Check if the given answer in the text control is correct and colour it
+// correspondingly.
 bool QuizItem::evaluate() {
     bool correct;
     std::wstring textCtrlString = std::wstring(textCtrl->GetValue().wchar_str());
@@ -99,6 +109,7 @@ bool QuizItem::evaluate() {
     return correct;
 }
 
+// Show the solution to the question.
 void QuizItem::showSolution() {
     solution->SetLabelText(verbForm.form);
 }

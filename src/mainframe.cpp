@@ -30,7 +30,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     info.SetName(wxT("Conjugateur"));
     info.SetCopyright(wxT("Copyright © 2023-2024 Timo Früh"));
     
-    // Set version in the app info to VERSION_STR only if on macOS.
+    // Set version in the app info to VERSION_STR only if not on macOS.
     #ifndef __WXOSX__
         info.SetVersion(VERSION_STR);
     #endif

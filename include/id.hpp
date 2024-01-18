@@ -10,6 +10,7 @@
 #endif
 
 
+// This enum contains the all necessary window IDs.
 enum winID {
     checkBoxER,
     checkBoxIR,

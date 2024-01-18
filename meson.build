@@ -5,7 +5,7 @@ project(
     default_options: [ 'cpp_std=c++17' ],
     license: 'GPL-3.0-or-later',
     license_files: 'LICENSE.md',
-    version: 'v1.0.0-dev'
+    version: '1.0.0-dev'
 )
 
 # Specify the include directories.
@@ -22,10 +22,10 @@ conf_data = configuration_data()
 
 # Set configuration variables.
 conf_data.set(
-  'tag', meson.project_version()
+  'version', meson.project_version()
 )
 conf_data.set(
-  'semver', meson.project_version().substring(1)
+  'tag', 'v' + meson.project_version()
 )
 conf_data.set(
   'project_source_root', meson.project_source_root()
@@ -57,11 +57,11 @@ if host_machine.system() == 'darwin'
     add_project_arguments('-arch', 'x86_64', '-arch', 'arm64', language: 'cpp')
     add_project_link_arguments('-arch', 'x86_64', '-arch', 'arm64', language: 'cpp')
     conf_data.set(
-      'mac_bundle_version', conf_data.get('semver') + '-universal'
+      'mac_bundle_version', conf_data.get('version') + '-universal'
     )
   else
     conf_data.set(
-      'mac_bundle_version', conf_data.get('semver') + '-' + host_machine.cpu()
+      'mac_bundle_version', conf_data.get('version') + '-' + host_machine.cpu()
     )
   endif
 
@@ -130,7 +130,7 @@ if host_machine.system() == 'darwin'
   run_target(
       'package_mac',
       command: [ 
-        'scripts/package_mac.sh', conf_data.get('semver')],
+        'scripts/package_mac.sh', conf_data.get('version')],
       depends: [ conjugateur ],
       env: env
   )

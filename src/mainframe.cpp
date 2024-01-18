@@ -30,9 +30,9 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     info.SetName(wxT("Conjugateur"));
     info.SetCopyright(wxT("Copyright © 2023-2024 Timo Früh"));
     
-    // Set version in the app info to VERSION_STR only if not on macOS.
+    // Set version in the app info to TAG_STR only if not on macOS.
     #ifndef __WXOSX__
-        info.SetVersion(VERSION_STR);
+        info.SetVersion(TAG_STR);
     #endif
 
     // Add a bunch more info to the app, but only on GTK, as it is the only

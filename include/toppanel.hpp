@@ -15,6 +15,8 @@
 #include "conjugateur.hpp"
 #include "quizitem.hpp"
 
+// The only panel of the mainframe. The rest of the main app controls resides
+// within this panel, so that keyboard focus can be handled automatically.
 class TopPanel : public wxPanel {
     public:
         explicit TopPanel(wxWindow* parent);

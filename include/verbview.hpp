@@ -10,7 +10,6 @@
 #endif
 
 #include <wx/choicebk.h>
-#include <wx/vscroll.h>
 
 
 #include <map>

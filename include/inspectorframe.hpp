@@ -9,8 +9,6 @@
     #include <wx/wx.h>
 #endif
 
-#include <wx/srchctrl.h>
-
 
 #include "id.hpp"
 #include "inspectorpanel.hpp"

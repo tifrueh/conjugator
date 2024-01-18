@@ -16,8 +16,6 @@
 #include <wx/aboutdlg.h>
 
 
-#include <vector>
-
 #include "id.hpp"
 #include "inspectorframe.hpp"
 #include "toppanel.hpp"

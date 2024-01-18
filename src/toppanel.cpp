@@ -19,14 +19,19 @@
 
 #include "toppanel.hpp"
 
+// Construct a new TopPanel.
 TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
+    // Add a horizontal box sizer.
     topsizer = new wxBoxSizer(wxHORIZONTAL);
 
+    // Add a vertical static box sizer to hold the form selection checkboxes.
     formSelectionSizer = new wxStaticBoxSizer(wxVERTICAL, this, wxT("Sélection de verbes/temps"));
 
+    // Add a vertical static box sizer to hold a sizer, which, in turn, will hold all quiz items.
     quizBoxSizer = new wxStaticBoxSizer(wxVERTICAL, this, wxT("Quiz"));
 
+    // Add a flex grid sizer to hold all quiz items.
     quizSizer = new wxFlexGridSizer(3, wxSize(10, 3));
     quizSizer->AddGrowableCol(1, 1);
 
@@ -36,6 +41,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         quizSizer->AddGrowableRow(i, 1);
     }
 
+    // Add all the contents of the formSelectionSizer and, in turn, add it to the topsizer.
     verbTypeTitle = new wxStaticText(this, wxID_ANY, wxT("Types de verbes"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
     wxFont titleFont = verbTypeTitle->GetFont();
     titleFont.Scale(1.1);
@@ -273,6 +279,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
     topsizer->AddSpacer(bigSpace);
 
+    // Add the quizBoxSizer to the topsizer.
     topsizer->Add(
         quizBoxSizer,
         1,
@@ -283,10 +290,16 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     SetSizerAndFit(topsizer);
 }
 
+// Reset the keyboard focus to the first quiz item.
 void TopPanel::ResetFocus() {
     quizItems.at(0)->SetFocus();
 }
 
+// Generate a new quiz. Show a message if there are not enough possible verb
+// forms selected to generate the desired amount of questions.
+// Note: This error should not be possible, but it was possible during early
+// development stages, when not many verbs were added yet, so it'll just stay
+// in place as a safety measure.
 void TopPanel::GenerateQuiz() {
 
     std::vector<cjgt::VerbForm> verbForms;
@@ -306,6 +319,8 @@ void TopPanel::GenerateQuiz() {
     topsizer->SetSizeHints(this);
 }
 
+// Randomly retrieve as many verb forms as needed for the desired amount of
+// questions based on the selected verbs and tenses.
 std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
     std::vector<const verbDB::Verb*> usableVerbs;
     std::vector<verbDB::Tense> usableTenses;
@@ -408,12 +423,15 @@ std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
     return verbForms;
 }
 
+// Evaluate all quiz items.
 void TopPanel::Check() {
     for (QuizItem* item : quizItems) {
         item->evaluate();
     }
 }
 
+// Evaluate all quiz items, show all solutions and set the size hints of the
+// topsizer to accommodate the solution labels.
 void TopPanel::ShowSolutions() {
     for (QuizItem* item : quizItems) {
         item->evaluate();
@@ -424,6 +442,7 @@ void TopPanel::ShowSolutions() {
 
 }
 
+// Select all verb suffix checkboxes.
 void TopPanel::SelectAllVerbs() {
     checkBoxER->SetValue(true);
     checkBoxIR->SetValue(true);
@@ -431,6 +450,7 @@ void TopPanel::SelectAllVerbs() {
     checkBoxRE->SetValue(true);
 }
 
+// Select all tense checkboxes.
 void TopPanel::SelectAllTenses() {
     checkBoxParticipePresent->SetValue(true);
     checkBoxPresent->SetValue(true);
@@ -442,6 +462,7 @@ void TopPanel::SelectAllTenses() {
     checkBoxConditionnel->SetValue(true);
 }
 
+// Unselect all checkboxes.
 void TopPanel::UnselectAll() {
     checkBoxER->SetValue(false);
     checkBoxIR->SetValue(false);

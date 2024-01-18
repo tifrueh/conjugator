@@ -12,6 +12,7 @@
 
 #include "verbviewpanel.hpp"
 
+// Construct a new VerbViewPanel, specifying the tense as int.
 VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb, const int &tense) : wxPanel(parent, id) {
     this->verb = verb;
     this->tense = tense;
@@ -33,12 +34,14 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
     sizer->Add(titleLabel, 0, wxEXPAND, 0);
     sizer->Add(formLabels.at(verbDB::Person::none), 0, wxEXPAND, 0);
     
+    // Hide item 2, which is the participe present, if the tense is not set to present.
     if (tense != verbDB::Tense::present) {
         sizer->Hide(2);
     }
 
     sizer->AddSpacer(10);
 
+    // Add a label so the sizer for each verb form of the tense.
     for (int person = verbDB::Person::je; person <= verbDB::Person::elles; person++) {
         formLabels.insert({person, new wxStaticText(this, wxID_ANY, wxEmptyString)});
         sizer->Add(formLabels.at(person), 0, wxEXPAND, 0);
@@ -50,10 +53,12 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
 }
 
 
+// Construct a new VerbViewPanel, specifying the tense as enum.
 VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb, const verbDB::Tense& tense) {
     VerbViewPanel(parent, id, verb, tense);
 }
 
+// Reset the verb of the verb view panel.
 void VerbViewPanel::setVerb(const verbDB::Verb& inputVerb) {
     this->verb = inputVerb;
 

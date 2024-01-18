@@ -28,8 +28,8 @@ endif
 if host_machine.system() != 'darwin'
 
   configure_file(
-    input: 'config.h.in',
-    output: 'config.h',
+    input: 'config.hpp.in',
+    output: 'config.hpp',
     configuration: conf_data
   )
 

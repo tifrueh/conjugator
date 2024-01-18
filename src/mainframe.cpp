@@ -8,7 +8,7 @@
 #endif
 
 #ifndef __WXOSX__
-    #include "config.h"
+    #include "config.hpp"
 #endif
 
 

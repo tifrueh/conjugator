@@ -14,6 +14,7 @@
 
 #include "verbview.hpp"
 
+// The only panel of the inspector, containing the verbbox and the verbview.
 class InspectorPanel : public wxPanel {
     public:
         explicit InspectorPanel(wxWindow* parent);

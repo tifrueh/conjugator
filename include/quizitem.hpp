@@ -12,8 +12,8 @@
 
 #include <string>
 
-#include "verb.db.hpp"
 #include "conjugateur.hpp"
+#include "verb.db.hpp"
 
 
 // A group of windows, consisting of a question label, a text entry for the

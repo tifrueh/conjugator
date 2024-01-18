@@ -10,10 +10,10 @@
 #endif
 
 
-#include "verb.db.hpp"
-#include "id.hpp"
 #include "conjugateur.hpp"
+#include "id.hpp"
 #include "verbview.hpp"
+#include "verb.db.hpp"
 
 
 // The only panel of the inspector, containing the verbbox and the verbview.

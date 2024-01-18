@@ -24,8 +24,8 @@
 #include <wx/intl.h>
 
 
-#include "verb.db.hpp"
 #include "mainframe.hpp"
+#include "verb.db.hpp"
 
 
 // The main app class with a locale and an overridden OnInit().

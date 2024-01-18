@@ -3,9 +3,9 @@
 
 #pragma once
 
+#include <array>
 #include <string>
 #include <vector>
-#include <array>
 
 
 // This namespace contains all functionality related to the verb database.

@@ -19,8 +19,8 @@
 #include <vector>
 
 #include "id.hpp"
-#include "toppanel.hpp"
 #include "inspectorframe.hpp"
+#include "toppanel.hpp"
 
 #include "conjugateur.xpm"
 

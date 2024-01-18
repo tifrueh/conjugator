@@ -10,15 +10,15 @@
 #endif
 
 
-#include <vector>
 #include <algorithm>
-#include <stdexcept>
 #include <random>
+#include <stdexcept>
+#include <vector>
 
 #include "conjugateur.hpp"
 #include "id.hpp"
-#include "verb.db.hpp"
 #include "quizitem.hpp"
+#include "verb.db.hpp"
 
 
 // The only panel of the mainframe. The rest of the main app controls resides

@@ -17,8 +17,8 @@
 #include <string>
 
 #include "conjugateur.hpp"
-#include "verb.db.hpp"
 #include "verbviewpanel.hpp"
+#include "verb.db.hpp"
 
 
 // This panel contains a wxChoicebook with one additional panel for each tense.

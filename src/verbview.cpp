@@ -15,7 +15,6 @@
 
 #include "verbview.hpp"
 
-// Construct a new VerbView.
 VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : wxPanel(parent, id) {
     this->verb = verb;
     
@@ -35,7 +34,6 @@ VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : 
 
 }
 
-// Set the verb of all verb view panels.
 void VerbView::setVerb(const verbDB::Verb &inputVerb) {
     verb = inputVerb;
     

@@ -210,10 +210,19 @@ namespace verbDB {
     extern const Verb voir;
     extern const Verb vouloir;
 
+    // A vector containing pointers to all known verbs.
     extern const std::vector<const Verb*> allVerbs;
+    
+    // A vector containing pointers to all -er verbs.
     extern std::vector<const Verb*> verbsER;
+    
+    // A vector containing pointers to all -ir verbs.
     extern std::vector<const Verb*> verbsIR;
+    
+    // A vector containing pointers to all -oir verbs.
     extern std::vector<const Verb*> verbsOIR;
+    
+    // A vector containing pointers to all -re verbs.
     extern std::vector<const Verb*> verbsRE;
 
     // An enumerator containing all recognised tenses.
@@ -222,8 +231,15 @@ namespace verbDB {
     // An enumerator containing all recognised persons.
     enum Person {none, je, tu, il, elle, nous, vous, ils, elles };
 
+    // An array containing all tense names as strings and IN THE SAME ORDER AS THE
+    // verbDB::Tense ENUMERATOR!!!
     extern const std::array<std::wstring, 9> tenseStrings;
+    
+    // An array containing all persons as strings and IN THE SAME ORDER AS THE
+    // verbDB::Person ENUMERATOR!!!
     extern const std::array<std::wstring, 9> personStrings;
 
+    // Sort all the verb pointers from allVerbs into the suffix vectors.
+    // This method MUST and MAY ONLY be called ONCE.
     void initTypeVectors();
 }

@@ -22,7 +22,6 @@
 
 #include "conjugateur.xpm"
 
-// Construct a new MainFrame.
 MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
 
     SetIcon(wxICON(conjugateur));
@@ -129,21 +128,18 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     SetSizerAndFit(topPanelSizer);
 }
 
-// Enable all menus in the menu bar.
 void MainFrame::enableMenuBar() {
     for (size_t menu = 0; menu < menuBar->GetMenuCount(); menu++) {
         menuBar->EnableTop(menu, true);
     }
 }
 
-// Disable all menus in the menu bar.
 void MainFrame::disableMenuBar() {
     for (size_t menu = 0; menu < menuBar->GetMenuCount(); menu++) {
         menuBar->EnableTop(menu, false);
     }
 }
 
-// Resize the mainframe only if more space is needed.
 void MainFrame::computeNewSize() {
     topPanelSizer->Layout();
 
@@ -154,8 +150,6 @@ void MainFrame::computeNewSize() {
     }
 }
 
-// Regenerate the quiz and compute the new size of the mainframe when the okay
-// button is clicked.
 void MainFrame::OnOkay(wxCommandEvent& event) {
     topPanel->GenerateQuiz();
     topPanel->ResetFocus();
@@ -163,47 +157,36 @@ void MainFrame::OnOkay(wxCommandEvent& event) {
     computeNewSize();
 }
 
-// Check all answers when the check button is clicked.
 void MainFrame::OnCheck(wxCommandEvent& event) {
     topPanel->Check();
 }
 
-// Show the solutions to the quiz and compute the new size of the mainframe
-// when the solutions button is clicked.
 void MainFrame::OnSolution(wxCommandEvent& event) {
     topPanel->ShowSolutions();
 
     computeNewSize();
 }
 
-// Show and about box with the app info when the about menu entry is selected.
 void MainFrame::OnAbout(wxCommandEvent& event) {
    wxAboutBox(GetInfo(), this);
 }
 
-// Select all verbs when the corresponding menu entry is selected.
 void MainFrame::OnSelectVerbs(wxCommandEvent& event) {
     topPanel->SelectAllVerbs();
 }
 
-// Select all tenses when the corresponding menu entry is selected.
 void MainFrame::OnSelectTenses(wxCommandEvent& event) {
     topPanel->SelectAllTenses();
 }
 
-// Unselect all verbs and tenses when the corresponding menu entry is selected.
 void MainFrame::OnUnselectAll(wxCommandEvent& event) {
     topPanel->UnselectAll();
 }
 
-// Open the app's github page in the default browser when the corresponding
-// menu entry is selected.
 void MainFrame::OnGitHub(wxCommandEvent& event) {
     wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/conjugateur"));
 }
 
-// Open the inspector and disable everything related to the mainframe when the
-// corresponding menu entry is clicked.
 void MainFrame::OnInspector(wxCommandEvent &event) {
     if (inspector == nullptr) {
         inspector = new InspectorFrame(this, winID::inspector, wxT("Inspecteur"));
@@ -214,8 +197,6 @@ void MainFrame::OnInspector(wxCommandEvent &event) {
     inspector->Show();
 }
 
-// Reset the pointer to the inspector and enable everything related to the
-// mainframe when the inspector is closed.
 void MainFrame::OnInspectorClose(wxWindowDestroyEvent& event) {
     inspector = nullptr;
     this->enableMenuBar();
@@ -223,13 +204,10 @@ void MainFrame::OnInspectorClose(wxWindowDestroyEvent& event) {
     topPanel->ResetFocus();
 }
 
-// Update the verb in the verbview of the inspector when a new verb is selected
-// in the verbbox.
 void MainFrame::OnVerbBox(wxCommandEvent &event) {
     inspector->updateVerb();
 }
 
-// Return the app info.
 wxAboutDialogInfo MainFrame::GetInfo() {
     return info;
 }

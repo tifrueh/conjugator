@@ -18,7 +18,11 @@
 // The most top-level frame of the inspector window.
 class InspectorFrame : public wxFrame {
     public:
+        // Construct a new inspector frame.
         InspectorFrame(wxWindow* parent, const wxWindowID& winID, const wxString& title);
+        
+        // Set the verb of the verbview to the one selected in the verbbox and set the
+        // sizehints of the frame from the topsizer.
         void updateVerb();
 
     private:

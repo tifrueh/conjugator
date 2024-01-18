@@ -12,7 +12,6 @@
 
 #include "verbviewpanel.hpp"
 
-// Construct a new VerbViewPanel, specifying the tense as int.
 VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb, const int &tense) : wxPanel(parent, id) {
     this->verb = verb;
     this->tense = tense;
@@ -53,12 +52,10 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
 }
 
 
-// Construct a new VerbViewPanel, specifying the tense as enum.
 VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb, const verbDB::Tense& tense) {
     VerbViewPanel(parent, id, verb, tense);
 }
 
-// Reset the verb of the verb view panel.
 void VerbViewPanel::setVerb(const verbDB::Verb& inputVerb) {
     this->verb = inputVerb;
 

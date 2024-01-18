@@ -8,7 +8,6 @@
 
 #include "conjugateur.hpp"
 
-// Search a verb based on its infinitive form: returns a pointer to the verb.
 const verbDB::Verb* cjgt::getVerb(const std::wstring &infinitif) {
     for (const verbDB::Verb* verb : verbDB::allVerbs) {
         if (verb->infinitif == infinitif) {
@@ -20,7 +19,6 @@ const verbDB::Verb* cjgt::getVerb(const std::wstring &infinitif) {
 
 }
 
-// Retrieve a verb form based on the verb, the tense (as int) and the person (as int).
 cjgt::VerbForm cjgt::getVerbForm(const verbDB::Verb& verb, const int& tense, const int& person) {
 
     cjgt::VerbForm verbForm;
@@ -215,35 +213,28 @@ cjgt::VerbForm cjgt::getVerbForm(const verbDB::Verb& verb, const int& tense, con
     return verbForm;
 }
 
-// Retrieve a verb form based on the verb, the tense and the person.
 cjgt::VerbForm cjgt::getVerbForm(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person) {
     int tenseInt = tense;
     int personInt = person;
     return getVerbForm(verb, tenseInt, personInt);
 }
 
-// Return a tense (provided as enum) as string.
 std::wstring cjgt::getTense(const verbDB::Tense& tense) {
     return verbDB::tenseStrings.at(tense);
 }
 
-// Return a tense (provided as int) as string.
 std::wstring cjgt::getTense(const int& tense) {
     return verbDB::tenseStrings.at(tense);
 }
 
-// Return a person (provided as enum) as string.
 std::wstring cjgt::getPerson(const verbDB::Person& person) {
     return verbDB::personStrings.at(person);
 }
 
-// Return a person (provided as int) as string.
 std::wstring cjgt::getPerson(const int& person) {
     return verbDB::personStrings.at(person);
 }
 
-// Return verb form as string.
-// Je is concatenated automatically, e. g. "j'ai fait".
 std::wstring cjgt::getFormString(const cjgt::VerbForm& verbForm) {
     std::wstring out;
 
@@ -267,13 +258,10 @@ std::wstring cjgt::getFormString(const cjgt::VerbForm& verbForm) {
     return out;
 }
 
-// Compare two verb forms to decide if they are equal.
-// They are considered equal if the infinitive, the person, the form and the tense are equal.
 bool cjgt::VerbForm::operator==(const cjgt::VerbForm& verbForm) const {
     return this->infinitif == verbForm.infinitif && this->person == verbForm.person && this->form == verbForm.form && this->tense == verbForm.tense;
 }
 
-// Strip a string of leading and trailing whitespaces.
 std::wstring cjgt::strip(const std::wstring& string) {
     std::wstring outstring = string;
     

@@ -18,11 +18,22 @@
 // answer and a solution label. It always has to be added to a flex grid sizer.
 class QuizItem {
     public:
+        // Construct a new quiz item. It will add itself to the wxFlexGridSizer
+        // provided as parameter automatically.
         QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbForm& verbForm);
-        bool evaluate();
+
+        // Set the focus to the text control.
         void SetFocus();
-        void showSolution();
+
+        // Reset the verb form this quiz item should ask for.
         void setVerbForm(const cjgt::VerbForm& form);
+
+        // Check if the given answer in the text control is correct and colour it
+        // correspondingly.
+        bool evaluate();
+
+        // Show the solution to the question.
+        void showSolution();
 
     private:
         wxFlexGridSizer* sizer;

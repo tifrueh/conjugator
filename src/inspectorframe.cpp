@@ -12,7 +12,6 @@
 // Define the wx style for the inspecteur window.
 #define wxINSPECTEUR_STYLE wxMINIMIZE_BOX | wxSYSTEM_MENU | wxCAPTION | wxCLOSE_BOX | wxCLIP_CHILDREN | wxFRAME_FLOAT_ON_PARENT
 
-// Construct a new inspector frame.
 InspectorFrame::InspectorFrame(wxWindow *parent, const wxWindowID &winID, const wxString &title) : wxFrame(parent, winID, title, wxDefaultPosition, wxDefaultSize, wxINSPECTEUR_STYLE) {
     SetIcon(wxICON(inspecteur));
 
@@ -25,8 +24,6 @@ InspectorFrame::InspectorFrame(wxWindow *parent, const wxWindowID &winID, const 
     this->SetSizerAndFit(topSizer);
 }
 
-// Set the verb of the verbview to the one selected in the verbbox and set the
-// sizehints of the frame from the topsizer.
 void InspectorFrame::updateVerb() {
     inspectorPanel->setVerbFromBox();
     topSizer->SetSizeHints(this);

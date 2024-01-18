@@ -17,7 +17,11 @@
 // The only panel of the inspector, containing the verbbox and the verbview.
 class InspectorPanel : public wxPanel {
     public:
+        // Construct a new inspector panel.
         explicit InspectorPanel(wxWindow* parent);
+
+        // Set the verb of the verbview to the one selected in the verbbox and set the
+        // sizehints of the panel from the topsizer.
         void setVerbFromBox();
 
     private:

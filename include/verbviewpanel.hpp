@@ -19,8 +19,13 @@
 // This panel displays all forms of a verb in a specified tense.
 class VerbViewPanel : public wxPanel {
     public:
+        // Construct a new VerbViewPanel, specifying the tense as int.
         VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb, const int &tense);
+
+        // Construct a new VerbViewPanel, specifying the tense as enum.
         VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb, const verbDB::Tense& tense);
+
+        // Reset the verb of the verb view panel.
         void setVerb(const verbDB::Verb& inputVerb);
 
     private:

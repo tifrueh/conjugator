@@ -15,9 +15,6 @@
 
 #include "quizitem.hpp"
 
-// Construct a new quiz item consisting of a question, a text entry for the
-// answer and a hidden solution text. It will add itself to the wxFlexGridSizer
-// provided as parameter automatically.
 QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbForm& verbForm) {
     this->verbForm = verbForm;
     this->sizer = sizer;
@@ -62,12 +59,10 @@ QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbFor
     );
 }
 
-// Set the focus to the text control.
 void QuizItem::SetFocus() {
     textCtrl->SetFocus();
 }
 
-// Reset the verb form this quiz item should ask for.
 void QuizItem::setVerbForm(const cjgt::VerbForm& form) {
     this->verbForm = form;
 
@@ -87,8 +82,6 @@ void QuizItem::setVerbForm(const cjgt::VerbForm& form) {
     question->SetLabelText(questionString);
 }
 
-// Check if the given answer in the text control is correct and colour it
-// correspondingly.
 bool QuizItem::evaluate() {
     bool correct;
     std::wstring textCtrlString = std::wstring(textCtrl->GetValue().wchar_str());
@@ -109,7 +102,6 @@ bool QuizItem::evaluate() {
     return correct;
 }
 
-// Show the solution to the question.
 void QuizItem::showSolution() {
     solution->SetLabelText(verbForm.form);
 }

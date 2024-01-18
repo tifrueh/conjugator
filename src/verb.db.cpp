@@ -7,8 +7,6 @@
 
 #include "verb.db.hpp"
 
-// An array containing all tense names as strings and IN THE SAME ORDER AS THE
-// verbDB::Tense ENUMERATOR!!!
 const std::array<std::wstring, 9> verbDB::tenseStrings {
     L"infinitif",
     L"participe présent",
@@ -21,8 +19,6 @@ const std::array<std::wstring, 9> verbDB::tenseStrings {
     L"conditionnel"
 };
 
-// An array containing all persons as strings and IN THE SAME ORDER AS THE
-// verbDB::Person ENUMERATOR!!!
 const std::array<std::wstring, 9> verbDB::personStrings {
     L"",
     L"je/j'",
@@ -35,7 +31,6 @@ const std::array<std::wstring, 9> verbDB::personStrings {
     L"elles"
 };
 
-// A vector containing pointers to all known verbs.
 const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::acheter,
     &verbDB::agir,
@@ -113,14 +108,11 @@ const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::vouloir
 };
 
-// Four vectors, one for earch verb suffix supported.
 std::vector<const verbDB::Verb*> verbDB::verbsER = {};
 std::vector<const verbDB::Verb*> verbDB::verbsIR = {};
 std::vector<const verbDB::Verb*> verbDB::verbsOIR = {};
 std::vector<const verbDB::Verb*> verbDB::verbsRE = {};
 
-// Sort all the verb pointers from allVerbs into the suffix vectors.
-// This method MUST and MAY ONLY be called ONCE.
 void verbDB::initTypeVectors() {
     for (const verbDB::Verb* pVerb : verbDB::allVerbs) {
         switch (pVerb->verbType) {

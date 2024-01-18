@@ -15,6 +15,7 @@
 #include "inspectorpanel.hpp"
 
 
+// The most top-level frame of the inspector window.
 class InspectorFrame : public wxFrame {
     public:
         InspectorFrame(wxWindow* parent, const wxWindowID& winID, const wxString& title);

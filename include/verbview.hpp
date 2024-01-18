@@ -22,6 +22,7 @@
 #include "verb.db.hpp"
 
 
+// This panel contains a wxChoicebook with one additional panel for each tense.
 class VerbView : public wxPanel {
     public:
         VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb);

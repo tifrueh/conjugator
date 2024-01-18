@@ -1,3 +1,4 @@
+# Add all verb files to the project sources.
 srcs += files(
     'acheter.verb.cpp',
     'agir.verb.cpp',

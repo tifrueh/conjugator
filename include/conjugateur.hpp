@@ -7,8 +7,11 @@
 
 #include "verb.db.hpp"
 
+// This namespace contains all functionality related to verb forms.
 namespace cjgt {
 
+    // A structure containing a form of a verb, including its corresponding
+    // infinitif, tense and person.
     struct VerbForm {
         std::wstring infinitif;
         std::wstring tense;

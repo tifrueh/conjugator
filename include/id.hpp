@@ -3,12 +3,6 @@
 
 #pragma once
 
-#include <wx/wxprec.h>
- 
-#ifndef WX_PRECOMP
-    #include <wx/wx.h>
-#endif
-
 
 // This enum contains the all necessary window IDs.
 enum winID {

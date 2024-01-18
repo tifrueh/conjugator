@@ -1,16 +1,8 @@
 // Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
-#include <wx/wxprec.h>
-
-#ifndef WX_PRECOMP
-    #include <wx/wx.h>
-#endif
-
-#include "verb.db.hpp"
-#include "conjugateur.hpp"
-
 #include "verbviewpanel.hpp"
+
 
 VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb, const int &tense) : wxPanel(parent, id) {
     this->verb = verb;

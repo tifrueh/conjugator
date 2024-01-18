@@ -9,11 +9,20 @@
     #include <wx/wx.h>
 #endif
 
+#ifndef __WXOSX__
+    #include "config.hpp"
+#endif
 
 #include <wx/aboutdlg.h>
 
+
+#include <vector>
+
+#include "id.hpp"
 #include "toppanel.hpp"
 #include "inspectorframe.hpp"
+
+#include "conjugateur.xpm"
 
 
 // The top-level frame containing the whole application.

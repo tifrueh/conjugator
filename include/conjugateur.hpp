@@ -4,8 +4,10 @@
 #pragma once
 
 #include <string>
+#include <stdexcept>
 
 #include "verb.db.hpp"
+
 
 // This namespace contains all functionality related to verb forms.
 namespace cjgt {

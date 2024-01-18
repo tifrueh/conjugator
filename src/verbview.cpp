@@ -1,19 +1,8 @@
 // Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
-#include <wx/wxprec.h>
-
-#ifndef WX_PRECOMP
-    #include <wx/wx.h>
-#endif
-
-#include <wx/choicebk.h>
-
-#include "verb.db.hpp"
-#include "conjugateur.hpp"
-#include "verbviewpanel.hpp"
-
 #include "verbview.hpp"
+
 
 VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : wxPanel(parent, id) {
     this->verb = verb;

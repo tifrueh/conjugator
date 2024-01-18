@@ -1,16 +1,6 @@
 // Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
-#include <wx/wxprec.h>
-
-#ifndef WX_PRECOMP
-    #include <wx/wx.h>
-#endif
-
-#include "verb.db.hpp"
-#include "id.hpp"
-#include "conjugateur.hpp"
-
 #include "inspectorpanel.hpp"
 
 

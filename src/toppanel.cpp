@@ -1,23 +1,8 @@
 // Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
-#include <wx/wxprec.h>
- 
-#ifndef WX_PRECOMP
-    #include <wx/wx.h>
-#endif
-
-
-#include <vector>
-#include <algorithm>
-#include <stdexcept>
-#include <random>
-
-#include "conjugateur.hpp"
-#include "id.hpp"
-#include "verb.db.hpp"
-
 #include "toppanel.hpp"
+
 
 TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 

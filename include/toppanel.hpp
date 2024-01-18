@@ -11,9 +11,15 @@
 
 
 #include <vector>
+#include <algorithm>
+#include <stdexcept>
+#include <random>
 
 #include "conjugateur.hpp"
+#include "id.hpp"
+#include "verb.db.hpp"
 #include "quizitem.hpp"
+
 
 // The only panel of the mainframe. The rest of the main app controls resides
 // within this panel, so that keyboard focus can be handled automatically.

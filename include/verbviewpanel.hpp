@@ -3,7 +3,6 @@
 
 #pragma once
 
-
 #include <wx/wxprec.h>
 
 #ifndef WX_PRECOMP
@@ -13,6 +12,7 @@
 #include <map>
 #include <string>
 
+#include "conjugateur.hpp"
 #include "verb.db.hpp"
 
 

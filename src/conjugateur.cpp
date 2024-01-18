@@ -1,12 +1,8 @@
 // Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
-#include <string>
-#include <stdexcept>
-
-#include "verb.db.hpp"
-
 #include "conjugateur.hpp"
+
 
 const verbDB::Verb* cjgt::getVerb(const std::wstring &infinitif) {
     for (const verbDB::Verb* verb : verbDB::allVerbs) {

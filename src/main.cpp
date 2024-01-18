@@ -20,12 +20,13 @@
     #include <wx/wx.h>
 #endif
 
-
 #include <wx/aboutdlg.h>
 #include <wx/intl.h>
 
+
 #include "verb.db.hpp"
 #include "mainframe.hpp"
+
 
 // The main app class with a locale and an overridden OnInit().
 class Conjugateur : public wxApp {

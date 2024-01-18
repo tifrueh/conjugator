@@ -1,26 +1,8 @@
 // Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
-#include <wx/wxprec.h>
- 
-#ifndef WX_PRECOMP
-    #include <wx/wx.h>
-#endif
-
-#ifndef __WXOSX__
-    #include "config.hpp"
-#endif
-
-
-#include <vector>
-
-#include "id.hpp"
-#include "toppanel.hpp"
-#include "inspectorframe.hpp"
-
 #include "mainframe.hpp"
 
-#include "conjugateur.xpm"
 
 MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
 

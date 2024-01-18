@@ -1,19 +1,8 @@
 // Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
-#include <wx/wxprec.h>
- 
-#ifndef WX_PRECOMP
-    #include <wx/wx.h>
-#endif
-
-
-#include <string>
-
-#include "verb.db.hpp"
-#include "conjugateur.hpp"
-
 #include "quizitem.hpp"
+
 
 QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbForm& verbForm) {
     this->verbForm = verbForm;

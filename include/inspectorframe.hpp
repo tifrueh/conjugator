@@ -3,7 +3,6 @@
 
 #pragma once
 
-
 #include <wx/wxprec.h>
 
 #ifndef WX_PRECOMP
@@ -12,7 +11,12 @@
 
 #include <wx/srchctrl.h>
 
+
+#include "id.hpp"
 #include "inspectorpanel.hpp"
+#include "verb.db.hpp"
+
+#include "inspecteur.xpm"
 
 
 // The most top-level frame of the inspector window.

@@ -1,11 +1,8 @@
 // Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
-#include <string>
-#include <vector>
-#include <array>
-
 #include "verb.db.hpp"
+
 
 const std::array<std::wstring, 9> verbDB::tenseStrings {
     L"infinitif",

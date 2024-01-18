@@ -3,16 +3,18 @@
 
 #pragma once
 
-
 #include <wx/wxprec.h>
 
 #ifndef WX_PRECOMP
     #include <wx/wx.h>
 #endif
 
-#include "verb.db.hpp"
 
+#include "verb.db.hpp"
+#include "id.hpp"
+#include "conjugateur.hpp"
 #include "verbview.hpp"
+
 
 // The only panel of the inspector, containing the verbbox and the verbview.
 class InspectorPanel : public wxPanel {

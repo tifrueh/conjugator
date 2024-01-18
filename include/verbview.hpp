@@ -3,7 +3,6 @@
 
 #pragma once
 
-
 #include <wx/wxprec.h>
 
 #ifndef WX_PRECOMP
@@ -11,15 +10,15 @@
 #endif
 
 #include <wx/choicebk.h>
+#include <wx/vscroll.h>
+
 
 #include <map>
 #include <string>
 
-#include <wx/vscroll.h>
-
-#include "verbviewpanel.hpp"
-
+#include "conjugateur.hpp"
 #include "verb.db.hpp"
+#include "verbviewpanel.hpp"
 
 
 // This panel contains a wxChoicebook with one additional panel for each tense.

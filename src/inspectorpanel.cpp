@@ -14,6 +14,7 @@
 #include "inspectorpanel.hpp"
 
 
+// Construct a new inspector panel.
 InspectorPanel::InspectorPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     topsizer = new wxBoxSizer(wxHORIZONTAL);
 
@@ -28,6 +29,7 @@ InspectorPanel::InspectorPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
     topsizer->Add(verbBox, 0, wxEXPAND, 0);
 
+    // Initialise a new verbview with the currently selected verb.
     verbView = new VerbView(this, wxID_ANY, *cjgt::getVerb(verbBox->GetStringSelection().ToStdWstring()));
 
     topsizer->Add(verbView, 1, wxEXPAND | wxALL, 0);
@@ -35,6 +37,8 @@ InspectorPanel::InspectorPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     this->SetSizerAndFit(topsizer);
 }
 
+// Set the verb of the verbview to the one selected in the verbbox and set the
+// sizehints of the panel from the topsizer.
 void InspectorPanel::setVerbFromBox() {
     verbView->setVerb(*cjgt::getVerb(verbBox->GetStringSelection().ToStdWstring()));
     

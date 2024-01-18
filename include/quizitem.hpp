@@ -14,6 +14,8 @@
 
 #include "conjugateur.hpp"
 
+// A group of windows, consisting of a question label, a text entry for the
+// answer and a solution label. It always has to be added to a flex grid sizer.
 class QuizItem {
     public:
         QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbForm& verbForm);

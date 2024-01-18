@@ -27,6 +27,7 @@
 #include "verb.db.hpp"
 #include "mainframe.hpp"
 
+// The main app class with a locale and an overridden OnInit().
 class Conjugateur : public wxApp {
     public:
         bool OnInit() override;
@@ -35,6 +36,8 @@ class Conjugateur : public wxApp {
 
 wxIMPLEMENT_APP(Conjugateur);
 
+// Set the locale, initialise verbDB, set the app name and initialise the
+// main top-level frame.
 bool Conjugateur::OnInit() {
 
     locale = new wxLocale();

@@ -7,10 +7,13 @@
 #include <vector>
 #include <array>
 
+// This namespace contains all functionality related to the verb database.
 namespace verbDB {
 
+    // An enum containing all recognised verb types (suffixes).
     enum VerbType { er, ir, oir, re };
 
+    // A structure containing all forms of a verb.
     struct Verb {
 
         VerbType verbType;
@@ -82,6 +85,7 @@ namespace verbDB {
         std::wstring conditionnelElles;
     };
 
+    // Declare all verbs.
     extern const Verb acheter;
     extern const Verb agir;
     extern const Verb aller;
@@ -212,7 +216,10 @@ namespace verbDB {
     extern std::vector<const Verb*> verbsOIR;
     extern std::vector<const Verb*> verbsRE;
 
+    // An enumerator containing all recognised tenses.
     enum Tense { infinitif, participePresent, present, imparfait, futur, passeCompose, plusQueParfait, subjonctif, conditionnel };
+    
+    // An enumerator containing all recognised persons.
     enum Person {none, je, tu, il, elle, nous, vous, ils, elles };
 
     extern const std::array<std::wstring, 9> tenseStrings;

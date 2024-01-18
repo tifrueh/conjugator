@@ -16,6 +16,7 @@
 #include "inspectorframe.hpp"
 
 
+// The top-level frame containing the whole application.
 class MainFrame : public wxFrame {
     public:
         explicit MainFrame(const wxString& title);

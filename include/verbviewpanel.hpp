@@ -16,6 +16,7 @@
 #include "verb.db.hpp"
 
 
+// This panel displays all forms of a verb in a specified tense.
 class VerbViewPanel : public wxPanel {
     public:
         VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb, const int &tense);

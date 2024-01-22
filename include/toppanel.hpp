@@ -10,6 +10,7 @@
 #endif
 
 
+#include <algorithm>
 #include <random>
 #include <stdexcept>
 #include <vector>

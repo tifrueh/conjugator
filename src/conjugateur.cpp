@@ -232,6 +232,12 @@ std::wstring cjgt::getPerson(const int& person) {
 }
 
 std::wstring cjgt::getFormString(const cjgt::VerbForm& verbForm) {
+    
+    // Return an empty string if a form is empty (e. g. falloir - je)
+    if (verbForm.form == L"") {
+        return L"";
+    }
+    
     std::wstring out;
 
     wchar_t firstChar = verbForm.form.at(0);

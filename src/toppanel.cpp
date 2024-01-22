@@ -366,10 +366,14 @@ std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
 
         verbForm = cjgt::getVerbForm(*verb, tense, randomPers);
 
-        if (std::find(std::begin(verbForms), std::end(verbForms), verbForm) == std::end(verbForms)) {
-            verbForms.push_back(verbForm);
-        } else {
+        if (std::find(std::begin(verbForms), std::end(verbForms), verbForm) != std::end(verbForms)) {
             i--;
+        }
+        else if (verbForm.form == L"") {
+            i--;
+        } 
+        else {
+            verbForms.push_back(verbForm);
         }
     }
 

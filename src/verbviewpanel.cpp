@@ -25,11 +25,6 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
     sizer->Add(titleLabel, 0, wxEXPAND, 0);
     sizer->Add(formLabels.at(verbDB::Person::none), 0, wxEXPAND, 0);
     
-    // Hide item 2, which is the participe present, if the tense is not set to present.
-    if (tense != verbDB::Tense::present) {
-        sizer->Hide(2);
-    }
-
     sizer->AddSpacer(10);
 
     // Add a label so the sizer for each verb form of the tense.
@@ -54,9 +49,24 @@ void VerbViewPanel::setVerb(const verbDB::Verb& inputVerb) {
     cjgt::VerbForm participePresent = cjgt::getVerbForm(verb, verbDB::Tense::participePresent, verbDB::Person::none);
     formLabels.at(verbDB::Person::none)->SetLabel(wxString(cjgt::getFormString(participePresent)));
     
+    // Hide the participe present if it is empty or if the VerbView's tense is
+    // any other than the present.
+    if (participePresent.form == L"" || tense != verbDB::Tense::present) {
+        sizer->Hide(formLabels.at(verbDB::Person::none));
+    } else {
+        sizer->Show(formLabels.at(verbDB::Person::none));
+    }
+    
     for (int person = verbDB::Person::je; person <= verbDB::Person::elles; person++) {
         cjgt::VerbForm verbForm = cjgt::getVerbForm(verb, tense, person);
         formLabels.at(person)->SetLabel(wxString(cjgt::getFormString(verbForm)));
+        
+        // Hide empty forms
+        if (verbForm.form == L"") {
+            sizer->Hide(formLabels.at(person));
+        } else {
+            sizer->Show(formLabels.at(person));
+        }
     }
     
     sizer->SetSizeHints(this);

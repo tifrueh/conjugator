@@ -253,6 +253,8 @@ std::wstring cjgt::getFormString(const cjgt::VerbForm& verbForm) {
         out = L"j'" + verbForm.form;
     } else if (!concatJe && verbForm.person == L"je/j'") {
         out = L"je " + verbForm.form;
+    } else if (verbForm.tense == L"participe présent") {
+        out = verbForm.form;
     } else {
         out = verbForm.person + L" " + verbForm.form;
     }

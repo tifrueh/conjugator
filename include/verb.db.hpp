@@ -106,7 +106,7 @@ namespace verbDB {
     extern const Verb bavarder;
     extern const Verb boire;
     extern const Verb choisir;
-    extern const Verb commencer;
+    extern const Verb commencerAvoir;
     extern const Verb commencerEtre;
     extern const Verb conduire;
     extern const Verb confondre;

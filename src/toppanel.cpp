@@ -239,7 +239,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         15
     );
 
-    std::vector<cjgt::VerbForm> verbs = GetVerbForms(quizItemCount);
+    std::vector<cjgt::VerbFormVariations> verbs = GetVerbFormVariations(quizItemCount);
     QuizItem* itemPtr = nullptr;
 
     for (int i = 0; i < quizItemCount; i++) {
@@ -274,10 +274,10 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     SetSizerAndFit(topsizer);
 }
 
-std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
+std::vector<cjgt::VerbFormVariations> TopPanel::GetVerbFormVariations(const int& count) {
     std::vector<const verbDB::Verb*> usableVerbs;
     std::vector<verbDB::Tense> usableTenses;
-    std::vector<cjgt::VerbForm> verbForms;
+    std::vector<cjgt::VerbFormVariations> verbFormVariationss;
 
     if (checkBoxER->GetValue()) {
         usableVerbs.insert(std::end(usableVerbs), std::begin(verbDB::verbsER), std::end(verbDB::verbsER));
@@ -343,7 +343,7 @@ std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
 
     const verbDB::Verb* verb;
     verbDB::Tense tense;
-    cjgt::VerbForm verbForm;
+    cjgt::VerbFormVariations verbFormVariations;
     int randomPosVerb;
     int randomPosTense;
     int randomPers;
@@ -364,20 +364,20 @@ std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
         verb = usableVerbs.at(randomPosVerb);
         tense = usableTenses.at(randomPosTense);
 
-        verbForm = cjgt::getVerbForm(*verb, tense, randomPers);
+        verbFormVariations = cjgt::getVerbFormVariations(*verb, tense, randomPers);
 
-        if (std::find(std::begin(verbForms), std::end(verbForms), verbForm) != std::end(verbForms)) {
+        if (std::find(std::begin(verbFormVariationss), std::end(verbFormVariationss), verbFormVariations) != std::end(verbFormVariationss)) {
             i--;
         }
-        else if (verbForm.form == L"") {
+        else if (std::find(verbFormVariations.forms.begin(), verbFormVariations.forms.end(), L"") != verbFormVariations.forms.end()) {
             i--;
         } 
         else {
-            verbForms.push_back(verbForm);
+            verbFormVariationss.push_back(verbFormVariations);
         }
     }
 
-    return verbForms;
+    return verbFormVariationss;
 }
 
 void TopPanel::ResetFocus() {
@@ -386,10 +386,10 @@ void TopPanel::ResetFocus() {
 
 void TopPanel::GenerateQuiz() {
 
-    std::vector<cjgt::VerbForm> verbForms;
+    std::vector<cjgt::VerbFormVariations> verbFormVariationss;
 
     try {
-        verbForms = GetVerbForms((int) quizItems.size());
+        verbFormVariationss = GetVerbFormVariations((int) quizItems.size());
     } catch(const std::invalid_argument& exception) {
         auto dlg = new wxMessageDialog(this, wxT("Il n'est pas possible de générer suffisamment de questions de quiz à partir de votre sélection. Veuillez sélectionner plus de verbes ou plus de temps."));
         dlg->ShowModal();
@@ -397,7 +397,7 @@ void TopPanel::GenerateQuiz() {
     }
 
     for (long unsigned int i = 0; i < quizItems.size(); i++) {
-        quizItems.at(i)->setVerbForm(verbForms.at(i));
+        quizItems.at(i)->setVerbFormVariations(verbFormVariationss.at(i));
     }
 
     topsizer->SetSizeHints(this);

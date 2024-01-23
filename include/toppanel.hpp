@@ -30,7 +30,7 @@ class TopPanel : public wxPanel {
 
         // Randomly retrieve as many verb forms as needed for the desired amount of
         // questions based on the selected verbs and tenses.
-        std::vector<cjgt::VerbForm> GetVerbForms(const int& count);
+        std::vector<cjgt::VerbFormVariations> GetVerbFormVariations(const int& count);
 
         // Reset the keyboard focus to the first quiz item.
         void ResetFocus();

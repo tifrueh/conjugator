@@ -58,54 +58,7 @@ If your system is neither macOS nor x86_64 Windows, you'll have to compile and i
 
 _Note: If you're building on macOS 10.15 or lower, you'll need to manually set the meson option `macos_min`, as its default value is 11._
 
-## Preview (macOS)
+## More information
 
-![macOS preview](./resources/preview.png)
-
-## Usage
-
-There are two distinct sections in the application's GUI:
-
-1. [**Sélection des verbes/temps**](#sélection-des-verbestemps)
-
-2. [**Quiz**](#quiz)
-
-### Sélection des verbes/temps
-
-This panel is used to control the **Quiz** section of the app. Firstly, under the header **Types de verbes** you can select which kinds of verbs will be used in the quiz and under the header **Temps** you can select the tenses which will be used in the quiz.
-
-The button **Gérer** generates a new quiz.
-
-The button **Contrôler** checks the correctness of the answers in the quiz and marks them in different colours.
-
-The button **Solutions** checks the verbs and also shows the correct solutions.
-
-### Quiz
-
-This panel displays a total of 15 text entries plus the infinitive, tense and personal pronoun. You can now try to put the correct verb form into the text entry and then use the buttons to the bottom left (see [previous section](#sélection-des-verbestemps)) to check your answers or show the solutions.
-
-### Keyboard shortcuts
-
-`Ctrl+1`: Select all verbs
-
-`Ctrl+2`: Select all tenses
-
-`Ctrl+0`: Unselect all verbs and tenses
-
-`Ctrl+Enter`: Generate new quiz
-
-`Ctrl+Shift+Enter`: Check answers
-
-`Ctrl+S`: Show solutions
-
-`Ctrl+I`: Open **Inspecteur**
-
-_Note: `Ctrl` corresponds to `Cmd` on macOS systems_
-
-### Inspector
-
-<div align=center><img src="./resources/preview-inspector.png" width=400 height=315.88></div>
-
-There is also an additional window, called **Inspecteur**, which can be used to display the whole conjugation of a verb. This window is primarily intended to be used by proofreaders who, by using the **Inspecteur**, can view the entirety of the database used by the app and therefore find mistakes (of which I'm sure there are plenty) faster than by simply using the app. The **Inspecteur** can of course also be used to help out while learning the conjugations.
-
-_Note to proofreaders: If you were to find any misspelt forms via the **Inspecteur** or otherwise, please do not hesitate to open an [issue](https://github.com/tifrueh/conjugateur/issues) to let me know. I'll try to fix it as soon as possible._
+To learn more about Conjugateur, please consult the
+[wiki](https://github.com/tifrueh/conjugateur/wiki/).

@@ -75,7 +75,7 @@ bool QuizItem::evaluate() {
     bool correct;
     std::wstring textCtrlString = std::wstring(textCtrl->GetValue().wchar_str());
 
-    correct = std::find(verbFormVariations.forms.begin(), verbFormVariations.forms.end(), textCtrlString) != verbFormVariations.forms.end();
+    correct = std::find(std::begin(verbFormVariations.forms), std::end(verbFormVariations.forms), textCtrlString) != std::end(verbFormVariations.forms);
 
     if (cjgt::strip(textCtrlString).empty()) {
         textCtrl->SetForegroundColour(wxNullColour);

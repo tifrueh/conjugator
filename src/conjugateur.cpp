@@ -234,7 +234,7 @@ cjgt::VerbFormVariations cjgt::getVerbFormVariations(const verbDB::Verb& verb, c
     for (const verbDB::Verb* variationVerb: verbs) {
         std::wstring formVariation = cjgt::getVerbForm(*variationVerb, tense, person).form;
         
-        if (std::find(out.forms.begin(), out.forms.end(), formVariation) != out.forms.end()) {
+        if (std::find(std::begin(out.forms), std::begin(out.forms), formVariation) != std::end(out.forms)) {
             out.forms.push_back(formVariation);
         }
     }

@@ -3,8 +3,10 @@
 
 #pragma once
 
+#include <algorithm>
 #include <stdexcept>
 #include <string>
+#include <vector>
 
 #include "verb.db.hpp"
 
@@ -24,6 +26,18 @@ namespace cjgt {
         // They are considered equal if the infinitive, the person, the form and the tense are equal.
         bool operator==(const VerbForm& verbForm) const;
     };
+    
+    // A structure containing all possible variations of a verb form.
+    struct VerbFormVariations {
+        std::wstring infinitif;
+        std::wstring tense;
+        std::wstring person;
+        std::vector<std::wstring> forms;
+        
+        // Compare two VerbFormVariations to decide if they are equal.
+        // They are considered equal if the infinitive and the person are equal.
+        bool operator==(const VerbFormVariations& verbForm) const;
+    };
 
     // Search a verb based on its label: returns a pointer to the verb.
     const verbDB::Verb* getVerb(const std::wstring& label);
@@ -33,6 +47,12 @@ namespace cjgt {
     
     // Retrieve a verb form based on the verb, the tense (as int) and the person (as int).
     VerbForm getVerbForm(const verbDB::Verb& verb, const int& tense, const int& person);
+    
+    // Retrieve all verb form variations based on the verb, the tense and the person.
+    VerbFormVariations getVerbFormVariations(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person);
+    
+    // Retrieve all verb form variations based on the verb, the tense (as int) and the person (as int).
+    VerbFormVariations getVerbFormVariations(const verbDB::Verb& verb, const int& tense, const int& person);
 
     // Return a tense (provided as enum) as string.
     std::wstring getTense(const verbDB::Tense& tense);

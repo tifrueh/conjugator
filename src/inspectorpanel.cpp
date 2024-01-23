@@ -10,7 +10,7 @@ InspectorPanel::InspectorPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     verbs = wxArrayString();
 
     for (const verbDB::Verb* verb : verbDB::allVerbs) {
-        verbs.Add(wxString(verb->infinitif));
+        verbs.Add(wxString(verb->label));
     }
 
     verbBox = new wxListBox(this, inspectorVerbBox, wxDefaultPosition, wxDefaultSize, verbs, wxLB_SINGLE);

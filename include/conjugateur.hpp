@@ -25,8 +25,8 @@ namespace cjgt {
         bool operator==(const VerbForm& verbForm) const;
     };
 
-    // Search a verb based on its infinitive form: returns a pointer to the verb.
-    const verbDB::Verb* getVerb(const std::wstring& infinitif);
+    // Search a verb based on its label: returns a pointer to the verb.
+    const verbDB::Verb* getVerb(const std::wstring& label);
     
     // Retrieve a verb form based on the verb, the tense and the person.
     VerbForm getVerbForm(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person);

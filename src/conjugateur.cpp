@@ -4,9 +4,9 @@
 #include "conjugateur.hpp"
 
 
-const verbDB::Verb* cjgt::getVerb(const std::wstring &infinitif) {
+const verbDB::Verb* cjgt::getVerb(const std::wstring &label) {
     for (const verbDB::Verb* verb : verbDB::allVerbs) {
-        if (verb->infinitif == infinitif) {
+        if (verb->label == label) {
             return verb;
         }
     }

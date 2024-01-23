@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::essayer = {
 
+    L"essayer",
+
     verbDB::VerbType::er,
 
     L"essayer",

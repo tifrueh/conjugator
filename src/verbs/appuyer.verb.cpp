@@ -4,6 +4,8 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::appuyer = {
+    
+    L"appuyer",
 
     verbDB::VerbType::er,
 

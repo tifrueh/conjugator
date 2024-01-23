@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::falloir = {
 
+    L"falloir",
+
     verbDB::VerbType::oir,
 
     L"falloir",

@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::seRejouir = {
 
+    L"se réjouir",
+
     verbDB::VerbType::ir,
 
     L"se réjouir",

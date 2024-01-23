@@ -16,6 +16,8 @@ namespace verbDB {
 
     // A structure containing all forms of a verb.
     struct Verb {
+        
+        std::wstring label;
 
         VerbType verbType;
 

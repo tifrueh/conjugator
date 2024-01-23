@@ -4,6 +4,8 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::donner = {
+    
+    L"donner",
 
     verbDB::VerbType::er,
 

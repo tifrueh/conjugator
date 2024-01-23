@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::apparaitre = {
 
+    L"apparaître",
+
     verbDB::VerbType::re,
 
     L"apparaître",

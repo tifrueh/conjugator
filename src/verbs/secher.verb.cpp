@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::secher = {
 
+    L"sécher",
+
     verbDB::VerbType::er,
 
     L"sécher",

@@ -4,6 +4,8 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::employer = {
+    
+    L"employer",
 
     verbDB::VerbType::er,
 

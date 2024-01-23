@@ -4,6 +4,8 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::dire = {
+    
+    L"dire",
 
     verbDB::VerbType::re,
 

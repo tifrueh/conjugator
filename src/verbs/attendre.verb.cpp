@@ -4,6 +4,8 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::attendre = {
+    
+    L"attendre",
 
     verbDB::VerbType::re,
 

@@ -4,6 +4,8 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::avoir = {
+    
+    L"avoir",
 
     verbDB::VerbType::oir,
 

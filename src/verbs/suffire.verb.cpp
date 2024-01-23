@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::suffire = {
 
+    L"suffire",
+
     verbDB::VerbType::re,
 
     L"suffire",

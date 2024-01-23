@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::traduire = {
 
+    L"traduire",
+
     verbDB::VerbType::re,
 
     L"traduire",

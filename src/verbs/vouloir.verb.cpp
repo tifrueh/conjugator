@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::vouloir = {
 
+    L"vouloir",
+
     verbDB::VerbType::oir,
 
     L"vouloir",

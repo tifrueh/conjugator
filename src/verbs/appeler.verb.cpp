@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::appeler = {
 
+    L"appeler",
+
     verbDB::VerbType::er,
 
     L"appeler",

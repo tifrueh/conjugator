@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::venir = {
 
+    L"venir",
+
     verbDB::VerbType::ir,
 
     L"venir",

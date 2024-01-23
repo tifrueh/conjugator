@@ -4,6 +4,8 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::croire = {
+    
+    L"croire",
 
     verbDB::VerbType::re,
 

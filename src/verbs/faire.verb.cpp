@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::faire = {
 
+    L"faire",
+
     verbDB::VerbType::re,
 
     L"faire",

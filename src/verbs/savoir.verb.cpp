@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::savoir= {
 
+    L"savoir",
+
     verbDB::VerbType::oir,
 
     L"savoir",

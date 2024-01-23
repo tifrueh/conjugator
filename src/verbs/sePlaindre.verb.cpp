@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::sePlaindre = {
 
+    L"se plaindre",
+
     verbDB::VerbType::re,
 
     L"se plaindre",

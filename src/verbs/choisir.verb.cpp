@@ -4,6 +4,8 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::choisir = {
+    
+    L"choisir",
 
     verbDB::VerbType::ir,
 

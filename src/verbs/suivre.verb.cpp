@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::suivre = {
 
+    L"suivre",
+
     verbDB::VerbType::re,
 
     L"suivre",

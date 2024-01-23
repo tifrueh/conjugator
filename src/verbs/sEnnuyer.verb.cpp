@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::sEnnuyer = {
 
+    L"s'ennuyer",
+
     verbDB::VerbType::er,
 
     L"s'ennuyer",

@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::fermer = {
 
+    L"fermer",
+
     verbDB::VerbType::er,
 
     L"fermer",

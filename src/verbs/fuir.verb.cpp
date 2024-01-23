@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::fuir = {
 
+    L"fuir",
+
     verbDB::VerbType::ir,
 
     L"fuir",

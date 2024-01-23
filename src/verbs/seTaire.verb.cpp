@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::seTaire = {
 
+    L"se taire",
+
     verbDB::VerbType::re,
 
     L"se taire",

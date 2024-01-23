@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::tenir = {
 
+    L"tenir",
+
     verbDB::VerbType::ir,
 
     L"tenir",

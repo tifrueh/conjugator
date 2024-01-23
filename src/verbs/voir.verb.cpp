@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::voir = {
 
+    L"voir",
+
     verbDB::VerbType::oir,
 
     L"voir",

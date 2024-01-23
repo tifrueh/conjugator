@@ -4,6 +4,8 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::apercevoir = {
+    
+    L"apercevoir",
 
     verbDB::VerbType::oir,
 

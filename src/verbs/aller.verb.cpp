@@ -4,6 +4,8 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::aller = {
+    
+    L"aller",
 
     verbDB::VerbType::er,
 

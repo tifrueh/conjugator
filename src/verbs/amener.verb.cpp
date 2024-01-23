@@ -4,6 +4,8 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::amener = {
+    
+    L"amener",
 
     verbDB::VerbType::er,
 

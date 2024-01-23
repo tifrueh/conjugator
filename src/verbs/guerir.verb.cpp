@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::guerir = {
 
+    L"guérir",
+
     verbDB::VerbType::ir,
 
     L"guérir",

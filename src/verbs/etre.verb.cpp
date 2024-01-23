@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::etre = {
 
+    L"être",
+
     verbDB::VerbType::re,
 
     L"être",

@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::sAssoir = {
 
+    L"s'assoir",
+
     verbDB::VerbType::oir,
 
     L"s'assoir",

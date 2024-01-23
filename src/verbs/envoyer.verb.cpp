@@ -4,6 +4,8 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::envoyer = {
+    
+    L"envoyer",
 
     verbDB::VerbType::er,
 

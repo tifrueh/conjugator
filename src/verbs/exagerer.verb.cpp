@@ -5,6 +5,8 @@
 
 const verbDB::Verb verbDB::exagerer = {
 
+    L"exagérer",
+
     verbDB::VerbType::er,
 
     L"exagérer",

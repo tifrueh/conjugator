@@ -369,7 +369,7 @@ std::vector<cjgt::VerbFormVariations> TopPanel::GetVerbFormVariations(const int&
         if (std::find(std::begin(verbFormVariationss), std::end(verbFormVariationss), verbFormVariations) != std::end(verbFormVariationss)) {
             i--;
         }
-        else if (std::find(std::begin(verbFormVariations.forms), std::end(verbFormVariations.forms), L"") != std::end(verbFormVariations.forms)) {
+        else if (std::all_of(std::begin(verbFormVariations.forms), std::end(verbFormVariations.forms), [](std::wstring str){return str == L"";})) {
             i--;
         } 
         else {

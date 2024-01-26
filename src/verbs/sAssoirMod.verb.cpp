@@ -3,9 +3,9 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::sAssoir = {
+const verbDB::Verb verbDB::sAssoirMod = {
 
-    L"s'assoir",
+    L"s'assoir (moderne)",
 
     verbDB::VerbType::oir,
 
@@ -34,10 +34,10 @@ const verbDB::Verb verbDB::sAssoir = {
     L"t'assoiras",
     L"s'assoira",
     L"s'assoira",
-    L"assoirons",
-    L"assoirez",
-    L"assoiront",
-    L"assoiront",
+    L"nous assoirons",
+    L"vous assoirez",
+    L"se assoiront",
+    L"se assoiront",
 
     L"me suis assis",
     L"t'es assis",

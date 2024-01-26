@@ -64,7 +64,8 @@ srcs += files(
     'monterEtre.verb.cpp',
     'parler.verb.cpp',
 
-    'sAssoir.verb.cpp',
+    'sAssoirMod.verb.cpp',
+    'sAsseoirTrad.verb.cpp',
     'savoir.verb.cpp',
     'secher.verb.cpp',
     'sEnnuyer.verb.cpp',

@@ -147,6 +147,7 @@ namespace verbDB {
     extern const Verb fuir;
     extern const Verb grimper;
     extern const Verb guerir;
+    extern const Verb habiter;
     extern const Verb inventer;
     extern const Verb jeter;
     extern const Verb joindre;

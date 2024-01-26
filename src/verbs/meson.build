@@ -55,20 +55,20 @@ srcs += files(
     'fuir.verb.cpp',
     'grimper.verb.cpp',
     'guerir.verb.cpp',
-    
+
     'parler.verb.cpp',
 
     'sAssoir.verb.cpp',
-    'sEnnuyer.verb.cpp',
-    'sInquieter.verb.cpp',
     'savoir.verb.cpp',
     'secher.verb.cpp',
+    'sEnnuyer.verb.cpp',
     'sentir.verb.cpp',
     'sePlaindre.verb.cpp',
     'sePromener.verb.cpp',
     'seRejouir.verb.cpp',
     'servir.verb.cpp',
     'seTaire.verb.cpp',
+    'sInquieter.verb.cpp',
     'souffrir.verb.cpp',
     'suffire.verb.cpp',
     'suivre.verb.cpp',

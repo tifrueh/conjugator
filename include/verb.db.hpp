@@ -132,6 +132,8 @@ namespace verbDB {
     extern const Verb employer;
     extern const Verb enlever;
     extern const Verb entendre;
+    extern const Verb entrerAvoir;
+    extern const Verb entrerEtre;
     extern const Verb envoyer;
     extern const Verb esperer;
     extern const Verb essayer;

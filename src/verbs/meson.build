@@ -60,6 +60,8 @@ srcs += files(
     'guerir.verb.cpp',
 
     'habiter.verb.cpp',
+    'monterAvoir.verb.cpp',
+    'monterEtre.verb.cpp',
     'parler.verb.cpp',
 
     'sAssoir.verb.cpp',

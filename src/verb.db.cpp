@@ -83,20 +83,20 @@ const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::fuir,
     &verbDB::grimper,
     &verbDB::guerir,
-    
+
     &verbDB::parler,
 
     &verbDB::sAssoir,
-    &verbDB::sEnnuyer,
-    &verbDB::sInquieter,
     &verbDB::savoir,
     &verbDB::secher,
+    &verbDB::sEnnuyer,
     &verbDB::sentir,
     &verbDB::sePlaindre,
     &verbDB::sePromener,
     &verbDB::seRejouir,
     &verbDB::servir,
     &verbDB::seTaire,
+    &verbDB::sInquieter,
     &verbDB::souffrir,
     &verbDB::suffire,
     &verbDB::suivre,

@@ -162,6 +162,7 @@ namespace verbDB {
     extern const Verb offrir;
     extern const Verb ouvrir;
     extern const Verb paraitre;
+    extern const Verb parler;
     extern const Verb partir;
     extern const Verb payer;
     extern const Verb peindre;

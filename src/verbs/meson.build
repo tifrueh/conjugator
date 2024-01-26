@@ -2,6 +2,7 @@
 srcs += files(
     'acheter.verb.cpp',
     'agir.verb.cpp',
+    'aimer.verb.cpp',
     'aller.verb.cpp',
     'amener.verb.cpp',
     'apercevoir.verb.cpp',

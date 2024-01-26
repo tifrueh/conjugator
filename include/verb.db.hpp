@@ -91,6 +91,7 @@ namespace verbDB {
     // Declare all verbs.
     extern const Verb acheter;
     extern const Verb agir;
+    extern const Verb aimer;
     extern const Verb aller;
     extern const Verb amener;
     extern const Verb apercevoir;

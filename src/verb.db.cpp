@@ -31,6 +31,7 @@ const std::array<std::wstring, 9> verbDB::personStrings {
 const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::acheter,
     &verbDB::agir,
+    &verbDB::aimer,
     &verbDB::aller,
     &verbDB::amener,
     &verbDB::apercevoir,

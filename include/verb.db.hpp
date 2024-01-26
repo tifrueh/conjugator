@@ -187,16 +187,16 @@ namespace verbDB {
     extern const Verb rire;
     extern const Verb rompre;
     extern const Verb sAssoir;
-    extern const Verb sEnnuyer;
-    extern const Verb sInquieter;
     extern const Verb savoir;
     extern const Verb secher;
+    extern const Verb sEnnuyer;
     extern const Verb sentir;
     extern const Verb sePlaindre;
     extern const Verb sePromener;
     extern const Verb seRejouir;
     extern const Verb servir;
     extern const Verb seTaire;
+    extern const Verb sInquieter;
     extern const Verb sortirAvoir;
     extern const Verb sortirEtre;
     extern const Verb souffrir;

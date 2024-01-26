@@ -97,7 +97,7 @@ void QuizItem::showSolution() {
     solutionStr += verbFormVariations.forms.at(0);
     
     for (size_t formVariationIndex = 1; formVariationIndex < verbFormVariations.forms.size(); formVariationIndex++) {
-        solutionStr += L" / ";
+        solutionStr += L" /\n";
         solutionStr += verbFormVariations.forms.at(formVariationIndex);
     }
 

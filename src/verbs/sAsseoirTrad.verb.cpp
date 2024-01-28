@@ -5,7 +5,7 @@
 
 const verbDB::Verb verbDB::sAsseoirTrad = {
 
-    L"s'assoir (traditionnel)",
+    L"s'asseoir (traditionnel)",
 
     verbDB::VerbType::oir,
 

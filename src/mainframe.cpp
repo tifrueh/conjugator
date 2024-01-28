@@ -166,7 +166,7 @@ void MainFrame::OnUnselectAll(wxCommandEvent& event) {
 }
 
 void MainFrame::OnGitHub(wxCommandEvent& event) {
-    wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/conjugateur"));
+    wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/conjugateur/wiki/"));
 }
 
 void MainFrame::OnInspector(wxCommandEvent &event) {

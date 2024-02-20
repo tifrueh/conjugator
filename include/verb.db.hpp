@@ -178,15 +178,12 @@ namespace verbDB {
     extern const Verb peindre;
     extern const Verb perdre;
     extern const Verb peser;
-    extern const Verb placer;
     extern const Verb plaire;
     extern const Verb pleuvoir;
     extern const Verb pouvoir;
-    extern const Verb preferer;
     extern const Verb prendre;
     extern const Verb produire;
     extern const Verb proteger;
-    extern const Verb ranger;
     extern const Verb reagir;
     extern const Verb recevoir;
     extern const Verb reduire;

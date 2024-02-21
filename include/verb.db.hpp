@@ -143,8 +143,7 @@ namespace verbDB {
     extern const Verb faire;
     extern const Verb falloir;
     extern const Verb fermer;
-    extern const Verb finirAvoir;
-    extern const Verb finirEtre;
+    extern const Verb finir;
     extern const Verb fuir;
     extern const Verb grimper;
     extern const Verb guerir;

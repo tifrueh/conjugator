@@ -210,8 +210,7 @@ namespace verbDB {
     extern const Verb valoir;
     extern const Verb vendre;
     extern const Verb venir;
-    extern const Verb vieillirAvoir;
-    extern const Verb vieillirEtre;
+    extern const Verb vieillir;
     extern const Verb vivre;
     extern const Verb voir;
     extern const Verb vouloir;

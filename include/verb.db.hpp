@@ -201,8 +201,7 @@ namespace verbDB {
     extern const Verb servir;
     extern const Verb seTaire;
     extern const Verb sInquieter;
-    extern const Verb sortirAvoir;
-    extern const Verb sortirEtre;
+    extern const Verb sortir;
     extern const Verb souffrir;
     extern const Verb suffire;
     extern const Verb suivre;

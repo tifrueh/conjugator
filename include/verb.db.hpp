@@ -108,8 +108,7 @@ namespace verbDB {
     extern const Verb boire;
     extern const Verb chercher;
     extern const Verb choisir;
-    extern const Verb commencerAvoir;
-    extern const Verb commencerEtre;
+    extern const Verb commencer;
     extern const Verb conduire;
     extern const Verb confondre;
     extern const Verb connaitre;

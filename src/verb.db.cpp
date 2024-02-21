@@ -85,8 +85,6 @@ const std::vector<const verbDB::Verb*> verbDB::allVerbs {
     &verbDB::guerir,
 
     &verbDB::habiter,
-    &verbDB::monterAvoir,
-    &verbDB::monterEtre,
     &verbDB::parler,
 
     &verbDB::sAssoirMod,

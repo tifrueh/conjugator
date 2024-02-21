@@ -159,8 +159,7 @@ namespace verbDB {
     extern const Verb mener;
     extern const Verb mentir;
     extern const Verb mettre;
-    extern const Verb monterAvoir;
-    extern const Verb monterEtre;
+    extern const Verb monter;
     extern const Verb mourir;
     extern const Verb nager;
     extern const Verb naitre;

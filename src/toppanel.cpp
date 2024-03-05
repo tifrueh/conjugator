@@ -49,6 +49,11 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     checkBoxSubjonctif = new wxCheckBox(this, winID::checkBoxSubjonctif, wxString(verbDB::tenseStrings.at(7)));
     checkBoxConditionnel = new wxCheckBox(this, winID::checkBoxConditionnel, wxString(verbDB::tenseStrings.at(8)));
 
+    addSettingsTitle = new wxStaticText(this, wxID_ANY, wxT("Paramètres additionels"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
+    addSettingsTitle->SetFont(titleFont);
+
+    checkBoxTrad = new wxCheckBox(this, winID::checkBoxTrad, wxT("Traduction de l'allemand"));
+
     checkBoxER->SetValue(true);
     checkBoxPresent->SetValue(true);
 
@@ -228,6 +233,26 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     );
 
     formSelectionSizer->AddSpacer(smallSpace);
+
+    formSelectionSizer->AddSpacer(bigSpace);
+
+    formSelectionSizer->Add(
+        addSettingsTitle,
+        0,
+        wxEXPAND |
+        wxLEFT | wxRIGHT,
+        bigSpace
+    );
+
+    formSelectionSizer->AddSpacer(bigSpace);
+
+    formSelectionSizer->Add(
+        checkBoxTrad,
+        0,
+        wxEXPAND |
+        wxLEFT | wxRIGHT,
+        bigSpace
+    );
 
     formSelectionSizer->AddStretchSpacer();
 

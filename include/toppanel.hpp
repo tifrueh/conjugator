@@ -78,6 +78,8 @@ class TopPanel : public wxPanel {
         wxCheckBox* checkBoxPlusQueParfait = nullptr;
         wxCheckBox* checkBoxSubjonctif = nullptr;
         wxCheckBox* checkBoxConditionnel = nullptr;
+        wxStaticText* addSettingsTitle = nullptr;
+        wxCheckBox* checkBoxTrad = nullptr;
         wxBoxSizer* buttonSizer = nullptr;
         wxButton* okayButton = nullptr;
         wxButton* checkButton = nullptr;

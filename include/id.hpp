@@ -18,6 +18,7 @@ enum winID {
     checkBoxPlusQueParfait,
     checkBoxSubjonctif,
     checkBoxConditionnel,
+    checkBoxTrad,
     okayButton,
     checkButton,
     solutionButton,

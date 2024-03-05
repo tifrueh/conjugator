@@ -28,15 +28,15 @@ namespace cjgt {
     };
     
     // A structure containing all possible variations of a verb form.
-    struct VerbFormVariations {
+    struct QuizData {
         std::wstring infinitif;
         std::wstring tense;
         std::wstring person;
         std::vector<std::wstring> forms;
         
-        // Compare two VerbFormVariations to decide if they are equal.
+        // Compare two QuizDatas to decide if they are equal.
         // They are considered equal if the infinitive and the person are equal.
-        bool operator==(const VerbFormVariations& verbForm) const;
+        bool operator==(const QuizData& verbForm) const;
     };
 
     // Search a verb based on its label: returns a pointer to the verb.
@@ -49,10 +49,10 @@ namespace cjgt {
     VerbForm getVerbForm(const verbDB::Verb& verb, const int& tense, const int& person);
     
     // Retrieve all verb form variations based on the verb, the tense and the person.
-    VerbFormVariations getVerbFormVariations(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person);
+    QuizData getQuizData(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person);
     
     // Retrieve all verb form variations based on the verb, the tense (as int) and the person (as int).
-    VerbFormVariations getVerbFormVariations(const verbDB::Verb& verb, const int& tense, const int& person);
+    QuizData getQuizData(const verbDB::Verb& verb, const int& tense, const int& person);
 
     // Return a tense (provided as enum) as string.
     std::wstring getTense(const verbDB::Tense& tense);

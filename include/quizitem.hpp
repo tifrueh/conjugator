@@ -23,13 +23,13 @@ class QuizItem {
     public:
         // Construct a new quiz item. It will add itself to the wxFlexGridSizer
         // provided as parameter automatically.
-        QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbFormVariations& verbFormVariations, const bool& translate = false);
+        QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::QuizData& quizData, const bool& translate = false);
 
         // Set the focus to the text control.
         void SetFocus();
 
         // Reset the verb form this quiz item should ask for.
-        void setVerbFormVariations(const cjgt::VerbFormVariations& formVariations, const bool& translate = false);
+        void setQuizData(const cjgt::QuizData& quizData, const bool& translate = false);
 
         // Check if the given answer in the text control is correct and colour it
         // correspondingly.
@@ -41,7 +41,7 @@ class QuizItem {
     private:
         wxFlexGridSizer* sizer;
         wxWindow* parent;
-        cjgt::VerbFormVariations verbFormVariations;
+        cjgt::QuizData quizData;
         wxStaticText* question = nullptr;
         wxTextCtrl* textCtrl = nullptr;
         wxStaticText* solution = nullptr;

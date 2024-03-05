@@ -215,9 +215,9 @@ cjgt::VerbForm cjgt::getVerbForm(const verbDB::Verb& verb, const verbDB::Tense& 
     return getVerbForm(verb, tenseInt, personInt);
 }
 
-cjgt::VerbFormVariations cjgt::getVerbFormVariations(const verbDB::Verb& verb, const int& tense, const int& person) {
+cjgt::QuizData cjgt::getQuizData(const verbDB::Verb& verb, const int& tense, const int& person) {
 
-    cjgt::VerbFormVariations out;
+    cjgt::QuizData out;
     out.infinitif = verb.infinitif;
     out.tense = cjgt::getTense(tense);
     out.person = cjgt::getPerson(person);
@@ -243,10 +243,10 @@ cjgt::VerbFormVariations cjgt::getVerbFormVariations(const verbDB::Verb& verb, c
     
 }
 
-cjgt::VerbFormVariations cjgt::getVerbFormVariations(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person) {
+cjgt::QuizData cjgt::getQuizData(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person) {
     int tenseInt = tense;
     int personInt = person;
-    return getVerbFormVariations(verb, tenseInt, personInt);
+    return getQuizData(verb, tenseInt, personInt);
 }
 
 std::wstring cjgt::getTense(const verbDB::Tense& tense) {
@@ -300,8 +300,8 @@ bool cjgt::VerbForm::operator==(const cjgt::VerbForm& verbForm) const {
     return this->infinitif == verbForm.infinitif && this->person == verbForm.person && this->form == verbForm.form && this->tense == verbForm.tense;
 }
 
-bool cjgt::VerbFormVariations::operator==(const cjgt::VerbFormVariations& verbFormVariations) const {
-    return this->infinitif == verbFormVariations.infinitif && this->person == verbFormVariations.person && this->tense == verbFormVariations.tense;
+bool cjgt::QuizData::operator==(const cjgt::QuizData& quizData) const {
+    return this->infinitif == quizData.infinitif && this->person == quizData.person && this->tense == quizData.tense;
 }
 
 std::wstring cjgt::strip(const std::wstring& string) {

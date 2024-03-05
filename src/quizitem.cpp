@@ -4,8 +4,8 @@
 #include "quizitem.hpp"
 
 
-QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbFormVariations& verbFormVariations, const bool& translate) {
-    this->verbFormVariations = verbFormVariations;
+QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::QuizData& quizData, const bool& translate) {
+    this->quizData = quizData;
     this->sizer = sizer;
     this->parent = parent;
 
@@ -14,14 +14,14 @@ QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbFor
     if (translate) {
         infinitif = L"gehrman";
     } else {
-        infinitif = verbFormVariations.infinitif;
+        infinitif = quizData.infinitif;
     }
 
     // Don't show a person if the question is prompting for a participe present form.
-    if (verbFormVariations.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
-        questionString = infinitif + L": " + verbFormVariations.tense;
+    if (quizData.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
+        questionString = infinitif + L": " + quizData.tense;
     } else {
-        questionString = infinitif + L": " + verbFormVariations.tense + L" – " + verbFormVariations.person;
+        questionString = infinitif + L": " + quizData.tense + L" – " + quizData.person;
     }
 
     question = new wxStaticText(parent, 
@@ -60,21 +60,21 @@ void QuizItem::SetFocus() {
     textCtrl->SetFocus();
 }
 
-void QuizItem::setVerbFormVariations(const cjgt::VerbFormVariations& formVariations, const bool& translate) {
-    this->verbFormVariations = formVariations;
+void QuizItem::setQuizData(const cjgt::QuizData& quizData, const bool& translate) {
+    this->quizData = quizData;
 
     std::wstring infinitif;
 
     if(translate) {
         infinitif = L"gehrman";
     } else {
-        infinitif = formVariations.infinitif;
+        infinitif = quizData.infinitif;
     }
 
-    if (formVariations.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
-        questionString = infinitif + L": " + formVariations.tense;
+    if (quizData.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
+        questionString = infinitif + L": " + quizData.tense;
     } else {
-        questionString = infinitif + L": " + formVariations.tense + L" – " + formVariations.person;
+        questionString = infinitif + L": " + quizData.tense + L" – " + quizData.person;
     }
 
     // Set the text colour back to default.
@@ -91,7 +91,7 @@ bool QuizItem::evaluate() {
     bool correct;
     std::wstring textCtrlString = std::wstring(textCtrl->GetValue().wchar_str());
 
-    correct = std::find(std::begin(verbFormVariations.forms), std::end(verbFormVariations.forms), textCtrlString) != std::end(verbFormVariations.forms);
+    correct = std::find(std::begin(quizData.forms), std::end(quizData.forms), textCtrlString) != std::end(quizData.forms);
 
     if (cjgt::strip(textCtrlString).empty()) {
         textCtrl->SetForegroundColour(wxNullColour);
@@ -110,11 +110,11 @@ bool QuizItem::evaluate() {
 void QuizItem::showSolution() {
     std::wstring solutionStr;
     
-    solutionStr += verbFormVariations.forms.at(0);
+    solutionStr += quizData.forms.at(0);
     
-    for (size_t formVariationIndex = 1; formVariationIndex < verbFormVariations.forms.size(); formVariationIndex++) {
+    for (size_t formVariationIndex = 1; formVariationIndex < quizData.forms.size(); formVariationIndex++) {
         solutionStr += L" /\n";
-        solutionStr += verbFormVariations.forms.at(formVariationIndex);
+        solutionStr += quizData.forms.at(formVariationIndex);
     }
 
     solution->SetLabelText(wxString(solutionStr));

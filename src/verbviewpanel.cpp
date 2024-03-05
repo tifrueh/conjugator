@@ -10,14 +10,19 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
     sizer = new wxBoxSizer(wxVERTICAL);
     
     tenseString = cjgt::getTense(tense);
-    infinitifString = verb.infinitif + L" – " + verb.translation;
-    
+
+    if (cjgt::strip(verb.participePresent) == L"") {
+        infinitifString = verb.infinitif;
+    } else {
+        infinitifString = verb.infinitif + L" – " + verb.participePresent;
+    }
+
     titleLabel = new wxStaticText(this, wxID_ANY, wxString(tenseString));
     titleLabel->SetMinSize(wxSize(200, titleLabel->GetMinHeight()));
 
     infinitifLabel = new wxStaticText(this, wxID_ANY, wxString(infinitifString));
 
-    formLabels.insert({verbDB::Person::none, new wxStaticText(this, wxID_ANY, wxEmptyString)});
+    translationLabel = new wxStaticText(this, wxID_ANY, wxString(verb.translation));
 
     wxFont titleFont = titleLabel->GetFont();
     titleFont.Scale(1.5);
@@ -28,10 +33,8 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
 
     sizer->Add(titleLabel, 0, wxEXPAND, 0);
     sizer->Add(infinitifLabel, 0, wxEXPAND, 0);
+    sizer->Add(translationLabel, 0, wxEXPAND, 0);
 
-    sizer->AddSpacer(10);
-    sizer->Add(formLabels.at(verbDB::Person::none), 0, wxEXPAND, 0);
-    
     sizer->AddSpacer(10);
 
     // Add a label so the sizer for each verb form of the tense.
@@ -41,7 +44,7 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
     }
 
     this->SetSizerAndFit(sizer);
-    
+
     this->setVerb(verb);
 }
 
@@ -53,23 +56,19 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
 void VerbViewPanel::setVerb(const verbDB::Verb& inputVerb) {
     this->verb = inputVerb;
 
-    infinitifLabel->SetLabel(verb.infinitif + " – " + verb.translation);
-
-    cjgt::VerbForm participePresent = cjgt::getVerbForm(verb, verbDB::Tense::participePresent, verbDB::Person::none);
-    formLabels.at(verbDB::Person::none)->SetLabel(wxString(cjgt::getFormString(participePresent)));
-    
-    // Hide the participe present if it is empty or if the VerbView's tense is
-    // any other than the present.
-    if (participePresent.form == L"" || tense != verbDB::Tense::present) {
-        sizer->Hide(formLabels.at(verbDB::Person::none));
+    if (cjgt::strip(verb.participePresent) == L"") {
+        infinitifString = verb.infinitif;
     } else {
-        sizer->Show(formLabels.at(verbDB::Person::none));
+        infinitifString = verb.infinitif + L" – " + verb.participePresent;
     }
-    
+
+   infinitifLabel->SetLabel(infinitifString);
+   translationLabel->SetLabel(verb.translation);
+
     for (int person = verbDB::Person::je; person <= verbDB::Person::elles; person++) {
         cjgt::VerbForm verbForm = cjgt::getVerbForm(verb, tense, person);
         formLabels.at(person)->SetLabel(wxString(cjgt::getFormString(verbForm)));
-        
+
         // Hide empty forms
         if (verbForm.form == L"") {
             sizer->Hide(formLabels.at(person));
@@ -77,6 +76,6 @@ void VerbViewPanel::setVerb(const verbDB::Verb& inputVerb) {
             sizer->Show(formLabels.at(person));
         }
     }
-    
+
     sizer->SetSizeHints(this);
 }

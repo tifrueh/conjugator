@@ -38,5 +38,6 @@ class VerbViewPanel : public wxPanel {
 
         wxStaticText* titleLabel;
         wxStaticText* infinitifLabel;
+        wxStaticText* translationLabel;
         std::map<int, wxStaticText*> formLabels;
 };

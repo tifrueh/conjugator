@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::agir = {
     verbDB::VerbType::ir,
 
     L"agir",
+    L"handeln",
     L"agissant",
 
     L"agis",

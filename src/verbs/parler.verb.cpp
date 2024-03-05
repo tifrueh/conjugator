@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::parler = {
     verbDB::VerbType::er,
 
     L"parler",
+    L"translation",
     L"parlant",
 
     L"parle",

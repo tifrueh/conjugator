@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::tenir = {
     verbDB::VerbType::ir,
 
     L"tenir",
+    L"translation",
     L"tenant",
 
     L"tiens",

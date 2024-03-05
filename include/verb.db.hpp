@@ -22,6 +22,7 @@ namespace verbDB {
         VerbType verbType;
 
         std::wstring infinitif;
+        std::wstring translation;
         std::wstring participePresent;
 
         std::wstring presentJe;

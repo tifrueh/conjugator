@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::appuyer = {
     verbDB::VerbType::er,
 
     L"appuyer",
+    L"drücken",
     L"appuyant",
 
     L"appuie",

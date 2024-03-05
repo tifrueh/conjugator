@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::avancer = {
     verbDB::VerbType::er,
 
     L"avancer",
+    L"voranbringen",
     L"avançant",
 
     L"avance",

@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::confondre = {
     verbDB::VerbType::re,
 
     L"confondre",
+    L"translation",
     L"confondant",
 
     L"confonds",

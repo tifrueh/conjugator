@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::disparaitre = {
     verbDB::VerbType::re,
 
     L"disparaître",
+    L"translation",
     L"disparaissant",
 
     L"disparais",

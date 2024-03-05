@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::enlever = {
     verbDB::VerbType::er,
 
     L"enlever",
+    L"translation",
     L"enlevant",
 
     L"enlève",

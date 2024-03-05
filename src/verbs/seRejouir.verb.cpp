@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::seRejouir = {
     verbDB::VerbType::ir,
 
     L"se réjouir",
+    L"translation",
     L"se réjouissant",
 
     L"me réjouis",

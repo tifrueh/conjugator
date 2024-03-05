@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::guerir = {
     verbDB::VerbType::ir,
 
     L"guérir",
+    L"translation",
     L"guérissant",
 
     L"guéris",

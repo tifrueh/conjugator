@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::effacer = {
     verbDB::VerbType::er,
 
     L"effacer",
+    L"translation",
     L"effaçant",
 
     L"efface",

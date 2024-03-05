@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::construire = {
     verbDB::VerbType::re,
 
     L"construire",
+    L"translation",
     L"construisant",
 
     L"construis",

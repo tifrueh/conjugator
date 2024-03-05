@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::savoir= {
     verbDB::VerbType::oir,
 
     L"savoir",
+    L"translation",
     L"sachant",
 
     L"sais",

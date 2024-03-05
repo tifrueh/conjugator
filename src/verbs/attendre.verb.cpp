@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::attendre = {
     verbDB::VerbType::re,
 
     L"attendre",
+    L"warten",
     L"attendant",
 
     L"attends",

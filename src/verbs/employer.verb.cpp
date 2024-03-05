@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::employer = {
     verbDB::VerbType::er,
 
     L"employer",
+    L"translation",
     L"employant",
 
     L"emploie",

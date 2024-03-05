@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::donner = {
     verbDB::VerbType::er,
 
     L"donner",
+    L"translation",
     L"donnant",
 
     L"donne",

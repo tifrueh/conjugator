@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::servir = {
     verbDB::VerbType::ir,
 
     L"servir",
+    L"translation",
     L"servant",
 
     L"sers",

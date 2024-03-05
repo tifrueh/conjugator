@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::atteindre = {
     verbDB::VerbType::re,
 
     L"atteindre",
+    L"erreichen",
     L"atteignant",
 
     L"atteins",

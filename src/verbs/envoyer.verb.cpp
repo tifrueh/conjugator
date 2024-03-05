@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::envoyer = {
     verbDB::VerbType::er,
 
     L"envoyer",
+    L"translation",
     L"envoyant",
 
     L"envoie",

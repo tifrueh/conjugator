@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::seTaire = {
     verbDB::VerbType::re,
 
     L"se taire",
+    L"translation",
     L"se taisant",
 
     L"me tais",

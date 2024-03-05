@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::suffire = {
     verbDB::VerbType::re,
 
     L"suffire",
+    L"translation",
     L"suffisant",
 
     L"suffis",

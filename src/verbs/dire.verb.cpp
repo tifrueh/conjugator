@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::dire = {
     verbDB::VerbType::re,
 
     L"dire",
+    L"translation",
     L"disant",
 
     L"dis",

@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::aimer = {
     verbDB::VerbType::er,
 
     L"aimer",
+    L"lieben",
     L"aimant",
 
     L"aime",

@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::aller = {
     verbDB::VerbType::er,
 
     L"aller",
+    L"gehen",
     L"allant",
 
     L"vais",

@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::ecrire = {
     verbDB::VerbType::re,
 
     L"écrire",
+    L"translation",
     L"écrivant",
 
     L"écris",

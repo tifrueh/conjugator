@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::souffrir = {
     verbDB::VerbType::ir,
 
     L"souffrir",
+    L"translation",
     L"souffrant",
 
     L"souffre",

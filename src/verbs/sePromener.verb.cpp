@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::sePromener = {
     verbDB::VerbType::er,
 
     L"se promener",
+    L"translation",
     L"se promenant",
 
     L"me promène",

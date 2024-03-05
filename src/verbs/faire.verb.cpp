@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::faire = {
     verbDB::VerbType::re,
 
     L"faire",
+    L"translation",
     L"faisant",
 
     L"fais",

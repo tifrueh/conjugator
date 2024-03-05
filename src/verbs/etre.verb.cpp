@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::etre = {
     verbDB::VerbType::re,
 
     L"être",
+    L"translation",
     L"étant",
 
     L"suis",

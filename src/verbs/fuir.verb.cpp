@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::fuir = {
     verbDB::VerbType::ir,
 
     L"fuir",
+    L"translation",
     L"fuyant",
 
     L"fuis",

@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::sInquieter = {
     verbDB::VerbType::er,
 
     L"s'inquiéter",
+    L"translation",
     L"s'inquiétant",
 
     L"m'inquiète",

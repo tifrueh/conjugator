@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::applaudir = {
     verbDB::VerbType::ir,
 
     L"applaudir",
+    L"applaudieren",
     L"applaudissant",
 
     L"applaudis",

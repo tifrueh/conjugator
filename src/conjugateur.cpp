@@ -219,7 +219,7 @@ cjgt::QuizData cjgt::getQuizData(const verbDB::Verb& verb, const int& tense, con
 
     cjgt::QuizData out;
     out.infinitif = verb.infinitif;
-    out.translation = L"translation";
+    out.translation = verb.translation;
     out.tense = cjgt::getTense(tense);
     out.person = cjgt::getPerson(person);
 

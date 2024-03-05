@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::grimper = {
     verbDB::VerbType::er,
 
     L"grimper",
+    L"translation",
     L"grimpant",
 
     L"grimpe",

@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::vivre = {
     verbDB::VerbType::re,
 
     L"vivre",
+    L"translation",
     L"vivant",
 
     L"vis",

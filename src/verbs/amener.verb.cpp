@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::amener = {
     verbDB::VerbType::er,
 
     L"amener",
+    L"bringen",
     L"amenant",
 
     L"amène",

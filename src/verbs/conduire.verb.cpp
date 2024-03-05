@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::conduire = {
     verbDB::VerbType::re,
 
     L"conduire",
+    L"translation",
     L"conduisant",
 
     L"conduis",

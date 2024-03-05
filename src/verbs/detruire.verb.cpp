@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::detruire = {
     verbDB::VerbType::re,
 
     L"détruire",
+    L"translation",
     L"détruisant",
 
     L"détruis",

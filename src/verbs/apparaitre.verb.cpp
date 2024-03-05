@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::apparaitre = {
     verbDB::VerbType::re,
 
     L"apparaître",
+    L"erscheinen",
     L"apparaissant",
 
     L"apparais",

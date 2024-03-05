@@ -10,6 +10,7 @@ const verbDB::Verb verbDB::bavarder = {
     verbDB::VerbType::er,
 
     L"bavarder",
+    L"translation",
     L"bavardant",
 
     L"bavarde",

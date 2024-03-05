@@ -4,16 +4,24 @@
 #include "quizitem.hpp"
 
 
-QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbFormVariations& verbFormVariations) {
+QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbFormVariations& verbFormVariations, const bool& translate) {
     this->verbFormVariations = verbFormVariations;
     this->sizer = sizer;
     this->parent = parent;
 
+    std::wstring infinitif;
+
+    if (translate) {
+        infinitif = L"gehrman";
+    } else {
+        infinitif = verbFormVariations.infinitif;
+    }
+
     // Don't show a person if the question is prompting for a participe present form.
     if (verbFormVariations.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
-        questionString = verbFormVariations.infinitif + L": " + verbFormVariations.tense;
+        questionString = infinitif + L": " + verbFormVariations.tense;
     } else {
-        questionString = verbFormVariations.infinitif + L": " + verbFormVariations.tense + L" – " + verbFormVariations.person;
+        questionString = infinitif + L": " + verbFormVariations.tense + L" – " + verbFormVariations.person;
     }
 
     question = new wxStaticText(parent, 
@@ -52,13 +60,21 @@ void QuizItem::SetFocus() {
     textCtrl->SetFocus();
 }
 
-void QuizItem::setVerbFormVariations(const cjgt::VerbFormVariations& formVariations) {
+void QuizItem::setVerbFormVariations(const cjgt::VerbFormVariations& formVariations, const bool& translate) {
     this->verbFormVariations = formVariations;
 
-    if (formVariations.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
-        questionString = formVariations.infinitif + L": " + formVariations.tense;
+    std::wstring infinitif;
+
+    if(translate) {
+        infinitif = L"gehrman";
     } else {
-        questionString = formVariations.infinitif + L": " + formVariations.tense + L" – " + formVariations.person;
+        infinitif = formVariations.infinitif;
+    }
+
+    if (formVariations.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
+        questionString = infinitif + L": " + formVariations.tense;
+    } else {
+        questionString = infinitif + L": " + formVariations.tense + L" – " + formVariations.person;
     }
 
     // Set the text colour back to default.

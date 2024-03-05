@@ -267,8 +267,16 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     std::vector<cjgt::VerbFormVariations> verbs = GetVerbFormVariations(quizItemCount);
     QuizItem* itemPtr = nullptr;
 
+    bool translate;
+
+    if (checkBoxTrad->GetValue()) {
+        translate = true;
+    } else {
+        translate = false;
+    }
+
     for (int i = 0; i < quizItemCount; i++) {
-        itemPtr = new QuizItem(this, quizSizer, verbs.at(i));
+        itemPtr = new QuizItem(this, quizSizer, verbs.at(i), translate);
         quizItems.push_back(itemPtr);
     }
 
@@ -413,6 +421,14 @@ void TopPanel::GenerateQuiz() {
 
     std::vector<cjgt::VerbFormVariations> verbFormVariationss;
 
+    bool translate;
+
+    if (checkBoxTrad->GetValue()) {
+        translate = true;
+    } else {
+        translate = false;
+    }
+
     try {
         verbFormVariationss = GetVerbFormVariations((int) quizItems.size());
     } catch(const std::invalid_argument& exception) {
@@ -422,7 +438,7 @@ void TopPanel::GenerateQuiz() {
     }
 
     for (long unsigned int i = 0; i < quizItems.size(); i++) {
-        quizItems.at(i)->setVerbFormVariations(verbFormVariationss.at(i));
+        quizItems.at(i)->setVerbFormVariations(verbFormVariationss.at(i), translate);
     }
 
     topsizer->SetSizeHints(this);

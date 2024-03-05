@@ -34,7 +34,9 @@ class VerbViewPanel : public wxPanel {
         verbDB::Verb verb;
         int tense;
         std::wstring tenseString;
+        std::wstring infinitifString;
 
         wxStaticText* titleLabel;
+        wxStaticText* infinitifLabel;
         std::map<int, wxStaticText*> formLabels;
 };

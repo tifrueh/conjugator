@@ -10,9 +10,13 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
     sizer = new wxBoxSizer(wxVERTICAL);
     
     tenseString = cjgt::getTense(tense);
+    infinitifString = verb.infinitif + L" – " + verb.translation;
     
     titleLabel = new wxStaticText(this, wxID_ANY, wxString(tenseString));
     titleLabel->SetMinSize(wxSize(200, titleLabel->GetMinHeight()));
+
+    infinitifLabel = new wxStaticText(this, wxID_ANY, wxString(infinitifString));
+
     formLabels.insert({verbDB::Person::none, new wxStaticText(this, wxID_ANY, wxEmptyString)});
 
     wxFont titleFont = titleLabel->GetFont();
@@ -23,6 +27,9 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
     sizer->AddSpacer(5);
 
     sizer->Add(titleLabel, 0, wxEXPAND, 0);
+    sizer->Add(infinitifLabel, 0, wxEXPAND, 0);
+
+    sizer->AddSpacer(10);
     sizer->Add(formLabels.at(verbDB::Person::none), 0, wxEXPAND, 0);
     
     sizer->AddSpacer(10);
@@ -45,6 +52,8 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
 
 void VerbViewPanel::setVerb(const verbDB::Verb& inputVerb) {
     this->verb = inputVerb;
+
+    infinitifLabel->SetLabel(verb.infinitif + " – " + verb.translation);
 
     cjgt::VerbForm participePresent = cjgt::getVerbForm(verb, verbDB::Tense::participePresent, verbDB::Person::none);
     formLabels.at(verbDB::Person::none)->SetLabel(wxString(cjgt::getFormString(participePresent)));

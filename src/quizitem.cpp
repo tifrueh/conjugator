@@ -12,7 +12,7 @@ QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::QuizDat
     std::wstring infinitif;
 
     if (translate) {
-        infinitif = L"gehrman";
+        infinitif = quizData.translation;
     } else {
         infinitif = quizData.infinitif;
     }
@@ -66,7 +66,7 @@ void QuizItem::setQuizData(const cjgt::QuizData& quizData, const bool& translate
     std::wstring infinitif;
 
     if(translate) {
-        infinitif = L"gehrman";
+        infinitif = quizData.translation;
     } else {
         infinitif = quizData.infinitif;
     }

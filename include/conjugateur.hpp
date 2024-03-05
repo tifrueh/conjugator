@@ -30,6 +30,7 @@ namespace cjgt {
     // A structure containing all possible variations of a verb form.
     struct QuizData {
         std::wstring infinitif;
+        std::wstring translation;
         std::wstring tense;
         std::wstring person;
         std::vector<std::wstring> forms;

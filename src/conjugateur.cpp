@@ -219,6 +219,7 @@ cjgt::QuizData cjgt::getQuizData(const verbDB::Verb& verb, const int& tense, con
 
     cjgt::QuizData out;
     out.infinitif = verb.infinitif;
+    out.translation = L"translation";
     out.tense = cjgt::getTense(tense);
     out.person = cjgt::getPerson(person);
 
@@ -301,7 +302,7 @@ bool cjgt::VerbForm::operator==(const cjgt::VerbForm& verbForm) const {
 }
 
 bool cjgt::QuizData::operator==(const cjgt::QuizData& quizData) const {
-    return this->infinitif == quizData.infinitif && this->person == quizData.person && this->tense == quizData.tense;
+    return this->infinitif == quizData.infinitif && this->translation == quizData.translation && this->person == quizData.person && this->tense == quizData.tense;
 }
 
 std::wstring cjgt::strip(const std::wstring& string) {

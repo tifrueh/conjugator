@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::entendre = {
     verbDB::VerbType::re,
 
     L"entendre",
-    L"translation",
+    L"hören",
     L"entendant",
 
     L"entends",

@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::sePlaindre = {
     verbDB::VerbType::re,
 
     L"se plaindre",
-    L"translation",
+    L"sich beschweren",
     L"se plaignant",
 
     L"me plains",

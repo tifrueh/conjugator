@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::couvrir = {
     verbDB::VerbType::ir,
 
     L"couvrir",
-    L"translation",
+    L"abdecken",
     L"couvrant",
 
     L"couvre",

@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::sEnnuyer = {
     verbDB::VerbType::er,
 
     L"s'ennuyer",
-    L"translation",
+    L"sich langweilen",
     L"s'ennuyant",
 
     L"m'ennuie",

@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::voir = {
     verbDB::VerbType::oir,
 
     L"voir",
-    L"translation",
+    L"sehen",
     L"voyant",
 
     L"vois",

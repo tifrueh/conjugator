@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::avoir = {
     verbDB::VerbType::oir,
 
     L"avoir",
-    L"translation",
+    L"haben",
     L"ayant",
 
     L"ai",

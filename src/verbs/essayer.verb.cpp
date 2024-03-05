@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::essayer = {
     verbDB::VerbType::er,
 
     L"essayer",
-    L"translation",
+    L"versuchen",
     L"essayant",
 
     L"essaie",

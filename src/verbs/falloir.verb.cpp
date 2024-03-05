@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::falloir = {
     verbDB::VerbType::oir,
 
     L"falloir",
-    L"translation",
+    L"brauchen",
     L"",
 
     L"",

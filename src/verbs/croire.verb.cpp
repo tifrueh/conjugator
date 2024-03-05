@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::croire = {
     verbDB::VerbType::re,
 
     L"croire",
-    L"translation",
+    L"glauben",
     L"croyant",
 
     L"crois",

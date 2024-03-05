@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::dormir = {
     verbDB::VerbType::ir,
 
     L"dormir",
-    L"translation",
+    L"schlafen",
     L"dormant",
 
     L"dors",

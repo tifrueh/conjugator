@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::demolir = {
     verbDB::VerbType::ir,
 
     L"démolir",
-    L"translation",
+    L"abreissen",
     L"démolissant",
 
     L"démolis",

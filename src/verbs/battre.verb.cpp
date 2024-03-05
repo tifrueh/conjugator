@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::battre = {
     verbDB::VerbType::re,
 
     L"battre",
-    L"translation",
+    L"kämpfen",
     L"battant",
 
     L"bats",

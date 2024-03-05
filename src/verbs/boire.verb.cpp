@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::boire = {
     verbDB::VerbType::re,
 
     L"boire",
-    L"translation",
+    L"trinken",
     L"buvant",
 
     L"bois",

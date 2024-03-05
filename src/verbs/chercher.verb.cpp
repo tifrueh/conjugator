@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::chercher = {
     verbDB::VerbType::er,
 
     L"chercher",
-    L"translation",
+    L"suchen",
     L"cherchant",
 
     L"cherche",

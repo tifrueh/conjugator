@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::connaitre = {
     verbDB::VerbType::re,
 
     L"connaître",
-    L"translation",
+    L"kennen",
     L"connaissant",
 
     L"connais",

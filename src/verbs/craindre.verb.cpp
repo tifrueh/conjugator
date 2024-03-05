@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::craindre = {
     verbDB::VerbType::re,
 
     L"craindre",
-    L"translation",
+    L"befürchten",
     L"craignant",
 
     L"crains",

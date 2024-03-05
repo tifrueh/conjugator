@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::choisir = {
     verbDB::VerbType::ir,
 
     L"choisir",
-    L"translation",
+    L"wählen",
     L"choisissant",
 
     L"choisis",

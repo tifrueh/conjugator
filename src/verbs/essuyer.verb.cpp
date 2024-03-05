@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::essuyer = {
     verbDB::VerbType::er,
 
     L"essuyer",
-    L"translation",
+    L"abwischen",
     L"essuyant",
 
     L"essuie",

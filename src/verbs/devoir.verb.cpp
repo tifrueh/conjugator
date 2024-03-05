@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::devoir = {
     verbDB::VerbType::oir,
 
     L"devoir",
-    L"translation",
+    L"müssen",
     L"devant",
 
     L"dois",

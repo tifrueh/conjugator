@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::cueillir = {
     verbDB::VerbType::ir,
 
     L"cueillir",
-    L"translation",
+    L"pflücken",
     L"cueillant",
 
     L"cueille",

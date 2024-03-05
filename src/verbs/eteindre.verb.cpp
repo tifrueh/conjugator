@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::eteindre = {
     verbDB::VerbType::re,
 
     L"éteindre",
-    L"translation",
+    L"ausschalten",
     L"éteignant",
 
     L"éteins",

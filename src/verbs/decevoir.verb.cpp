@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::decevoir = {
     verbDB::VerbType::oir,
 
     L"décevoir",
-    L"translation",
+    L"enttäuschen",
     L"décevant",
 
     L"déçois",

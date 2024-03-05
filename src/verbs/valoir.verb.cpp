@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::valoir = {
     verbDB::VerbType::oir,
 
     L"valoir",
-    L"translation",
+    L"wert sein",
     L"valant",
 
     L"vaux",

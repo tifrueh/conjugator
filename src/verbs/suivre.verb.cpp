@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::suivre = {
     verbDB::VerbType::re,
 
     L"suivre",
-    L"translation",
+    L"folgen",
     L"suivant",
 
     L"suis",

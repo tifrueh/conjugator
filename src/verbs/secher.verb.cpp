@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::secher = {
     verbDB::VerbType::er,
 
     L"sécher",
-    L"translation",
+    L"trocknen",
     L"séchant",
 
     L"sèche",

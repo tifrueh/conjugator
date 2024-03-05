@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::habiter = {
     verbDB::VerbType::er,
 
     L"habiter",
-    L"translation",
+    L"wohnen",
     L"habitant",
 
     L"habite",

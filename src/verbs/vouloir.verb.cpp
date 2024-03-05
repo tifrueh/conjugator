@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::vouloir = {
     verbDB::VerbType::oir,
 
     L"vouloir",
-    L"translation",
+    L"wollen",
     L"voulant",
 
     L"veux",

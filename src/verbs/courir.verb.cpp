@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::courir = {
     verbDB::VerbType::ir,
 
     L"courir",
-    L"translation",
+    L"laufen",
     L"courant",
 
     L"cours",

@@ -6,7 +6,7 @@
     <p></p>
 </div>
 
-This application was designed to help students study French verbs. Version 1.0.0 is currently at the end of its development stage and a download of the beta version can be found in the [releases of the GitHub repo](https://github.com/tifrueh/conjugateur/releases). 
+This application is designed to help students study French verbs. The latest release can be downloaded from the [releases of the GitHub repo](https://github.com/tifrueh/conjugateur/releases/latest). 
 
 ## Installation
 
@@ -50,13 +50,7 @@ _Note: As the EXE is not signed, Windows is probably going to warn you about ins
 
 ### Build from source
 
-If your system is neither macOS nor x86_64 Windows, you'll have to compile and install the program yourself. Additional software components you'll need for that are the following:
-
-- [meson build system](https://mesonbuild.com/)
-
-- [wxwidgets](https://www.wxwidgets.org/)
-
-_Note: If you're building on macOS 10.15 or lower, you'll need to manually set the meson option `macos_min`, as its default value is 11._
+If your system is neither macOS nor x86_64 Windows, you'll have to compile and install the program yourself. Instructions can be found in the [wiki](https://github.com/tifrueh/conjugateur/wiki/02-Building).
 
 ## More information
 

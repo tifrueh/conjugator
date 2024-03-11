@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::avancer = {
+    
+    L"avancer",
 
     verbDB::VerbType::er,
 
     L"avancer",
+    L"voranbringen",
     L"avançant",
 
     L"avance",

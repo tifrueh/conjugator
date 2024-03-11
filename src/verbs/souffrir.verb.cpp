@@ -5,9 +5,12 @@
 
 const verbDB::Verb verbDB::souffrir = {
 
+    L"souffrir",
+
     verbDB::VerbType::ir,
 
     L"souffrir",
+    L"leiden",
     L"souffrant",
 
     L"souffre",

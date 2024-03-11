@@ -5,9 +5,12 @@
 
 const verbDB::Verb verbDB::vendre = {
 
+    L"vendre",
+
     verbDB::VerbType::re,
 
     L"vendre",
+    L"verkaufen",
     L"vendant",
 
     L"vends",

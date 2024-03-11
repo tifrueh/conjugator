@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::courir = {
+    
+    L"courir",
 
     verbDB::VerbType::ir,
 
     L"courir",
+    L"laufen",
     L"courant",
 
     L"cours",

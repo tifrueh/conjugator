@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::appuyer = {
+    
+    L"appuyer",
 
     verbDB::VerbType::er,
 
     L"appuyer",
+    L"drücken",
     L"appuyant",
 
     L"appuie",

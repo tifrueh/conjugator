@@ -1,38 +1,23 @@
 // Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
-#include <wx/wxprec.h>
- 
-#ifndef WX_PRECOMP
-    #include <wx/wx.h>
-#endif
-
-#ifndef __WXOSX__
-    #include "config.h"
-#endif
-
-
-#include <vector>
-
-#include "id.hpp"
-#include "toppanel.hpp"
-#include "inspectorframe.hpp"
-
 #include "mainframe.hpp"
 
-#include "conjugateur.xpm"
 
 MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
 
     SetIcon(wxICON(conjugateur));
 
     info.SetName(wxT("Conjugateur"));
-    info.SetCopyright(wxT("Copyright © 2023 Timo Früh"));
+    info.SetCopyright(wxT("Copyright © 2023-2024 Timo Früh"));
     
+    // Set version in the app info to TAG_STR only if not on macOS.
     #ifndef __WXOSX__
-        info.SetVersion(VERSION_STR);
+        info.SetVersion(TAG_STR);
     #endif
 
+    // Add a bunch more info to the app, but only on GTK, as it is the only
+    // platform to support such a detailed "About" window.
     #ifdef __WXGTK__
         info.SetIcon(wxICON(conjugateur));
         info.SetDescription(wxT("Entraîneur de conjugaison des verbes français"));
@@ -58,6 +43,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
         info.AddTranslator(wxT("Gérard Durand"));
     #endif
 
+    // Define a menu bar and add all menu items.
     menuBar = new wxMenuBar();
 
     menuEdit = new wxMenu();
@@ -90,9 +76,12 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
 
     this->SetMenuBar(menuBar);
 
+    // Create a new top panel in which all windows will reside (so that
+    // keyboard focus is handled automatically).
     topPanel = new TopPanel(this);
     topPanel->ResetFocus();
 
+    // Create a new wxBoxSizer and add the top panel to it.
     topPanelSizer = new wxBoxSizer(wxVERTICAL);
 
     topPanelSizer->Add(
@@ -102,6 +91,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
         0
     );
 
+    // Bind events to their corresponding method.
     Bind(wxEVT_BUTTON, &MainFrame::OnOkay, this, winID::okayButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnCheck, this, winID::checkButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnSolution, this, winID::solutionButton);
@@ -176,7 +166,7 @@ void MainFrame::OnUnselectAll(wxCommandEvent& event) {
 }
 
 void MainFrame::OnGitHub(wxCommandEvent& event) {
-    wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/conjugateur"));
+    wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/conjugateur/wiki/"));
 }
 
 void MainFrame::OnInspector(wxCommandEvent &event) {

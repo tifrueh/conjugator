@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::decevoir = {
+    
+    L"decevoir",
 
     verbDB::VerbType::oir,
 
     L"décevoir",
+    L"enttäuschen",
     L"décevant",
 
     L"déçois",

@@ -5,9 +5,12 @@
 
 const verbDB::Verb verbDB::sePromener = {
 
+    L"se promener",
+
     verbDB::VerbType::er,
 
     L"se promener",
+    L"spazieren",
     L"se promenant",
 
     L"me promène",

@@ -1,29 +1,27 @@
 // Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
-#include <wx/wxprec.h>
- 
-#ifndef WX_PRECOMP
-    #include <wx/wx.h>
-#endif
-
-
-#include <string>
-
-#include "verb.db.hpp"
-#include "conjugateur.hpp"
-
 #include "quizitem.hpp"
 
-QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbForm& verbForm) {
-    this->verbForm = verbForm;
+
+QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::QuizData& quizData, const bool& translate) {
+    this->quizData = quizData;
     this->sizer = sizer;
     this->parent = parent;
 
-    if (verbForm.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
-        questionString = verbForm.infinitif + L": " + verbForm.tense;
+    std::wstring infinitif;
+
+    if (translate) {
+        infinitif = quizData.translation;
     } else {
-        questionString = verbForm.infinitif + L": " + verbForm.tense + L" – " + verbForm.person;
+        infinitif = quizData.infinitif;
+    }
+
+    // Don't show a person if the question is prompting for a participe present form.
+    if (quizData.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
+        questionString = infinitif + L": " + quizData.tense;
+    } else {
+        questionString = infinitif + L": " + quizData.tense + L" – " + quizData.person;
     }
 
     question = new wxStaticText(parent, 
@@ -31,6 +29,7 @@ QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbFor
         wxString(questionString)
     );
 
+    // Create a text control with a minimum width of 150.
     textCtrl = new wxTextCtrl(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(150, wxDefaultSize.GetY()));
 
     solution = new wxStaticText(parent, wxID_ANY, wxEmptyString);
@@ -61,15 +60,24 @@ void QuizItem::SetFocus() {
     textCtrl->SetFocus();
 }
 
-void QuizItem::setVerbForm(const cjgt::VerbForm& form) {
-    this->verbForm = form;
+void QuizItem::setQuizData(const cjgt::QuizData& quizData, const bool& translate) {
+    this->quizData = quizData;
 
-    if (form.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
-        questionString = form.infinitif + L": " + form.tense;
+    std::wstring infinitif;
+
+    if(translate) {
+        infinitif = quizData.translation;
     } else {
-        questionString = form.infinitif + L": " + form.tense + L" – " + form.person;
+        infinitif = quizData.infinitif;
     }
 
+    if (quizData.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
+        questionString = infinitif + L": " + quizData.tense;
+    } else {
+        questionString = infinitif + L": " + quizData.tense + L" – " + quizData.person;
+    }
+
+    // Set the text colour back to default.
     textCtrl->SetForegroundColour(wxNullColour);
 
     textCtrl->Clear();
@@ -83,7 +91,7 @@ bool QuizItem::evaluate() {
     bool correct;
     std::wstring textCtrlString = std::wstring(textCtrl->GetValue().wchar_str());
 
-    correct = verbForm.form == cjgt::strip(textCtrlString);
+    correct = std::find(std::begin(quizData.forms), std::end(quizData.forms), textCtrlString) != std::end(quizData.forms);
 
     if (cjgt::strip(textCtrlString).empty()) {
         textCtrl->SetForegroundColour(wxNullColour);
@@ -100,5 +108,14 @@ bool QuizItem::evaluate() {
 }
 
 void QuizItem::showSolution() {
-    solution->SetLabelText(verbForm.form);
+    std::wstring solutionStr;
+    
+    solutionStr += quizData.forms.at(0);
+    
+    for (size_t formVariationIndex = 1; formVariationIndex < quizData.forms.size(); formVariationIndex++) {
+        solutionStr += L" /\n";
+        solutionStr += quizData.forms.at(formVariationIndex);
+    }
+
+    solution->SetLabelText(wxString(solutionStr));
 }

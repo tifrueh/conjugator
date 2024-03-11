@@ -5,9 +5,12 @@
 
 const verbDB::Verb verbDB::suffire = {
 
+    L"suffire",
+
     verbDB::VerbType::re,
 
     L"suffire",
+    L"ausreichen",
     L"suffisant",
 
     L"suffis",

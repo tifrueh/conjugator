@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::construire = {
+    
+    L"construire",
 
     verbDB::VerbType::re,
 
     L"construire",
+    L"bauen",
     L"construisant",
 
     L"construis",

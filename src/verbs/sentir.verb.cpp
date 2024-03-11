@@ -5,9 +5,12 @@
 
 const verbDB::Verb verbDB::sentir= {
 
+    L"sentir",
+
     verbDB::VerbType::ir,
 
     L"sentir",
+    L"fühlen",
     L"sentant",
 
     L"sens",

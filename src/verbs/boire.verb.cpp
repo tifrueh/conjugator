@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::boire = {
+    
+    L"boire",
 
     verbDB::VerbType::re,
 
     L"boire",
+    L"trinken",
     L"buvant",
 
     L"bois",

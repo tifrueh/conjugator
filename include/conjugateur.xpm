@@ -1,5 +1,5 @@
 /* XPM */
-const static char *conjugateur_xpm[] = {
+[[maybe_unused]] const static char *conjugateur_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "256 256 194 2 ",
 "   c None",

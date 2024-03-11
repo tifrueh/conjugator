@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::agir = {
+    
+    L"agir",
 
     verbDB::VerbType::ir,
 
     L"agir",
+    L"handeln",
     L"agissant",
 
     L"agis",

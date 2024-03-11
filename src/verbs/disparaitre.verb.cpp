@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::disparaitre = {
+    
+    L"disparaître",
 
     verbDB::VerbType::re,
 
     L"disparaître",
+    L"verschwinden",
     L"disparaissant",
 
     L"disparais",

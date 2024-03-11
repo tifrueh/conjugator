@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::ecrire = {
+    
+    L"écrire",
 
     verbDB::VerbType::re,
 
     L"écrire",
+    L"schreiben",
     L"écrivant",
 
     L"écris",

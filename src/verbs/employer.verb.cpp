@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::employer = {
+    
+    L"employer",
 
     verbDB::VerbType::er,
 
     L"employer",
+    L"verwenden",
     L"employant",
 
     L"emploie",

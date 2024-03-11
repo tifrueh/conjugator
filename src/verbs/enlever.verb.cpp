@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::enlever = {
+    
+    L"enlever",
 
     verbDB::VerbType::er,
 
     L"enlever",
+    L"entfernen",
     L"enlevant",
 
     L"enlève",

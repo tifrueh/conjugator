@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::effacer = {
+    
+    L"effacer",
 
     verbDB::VerbType::er,
 
     L"effacer",
+    L"löschen",
     L"effaçant",
 
     L"efface",

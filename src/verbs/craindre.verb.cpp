@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::craindre = {
+    
+    L"craindre",
 
     verbDB::VerbType::re,
 
     L"craindre",
+    L"befürchten",
     L"craignant",
 
     L"crains",

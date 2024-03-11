@@ -3,19 +3,26 @@
 
 #pragma once
 
+#include <array>
 #include <string>
 #include <vector>
-#include <array>
 
+
+// This namespace contains all functionality related to the verb database.
 namespace verbDB {
 
+    // An enum containing all recognised verb types (suffixes).
     enum VerbType { er, ir, oir, re };
 
+    // A structure containing all forms of a verb.
     struct Verb {
+        
+        std::wstring label;
 
         VerbType verbType;
 
         std::wstring infinitif;
+        std::wstring translation;
         std::wstring participePresent;
 
         std::wstring presentJe;
@@ -82,8 +89,10 @@ namespace verbDB {
         std::wstring conditionnelElles;
     };
 
+    // Declare all verbs.
     extern const Verb acheter;
     extern const Verb agir;
+    extern const Verb aimer;
     extern const Verb aller;
     extern const Verb amener;
     extern const Verb apercevoir;
@@ -98,9 +107,9 @@ namespace verbDB {
     extern const Verb battre;
     extern const Verb bavarder;
     extern const Verb boire;
+    extern const Verb chercher;
     extern const Verb choisir;
     extern const Verb commencer;
-    extern const Verb commencerEtre;
     extern const Verb conduire;
     extern const Verb confondre;
     extern const Verb connaitre;
@@ -112,6 +121,7 @@ namespace verbDB {
     extern const Verb cueillir;
     extern const Verb decevoir;
     extern const Verb demolir;
+    extern const Verb descendre;
     extern const Verb detruire;
     extern const Verb devoir;
     extern const Verb dire;
@@ -123,6 +133,7 @@ namespace verbDB {
     extern const Verb employer;
     extern const Verb enlever;
     extern const Verb entendre;
+    extern const Verb entrer;
     extern const Verb envoyer;
     extern const Verb esperer;
     extern const Verb essayer;
@@ -133,9 +144,11 @@ namespace verbDB {
     extern const Verb faire;
     extern const Verb falloir;
     extern const Verb fermer;
+    extern const Verb finir;
     extern const Verb fuir;
     extern const Verb grimper;
     extern const Verb guerir;
+    extern const Verb habiter;
     extern const Verb inventer;
     extern const Verb jeter;
     extern const Verb joindre;
@@ -147,6 +160,7 @@ namespace verbDB {
     extern const Verb mener;
     extern const Verb mentir;
     extern const Verb mettre;
+    extern const Verb monter;
     extern const Verb mourir;
     extern const Verb nager;
     extern const Verb naitre;
@@ -155,20 +169,18 @@ namespace verbDB {
     extern const Verb offrir;
     extern const Verb ouvrir;
     extern const Verb paraitre;
+    extern const Verb parler;
     extern const Verb partir;
     extern const Verb payer;
     extern const Verb peindre;
     extern const Verb perdre;
     extern const Verb peser;
-    extern const Verb placer;
     extern const Verb plaire;
     extern const Verb pleuvoir;
     extern const Verb pouvoir;
-    extern const Verb preferer;
     extern const Verb prendre;
     extern const Verb produire;
     extern const Verb proteger;
-    extern const Verb ranger;
     extern const Verb reagir;
     extern const Verb recevoir;
     extern const Verb reduire;
@@ -179,19 +191,18 @@ namespace verbDB {
     extern const Verb reussir;
     extern const Verb rire;
     extern const Verb rompre;
-    extern const Verb sAssoir;
-    extern const Verb sEnnuyer;
-    extern const Verb sInquieter;
+    extern const Verb sAsseoir;
     extern const Verb savoir;
     extern const Verb secher;
+    extern const Verb sEnnuyer;
     extern const Verb sentir;
     extern const Verb sePlaindre;
     extern const Verb sePromener;
     extern const Verb seRejouir;
     extern const Verb servir;
     extern const Verb seTaire;
-    extern const Verb sortirAvoir;
-    extern const Verb sortirEtre;
+    extern const Verb sInquieter;
+    extern const Verb sortir;
     extern const Verb souffrir;
     extern const Verb suffire;
     extern const Verb suivre;
@@ -200,23 +211,41 @@ namespace verbDB {
     extern const Verb valoir;
     extern const Verb vendre;
     extern const Verb venir;
-    extern const Verb vieillirAvoir;
-    extern const Verb vieillirEtre;
+    extern const Verb vieillir;
     extern const Verb vivre;
     extern const Verb voir;
     extern const Verb vouloir;
 
+    // A vector containing pointers to all known verbs.
     extern const std::vector<const Verb*> allVerbs;
+    
+    // A vector containing pointers to all -er verbs.
     extern std::vector<const Verb*> verbsER;
+    
+    // A vector containing pointers to all -ir verbs.
     extern std::vector<const Verb*> verbsIR;
+    
+    // A vector containing pointers to all -oir verbs.
     extern std::vector<const Verb*> verbsOIR;
+    
+    // A vector containing pointers to all -re verbs.
     extern std::vector<const Verb*> verbsRE;
 
+    // An enumerator containing all recognised tenses.
     enum Tense { infinitif, participePresent, present, imparfait, futur, passeCompose, plusQueParfait, subjonctif, conditionnel };
+    
+    // An enumerator containing all recognised persons.
     enum Person {none, je, tu, il, elle, nous, vous, ils, elles };
 
+    // An array containing all tense names as strings and IN THE SAME ORDER AS THE
+    // verbDB::Tense ENUMERATOR!!!
     extern const std::array<std::wstring, 9> tenseStrings;
+    
+    // An array containing all persons as strings and IN THE SAME ORDER AS THE
+    // verbDB::Person ENUMERATOR!!!
     extern const std::array<std::wstring, 9> personStrings;
 
+    // Sort all the verb pointers from allVerbs into the suffix vectors.
+    // This method MUST and MAY ONLY be called ONCE.
     void initTypeVectors();
 }

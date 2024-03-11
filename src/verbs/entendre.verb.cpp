@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::entendre = {
+    
+    L"entendre",
 
     verbDB::VerbType::re,
 
     L"entendre",
+    L"hören",
     L"entendant",
 
     L"entends",

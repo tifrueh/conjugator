@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::cueillir = {
+    
+    L"cueillir",
 
     verbDB::VerbType::ir,
 
     L"cueillir",
+    L"pflücken",
     L"cueillant",
 
     L"cueille",

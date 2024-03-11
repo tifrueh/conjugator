@@ -1,32 +1,21 @@
 // Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
-#include <wx/wxprec.h>
- 
-#ifndef WX_PRECOMP
-    #include <wx/wx.h>
-#endif
-
-
-#include <vector>
-#include <algorithm>
-#include <stdexcept>
-#include <random>
-
-#include "conjugateur.hpp"
-#include "id.hpp"
-#include "verb.db.hpp"
-
 #include "toppanel.hpp"
+
 
 TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
+    // Add a horizontal box sizer.
     topsizer = new wxBoxSizer(wxHORIZONTAL);
 
+    // Add a vertical static box sizer to hold the form selection checkboxes.
     formSelectionSizer = new wxStaticBoxSizer(wxVERTICAL, this, wxT("Sélection de verbes/temps"));
 
+    // Add a vertical static box sizer to hold a sizer, which, in turn, will hold all quiz items.
     quizBoxSizer = new wxStaticBoxSizer(wxVERTICAL, this, wxT("Quiz"));
 
+    // Add a flex grid sizer to hold all quiz items.
     quizSizer = new wxFlexGridSizer(3, wxSize(10, 3));
     quizSizer->AddGrowableCol(1, 1);
 
@@ -36,6 +25,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         quizSizer->AddGrowableRow(i, 1);
     }
 
+    // Add all the contents of the formSelectionSizer and, in turn, add it to the topsizer.
     verbTypeTitle = new wxStaticText(this, wxID_ANY, wxT("Types de verbes"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
     wxFont titleFont = verbTypeTitle->GetFont();
     titleFont.Scale(1.1);
@@ -58,6 +48,11 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     checkBoxPlusQueParfait = new wxCheckBox(this, winID::checkBoxPlusQueParfait, wxString(verbDB::tenseStrings.at(6)));
     checkBoxSubjonctif = new wxCheckBox(this, winID::checkBoxSubjonctif, wxString(verbDB::tenseStrings.at(7)));
     checkBoxConditionnel = new wxCheckBox(this, winID::checkBoxConditionnel, wxString(verbDB::tenseStrings.at(8)));
+
+    addSettingsTitle = new wxStaticText(this, wxID_ANY, wxT("Paramètres additionels"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
+    addSettingsTitle->SetFont(titleFont);
+
+    checkBoxTrad = new wxCheckBox(this, winID::checkBoxTrad, wxT("Traduction de l'allemand"));
 
     checkBoxER->SetValue(true);
     checkBoxPresent->SetValue(true);
@@ -239,6 +234,26 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
     formSelectionSizer->AddSpacer(smallSpace);
 
+    formSelectionSizer->AddSpacer(bigSpace);
+
+    formSelectionSizer->Add(
+        addSettingsTitle,
+        0,
+        wxEXPAND |
+        wxLEFT | wxRIGHT,
+        bigSpace
+    );
+
+    formSelectionSizer->AddSpacer(bigSpace);
+
+    formSelectionSizer->Add(
+        checkBoxTrad,
+        0,
+        wxEXPAND |
+        wxLEFT | wxRIGHT,
+        bigSpace
+    );
+
     formSelectionSizer->AddStretchSpacer();
 
     formSelectionSizer->Add(
@@ -249,11 +264,19 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         15
     );
 
-    std::vector<cjgt::VerbForm> verbs = GetVerbForms(quizItemCount);
+    std::vector<cjgt::QuizData> verbs = GetQuizDatas(quizItemCount);
     QuizItem* itemPtr = nullptr;
 
+    bool translate;
+
+    if (checkBoxTrad->GetValue()) {
+        translate = true;
+    } else {
+        translate = false;
+    }
+
     for (int i = 0; i < quizItemCount; i++) {
-        itemPtr = new QuizItem(this, quizSizer, verbs.at(i));
+        itemPtr = new QuizItem(this, quizSizer, verbs.at(i), translate);
         quizItems.push_back(itemPtr);
     }
 
@@ -273,6 +296,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
     topsizer->AddSpacer(bigSpace);
 
+    // Add the quizBoxSizer to the topsizer.
     topsizer->Add(
         quizBoxSizer,
         1,
@@ -283,33 +307,10 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     SetSizerAndFit(topsizer);
 }
 
-void TopPanel::ResetFocus() {
-    quizItems.at(0)->SetFocus();
-}
-
-void TopPanel::GenerateQuiz() {
-
-    std::vector<cjgt::VerbForm> verbForms;
-
-    try {
-        verbForms = GetVerbForms((int) quizItems.size());
-    } catch(const std::invalid_argument& exception) {
-        auto dlg = new wxMessageDialog(this, wxT("Il n'est pas possible de générer suffisamment de questions de quiz à partir de votre sélection. Veuillez sélectionner plus de verbes ou plus de temps."));
-        dlg->ShowModal();
-        return;
-    }
-
-    for (long unsigned int i = 0; i < quizItems.size(); i++) {
-        quizItems.at(i)->setVerbForm(verbForms.at(i));
-    }
-
-    topsizer->SetSizeHints(this);
-}
-
-std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
+std::vector<cjgt::QuizData> TopPanel::GetQuizDatas(const int& count) {
     std::vector<const verbDB::Verb*> usableVerbs;
     std::vector<verbDB::Tense> usableTenses;
-    std::vector<cjgt::VerbForm> verbForms;
+    std::vector<cjgt::QuizData> quizDatas;
 
     if (checkBoxER->GetValue()) {
         usableVerbs.insert(std::end(usableVerbs), std::begin(verbDB::verbsER), std::end(verbDB::verbsER));
@@ -375,7 +376,7 @@ std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
 
     const verbDB::Verb* verb;
     verbDB::Tense tense;
-    cjgt::VerbForm verbForm;
+    cjgt::QuizData quizData;
     int randomPosVerb;
     int randomPosTense;
     int randomPers;
@@ -396,16 +397,51 @@ std::vector<cjgt::VerbForm> TopPanel::GetVerbForms(const int& count) {
         verb = usableVerbs.at(randomPosVerb);
         tense = usableTenses.at(randomPosTense);
 
-        verbForm = cjgt::getVerbForm(*verb, tense, randomPers);
+        quizData = cjgt::getQuizData(*verb, tense, randomPers);
 
-        if (std::find(std::begin(verbForms), std::end(verbForms), verbForm) == std::end(verbForms)) {
-            verbForms.push_back(cjgt::getVerbForm(*verb, tense, randomPers));
-        } else {
+        if (std::find(std::begin(quizDatas), std::end(quizDatas), quizData) != std::end(quizDatas)) {
             i--;
+        }
+        else if (std::all_of(std::begin(quizData.forms), std::end(quizData.forms), [](std::wstring str){return str == L"";})) {
+            i--;
+        } 
+        else {
+            quizDatas.push_back(quizData);
         }
     }
 
-    return verbForms;
+    return quizDatas;
+}
+
+void TopPanel::ResetFocus() {
+    quizItems.at(0)->SetFocus();
+}
+
+void TopPanel::GenerateQuiz() {
+
+    std::vector<cjgt::QuizData> quizDatas;
+
+    bool translate;
+
+    if (checkBoxTrad->GetValue()) {
+        translate = true;
+    } else {
+        translate = false;
+    }
+
+    try {
+        quizDatas = GetQuizDatas((int) quizItems.size());
+    } catch(const std::invalid_argument& exception) {
+        auto dlg = new wxMessageDialog(this, wxT("Il n'est pas possible de générer suffisamment de questions de quiz à partir de votre sélection. Veuillez sélectionner plus de verbes ou plus de temps."));
+        dlg->ShowModal();
+        return;
+    }
+
+    for (long unsigned int i = 0; i < quizItems.size(); i++) {
+        quizItems.at(i)->setQuizData(quizDatas.at(i), translate);
+    }
+
+    topsizer->SetSizeHints(this);
 }
 
 void TopPanel::Check() {

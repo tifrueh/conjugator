@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::connaitre = {
+    
+    L"connaître",
 
     verbDB::VerbType::re,
 
     L"connaître",
+    L"kennen",
     L"connaissant",
 
     L"connais",

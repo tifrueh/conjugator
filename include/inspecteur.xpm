@@ -1,5 +1,5 @@
 /* XPM */
-const static char *inspecteur_xpm[] = {
+[[maybe_unused]] const static char *inspecteur_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "256 256 151 2 ",
 "   c None",

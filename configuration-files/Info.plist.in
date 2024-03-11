@@ -11,9 +11,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>fr</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2023 Timo Früh</string>
+	<string>Copyright © 2023-2024 Timo Früh</string>
 	<key>CFBundleShortVersionString</key>
-	<string>@mac_version@</string>
+	<string>@version@</string>
 	<key>CFBundleVersion</key>
 	<string>@mac_bundle_version@</string>
 	<key>CFBundleName</key>

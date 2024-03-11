@@ -5,9 +5,12 @@
 
 const verbDB::Verb verbDB::sInquieter = {
 
+    L"s'inquiéter",
+
     verbDB::VerbType::er,
 
     L"s'inquiéter",
+    L"sich Sorgen machen",
     L"s'inquiétant",
 
     L"m'inquiète",

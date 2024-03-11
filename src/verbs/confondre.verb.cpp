@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::confondre = {
+    
+    L"confondre",
 
     verbDB::VerbType::re,
 
     L"confondre",
+    L"verwechseln",
     L"confondant",
 
     L"confonds",

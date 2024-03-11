@@ -3,7 +3,6 @@
 
 #pragma once
 
-
 #include <wx/wxprec.h>
 
 #ifndef WX_PRECOMP
@@ -13,13 +12,20 @@
 #include <map>
 #include <string>
 
+#include "conjugateur.hpp"
 #include "verb.db.hpp"
 
 
+// This panel displays all forms of a verb in a specified tense.
 class VerbViewPanel : public wxPanel {
     public:
+        // Construct a new VerbViewPanel, specifying the tense as int.
         VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb, const int &tense);
+
+        // Construct a new VerbViewPanel, specifying the tense as enum.
         VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb, const verbDB::Tense& tense);
+
+        // Reset the verb of the verb view panel.
         void setVerb(const verbDB::Verb& inputVerb);
 
     private:
@@ -28,7 +34,10 @@ class VerbViewPanel : public wxPanel {
         verbDB::Verb verb;
         int tense;
         std::wstring tenseString;
+        std::wstring infinitifString;
 
         wxStaticText* titleLabel;
+        wxStaticText* infinitifLabel;
+        wxStaticText* translationLabel;
         std::map<int, wxStaticText*> formLabels;
 };

@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::atteindre = {
+    
+    L"atteindre",
 
     verbDB::VerbType::re,
 
     L"atteindre",
+    L"erreichen",
     L"atteignant",
 
     L"atteins",

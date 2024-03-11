@@ -3,11 +3,14 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::sAssoir = {
+const verbDB::Verb verbDB::sAsseoir = {
+
+    L"s'asseoir",
 
     verbDB::VerbType::oir,
 
-    L"s'assoir",
+    L"s'asseoir",
+    L"sich setzen",
     L"s'assoyant",
 
     L"m'assois",
@@ -32,10 +35,10 @@ const verbDB::Verb verbDB::sAssoir = {
     L"t'assoiras",
     L"s'assoira",
     L"s'assoira",
-    L"assoirons",
-    L"assoirez",
-    L"assoiront",
-    L"assoiront",
+    L"nous assoirons",
+    L"vous assoirez",
+    L"s'assoiront",
+    L"s'assoiront",
 
     L"me suis assis",
     L"t'es assis",
@@ -53,7 +56,7 @@ const verbDB::Verb verbDB::sAssoir = {
     L"nous étions assis",
     L"vous étiez assis",
     L"s'étaient assis",
-    L"s'étaient assises",
+    L"s'étaient assise",
 
     L"m'assoie",
     L"t'assoies",
@@ -72,4 +75,5 @@ const verbDB::Verb verbDB::sAssoir = {
     L"vous assoiriez",
     L"s'assoiraient",
     L"s'assoiraient"
+
 };

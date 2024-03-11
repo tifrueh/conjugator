@@ -5,9 +5,12 @@
 
 const verbDB::Verb verbDB::exagerer = {
 
+    L"exagérer",
+
     verbDB::VerbType::er,
 
     L"exagérer",
+    L"übertreiben",
     L"exagérant",
 
     L"exagère",

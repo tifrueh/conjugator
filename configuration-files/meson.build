@@ -1,3 +1,4 @@
+# Configure Info.plist if on macOS.
 if host_machine.system() == 'darwin'
   
   configure_file(
@@ -6,6 +7,7 @@ if host_machine.system() == 'darwin'
     configuration: conf_data
   )
 
+# Configure resources.rc and conjugateur.iss on Windows.
 elif host_machine.system() == 'windows' 
   
   configure_file(
@@ -22,11 +24,12 @@ elif host_machine.system() == 'windows'
 
 endif
 
+# Configure config.h on anything except macOS.
 if host_machine.system() != 'darwin'
 
   configure_file(
-    input: 'config.h.in',
-    output: 'config.h',
+    input: 'config.hpp.in',
+    output: 'config.hpp',
     configuration: conf_data
   )
 

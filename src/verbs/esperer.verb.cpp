@@ -5,9 +5,12 @@
 
 const verbDB::Verb verbDB::esperer = {
 
+    L"espérer",
+
     verbDB::VerbType::er,
 
     L"espérer",
+    L"hoffen",
     L"espérant",
 
     L"espère",

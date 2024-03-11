@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::devoir = {
+    
+    L"devoir",
 
     verbDB::VerbType::oir,
 
     L"devoir",
+    L"müssen",
     L"devant",
 
     L"dois",

@@ -1,3 +1,4 @@
+# Add all .cpp files to the project sources.
 srcs += files(
     'conjugateur.cpp',
     'inspectorframe.cpp',
@@ -11,4 +12,5 @@ srcs += files(
     'verbviewpanel.cpp'
 )
 
+# Execute meson.build in the 'verbs' subdir.
 subdir('verbs')

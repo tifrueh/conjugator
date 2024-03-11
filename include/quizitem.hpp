@@ -10,22 +10,38 @@
 #endif
 
 
+#include <algorithm>
 #include <string>
 
 #include "conjugateur.hpp"
+#include "verb.db.hpp"
 
+
+// A group of windows, consisting of a question label, a text entry for the
+// answer and a solution label. It always has to be added to a flex grid sizer.
 class QuizItem {
     public:
-        QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::VerbForm& verbForm);
-        bool evaluate();
+        // Construct a new quiz item. It will add itself to the wxFlexGridSizer
+        // provided as parameter automatically.
+        QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::QuizData& quizData, const bool& translate = false);
+
+        // Set the focus to the text control.
         void SetFocus();
+
+        // Reset the verb form this quiz item should ask for.
+        void setQuizData(const cjgt::QuizData& quizData, const bool& translate = false);
+
+        // Check if the given answer in the text control is correct and colour it
+        // correspondingly.
+        bool evaluate();
+
+        // Show the solution to the question.
         void showSolution();
-        void setVerbForm(const cjgt::VerbForm& form);
 
     private:
         wxFlexGridSizer* sizer;
         wxWindow* parent;
-        cjgt::VerbForm verbForm;
+        cjgt::QuizData quizData;
         wxStaticText* question = nullptr;
         wxTextCtrl* textCtrl = nullptr;
         wxStaticText* solution = nullptr;

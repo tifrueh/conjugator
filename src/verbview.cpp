@@ -1,19 +1,8 @@
 // Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
-#include <wx/wxprec.h>
-
-#ifndef WX_PRECOMP
-    #include <wx/wx.h>
-#endif
-
-#include <wx/choicebk.h>
-
-#include "verb.db.hpp"
-#include "conjugateur.hpp"
-#include "verbviewpanel.hpp"
-
 #include "verbview.hpp"
+
 
 VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : wxPanel(parent, id) {
     this->verb = verb;
@@ -22,6 +11,7 @@ VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : 
     
     tensebook = new wxChoicebook(this, wxID_ANY);
 
+    // Create a verb view panel for each tense from present to conditionnel and add it to the tensebook.
     for (int tense = verbDB::Tense::present; tense <= verbDB::Tense::conditionnel; tense++) {
         pages.insert({tense, new VerbViewPanel(tensebook, wxID_ANY, verb, tense)});
         tensebook->InsertPage(tense - verbDB::Tense::present, pages.at(tense), wxString(cjgt::getTense(tense)));

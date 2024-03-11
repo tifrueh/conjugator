@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::bavarder = {
+    
+    L"bavarder",
 
     verbDB::VerbType::er,
 
     L"bavarder",
+    L"plaudern",
     L"bavardant",
 
     L"bavarde",

@@ -5,9 +5,12 @@
 
 const verbDB::Verb verbDB::conduire = {
 
+    L"conduire",
+
     verbDB::VerbType::re,
 
     L"conduire",
+    L"fahren",
     L"conduisant",
 
     L"conduis",

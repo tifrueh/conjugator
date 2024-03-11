@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::grimper = {
+    
+    L"grimper",
 
     verbDB::VerbType::er,
 
     L"grimper",
+    L"klettern",
     L"grimpant",
 
     L"grimpe",

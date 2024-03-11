@@ -5,9 +5,12 @@
 
 const verbDB::Verb verbDB::fermer = {
 
+    L"fermer",
+
     verbDB::VerbType::er,
 
     L"fermer",
+    L"schliessen",
     L"fermant",
 
     L"ferme",

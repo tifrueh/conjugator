@@ -4,10 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::couvrir = {
+    
+    L"couvrir",
 
     verbDB::VerbType::ir,
 
     L"couvrir",
+    L"abdecken",
     L"couvrant",
 
     L"couvre",

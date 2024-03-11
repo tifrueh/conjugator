@@ -1,16 +1,12 @@
 // Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
-#include <string>
-#include <stdexcept>
-
-#include "verb.db.hpp"
-
 #include "conjugateur.hpp"
 
-const verbDB::Verb* cjgt::getVerb(const std::wstring &infinitif) {
+
+const verbDB::Verb* cjgt::getVerb(const std::wstring &label) {
     for (const verbDB::Verb* verb : verbDB::allVerbs) {
-        if (verb->infinitif == infinitif) {
+        if (verb->label == label) {
             return verb;
         }
     }
@@ -219,6 +215,41 @@ cjgt::VerbForm cjgt::getVerbForm(const verbDB::Verb& verb, const verbDB::Tense& 
     return getVerbForm(verb, tenseInt, personInt);
 }
 
+cjgt::QuizData cjgt::getQuizData(const verbDB::Verb& verb, const int& tense, const int& person) {
+
+    cjgt::QuizData out;
+    out.infinitif = verb.infinitif;
+    out.translation = verb.translation;
+    out.tense = cjgt::getTense(tense);
+    out.person = cjgt::getPerson(person);
+
+    std::vector<const verbDB::Verb*> verbs;
+    verbs.push_back(&verb);
+
+    for (const verbDB::Verb* searchedVerb : verbDB::allVerbs) {
+        if (searchedVerb->infinitif == verb.infinitif){
+            verbs.push_back(searchedVerb);
+        }
+    }
+    
+    for (const verbDB::Verb* variationVerb: verbs) {
+        std::wstring formVariation = cjgt::getVerbForm(*variationVerb, tense, person).form;
+        
+        if (std::find(std::begin(out.forms), std::end(out.forms), formVariation) == std::end(out.forms)) {
+            out.forms.push_back(formVariation);
+        }
+    }
+    
+    return out;
+    
+}
+
+cjgt::QuizData cjgt::getQuizData(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person) {
+    int tenseInt = tense;
+    int personInt = person;
+    return getQuizData(verb, tenseInt, personInt);
+}
+
 std::wstring cjgt::getTense(const verbDB::Tense& tense) {
     return verbDB::tenseStrings.at(tense);
 }
@@ -236,6 +267,12 @@ std::wstring cjgt::getPerson(const int& person) {
 }
 
 std::wstring cjgt::getFormString(const cjgt::VerbForm& verbForm) {
+    
+    // Return an empty string if a form is empty (e. g. falloir - je)
+    if (verbForm.form == L"") {
+        return L"";
+    }
+    
     std::wstring out;
 
     wchar_t firstChar = verbForm.form.at(0);
@@ -251,6 +288,8 @@ std::wstring cjgt::getFormString(const cjgt::VerbForm& verbForm) {
         out = L"j'" + verbForm.form;
     } else if (!concatJe && verbForm.person == L"je/j'") {
         out = L"je " + verbForm.form;
+    } else if (verbForm.tense == L"participe présent") {
+        out = verbForm.form;
     } else {
         out = verbForm.person + L" " + verbForm.form;
     }
@@ -262,9 +301,14 @@ bool cjgt::VerbForm::operator==(const cjgt::VerbForm& verbForm) const {
     return this->infinitif == verbForm.infinitif && this->person == verbForm.person && this->form == verbForm.form && this->tense == verbForm.tense;
 }
 
+bool cjgt::QuizData::operator==(const cjgt::QuizData& quizData) const {
+    return this->infinitif == quizData.infinitif && this->translation == quizData.translation && this->person == quizData.person && this->tense == quizData.tense;
+}
+
 std::wstring cjgt::strip(const std::wstring& string) {
     std::wstring outstring = string;
     
+    // Calculate the beginning and the count of the stripped string.
     const long unsigned int begin = outstring.find_first_not_of(' ');
     const long unsigned int end = outstring.find_last_not_of(' ');
     const long unsigned int count = end + 1 - begin;

@@ -32,10 +32,15 @@
 *.app
 
 # Visual Studio Code
-.vscode
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
 
 # CLion
 .idea
 
 # macOS
 .DS_Store
+
+# ccls
+.ccls-cache

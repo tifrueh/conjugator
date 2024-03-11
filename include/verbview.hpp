@@ -3,7 +3,6 @@
 
 #pragma once
 
-
 #include <wx/wxprec.h>
 
 #ifndef WX_PRECOMP
@@ -12,19 +11,22 @@
 
 #include <wx/choicebk.h>
 
+
 #include <map>
 #include <string>
 
-#include <wx/vscroll.h>
-
+#include "conjugateur.hpp"
 #include "verbviewpanel.hpp"
-
 #include "verb.db.hpp"
 
 
+// This panel contains a wxChoicebook with one additional panel for each tense.
 class VerbView : public wxPanel {
     public:
+        // Construct a new VerbView.
         VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb);
+
+        // Set the verb of all verb view panels.
         void setVerb(const verbDB::Verb& inputVerb);
 
     private:

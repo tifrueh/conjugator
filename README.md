@@ -8,6 +8,20 @@
 
 This application is designed to help students study French verbs. The latest release can be downloaded from the [releases of the GitHub repo](https://github.com/tifrueh/conjugateur/releases/latest). 
 
+## Features
+
+- Generate a quiz which asks you to conjugate 15 different verbs
+
+- Select which verb types and which tenses you want to be asked about
+
+- Optionally display the infinitive in German to also study translations
+
+- Get feedback on the correctness of your answers without showing solutions
+
+- Compare your answer to the solutions
+
+- Read up on the conjugation of all verbs in the app's database using the separate "Inspecteur" window
+
 ## Installation
 
 ### macOS (homebrew)

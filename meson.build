@@ -5,7 +5,7 @@ project(
     default_options: [ 'cpp_std=c++17' ],
     license: 'GPL-3.0-or-later',
     license_files: 'LICENSE.md',
-    version: '1.0.0-dev'
+    version: '1.0.0'
 )
 
 # Specify the include directories.

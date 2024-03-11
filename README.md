@@ -4,7 +4,7 @@
     <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">
         <img alt="GitHub" src="https://img.shields.io/github/license/tifrueh/conjugateur">
     </a>
-    <a href="https://github.com/tifrueh/conjugateur/releases">
+    <a href="https://github.com/tifrueh/conjugateur/releases/latest">
         <img alt="GitHub tag (with filter)" src="https://img.shields.io/github/v/tag/tifrueh/conjugateur">
     </a>
     <p></p>

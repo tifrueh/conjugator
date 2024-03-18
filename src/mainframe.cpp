@@ -73,6 +73,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     menuHelp->Append(wxID_ABOUT, wxT("À propos de Conjugateur"));
     menuHelp->AppendSeparator();
     menuHelp->Append(winID::menuHelpGitHub, wxT("GitHub"));
+    menuHelp->Append(winID::menuHelpChecker, wxT("Recherche des mises à jour"));
 
     this->SetMenuBar(menuBar);
 
@@ -104,8 +105,10 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnAbout, this, wxID_ABOUT);
     Bind(wxEVT_MENU, &MainFrame::OnGitHub, this, winID::menuHelpGitHub);
     Bind(wxEVT_MENU, &MainFrame::OnInspector, this, winID::menuInspectorOpen);
+    Bind(wxEVT_MENU, &MainFrame::OnChecker, this, winID::menuHelpChecker);
     Bind(wxEVT_LISTBOX, &MainFrame::OnVerbBox, this, winID::inspectorVerbBox);
     Bind(wxEVT_DESTROY, &MainFrame::OnInspectorClose, this, winID::inspector);
+    Bind(wxEVT_DESTROY, &MainFrame::OnCheckerClose, this, winID::checker);
 
     SetSizerAndFit(topPanelSizer);
 }
@@ -181,6 +184,23 @@ void MainFrame::OnInspector(wxCommandEvent &event) {
 
 void MainFrame::OnInspectorClose(wxWindowDestroyEvent& event) {
     inspector = nullptr;
+    this->enableMenuBar();
+    topPanel->Enable();
+    topPanel->ResetFocus();
+}
+
+void MainFrame::OnChecker(wxCommandEvent &event) {
+    if (checker == nullptr) {
+        checker = new CheckerFrame(this, winID::checker, wxT("Recherce des mises à jour"));
+    }
+    topPanel->SetFocusIgnoringChildren();
+    topPanel->Disable();
+    this->disableMenuBar();
+    checker->Show();
+}
+
+void MainFrame::OnCheckerClose(wxWindowDestroyEvent& event) {
+    checker = nullptr;
     this->enableMenuBar();
     topPanel->Enable();
     topPanel->ResetFocus();

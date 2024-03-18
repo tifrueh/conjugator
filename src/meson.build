@@ -1,5 +1,7 @@
 # Add all .cpp files to the project sources.
 srcs += files(
+    'checkerframe.cpp',
+    'checkerpanel.cpp',
     'conjugateur.cpp',
     'inspectorframe.cpp',
     'inspectorpanel.cpp',

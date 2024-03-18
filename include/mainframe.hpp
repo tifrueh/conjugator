@@ -16,7 +16,6 @@
 #include <wx/aboutdlg.h>
 
 
-#include "checkerframe.hpp"
 #include "id.hpp"
 #include "inspectorframe.hpp"
 #include "toppanel.hpp"
@@ -42,7 +41,6 @@ class MainFrame : public wxFrame {
         wxBoxSizer* topPanelSizer = nullptr;
         TopPanel* topPanel = nullptr;
         InspectorFrame* inspector = nullptr;
-        CheckerFrame* checker = nullptr;
         
         // Enable all menus in the menu bar.
         void enableMenuBar();
@@ -87,13 +85,6 @@ class MainFrame : public wxFrame {
         // Reset the pointer to the inspector and enable everything related to the
         // mainframe when the inspector is closed.
         void OnInspectorClose(wxWindowDestroyEvent& event);
-
-        // Open che checker and disable everything related to the mainframe.
-        void OnChecker(wxCommandEvent& event);
-
-        // Reset the pointer to the checker and enable everything related to the
-        // mainframe.
-        void OnCheckerClose(wxWindowDestroyEvent& event);
 
         // Update the verb in the verbview of the inspector when a new verb is selected
         // in the verbbox.

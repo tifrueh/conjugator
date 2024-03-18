@@ -38,7 +38,7 @@ const verbDB::Verb verbDB::mettre = {
     L"mettrons",
     L"mettrez",
     L"mettront",
-    L"menttront",
+    L"mettront",
 
     L"ai mis",
     L"as mis ",

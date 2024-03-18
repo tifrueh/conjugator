@@ -5,11 +5,11 @@
 
 const verbDB::Verb verbDB::maigrir = {
 
-    L"maigir",
+    L"maigrir",
 
     verbDB::VerbType::ir,
 
-    L"maigir",
+    L"maigrir",
     L"abnehmen",
     L"maigrissant",
 

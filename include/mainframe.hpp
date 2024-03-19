@@ -19,6 +19,7 @@
 #include "id.hpp"
 #include "inspectorframe.hpp"
 #include "toppanel.hpp"
+#include "updatechecker.hpp"
 
 #include "conjugateur.xpm"
 
@@ -38,6 +39,7 @@ class MainFrame : public wxFrame {
         wxMenu* menuEdit;
         wxMenu* menuQuiz;
         wxMenu* menuHelp;
+        UpdateChecker updateChecker;
         wxBoxSizer* topPanelSizer = nullptr;
         TopPanel* topPanel = nullptr;
         InspectorFrame* inspector = nullptr;
@@ -89,4 +91,10 @@ class MainFrame : public wxFrame {
         // Update the verb in the verbview of the inspector when a new verb is selected
         // in the verbbox.
         void OnVerbBox(wxCommandEvent& event);
+
+        // Check for updates.
+        void OnUpdateChecker(wxCommandEvent& event);
+
+        // Handle update checker results.
+        void HandleUpdateChecker(wxWebRequestEvent& event);
 };

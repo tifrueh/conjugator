@@ -71,7 +71,7 @@ void UpdateChecker::showResultMessage(const std::string& responseString) {
 
         message = L"Votre version: " + wxString(TAG_STR) + L"\n" +
                   L"Dernière version: " + wxString(latestVersion) +
-                  L"\nEst-ce que vous voulez télécharger la dernière version?";
+                  L"\n\nEst-ce que vous voulez télécharger la dernière version?";
 
         dialog = new wxMessageDialog(parent, message, wxT("Mise à jour"), wxOK | wxCANCEL);
 

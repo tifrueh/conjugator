@@ -23,6 +23,8 @@ class UpdateChecker {
         void showResult(wxWebRequestEvent& request);
 
     private:
+        std::string getLatestVersion(const std::string& responseString);
+        void showResultMessage(const std::string& responseString);
         wxWebRequest request;
         wxWindow* parent;
 };

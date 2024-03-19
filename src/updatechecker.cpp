@@ -1,6 +1,7 @@
 // Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in main.cpp
 
+#include "config.hpp"
 #include "updatechecker.hpp"
 
 
@@ -24,8 +25,7 @@ void UpdateChecker::start(wxWindow* parent, const std::string& url, const int& r
 void UpdateChecker::showResult(wxWebRequestEvent& event) {
     switch(event.GetState()) {
         case wxWebRequest::State_Completed: {
-            wxMessageDialog* dlgSuccess = new wxMessageDialog(parent, event.GetResponse().AsString());
-            dlgSuccess->ShowModal();
+            showResultMessage(event.GetResponse().AsString().ToStdString());
             break;
         }
         case wxWebRequest::State_Failed: {
@@ -37,4 +37,29 @@ void UpdateChecker::showResult(wxWebRequestEvent& event) {
             break;
         }
     }
+}
+
+std::string UpdateChecker::getLatestVersion(const std::string& responseString) {
+    size_t versionPos = responseString.find("\"tag_name\"") + 12;
+    size_t versionEndPos = responseString.find("\"", versionPos);
+    if (versionPos != std::string::npos) {
+        return responseString.substr(versionPos, versionEndPos - versionPos);
+    } else {
+        return "Ne pas trouvé";
+    }
+}
+
+void UpdateChecker::showResultMessage(const std::string& responseString) {
+    std::string latestVersion = getLatestVersion(responseString);
+    wxString message;
+    wxMessageDialog* dialog = nullptr;
+
+    if (latestVersion != TAG_STR) {
+        message = L"Votre version: " + wxString(TAG_STR) + L"\n" + L"Dernière version: " + wxString(latestVersion);
+        dialog = new wxMessageDialog(parent, message);
+    } else {
+        dialog = new wxMessageDialog(parent, wxT("Vous utilisez déjà la dernière version."));
+    }
+
+    dialog->ShowModal();
 }

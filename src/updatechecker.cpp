@@ -13,7 +13,7 @@ UpdateChecker::UpdateChecker() {
 void UpdateChecker::start(wxWindow* parent, const std::string& url, const int& requestId) {
     this->parent = parent;
 
-    if (request.IsOk()) {
+    if (request.IsOk() && request.GetState() == wxWebRequest::State_Active) {
         request.Cancel();
     }
 

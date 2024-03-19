@@ -29,7 +29,7 @@ void UpdateChecker::showResult(wxWebRequestEvent& event) {
             break;
         }
         case wxWebRequest::State_Failed: {
-            wxMessageDialog* dlgFailed = new wxMessageDialog(parent, wxT("La requête a échoué"));
+            wxMessageDialog* dlgFailed = new wxMessageDialog(parent, wxT("La requête web a échoué. Veuillez vérifier votre connexion Internet."));
             dlgFailed->ShowModal();
             break;
         }

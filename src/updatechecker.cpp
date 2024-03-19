@@ -40,9 +40,10 @@ void UpdateChecker::showResult(wxWebRequestEvent& event) {
 }
 
 std::string UpdateChecker::getLatestVersion(const std::string& responseString) {
-    size_t versionPos = responseString.find("\"tag_name\"") + 12;
+    size_t keyPos = responseString.find("\"tag_name\"");
+    size_t versionPos = keyPos + 12;
     size_t versionEndPos = responseString.find("\"", versionPos);
-    if (versionPos != std::string::npos) {
+    if (keyPos != responseString.npos) {
         return responseString.substr(versionPos, versionEndPos - versionPos);
     } else {
         return "Ne pas trouvé";

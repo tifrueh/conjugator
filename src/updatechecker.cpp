@@ -12,6 +12,10 @@ UpdateChecker::UpdateChecker() {
 void UpdateChecker::start(wxWindow* parent, const std::string& url, const int& requestId) {
     this->parent = parent;
 
+    if (request.IsOk()) {
+        request.Cancel();
+    }
+
     request = wxWebSession::GetDefault().CreateRequest(parent, url, requestId);
     if (!request.IsOk()) {
         wxMessageDialog* dlg = new wxMessageDialog(parent, wxT("La requête n'a pas pu être traitée."));

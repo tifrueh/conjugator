@@ -8,6 +8,7 @@
 UpdateChecker::UpdateChecker() {
     request = wxWebRequest();
     session = wxWebSession::GetDefault();
+    failSilently = false;
 }
 
 void UpdateChecker::start(wxWindow* parent, const std::string& url, const int& requestId) {
@@ -18,7 +19,7 @@ void UpdateChecker::start(wxWindow* parent, const std::string& url, const int& r
     }
 
     request = session.CreateRequest(parent, url, requestId);
-    if (!request.IsOk()) {
+    if (!request.IsOk() && failSilently == false) {
         wxMessageDialog* dlg = new wxMessageDialog(parent, wxT("La requête n'a pas pu être traitée."), wxT("Erreur"));
         dlg->ShowModal();
         return;
@@ -35,14 +36,17 @@ void UpdateChecker::showResult(wxWebRequestEvent& event) {
         }
         case wxWebRequest::State_Failed: {
 
-            wxMessageDialog *dlgFailed = new wxMessageDialog(
-                parent,
-                wxT("La requête web a échoué. Veuillez "
-                "vérifier votre connexion Internet."),
-                wxT("Erreur")
-            );
+            if (failSilently == false) {
+                wxMessageDialog *dlgFailed = new wxMessageDialog(
+                    parent,
+                    wxT("La requête web a échoué. Veuillez "
+                    "vérifier votre connexion Internet."),
+                    wxT("Erreur")
+                );
 
-            dlgFailed->ShowModal();
+                dlgFailed->ShowModal();
+            }
+
             break;
         }
         default: {
@@ -79,8 +83,12 @@ void UpdateChecker::showResultMessage(const std::string& responseString) {
             wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/conjugateur/releases/latest"));
         }
 
-    } else {
+    } else if (failSilently == false) {
         dialog = new wxMessageDialog(parent, wxT("Vous utilisez déjà la dernière version."), wxT("Mise à jour"));
         dialog->ShowModal();
     }
+}
+
+void UpdateChecker::setFailSilently(const bool& failSilently) {
+    this->failSilently = failSilently;
 }

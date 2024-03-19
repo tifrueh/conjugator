@@ -110,6 +110,10 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_DESTROY, &MainFrame::OnInspectorClose, this, winID::inspector);
     Bind(wxEVT_WEBREQUEST_STATE, &MainFrame::HandleUpdateChecker, this, winID::requestUpdateChecker);
 
+    // Silently check if a new update is available.
+    updateChecker.setFailSilently(true);
+    updateChecker.start(this, "https://api.github.com/repos/tifrueh/conjugateur/releases/latest", winID::requestUpdateChecker);
+
     SetSizerAndFit(topPanelSizer);
 }
 
@@ -194,6 +198,9 @@ void MainFrame::OnVerbBox(wxCommandEvent &event) {
 }
 
 void MainFrame::OnUpdateChecker(wxCommandEvent& event) {
+    // Configure the update checker so that it doesn't fail silently.
+    updateChecker.setFailSilently(false);
+
     updateChecker.start(this, "https://api.github.com/repos/tifrueh/conjugateur/releases/latest", winID::requestUpdateChecker);
 }
 

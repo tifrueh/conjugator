@@ -21,6 +21,7 @@ class UpdateChecker {
         UpdateChecker();
         void start(wxWindow* parent, const std::string& url, const int& requestID);
         void showResult(wxWebRequestEvent& request);
+        void setFailSilently(const bool& failSilently);
 
     private:
         std::string getLatestVersion(const std::string& responseString);
@@ -28,4 +29,5 @@ class UpdateChecker {
         wxWebRequest request;
         wxWebSession session;
         wxWindow* parent;
+        bool failSilently;
 };

@@ -19,7 +19,7 @@ void UpdateChecker::start(wxWindow* parent, const std::string& url, const int& r
 
     request = session.CreateRequest(parent, url, requestId);
     if (!request.IsOk()) {
-        wxMessageDialog* dlg = new wxMessageDialog(parent, wxT("La requête n'a pas pu être traitée."));
+        wxMessageDialog* dlg = new wxMessageDialog(parent, wxT("La requête n'a pas pu être traitée."), wxT("Erreur"));
         dlg->ShowModal();
         return;
     }
@@ -34,7 +34,14 @@ void UpdateChecker::showResult(wxWebRequestEvent& event) {
             break;
         }
         case wxWebRequest::State_Failed: {
-            wxMessageDialog* dlgFailed = new wxMessageDialog(parent, wxT("La requête web a échoué. Veuillez vérifier votre connexion Internet."));
+
+            wxMessageDialog *dlgFailed = new wxMessageDialog(
+                parent,
+                wxT("La requête web a échoué. Veuillez "
+                "vérifier votre connexion Internet."),
+                wxT("Erreur")
+            );
+
             dlgFailed->ShowModal();
             break;
         }
@@ -61,11 +68,19 @@ void UpdateChecker::showResultMessage(const std::string& responseString) {
     wxMessageDialog* dialog = nullptr;
 
     if (latestVersion != TAG_STR) {
-        message = L"Votre version: " + wxString(TAG_STR) + L"\n" + L"Dernière version: " + wxString(latestVersion);
-        dialog = new wxMessageDialog(parent, message);
-    } else {
-        dialog = new wxMessageDialog(parent, wxT("Vous utilisez déjà la dernière version."));
-    }
 
-    dialog->ShowModal();
+        message = L"Votre version: " + wxString(TAG_STR) + L"\n" +
+                  L"Dernière version: " + wxString(latestVersion) +
+                  L"\nEst-ce que vous voulez télécharger la dernière version?";
+
+        dialog = new wxMessageDialog(parent, message, wxT("Mise à jour"), wxOK | wxCANCEL);
+
+        if (dialog->ShowModal() == wxID_OK) {
+            wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/conjugateur/releases/latest"));
+        }
+
+    } else {
+        dialog = new wxMessageDialog(parent, wxT("Vous utilisez déjà la dernière version."), wxT("Mise à jour"));
+        dialog->ShowModal();
+    }
 }

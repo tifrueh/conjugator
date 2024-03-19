@@ -19,9 +19,7 @@
 class UpdateChecker {
     public:
         UpdateChecker();
-        UpdateChecker(wxWindow* parent, const std::string& url, const int& requestId);
-        void setRequest(wxWindow* parent, const std::string& url, const int& requestID);
-        void start();
+        void start(wxWindow* parent, const std::string& url, const int& requestID);
         void showResult(wxWebRequestEvent& request);
 
     private:

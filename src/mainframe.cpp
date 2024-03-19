@@ -92,9 +92,6 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
         0
     );
 
-    // Initialise the update checker.
-    updateChecker.setRequest(this, "https://api.github.com/repos/tifrueh/conjugateur/releases/latest", winID::requestUpdateChecker);
-
     // Bind events to their corresponding method.
     Bind(wxEVT_BUTTON, &MainFrame::OnOkay, this, winID::okayButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnCheck, this, winID::checkButton);
@@ -197,7 +194,7 @@ void MainFrame::OnVerbBox(wxCommandEvent &event) {
 }
 
 void MainFrame::OnUpdateChecker(wxCommandEvent& event) {
-    updateChecker.start();
+    updateChecker.start(this, "https://api.github.com/repos/tifrueh/conjugateur/releases/latest", winID::requestUpdateChecker);
 }
 
 void MainFrame::HandleUpdateChecker(wxWebRequestEvent& event) {

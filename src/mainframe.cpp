@@ -72,6 +72,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
 
     menuHelp->Append(wxID_ABOUT, wxT("À propos de Conjugateur"));
     menuHelp->AppendSeparator();
+    menuHelp->Append(winID::menuHelpUpdateChecker, wxT("Rechercher des mises à jour"));
     menuHelp->Append(winID::menuHelpGitHub, wxT("GitHub"));
 
     this->SetMenuBar(menuBar);
@@ -103,9 +104,15 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnUnselectAll, this, winID::menuQuizUnselectAll);
     Bind(wxEVT_MENU, &MainFrame::OnAbout, this, wxID_ABOUT);
     Bind(wxEVT_MENU, &MainFrame::OnGitHub, this, winID::menuHelpGitHub);
+    Bind(wxEVT_MENU, &MainFrame::OnUpdateChecker, this, winID::menuHelpUpdateChecker);
     Bind(wxEVT_MENU, &MainFrame::OnInspector, this, winID::menuInspectorOpen);
     Bind(wxEVT_LISTBOX, &MainFrame::OnVerbBox, this, winID::inspectorVerbBox);
     Bind(wxEVT_DESTROY, &MainFrame::OnInspectorClose, this, winID::inspector);
+    Bind(wxEVT_WEBREQUEST_STATE, &MainFrame::HandleUpdateChecker, this, winID::requestUpdateChecker);
+
+    // Silently check if a new update is available.
+    updateChecker.setFailSilently(true);
+    updateChecker.start(this, "https://api.github.com/repos/tifrueh/conjugateur/releases/latest", winID::requestUpdateChecker);
 
     SetSizerAndFit(topPanelSizer);
 }
@@ -188,6 +195,17 @@ void MainFrame::OnInspectorClose(wxWindowDestroyEvent& event) {
 
 void MainFrame::OnVerbBox(wxCommandEvent &event) {
     inspector->updateVerb();
+}
+
+void MainFrame::OnUpdateChecker(wxCommandEvent& event) {
+    // Configure the update checker so that it doesn't fail silently.
+    updateChecker.setFailSilently(false);
+
+    updateChecker.start(this, "https://api.github.com/repos/tifrueh/conjugateur/releases/latest", winID::requestUpdateChecker);
+}
+
+void MainFrame::HandleUpdateChecker(wxWebRequestEvent& event) {
+    updateChecker.showResult(event);
 }
 
 wxAboutDialogInfo MainFrame::GetInfo() {

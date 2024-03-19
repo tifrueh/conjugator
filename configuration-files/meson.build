@@ -24,13 +24,9 @@ elif host_machine.system() == 'windows'
 
 endif
 
-# Configure config.h on anything except macOS.
-if host_machine.system() != 'darwin'
-
-  configure_file(
-    input: 'config.hpp.in',
-    output: 'config.hpp',
-    configuration: conf_data
-  )
-
-endif
+# Always configure config.hpp.
+configure_file(
+  input: 'config.hpp.in',
+  output: 'config.hpp',
+  configuration: conf_data
+)

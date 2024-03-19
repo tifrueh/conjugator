@@ -32,7 +32,7 @@ const verbDB::Verb verbDB::commencer = {
     L"commençaient",
 
     L"commencerai",
-    L"commerceras",
+    L"commenceras",
     L"commercera",
     L"commercera",
     L"commercerons",

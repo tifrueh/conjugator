@@ -5,22 +5,22 @@
 
 const verbDB::Verb verbDB::proteger = {
 
-    L"protéger ",
+    L"protéger",
 
     verbDB::VerbType::er,
 
-    L"protéger ",
+    L"protéger",
     L"schützen",
     L"protégeant",
 
-    L"protège ",
+    L"protège",
     L"protèges",
     L"protège",
     L"protège",
     L"protégeons",
     L"protégez",
-    L"protègent ",
-    L"protègent ",
+    L"protègent",
+    L"protègent",
 
     L"protégeais",
     L"protégeais",
@@ -29,7 +29,7 @@ const verbDB::Verb verbDB::proteger = {
     L"protégions",
     L"protégiez",
     L"protégeaient",
-    L"protégeaient ",
+    L"protégeaient",
 
     L"protégerai",
     L"protégeras",
@@ -58,14 +58,14 @@ const verbDB::Verb verbDB::proteger = {
     L"avaient protégé",
     L"avaient protégé",
 
-    L"protège ",
+    L"protège",
     L"protèges",
     L"protège",
     L"protège",
     L"protégions",
     L"protégiez",
     L"protègent",
-    L"protègent ",
+    L"protègent",
 
     L"protégerais",
     L"protégerais",
@@ -73,7 +73,7 @@ const verbDB::Verb verbDB::proteger = {
     L"protégerait",
     L"protégerions",
     L"protégeriez",
-    L"protégeraient ",
-    L"protégeraient "
+    L"protégeraient",
+    L"protégeraient"
 
 };

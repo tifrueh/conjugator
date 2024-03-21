@@ -5,15 +5,15 @@
 
 const verbDB::Verb verbDB::vieillir = {
 
-    L"viellir",
+    L"vieillir",
 
     verbDB::VerbType::ir,
 
-    L"viellir",
+    L"vieillir",
     L"altern",
     L"vieillissant",
 
-    L"viellis",
+    L"vieillis",
     L"vieillis",
     L"vieillit",
     L"vieillit",

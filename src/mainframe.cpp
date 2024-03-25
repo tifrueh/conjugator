@@ -72,7 +72,6 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
 
     menuHelp->Append(wxID_ABOUT, wxT("À propos de Conjugateur"));
     menuHelp->AppendSeparator();
-    menuHelp->Append(winID::menuHelpUpdateChecker, wxT("Rechercher des mises à jour"));
     menuHelp->Append(winID::menuHelpGitHub, wxT("GitHub"));
 
     this->SetMenuBar(menuBar);
@@ -110,9 +109,30 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_DESTROY, &MainFrame::OnInspectorClose, this, winID::inspector);
     Bind(wxEVT_WEBREQUEST_STATE, &MainFrame::HandleUpdateChecker, this, winID::requestUpdateChecker);
 
-    // Silently check if a new update is available.
-    updateChecker.setFailSilently(true);
-    updateChecker.start(this, "https://api.github.com/repos/tifrueh/conjugateur/releases/latest", winID::requestUpdateChecker);
+    wxStandardPaths::Get().SetFileLayout(wxStandardPaths::FileLayout_XDG);
+    config = new wxConfig("conjugateur");
+
+    bool checkForUpdateOnStartup = true;
+    bool checkForUpdateOnStartupDefined = config->Read("checkForUpdateOnStartup", &checkForUpdateOnStartup);
+
+    if (checkForUpdateOnStartupDefined && checkForUpdateOnStartup) {
+        this->checkForUpdates();
+    } else if (! checkForUpdateOnStartupDefined) {
+        config->Write("checkForUpdateOnStartup", checkForUpdateOnStartup);
+        this->checkForUpdates();
+    }
+
+    bool disableUpdateChecker = false;
+    bool disableUpdateCheckerDefined = config->Read("disableUpdateChecker", &disableUpdateChecker);
+
+    if (disableUpdateCheckerDefined && ! disableUpdateChecker) {
+        menuHelp->Append(winID::menuHelpUpdateChecker, wxT("Rechercher des mises à jour"));
+    } else if (! disableUpdateCheckerDefined) {
+        config->Write("disableUpdateChecker", disableUpdateChecker);
+        menuHelp->Append(winID::menuHelpUpdateChecker, wxT("Rechercher des mises à jour"));
+    }
+
+    delete config;
 
     SetSizerAndFit(topPanelSizer);
 }
@@ -197,11 +217,14 @@ void MainFrame::OnVerbBox(wxCommandEvent &event) {
     inspector->updateVerb();
 }
 
-void MainFrame::OnUpdateChecker(wxCommandEvent& event) {
+void MainFrame::checkForUpdates() {
     // Configure the update checker so that it doesn't fail silently.
     updateChecker.setFailSilently(false);
-
     updateChecker.start(this, "https://api.github.com/repos/tifrueh/conjugateur/releases/latest", winID::requestUpdateChecker);
+}
+
+void MainFrame::OnUpdateChecker(wxCommandEvent& event) {
+    this->checkForUpdates();
 }
 
 void MainFrame::HandleUpdateChecker(wxWebRequestEvent& event) {

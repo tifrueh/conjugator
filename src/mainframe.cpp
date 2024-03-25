@@ -115,21 +115,23 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     bool checkForUpdateOnStartup = true;
     bool checkForUpdateOnStartupDefined = config->Read("checkForUpdateOnStartup", &checkForUpdateOnStartup);
 
-    if (checkForUpdateOnStartupDefined && checkForUpdateOnStartup) {
-        this->checkForUpdates();
-    } else if (! checkForUpdateOnStartupDefined) {
-        config->Write("checkForUpdateOnStartup", checkForUpdateOnStartup);
-        this->checkForUpdates();
-    }
-
     bool disableUpdateChecker = false;
     bool disableUpdateCheckerDefined = config->Read("disableUpdateChecker", &disableUpdateChecker);
 
-    if (disableUpdateCheckerDefined && ! disableUpdateChecker) {
+    if (checkForUpdateOnStartup && ! disableUpdateChecker) {
+        this->checkForUpdates();
+    }
+
+    if (! disableUpdateChecker) {
         menuHelp->Append(winID::menuHelpUpdateChecker, wxT("Rechercher des mises à jour"));
-    } else if (! disableUpdateCheckerDefined) {
+    }
+
+    if (! checkForUpdateOnStartupDefined) {
+        config->Write("checkForUpdateOnStartup", checkForUpdateOnStartup);
+    }
+
+    if (! disableUpdateCheckerDefined) {
         config->Write("disableUpdateChecker", disableUpdateChecker);
-        menuHelp->Append(winID::menuHelpUpdateChecker, wxT("Rechercher des mises à jour"));
     }
 
     delete config;

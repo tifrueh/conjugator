@@ -26,7 +26,7 @@ fi
 # Define various useful path variables.
 DIST_PATH="${MESON_SOURCE_ROOT}/dist/macOS"
 DMG_DIR_PATH="${MESON_BUILD_ROOT}/Conjugateur v${1}"
-DMG_PATH="${DIST_PATH}/Conjugateur v${1}.dmg"
+DMG_PATH="${DIST_PATH}/Conjugateur-macOS-universal-v${1}.dmg"
 BUNDLE_PATH="${MESON_BUILD_ROOT}/Conjugateur.app"
 
 # Rebundle the app if it doesn't exist yet.

@@ -110,7 +110,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_WEBREQUEST_STATE, &MainFrame::HandleUpdateChecker, this, winID::requestUpdateChecker);
 
     wxStandardPaths::Get().SetFileLayout(wxStandardPaths::FileLayout_XDG);
-    config = new wxConfig("conjugateur");
+    config = new wxConfig("conjugateur", "ch.tifrueh", CONFIG_FILENAME);
 
     bool checkForUpdateOnStartup = true;
     bool checkForUpdateOnStartupDefined = config->Read("checkForUpdateOnStartup", &checkForUpdateOnStartup);

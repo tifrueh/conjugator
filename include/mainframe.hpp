@@ -9,9 +9,7 @@
     #include <wx/wx.h>
 #endif
 
-#ifndef __WXOSX__
-    #include "config.hpp"
-#endif
+#include "config.hpp"
 
 #include <wx/aboutdlg.h>
 #include <wx/config.h>

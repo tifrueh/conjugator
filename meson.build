@@ -33,6 +33,9 @@ conf_data.set(
 conf_data.set(
   'resources_dir', meson.project_source_root() + '/resources'
 )
+conf_data.set(
+  'config_filename', 'conjugateur.conf'
+)
 
 # Define the wxWidgets dependency depending on the 'static_wxwidgets' option.
 if get_option('static_wxwidgets') == 'auto'
@@ -64,6 +67,11 @@ if host_machine.system() == 'darwin'
       'mac_bundle_version', conf_data.get('version') + '-' + host_machine.cpu()
     )
   endif
+
+  # Set a different configuration filename
+  conf_data.set(
+    'config_filename', 'ch.tifrueh.conjugateur.conf'
+  )
 
 # Configuration only needed on Windows.
 elif host_machine.system() == 'windows' 

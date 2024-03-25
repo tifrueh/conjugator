@@ -142,4 +142,12 @@ if host_machine.system() == 'darwin'
       depends: [ conjugateur ],
       env: env
   )
+
+  run_target(
+      'dmg_mac',
+      command: [ 
+        'scripts/dmg_mac.sh', conf_data.get('version')],
+      depends: [ conjugateur ],
+      env: env
+  )
 endif

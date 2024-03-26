@@ -5,11 +5,11 @@
 
 const verbDB::Verb verbDB::commencer = {
 
-    L"commencer ",
+    L"commencer",
 
     verbDB::VerbType::er,
 
-    L"commencer ",
+    L"commencer",
     L"beginnen",
     L"commençant",
 
@@ -62,7 +62,7 @@ const verbDB::Verb verbDB::commencer = {
     L"commences",
     L"commence",
     L"commence",
-    L"commencions ",
+    L"commencions",
     L"commenciez",
     L"commencent",
     L"commencent",

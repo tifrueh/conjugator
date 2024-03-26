@@ -9,11 +9,11 @@
     #include <wx/wx.h>
 #endif
 
-#ifndef __WXOSX__
-    #include "config.hpp"
-#endif
+#include "config.hpp"
 
 #include <wx/aboutdlg.h>
+#include <wx/config.h>
+#include <wx/stdpaths.h>
 
 
 #include "id.hpp"
@@ -39,6 +39,7 @@ class MainFrame : public wxFrame {
         wxMenu* menuEdit;
         wxMenu* menuQuiz;
         wxMenu* menuHelp;
+        wxConfig* config;
         UpdateChecker updateChecker;
         wxBoxSizer* topPanelSizer = nullptr;
         TopPanel* topPanel = nullptr;
@@ -93,6 +94,9 @@ class MainFrame : public wxFrame {
         void OnVerbBox(wxCommandEvent& event);
 
         // Check for updates.
+        void checkForUpdates();
+
+        // Callback for the update checker menu item.
         void OnUpdateChecker(wxCommandEvent& event);
 
         // Handle update checker results.

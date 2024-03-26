@@ -94,7 +94,7 @@ class MainFrame : public wxFrame {
         void OnVerbBox(wxCommandEvent& event);
 
         // Check for updates.
-        void checkForUpdates();
+        void checkForUpdates(const bool& failSilently = false);
 
         // Callback for the update checker menu item.
         void OnUpdateChecker(wxCommandEvent& event);

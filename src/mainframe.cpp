@@ -119,7 +119,8 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     bool disableUpdateCheckerDefined = config->Read("disableUpdateChecker", &disableUpdateChecker);
 
     if (checkForUpdateOnStartup && ! disableUpdateChecker) {
-        this->checkForUpdates();
+        // Check for updates and set failSilently to true
+        this->checkForUpdates(true);
     }
 
     if (! disableUpdateChecker) {
@@ -219,9 +220,8 @@ void MainFrame::OnVerbBox(wxCommandEvent &event) {
     inspector->updateVerb();
 }
 
-void MainFrame::checkForUpdates() {
-    // Configure the update checker so that it doesn't fail silently.
-    updateChecker.setFailSilently(false);
+void MainFrame::checkForUpdates(const bool& failSilently) {
+    updateChecker.setFailSilently(failSilently);
     updateChecker.start(this, "https://api.github.com/repos/tifrueh/conjugateur/releases/latest", winID::requestUpdateChecker);
 }
 

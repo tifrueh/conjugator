@@ -30,8 +30,8 @@ fi
 
 # Define various useful path variables.
 DIST_PATH="${MESON_SOURCE_ROOT}/dist/macOS"
-COMPONENT_PKG_PATH="${DIST_PATH}/Conjugateur-macOS-universal-v${1}.component.pkg"
-DISTFILE_PATH="${DIST_PATH}/distfile.plist"
+COMPONENT_PKG_PATH="${MESON_BUILD_ROOT}/Conjugateur-macOS-universal-v${1}.component.pkg"
+DISTFILE_PATH="${MESON_BUILD_ROOT}/distfile.plist"
 PKG_PATH="${DIST_PATH}/Conjugateur-macOS-universal-v${1}.pkg"
 BUNDLE_PATH="${MESON_BUILD_ROOT}/Conjugateur.app"
 
@@ -80,19 +80,13 @@ mv -f "${DISTFILE_PATH}.new" "${DISTFILE_PATH}"
 # Build the final installer package, and sign it if codesigning is enabled.
 if [ ${CODESIGN} ]; then
 	productbuild --distribution "${DISTFILE_PATH}" \
-		--package-path "${DIST_PATH}" \
+		--package-path "${MESON_BUILD_ROOT}" \
 		--sign "${CERT_PKG}" \
 		--version "${1}" \
 		"${PKG_PATH}"
 else
 	productbuild --distribution "${DISTFILE_PATH}" \
-		--package-path "${DIST_PATH}" \
+		--package-path "${MESON_BUILD_ROOT}" \
 		--version "${1}" \
 		"${PKG_PATH}"
 fi
-
-# Remove the distfile, the bundle and the component package. This is necessary
-# as the installer may install the app to the place where it finds another
-# version of it, e. g. build/Conjugateur.app, which is, of course, not exactly
-# desirable.
-rm -r "${DISTFILE_PATH}" "${BUNDLE_PATH}" "${COMPONENT_PKG_PATH}"

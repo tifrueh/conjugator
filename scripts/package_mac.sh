@@ -31,7 +31,7 @@ fi
 # Define various useful path variables.
 DIST_PATH="${MESON_SOURCE_ROOT}/dist/macOS"
 COMPONENT_PKG_PATH="${MESON_BUILD_ROOT}/Conjugateur-macOS-universal-v${1}.component.pkg"
-DISTFILE_PATH="${MESON_BUILD_ROOT}/distfile.plist"
+DISTFILE_PATH="${MESON_BUILD_ROOT}/distribution.dist"
 PKG_PATH="${DIST_PATH}/Conjugateur-macOS-universal-v${1}.pkg"
 BUNDLE_PATH="${MESON_BUILD_ROOT}/Conjugateur.app"
 

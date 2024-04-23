@@ -64,7 +64,7 @@ pkgbuild --component "${BUNDLE_PATH}"\
 
 # Synthesise a distfile from the component package.
 productbuild --synthesize \
-	--package "${COMPONENT_PKG_PATH}" \
+	--package "${COMPONENT_PKG_PATH}" "/Applications" \
 	"${DISTFILE_PATH}"
 
 # Insert a line defining the license file into the distfile with awk.

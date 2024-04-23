@@ -17,7 +17,7 @@ const verbDB::Verb verbDB::lancer = {
     L"lances",
     L"lance",
     L"lance",
-    L"lançons ",
+    L"lançons",
     L"lançez",
     L"lançent",
     L"lançent",

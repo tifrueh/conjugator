@@ -35,7 +35,7 @@ namespace cjgt {
         unsigned int id;
         std::wstring name;
 
-        bool operator==(const Person& Person) const;
+        bool operator==(const Category& Category) const;
     };
 
     struct Tense {

@@ -58,7 +58,7 @@ namespace cjgt {
             std::vector<Category>* getCategories();
             std::vector<Tense>* getTenses();
             std::vector<std::vector<std::wstring>*> getVerbs();
-            QuizItem getRandomQuizItem(const std::wstring& category, const std::wstring& tense);
+            QuizItem getRandomQuizItem(const Category& category, const Tense& tense);
 
         private:
             std::wstring name;

@@ -57,7 +57,7 @@ namespace cjgt {
             std::vector<Person>* getPersons();
             std::vector<Category>* getCategories();
             std::vector<Tense>* getTenses();
-            std::vector<verbDB::Verb*> getVerbs();
+            std::vector<verbDB::Verb*>* getVerbs();
             QuizItem getRandomQuizItem(const Category* category, const Tense* tense);
 
         private:

@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::sEnnuyer = {
-
-    L"s'ennuyer",
-
-    verbDB::VerbType::er,
+const std::vector<std::wstring> verbDB::sEnnuyer = {
 
     L"s'ennuyer",
     L"sich langweilen",

@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::envoyer = {
-    
-    L"envoyer",
-
-    verbDB::VerbType::er,
+const std::vector<std::wstring> verbDB::envoyer = {
 
     L"envoyer",
     L"senden",

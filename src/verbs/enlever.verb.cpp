@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::enlever = {
-    
-    L"enlever",
-
-    verbDB::VerbType::er,
+const std::vector<std::wstring> verbDB::enlever = {
 
     L"enlever",
     L"entfernen",

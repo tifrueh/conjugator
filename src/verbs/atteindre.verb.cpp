@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::atteindre = {
-    
-    L"atteindre",
-
-    verbDB::VerbType::re,
+const std::vector<std::wstring> verbDB::atteindre = {
 
     L"atteindre",
     L"erreichen",

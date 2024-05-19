@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::grimper = {
-    
-    L"grimper",
-
-    verbDB::VerbType::er,
+const std::vector<std::wstring> verbDB::grimper = {
 
     L"grimper",
     L"klettern",

@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::suivre = {
-
-    L"suivre",
-
-    verbDB::VerbType::re,
+const std::vector<std::wstring> verbDB::suivre = {
 
     L"suivre",
     L"folgen",

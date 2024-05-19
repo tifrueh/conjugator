@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::essuyer = {
-
-    L"essuyer",
-
-    verbDB::VerbType::er,
+const std::vector<std::wstring> verbDB::essuyer = {
 
     L"essuyer",
     L"abwischen",

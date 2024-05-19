@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::offrir = {
-
-    L"offrir",
-
-    verbDB::VerbType::ir,
+const std::vector<std::wstring> verbDB::offrir = {
 
     L"offrir",
     L"anbieten",

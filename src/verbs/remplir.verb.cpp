@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::remplir = {
-
-    L"remplir",
-
-    verbDB::VerbType::ir,
+const std::vector<std::wstring> verbDB::remplir = {
 
     L"remplir",
     L"füllen",

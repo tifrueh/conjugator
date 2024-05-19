@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::fuir = {
-
-    L"fuir",
-
-    verbDB::VerbType::ir,
+const std::vector<std::wstring> verbDB::fuir = {
 
     L"fuir",
     L"fliehen",

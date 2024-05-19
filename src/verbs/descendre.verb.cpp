@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::descendre = {
-
-    L"descendre",
-
-    verbDB::VerbType::re,
+const std::vector<std::wstring> verbDB::descendre = {
 
     L"descendre",
     L"aussteigen",

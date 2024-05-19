@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::rompre = {
-
-    L"rompre",
-
-    verbDB::VerbType::re,
+const std::vector<std::wstring> verbDB::rompre = {
 
     L"rompre",
     L"brechen",

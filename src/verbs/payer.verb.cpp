@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::payer = {
-
-    L"payer",
-
-    verbDB::VerbType::er,
+const std::vector<std::wstring> verbDB::payer = {
 
     L"payer",
     L"bezahlen",

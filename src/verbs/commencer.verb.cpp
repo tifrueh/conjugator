@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::commencer = {
-
-    L"commencer",
-
-    verbDB::VerbType::er,
+const std::vector<std::wstring> verbDB::commencer = {
 
     L"commencer",
     L"beginnen",

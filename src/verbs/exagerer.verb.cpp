@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::exagerer = {
-
-    L"exagérer",
-
-    verbDB::VerbType::er,
+const std::vector<std::wstring> verbDB::exagerer = {
 
     L"exagérer",
     L"übertreiben",

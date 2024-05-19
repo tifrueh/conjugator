@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::eteindre = {
-
-    L"éteindre",
-
-    verbDB::VerbType::re,
+const std::vector<std::wstring> verbDB::eteindre = {
 
     L"éteindre",
     L"ausschalten",

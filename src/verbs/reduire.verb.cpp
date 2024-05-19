@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::reduire = {
-
-    L"réduire",
-
-    verbDB::VerbType::re,
+const std::vector<std::wstring> verbDB::reduire = {
 
     L"réduire",
     L"reduzieren",

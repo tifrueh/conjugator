@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::seTaire = {
-
-    L"se taire",
-
-    verbDB::VerbType::re,
+const std::vector<std::wstring> verbDB::seTaire = {
 
     L"se taire",
     L"schweigen",

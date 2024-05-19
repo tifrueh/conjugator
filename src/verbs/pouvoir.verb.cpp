@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::pouvoir = {
-
-    L"pouvoir",
-
-    verbDB::VerbType::oir,
+const std::vector<std::wstring> verbDB::pouvoir = {
 
     L"pouvoir",
     L"können",

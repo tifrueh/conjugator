@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::couvrir = {
-    
-    L"couvrir",
-
-    verbDB::VerbType::ir,
+const std::vector<std::wstring> verbDB::couvrir = {
 
     L"couvrir",
     L"abdecken",

@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::naitre = {
-
-    L"naître",
-
-    verbDB::VerbType::re,
+const std::vector<std::wstring> verbDB::naitre = {
 
     L"naître",
     L"geboren werden",

@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::effacer = {
-    
-    L"effacer",
-
-    verbDB::VerbType::er,
+const std::vector<std::wstring> verbDB::effacer = {
 
     L"effacer",
     L"löschen",

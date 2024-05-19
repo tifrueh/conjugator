@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::reflechir = {
-
-    L"réfléchir",
-
-    verbDB::VerbType::ir,
+const std::vector<std::wstring> verbDB::reflechir = {
 
     L"réfléchir",
     L"nachdenken",

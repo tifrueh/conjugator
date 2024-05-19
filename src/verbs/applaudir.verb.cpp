@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::applaudir = {
-    
-    L"applaudir",
-    
-    verbDB::VerbType::ir,
+const std::vector<std::wstring> verbDB::applaudir = {
 
     L"applaudir",
     L"applaudieren",

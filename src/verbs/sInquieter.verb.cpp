@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::sInquieter = {
-
-    L"s'inquiéter",
-
-    verbDB::VerbType::er,
+const std::vector<std::wstring> verbDB::sInquieter = {
 
     L"s'inquiéter",
     L"sich Sorgen machen",

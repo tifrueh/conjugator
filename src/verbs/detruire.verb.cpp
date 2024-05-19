@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::detruire = {
-    
-    L"détruire",
-
-    verbDB::VerbType::re,
+const std::vector<std::wstring> verbDB::detruire = {
 
     L"détruire",
     L"zerstören",

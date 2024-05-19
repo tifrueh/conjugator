@@ -3,11 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::faire = {
-
-    L"faire",
-
-    verbDB::VerbType::re,
+const std::vector<std::wstring> verbDB::faire = {
 
     L"faire",
     L"tun",

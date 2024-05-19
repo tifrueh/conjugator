@@ -39,7 +39,7 @@ namespace cjgt {
             Language(const std::wstring& name,
                     const std::vector<std::wstring&>& persons,
                     const std::vector<std::wstring&>& categories,
-                    const std::vector<std::wstring&>& tenses);
+                    const std::vector<Tense&>& tenses);
 
             std::wstring* getName();
             std::vector<std::wstring>* getPersons();

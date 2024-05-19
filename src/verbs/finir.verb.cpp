@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const std::vector<std::wstring> verbDB::finir = {
+const verbDB::Verb verbDB::finir = {
 
     L"finir",
     L"beenden",

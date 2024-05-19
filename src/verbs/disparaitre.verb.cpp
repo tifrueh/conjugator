@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const std::vector<std::wstring> verbDB::disparaitre = {
+const verbDB::Verb verbDB::disparaitre = {
 
     L"disparaître",
     L"verschwinden",

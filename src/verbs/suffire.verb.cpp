@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const std::vector<std::wstring> verbDB::suffire = {
+const verbDB::Verb verbDB::suffire = {
 
     L"suffire",
     L"ausreichen",

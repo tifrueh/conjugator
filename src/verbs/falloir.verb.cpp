@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const std::vector<std::wstring> verbDB::falloir = {
+const verbDB::Verb verbDB::falloir = {
 
     L"falloir",
     L"brauchen",

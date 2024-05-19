@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const std::vector<std::wstring> verbDB::sePromener = {
+const verbDB::Verb verbDB::sePromener = {
 
     L"se promener",
     L"spazieren",

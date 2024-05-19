@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const std::vector<std::wstring> verbDB::mener = {
+const verbDB::Verb verbDB::mener = {
 
     L"mener ",
     L"durchführen",

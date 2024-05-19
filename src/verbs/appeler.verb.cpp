@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const std::vector<std::wstring> verbDB::appeler = {
+const verbDB::Verb verbDB::appeler = {
 
     L"appeler",
     L"anrufen",

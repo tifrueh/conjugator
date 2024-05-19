@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const std::vector<std::wstring> verbDB::boire = {
+const verbDB::Verb verbDB::boire = {
 
     L"boire",
     L"trinken",

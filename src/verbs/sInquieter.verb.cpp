@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const std::vector<std::wstring> verbDB::sInquieter = {
+const verbDB::Verb verbDB::sInquieter = {
 
     L"s'inquiéter",
     L"sich Sorgen machen",

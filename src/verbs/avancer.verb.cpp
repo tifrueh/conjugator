@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const std::vector<std::wstring> verbDB::avancer = {
+const verbDB::Verb verbDB::avancer = {
 
     L"avancer",
     L"voranbringen",

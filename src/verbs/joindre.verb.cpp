@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const std::vector<std::wstring> verbDB::joindre = {
+const verbDB::Verb verbDB::joindre = {
 
     L"joindre",
     L"verbinden",

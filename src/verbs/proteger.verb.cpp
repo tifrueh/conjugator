@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const std::vector<std::wstring> verbDB::proteger = {
+const verbDB::Verb verbDB::proteger = {
 
     L"protéger",
     L"schützen",

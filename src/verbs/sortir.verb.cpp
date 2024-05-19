@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const std::vector<std::wstring> verbDB::sortir = {
+const verbDB::Verb verbDB::sortir = {
 
     L"sortir",
     L"verlassen",

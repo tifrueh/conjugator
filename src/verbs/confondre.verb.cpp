@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const std::vector<std::wstring> verbDB::confondre = {
+const verbDB::Verb verbDB::confondre = {
 
     L"confondre",
     L"verwechseln",

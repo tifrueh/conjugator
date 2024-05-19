@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const std::vector<std::wstring> verbDB::appuyer = {
+const verbDB::Verb verbDB::appuyer = {
 
     L"appuyer",
     L"drücken",

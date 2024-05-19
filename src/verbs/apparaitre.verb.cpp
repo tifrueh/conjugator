@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const std::vector<std::wstring> verbDB::apparaitre = {
+const verbDB::Verb verbDB::apparaitre = {
 
     L"apparaître",
     L"erscheinen",

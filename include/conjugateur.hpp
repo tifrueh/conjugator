@@ -24,6 +24,20 @@ namespace cjgt {
         bool operator==(const QuizItem& QuizItem) const;
     };
 
+    struct Person {
+        unsigned int id;
+        std::wstring name;
+
+        bool operator==(const Person& Person) const;
+    };
+
+    struct Category {
+        unsigned int id;
+        std::wstring name;
+
+        bool operator==(const Person& Person) const;
+    };
+
     struct Tense {
         unsigned int id;
         std::wstring name;
@@ -35,21 +49,21 @@ namespace cjgt {
     class Language{
         public:
             Language(const std::wstring& name,
-                    const std::vector<std::wstring>& persons,
-                    const std::vector<std::wstring>& categories,
+                    const std::vector<Person>& persons,
+                    const std::vector<Category>& categories,
                     const std::vector<Tense>& tenses);
 
             std::wstring* getName();
-            std::vector<std::wstring>* getPersons();
-            std::vector<std::wstring>* getCategories();
-            std::vector<std::wstring>* getTenses();
+            std::vector<Person>* getPersons();
+            std::vector<Category>* getCategories();
+            std::vector<Tense>* getTenses();
             std::vector<std::vector<std::wstring>*> getVerbs();
             QuizItem getRandomQuizItem(const std::wstring& category, const std::wstring& tense);
 
         private:
             std::wstring name;
-            std::vector<std::wstring> persons;
-            std::vector<std::wstring> categories;
+            std::vector<Person> persons;
+            std::vector<Category> categories;
             std::vector<Tense> tenses;
             std::map<std::wstring, std::vector<std::wstring>> verbs;
     };

@@ -25,8 +25,11 @@ namespace cjgt {
     };
 
     struct Tense {
+        unsigned int id;
         std::wstring name;
         unsigned int width;
+
+        bool operator==(const Tense& Tense) const;
     };
 
     class Language{

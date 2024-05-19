@@ -57,7 +57,7 @@ namespace cjgt {
             std::vector<Person>* getPersons();
             std::vector<Category>* getCategories();
             std::vector<Tense>* getTenses();
-            std::vector<std::vector<std::wstring>*> getVerbs();
+            std::vector<verbDB::Verb*> getVerbs();
             QuizItem getRandomQuizItem(const Category& category, const Tense& tense);
 
         private:
@@ -65,7 +65,7 @@ namespace cjgt {
             std::vector<Person> persons;
             std::vector<Category> categories;
             std::vector<Tense> tenses;
-            std::map<std::wstring, std::vector<std::wstring>> verbs;
+            std::map<std::wstring, verbDB::Verb> verbs;
     };
 
     extern Language french;

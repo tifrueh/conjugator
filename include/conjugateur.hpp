@@ -65,7 +65,7 @@ namespace cjgt {
             std::vector<Person> persons;
             std::vector<Category> categories;
             std::vector<Tense> tenses;
-            std::map<std::wstring, verbDB::Verb> verbs;
+            std::map<std::wstring, verbDB::Verb*> verbs;
     };
 
     extern Language french;

@@ -41,7 +41,7 @@ namespace cjgt {
     struct Tense {
         unsigned int id;
         std::wstring name;
-        unsigned int width;
+        std::vector<Person*> persons;
 
         bool operator==(const Tense& Tense) const;
     };

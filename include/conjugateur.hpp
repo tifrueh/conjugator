@@ -24,11 +24,6 @@ namespace cjgt {
         bool operator==(const QuizItem& QuizItem) const;
     };
 
-    struct Verb {
-        std::wstring infinitif;
-        std::wstring translation;
-    };
-
     struct Tense {
         std::wstring name;
         unsigned int width;

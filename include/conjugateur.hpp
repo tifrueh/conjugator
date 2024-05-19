@@ -11,66 +11,48 @@
 #include "verb.db.hpp"
 
 
-// This namespace contains all functionality related to verb forms.
+// This namespace contains all functionality related to manipulating the verb database.
 namespace cjgt {
 
-    // A structure containing a form of a verb, including its corresponding
-    // infinitif, tense and person.
-    struct VerbForm {
+    struct QuizItem {
         std::wstring infinitif;
         std::wstring tense;
         std::wstring person;
         std::wstring form;
-        
-        // Compare two verb forms to decide if they are equal.
-        // They are considered equal if the infinitive, the person, the form and the tense are equal.
-        bool operator==(const VerbForm& verbForm) const;
+
+        bool operator==(const QuizItem& QuizItem) const;
     };
-    
-    // A structure containing all possible variations of a verb form.
-    struct QuizData {
+
+    struct Verb {
         std::wstring infinitif;
         std::wstring translation;
-        std::wstring tense;
-        std::wstring person;
-        std::vector<std::wstring> forms;
-        
-        // Compare two QuizDatas to decide if they are equal.
-        // They are considered equal if the infinitive and the person are equal.
-        bool operator==(const QuizData& verbForm) const;
     };
 
-    // Search a verb based on its label: returns a pointer to the verb.
-    const verbDB::Verb* getVerb(const std::wstring& label);
-    
-    // Retrieve a verb form based on the verb, the tense and the person.
-    VerbForm getVerbForm(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person);
-    
-    // Retrieve a verb form based on the verb, the tense (as int) and the person (as int).
-    VerbForm getVerbForm(const verbDB::Verb& verb, const int& tense, const int& person);
-    
-    // Retrieve all verb form variations based on the verb, the tense and the person.
-    QuizData getQuizData(const verbDB::Verb& verb, const verbDB::Tense& tense, const verbDB::Person& person);
-    
-    // Retrieve all verb form variations based on the verb, the tense (as int) and the person (as int).
-    QuizData getQuizData(const verbDB::Verb& verb, const int& tense, const int& person);
+    struct Tense {
+        std::wstring name;
+        unsigned int width;
+    };
 
-    // Return a tense (provided as enum) as string.
-    std::wstring getTense(const verbDB::Tense& tense);
+    class Language{
+        public:
+            Language(const std::wstring& name,
+                    const std::vector<std::wstring&>& persons,
+                    const std::vector<std::wstring&>& categories,
+                    const std::vector<std::wstring&>& tenses);
 
-    // Return a tense (provided as int) as string.
-    std::wstring getTense(const int& tense);
+            std::wstring* getName();
+            std::vector<std::wstring>* getPersons();
+            std::vector<std::wstring>* getCategories();
+            std::vector<std::wstring>* getTenses();
+            std::vector<std::vector<std::wstring>*> getVerbs();
+            QuizItem getRandomQuizItem(const std::wstring& category, const std::wstring& tense);
 
-    // Return a person (provided as enum) as string.
-    std::wstring getPerson(const verbDB::Person& person);
+        private:
+            std::wstring name;
+            std::vector<std::wstring> categories;
+            std::vector<Tense> tenses;
+            std::map<std::wstring, std::vector<std::wstring>> verbs;
+    };
 
-    // Return a person (provided as int) as string.
-    std::wstring getPerson(const int& person);
-
-    // Return verb form as string.
-    // Je is concatenated automatically, e. g. "j'ai fait".
-    std::wstring getFormString(const VerbForm& verbForm);
-
-    // Strip a string of leading and trailing whitespaces.
-    std::wstring strip(const std::wstring& string);
+    extern Language french;
 }

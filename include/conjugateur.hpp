@@ -37,9 +37,9 @@ namespace cjgt {
     class Language{
         public:
             Language(const std::wstring& name,
-                    const std::vector<std::wstring&>& persons,
-                    const std::vector<std::wstring&>& categories,
-                    const std::vector<Tense&>& tenses);
+                    const std::vector<std::wstring>& persons,
+                    const std::vector<std::wstring>& categories,
+                    const std::vector<Tense>& tenses);
 
             std::wstring* getName();
             std::vector<std::wstring>* getPersons();

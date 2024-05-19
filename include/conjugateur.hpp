@@ -50,8 +50,8 @@ namespace cjgt {
 
         private:
             std::wstring name;
-            std::vector<std::wstring> categories;
             std::vector<std::wstring> persons;
+            std::vector<std::wstring> categories;
             std::vector<Tense> tenses;
             std::map<std::wstring, std::vector<std::wstring>> verbs;
     };

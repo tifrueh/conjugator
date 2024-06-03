@@ -49,8 +49,8 @@ std::vector<cjgt::Tense*> cjgt::Language::getTenses() {
     return output;
 }
 
-std::map<std::wstring, verbDB::Verb*>* cjgt::Language::getVerbs() {
-    return &this->verbs;
+std::map<std::wstring, verbDB::Verb*> cjgt::Language::getVerbs() {
+    return this->verbs;
 }
 
 cjgt::QuizData cjgt::Language::getRandomQuizData(

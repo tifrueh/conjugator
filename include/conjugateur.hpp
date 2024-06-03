@@ -14,8 +14,6 @@
 // This namespace contains all functionality related to manipulating the verb database.
 namespace cjgt {
 
-    std::wstring strip(const std::wstring& string);
-
     struct Category {
         unsigned int id;
         std::wstring name;
@@ -67,13 +65,15 @@ namespace cjgt {
             std::map<Category*, std::vector<verbDB::Verb*>> categorised_verbs;
             std::random_device random_device;
             std::default_random_engine random_engine;
-
-            std::wstring* getVerbForm(
-                    verbDB::Verb* verb,
-                    const std::vector<std::wstring>::size_type& person,
-                    Tense* tense
-            );
     };
+
+    std::wstring* getVerbForm(
+            verbDB::Verb* verb,
+            const std::vector<std::wstring>::size_type& person,
+            Tense* tense
+    );
+
+    std::wstring strip(const std::wstring& string);
 
     extern Language french;
 }

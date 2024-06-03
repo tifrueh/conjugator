@@ -76,7 +76,7 @@ cjgt::QuizData cjgt::Language::getRandomQuizData(
     std::vector<std::wstring>::size_type person_index = person_distribution(this->random_engine);
     std::wstring* person = &tense->persons.at(person_index);
 
-    std::wstring* form = this->getVerbForm(verb, person_index, tense);
+    std::wstring* form = getVerbForm(verb, person_index, tense);
 
     cjgt::QuizData data;
     data.verb_name = &verb->name;
@@ -87,7 +87,7 @@ cjgt::QuizData cjgt::Language::getRandomQuizData(
     return data;
 }
 
-std::wstring* cjgt::Language::getVerbForm(
+std::wstring* cjgt::getVerbForm(
                     verbDB::Verb* verb,
                     const std::vector<std::wstring>::size_type& person,
                     Tense* tense

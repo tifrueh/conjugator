@@ -8,7 +8,6 @@ srcs += files(
     'quizitem.cpp',
     'toppanel.cpp',
     'updatechecker.cpp',
-    'verb.db.cpp',
     'verbview.cpp',
     'verbviewpanel.cpp'
 )

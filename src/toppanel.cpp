@@ -182,7 +182,7 @@ std::vector<cjgt::QuizData> TopPanel::GetQuizDatas(const unsigned int& count) {
         }
 
         usableCategories.push_back(element.first);
-        usableVerbCount += this->language->getVerbCount(element.first);
+        usableVerbCount += element.first->verbs.size();
     }
 
 

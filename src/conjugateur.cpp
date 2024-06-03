@@ -20,12 +20,13 @@ cjgt::Language::Language(
     this->categories = categories;
     this->tenses = tenses;
 
-    this->random_engine.seed(this->random_device());
-}
+    for (cjgt::Category category : this->categories) {
+        for (verbDB::Verb* verb : category.verbs) {
+            this->verbs.at(verb->name) = verb;
+        }
+    }
 
-void cjgt::Language::addVerb(verbDB::Verb* verb, cjgt::Category* category) {
-    this->verbs[verb->name] = verb;
-    this->categorised_verbs[category].push_back(verb);
+    this->random_engine.seed(this->random_device());
 }
 
 std::wstring* cjgt::Language::getName() {
@@ -40,10 +41,6 @@ std::vector<cjgt::Category*> cjgt::Language::getCategories() {
     }
 
     return output;
-}
-
-std::vector<verbDB::Verb*>::size_type cjgt::Language::getVerbCount(cjgt::Category* category) {
-    return this->categorised_verbs.at(category).size();
 }
 
 std::vector<cjgt::Tense*> cjgt::Language::getTenses() {
@@ -72,10 +69,8 @@ cjgt::QuizData cjgt::Language::getRandomQuizData(
     std::uniform_int_distribution<unsigned int> category_distribution(0, categories.size() - 1);
     cjgt::Category* category = categories.at(category_distribution(this->random_engine));
 
-    std::vector<verbDB::Verb*> verbs = this->categorised_verbs.at(category);
-
     std::uniform_int_distribution<unsigned int> verb_distribution(0, verbs.size() - 1);
-    verbDB::Verb* verb = verbs.at(verb_distribution(this->random_engine));
+    verbDB::Verb* verb = category->verbs.at(verb_distribution(this->random_engine));
 
     std::uniform_int_distribution<unsigned int> tense_distribution(0, tenses.size() - 1);
     cjgt::Tense* tense = tenses.at(tense_distribution(this->random_engine));

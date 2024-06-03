@@ -17,6 +17,7 @@ namespace cjgt {
     struct Category {
         unsigned int id;
         std::wstring name;
+        std::vector<verbDB::Verb*> verbs;
 
         bool operator==(const Category& Category) const;
     };
@@ -46,11 +47,8 @@ namespace cjgt {
                     const std::vector<Tense>& tenses
             );
 
-            void addVerb(verbDB::Verb*, Category*);
-
             std::wstring* getName();
             std::vector<Category*> getCategories();
-            std::vector<verbDB::Verb*>::size_type getVerbCount(cjgt::Category*);
             std::vector<Tense*> getTenses();
             std::map<std::wstring, verbDB::Verb*> getVerbs();
             verbDB::Verb* getVerb(std::wstring);
@@ -62,7 +60,6 @@ namespace cjgt {
             std::vector<Category> categories;
             std::vector<Tense> tenses;
             std::map<std::wstring, verbDB::Verb*> verbs;
-            std::map<Category*, std::vector<verbDB::Verb*>> categorised_verbs;
             std::random_device random_device;
             std::default_random_engine random_engine;
     };

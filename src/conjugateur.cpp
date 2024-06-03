@@ -49,7 +49,7 @@ std::map<std::wstring, verbDB::Verb*>* cjgt::Language::getVerbs() {
     return &this->verbs;
 }
 
-cjgt::QuizItem cjgt::Language::getRandomQuizItem(
+cjgt::QuizData cjgt::Language::getRandomQuizData(
         const std::vector<cjgt::Category*>& categories,
         const std::vector<cjgt::Tense*>& tenses
 ) {
@@ -70,13 +70,13 @@ cjgt::QuizItem cjgt::Language::getRandomQuizItem(
 
     std::wstring* form = this->getVerbForm(verb, person_index, tense);
 
-    cjgt::QuizItem item;
-    item.verb_name = &verb->name;
-    item.tense = tense;
-    item.person = person;
-    item.form = form;
+    cjgt::QuizData data;
+    data.verb_name = &verb->name;
+    data.tense = tense;
+    data.person = person;
+    data.form = form;
 
-    return item;
+    return data;
 }
 
 std::wstring* cjgt::Language::getVerbForm(

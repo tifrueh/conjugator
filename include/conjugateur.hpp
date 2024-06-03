@@ -31,13 +31,13 @@ namespace cjgt {
         bool operator==(const Tense& Tense) const;
     };
 
-    struct QuizItem {
+    struct QuizData {
         std::wstring* verb_name;
         Tense* tense;
         std::wstring* person;
         std::wstring* form;
 
-        bool operator==(const QuizItem& QuizItem) const;
+        bool operator==(const QuizData& QuizItemData) const;
     };
 
     class Language{
@@ -55,7 +55,7 @@ namespace cjgt {
             std::vector<Tense*> getTenses();
             std::map<std::wstring, verbDB::Verb*>* getVerbs();
 
-            QuizItem getRandomQuizItem(const std::vector<Category*>& categories, const std::vector<Tense*>& tenses);
+            QuizData getRandomQuizData(const std::vector<Category*>& categories, const std::vector<Tense*>& tenses);
 
         private:
             std::wstring name;

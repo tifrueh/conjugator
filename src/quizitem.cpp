@@ -4,7 +4,7 @@
 #include "quizitem.hpp"
 
 
-QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::QuizItem& data, const bool& translate) {
+QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::QuizData& data, const bool& translate) {
     this->data = data;
     this->sizer = sizer;
     this->parent = parent;
@@ -52,7 +52,7 @@ void QuizItem::SetFocus() {
     textCtrl->SetFocus();
 }
 
-void QuizItem::setQuizData(const cjgt::QuizItem& data, const bool& translate) {
+void QuizItem::setQuizData(const cjgt::QuizData& data, const bool& translate) {
     this->data = data;
 
     std::wstring infinitif;

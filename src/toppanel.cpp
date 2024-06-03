@@ -97,6 +97,8 @@ TopPanel::TopPanel(wxWindow* parent, cjgt::Language* language) : wxPanel(parent,
         );
     }
 
+    this->SetAllVerbs(true);
+
     formSelectionSizer->AddSpacer(hugeSpace);
 
     formSelectionSizer->Add(
@@ -118,6 +120,8 @@ TopPanel::TopPanel(wxWindow* parent, cjgt::Language* language) : wxPanel(parent,
                 bigSpace
         );
     }
+
+    this->SetAllTenses(true);
 
     formSelectionSizer->AddStretchSpacer();
 

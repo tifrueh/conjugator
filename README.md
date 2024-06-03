@@ -31,8 +31,8 @@ repo](https://github.com/tifrueh/conjugateur/releases/latest).
 
 ### macOS (homebrew)
 
-A precompiled version and packaged version for macOS (`>=12`) can be downloaded
-and installed via my homebrew repository:
+A precompiled and packaged version for macOS (`>=12`) can be downloaded and
+installed via my homebrew repository:
 
 1. Tap my homebrew tap
 
@@ -83,11 +83,10 @@ release](https://github.com/tifrueh/conjugateur/releases/latest).
 3. Follow the installer's instructions
 
 _Note: As the EXE is not signed, Windows is probably going to warn you about
-installing untrusted software and it is absolutely right. I'm going to fix this
-issue in the future, but for the moment, this admittedly insecure installation
-procedure will have to suffice. I'd recommend you check the integrity of the
-EXE via the provided SHASUM and choose an installation only for your user, so
-as not to give the installer root permissions._
+installing untrusted software and it is absolutely right. I'd recommend you
+check the integrity of the EXE via the provided SHASUM and choose an
+installation only for your user, so as not to give the installer root
+permissions._
 
 ### Build from source
 

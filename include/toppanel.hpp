@@ -13,12 +13,12 @@
 #include <algorithm>
 #include <random>
 #include <stdexcept>
+#include <map>
 #include <vector>
 
 #include "conjugateur.hpp"
 #include "id.hpp"
 #include "quizitem.hpp"
-#include "verb.db.hpp"
 
 
 // The only panel of the mainframe. The rest of the main app controls resides
@@ -30,7 +30,7 @@ class TopPanel : public wxPanel {
 
         // Randomly retrieve as many verb forms as needed for the desired amount of
         // questions based on the selected verbs and tenses.
-        std::vector<cjgt::QuizData> GetQuizDatas(const int& count);
+        std::vector<cjgt::QuizData> GetQuizDatas(const unsigned int& count);
 
         // Reset the keyboard focus to the first quiz item.
         void ResetFocus();
@@ -58,31 +58,29 @@ class TopPanel : public wxPanel {
         // Unselect all checkboxes.
         void UnselectAll();
 
+        void SetLanguage(cjgt::Language* language);
+
     private:
         int quizItemCount;
+        cjgt::Language* language;
         wxBoxSizer* topsizer = nullptr;
         wxStaticBoxSizer* formSelectionSizer = nullptr;
         wxStaticBoxSizer* quizBoxSizer = nullptr;
         wxFlexGridSizer* quizSizer = nullptr;
+
         wxStaticText* verbTypeTitle = nullptr;
-        wxCheckBox* checkBoxER = nullptr;
-        wxCheckBox* checkBoxIR = nullptr;
-        wxCheckBox* checkBoxOIR = nullptr;
-        wxCheckBox* checkBoxRE = nullptr;
+        std::map<cjgt::Category*, wxCheckBox*> categoryCheckBoxes;
+
         wxStaticText* tenseTitle = nullptr;
-        wxCheckBox* checkBoxParticipePresent = nullptr;
-        wxCheckBox* checkBoxPresent = nullptr;
-        wxCheckBox* checkBoxImparfait = nullptr;
-        wxCheckBox* checkBoxFutur = nullptr;
-        wxCheckBox* checkBoxPasseCompose = nullptr;
-        wxCheckBox* checkBoxPlusQueParfait = nullptr;
-        wxCheckBox* checkBoxSubjonctif = nullptr;
-        wxCheckBox* checkBoxConditionnel = nullptr;
+        std::map<cjgt::Tense*, wxCheckBox*> tenseCheckBoxes;
+
         wxStaticText* addSettingsTitle = nullptr;
-        wxCheckBox* checkBoxTrad = nullptr;
         wxBoxSizer* buttonSizer = nullptr;
         wxButton* okayButton = nullptr;
         wxButton* checkButton = nullptr;
         wxButton* solutionButton = nullptr;
         std::vector<QuizItem*> quizItems;
+
+        void SetAllVerbs(const bool& status);
+        void SetAllTenses(const bool& status);
 };

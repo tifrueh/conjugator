@@ -6,6 +6,8 @@
 
 TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
+    this->language = &cjgt::french;
+
     // Add a horizontal box sizer.
     topsizer = new wxBoxSizer(wxHORIZONTAL);
 
@@ -32,30 +34,11 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     titleFont.MakeBold();
     verbTypeTitle->SetFont(titleFont);
 
-    checkBoxER = new wxCheckBox(this, winID::checkBoxER, wxT("-er"));
-    checkBoxIR = new wxCheckBox(this, winID::checkBoxIR, wxT("-ir"));
-    checkBoxOIR = new wxCheckBox(this, winID::checkBoxOIR, wxT("-oir"));
-    checkBoxRE = new wxCheckBox(this, winID::checkBoxRE, wxT("-re"));
-
     tenseTitle = new wxStaticText(this, wxID_ANY, wxT("Temps"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
     tenseTitle->SetFont(titleFont);
 
-    checkBoxParticipePresent = new wxCheckBox(this, winID::checkBoxParticipePresent, wxString(verbDB::tenseStrings.at(1)));
-    checkBoxPresent = new wxCheckBox(this, winID::checkBoxPresent, wxString(verbDB::tenseStrings.at(2)));
-    checkBoxImparfait = new wxCheckBox(this, winID::checkBoxImparfait, wxString(verbDB::tenseStrings.at(3)));
-    checkBoxFutur = new wxCheckBox(this, winID::checkBoxFutur, wxString(verbDB::tenseStrings.at(4)));
-    checkBoxPasseCompose = new wxCheckBox(this, winID::checkBoxPasseCompose, wxString(verbDB::tenseStrings.at(5)));
-    checkBoxPlusQueParfait = new wxCheckBox(this, winID::checkBoxPlusQueParfait, wxString(verbDB::tenseStrings.at(6)));
-    checkBoxSubjonctif = new wxCheckBox(this, winID::checkBoxSubjonctif, wxString(verbDB::tenseStrings.at(7)));
-    checkBoxConditionnel = new wxCheckBox(this, winID::checkBoxConditionnel, wxString(verbDB::tenseStrings.at(8)));
-
     addSettingsTitle = new wxStaticText(this, wxID_ANY, wxT("Paramètres additionels"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
     addSettingsTitle->SetFont(titleFont);
-
-    checkBoxTrad = new wxCheckBox(this, winID::checkBoxTrad, wxT("Traduction de l'allemand"));
-
-    checkBoxER->SetValue(true);
-    checkBoxPresent->SetValue(true);
 
     buttonSizer = new wxBoxSizer(wxHORIZONTAL);
 
@@ -104,43 +87,15 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
     formSelectionSizer->AddSpacer(bigSpace);
 
-    formSelectionSizer->Add(
-        checkBoxER,
-        0,
-        wxEXPAND |
-        wxLEFT | wxRIGHT,
-        bigSpace
-    );
-
-    formSelectionSizer->AddSpacer(smallSpace);
-
-    formSelectionSizer->Add(
-        checkBoxIR,
-        0,
-        wxEXPAND |
-        wxLEFT | wxRIGHT,
-        bigSpace
-    );
-
-    formSelectionSizer->AddSpacer(smallSpace);
-
-    formSelectionSizer->Add(
-        checkBoxOIR,
-        0,
-        wxEXPAND |
-        wxLEFT | wxRIGHT,
-        bigSpace
-    );
-
-    formSelectionSizer->AddSpacer(smallSpace);
-
-    formSelectionSizer->Add(
-        checkBoxRE,
-        0,
-        wxEXPAND |
-        wxLEFT | wxRIGHT,
-        bigSpace
-    );
+    for (cjgt::Category* category : this->language->getCategories()) {
+        this->categoryCheckBoxes[category] = new wxCheckBox(this, wxID_ANY, wxString(category->name));
+        this->formSelectionSizer->Add(
+                this->categoryCheckBoxes[category],
+                0,
+                wxEXPAND | wxLEFT | wxRIGHT,
+                bigSpace
+        );
+    }
 
     formSelectionSizer->AddSpacer(hugeSpace);
 
@@ -154,105 +109,15 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
 
     formSelectionSizer->AddSpacer(bigSpace);
 
-    formSelectionSizer->Add(
-        checkBoxParticipePresent,
-        0,
-        wxEXPAND |
-        wxLEFT | wxRIGHT,
-        bigSpace
-    );
-
-    formSelectionSizer->AddSpacer(smallSpace);
-
-    formSelectionSizer->Add(
-        checkBoxPresent,
-        0,
-        wxEXPAND |
-        wxLEFT | wxRIGHT,
-        bigSpace
-    );
-
-    formSelectionSizer->AddSpacer(smallSpace);
-
-    formSelectionSizer->Add(
-        checkBoxImparfait,
-        0,
-        wxEXPAND |
-        wxLEFT | wxRIGHT,
-        bigSpace
-    );
-
-    formSelectionSizer->AddSpacer(smallSpace);
-
-    formSelectionSizer->Add(
-        checkBoxFutur,
-        0,
-        wxEXPAND |
-        wxLEFT | wxRIGHT,
-        bigSpace
-    );
-
-    formSelectionSizer->AddSpacer(smallSpace);
-
-    formSelectionSizer->Add(
-        checkBoxPasseCompose,
-        0,
-        wxEXPAND |
-        wxLEFT | wxRIGHT,
-        bigSpace
-    );
-
-    formSelectionSizer->AddSpacer(smallSpace);
-
-    formSelectionSizer->Add(
-        checkBoxPlusQueParfait,
-        0,
-        wxEXPAND |
-        wxLEFT | wxRIGHT,
-        bigSpace
-    );
-
-    formSelectionSizer->AddSpacer(smallSpace);
-
-    formSelectionSizer->Add(
-        checkBoxSubjonctif,
-        0,
-        wxEXPAND |
-        wxLEFT | wxRIGHT,
-        bigSpace
-    );
-
-    formSelectionSizer->AddSpacer(smallSpace);
-
-    formSelectionSizer->Add(
-        checkBoxConditionnel,
-        0,
-        wxEXPAND |
-        wxLEFT | wxRIGHT,
-        bigSpace
-    );
-
-    formSelectionSizer->AddSpacer(smallSpace);
-
-    formSelectionSizer->AddSpacer(bigSpace);
-
-    formSelectionSizer->Add(
-        addSettingsTitle,
-        0,
-        wxEXPAND |
-        wxLEFT | wxRIGHT,
-        bigSpace
-    );
-
-    formSelectionSizer->AddSpacer(bigSpace);
-
-    formSelectionSizer->Add(
-        checkBoxTrad,
-        0,
-        wxEXPAND |
-        wxLEFT | wxRIGHT,
-        bigSpace
-    );
+    for (cjgt::Tense* tense : this->language->getTenses()) {
+        this->tenseCheckBoxes[tense] = new wxCheckBox(this, wxID_ANY, wxString(tense->name));
+        formSelectionSizer->Add(
+                this->tenseCheckBoxes[tense],
+                0,
+                wxEXPAND | wxLEFT | wxRIGHT,
+                bigSpace
+        );
+    }
 
     formSelectionSizer->AddStretchSpacer();
 
@@ -264,19 +129,11 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         15
     );
 
-    std::vector<cjgt::QuizData> verbs = GetQuizDatas(quizItemCount);
+    std::vector<cjgt::QuizData> quizDatas = GetQuizDatas(quizItemCount);
     QuizItem* itemPtr = nullptr;
 
-    bool translate;
-
-    if (checkBoxTrad->GetValue()) {
-        translate = true;
-    } else {
-        translate = false;
-    }
-
     for (int i = 0; i < quizItemCount; i++) {
-        itemPtr = new QuizItem(this, quizSizer, verbs.at(i), translate);
+        itemPtr = new QuizItem(this, quizSizer, quizDatas.at(i));
         quizItems.push_back(itemPtr);
     }
 
@@ -307,105 +164,46 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     SetSizerAndFit(topsizer);
 }
 
-std::vector<cjgt::QuizData> TopPanel::GetQuizDatas(const int& count) {
-    std::vector<const verbDB::Verb*> usableVerbs;
-    std::vector<verbDB::Tense> usableTenses;
+std::vector<cjgt::QuizData> TopPanel::GetQuizDatas(const unsigned int& count) {
+    std::vector<cjgt::Category*> usableCategories;
+    std::vector<cjgt::Tense*> usableTenses;
     std::vector<cjgt::QuizData> quizDatas;
+    std::vector<verbDB::Verb*>::size_type usableVerbCount = 0;
+    std::vector<std::wstring*>::size_type usableFormCount = 0;
 
-    if (checkBoxER->GetValue()) {
-        usableVerbs.insert(std::end(usableVerbs), std::begin(verbDB::verbsER), std::end(verbDB::verbsER));
+    for (std::pair<cjgt::Category*, wxCheckBox*> element : this->categoryCheckBoxes) {
+
+        if (element.second->GetValue() == false) {
+            continue;
+        }
+
+        usableCategories.push_back(element.first);
+        usableVerbCount += this->language->getVerbCount(element.first);
     }
 
-    if (checkBoxIR->GetValue()) {
-        usableVerbs.insert(std::end(usableVerbs), std::begin(verbDB::verbsIR), std::end(verbDB::verbsIR));
-    }
 
-    if (checkBoxOIR->GetValue()) {
-        usableVerbs.insert(std::end(usableVerbs), std::begin(verbDB::verbsOIR), std::end(verbDB::verbsOIR));
-    }
+    for (std::pair<cjgt::Tense*, wxCheckBox*> element : this->tenseCheckBoxes) {
 
-    if (checkBoxRE->GetValue()) {
-        usableVerbs.insert(std::end(usableVerbs), std::begin(verbDB::verbsRE), std::end(verbDB::verbsRE));
-    }
+        if (element.second->GetValue() == false) {
+            continue;
+        }
 
-    unsigned long usableFormCount = 0;
-
-    if (checkBoxParticipePresent->GetValue()) {
-        usableTenses.push_back(verbDB::Tense::participePresent);
-        usableFormCount += usableVerbs.size();
-    }
-
-    if (checkBoxPresent->GetValue()) {
-        usableTenses.push_back(verbDB::Tense::present);
-        usableFormCount += usableVerbs.size() * 8;
-    }
-
-    if (checkBoxImparfait->GetValue()) {
-        usableTenses.push_back(verbDB::Tense::imparfait);
-        usableFormCount += usableVerbs.size() * 8;
-    }
-
-    if (checkBoxFutur->GetValue()) {
-        usableTenses.push_back(verbDB::Tense::futur);
-        usableFormCount += usableVerbs.size() * 8;
-    }
-
-    if (checkBoxPasseCompose->GetValue()) {
-        usableTenses.push_back(verbDB::Tense::passeCompose);
-        usableFormCount += usableVerbs.size() * 8;
-    }
-
-    if (checkBoxPlusQueParfait->GetValue()) {
-        usableTenses.push_back(verbDB::Tense::plusQueParfait);
-        usableFormCount += usableVerbs.size() * 8;
-    }
-
-    if (checkBoxSubjonctif->GetValue()) {
-        usableTenses.push_back(verbDB::Tense::subjonctif);
-        usableFormCount += usableVerbs.size() * 8;
-    }
-
-    if (checkBoxConditionnel->GetValue()) {
-        usableTenses.push_back(verbDB::Tense::conditionnel);
-        usableFormCount += usableVerbs.size() * 8;
+        usableTenses.push_back(element.first);
+        usableFormCount += usableVerbCount * element.first->persons.size();
     }
 
     if (usableFormCount < (unsigned long) count) {
         throw std::invalid_argument( "More forms requested than possible" );
     }
 
-    const verbDB::Verb* verb;
-    verbDB::Tense tense;
-    cjgt::QuizData quizData;
-    int randomPosVerb;
-    int randomPosTense;
-    int randomPers;
+    for (unsigned int i = 0; i < count; i++) {
+        cjgt::QuizData quizData = this->language->getRandomQuizData(usableCategories, usableTenses);
 
-    std::random_device randomDevice;
-    std::mt19937 randomGenerator(randomDevice());
-    std::uniform_int_distribution<> verbDistributor(0, (int) usableVerbs.size() - 1);
-    std::uniform_int_distribution<> tensesDistributor(0, (int) usableTenses.size() - 1);
-    std::uniform_int_distribution<> persDistributor(verbDB::Person::je, (int) verbDB::Person::elles);
-
-    for (int i = 0; i < count; i++) {
-        randomPosVerb = verbDistributor(randomGenerator);
-
-        randomPosTense = tensesDistributor(randomGenerator);
-
-        randomPers = persDistributor(randomGenerator);
-
-        verb = usableVerbs.at(randomPosVerb);
-        tense = usableTenses.at(randomPosTense);
-
-        quizData = cjgt::getQuizData(*verb, tense, randomPers);
-
-        if (std::find(std::begin(quizDatas), std::end(quizDatas), quizData) != std::end(quizDatas)) {
+        if (std::find(quizDatas.begin(), quizDatas.end(), quizData) != quizDatas.end()) {
             i--;
-        }
-        else if (std::all_of(std::begin(quizData.forms), std::end(quizData.forms), [](std::wstring str){return str == L"";})) {
+        } else if (*quizData.form == L"") {
             i--;
-        } 
-        else {
+        } else {
             quizDatas.push_back(quizData);
         }
     }
@@ -421,16 +219,8 @@ void TopPanel::GenerateQuiz() {
 
     std::vector<cjgt::QuizData> quizDatas;
 
-    bool translate;
-
-    if (checkBoxTrad->GetValue()) {
-        translate = true;
-    } else {
-        translate = false;
-    }
-
     try {
-        quizDatas = GetQuizDatas((int) quizItems.size());
+        quizDatas = GetQuizDatas((unsigned int) quizItems.size());
     } catch(const std::invalid_argument& exception) {
         auto dlg = new wxMessageDialog(this, wxT("Il n'est pas possible de générer suffisamment de questions de quiz à partir de votre sélection. Veuillez sélectionner plus de verbes ou plus de temps."));
         dlg->ShowModal();
@@ -438,7 +228,7 @@ void TopPanel::GenerateQuiz() {
     }
 
     for (long unsigned int i = 0; i < quizItems.size(); i++) {
-        quizItems.at(i)->setQuizData(quizDatas.at(i), translate);
+        quizItems.at(i)->setQuizData(quizDatas.at(i));
     }
 
     topsizer->SetSizeHints(this);
@@ -461,34 +251,30 @@ void TopPanel::ShowSolutions() {
 }
 
 void TopPanel::SelectAllVerbs() {
-    checkBoxER->SetValue(true);
-    checkBoxIR->SetValue(true);
-    checkBoxOIR->SetValue(true);
-    checkBoxRE->SetValue(true);
+    SetAllVerbs(true);
 }
 
 void TopPanel::SelectAllTenses() {
-    checkBoxParticipePresent->SetValue(true);
-    checkBoxPresent->SetValue(true);
-    checkBoxImparfait->SetValue(true);
-    checkBoxFutur->SetValue(true);
-    checkBoxPasseCompose->SetValue(true);
-    checkBoxPlusQueParfait->SetValue(true);
-    checkBoxSubjonctif->SetValue(true);
-    checkBoxConditionnel->SetValue(true);
+    SetAllTenses(true);
 }
 
 void TopPanel::UnselectAll() {
-    checkBoxER->SetValue(false);
-    checkBoxIR->SetValue(false);
-    checkBoxOIR->SetValue(false);
-    checkBoxRE->SetValue(false);
-    checkBoxParticipePresent->SetValue(false);
-    checkBoxPresent->SetValue(false);
-    checkBoxImparfait->SetValue(false);
-    checkBoxFutur->SetValue(false);
-    checkBoxPasseCompose->SetValue(false);
-    checkBoxPlusQueParfait->SetValue(false);
-    checkBoxSubjonctif->SetValue(false);
-    checkBoxConditionnel->SetValue(false);
+    SetAllVerbs(false);
+    SetAllTenses(false);
+}
+
+void TopPanel::SetLanguage(cjgt::Language* language) {
+    this->language = language;
+}
+
+void TopPanel::SetAllVerbs(const bool& status) {
+    for (std::pair<cjgt::Category*, wxCheckBox*> element : this->categoryCheckBoxes) {
+        element.second->SetValue(true);
+    }
+}
+
+void TopPanel::SetAllTenses(const bool& status) {
+    for (std::pair<cjgt::Tense*, wxCheckBox*> element : this->tenseCheckBoxes) {
+        element.second->SetValue(true);
+    }
 }

@@ -52,6 +52,7 @@ namespace cjgt {
 
             std::wstring* getName();
             std::vector<Category*> getCategories();
+            std::vector<verbDB::Verb*>::size_type getVerbCount(cjgt::Category*);
             std::vector<Tense*> getTenses();
             std::map<std::wstring, verbDB::Verb*>* getVerbs();
 

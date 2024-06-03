@@ -34,6 +34,10 @@ std::vector<cjgt::Category*> cjgt::Language::getCategories() {
     return output;
 }
 
+std::vector<verbDB::Verb*>::size_type cjgt::Language::getVerbCount(cjgt::Category* category) {
+    return this->categorised_verbs.at(category).size();
+}
+
 std::vector<cjgt::Tense*> cjgt::Language::getTenses() {
 
     std::vector<cjgt::Tense*> output;

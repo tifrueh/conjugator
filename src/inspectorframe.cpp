@@ -7,12 +7,12 @@
 // Define the wx style for the inspecteur window.
 #define wxINSPECTEUR_STYLE wxMINIMIZE_BOX | wxSYSTEM_MENU | wxCAPTION | wxCLOSE_BOX | wxCLIP_CHILDREN | wxFRAME_FLOAT_ON_PARENT
 
-InspectorFrame::InspectorFrame(wxWindow *parent, const wxWindowID &winID, const wxString &title) : wxFrame(parent, winID, title, wxDefaultPosition, wxDefaultSize, wxINSPECTEUR_STYLE) {
+InspectorFrame::InspectorFrame(wxWindow *parent, const wxWindowID &winID, const wxString &title, cjgt::Language* language) : wxFrame(parent, winID, title, wxDefaultPosition, wxDefaultSize, wxINSPECTEUR_STYLE) {
     SetIcon(wxICON(inspecteur));
 
     topSizer = new wxBoxSizer(wxHORIZONTAL);
 
-    inspectorPanel = new InspectorPanel(this);
+    inspectorPanel = new InspectorPanel(this, language);
 
     topSizer->Add(inspectorPanel, 1, wxEXPAND, 0);
 

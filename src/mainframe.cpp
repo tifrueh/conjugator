@@ -76,9 +76,11 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
 
     this->SetMenuBar(menuBar);
 
+    this->language = &cjgt::french;
+
     // Create a new top panel in which all windows will reside (so that
     // keyboard focus is handled automatically).
-    topPanel = new TopPanel(this);
+    topPanel = new TopPanel(this, this->language);
     topPanel->ResetFocus();
 
     // Create a new wxBoxSizer and add the top panel to it.
@@ -201,7 +203,7 @@ void MainFrame::OnGitHub(wxCommandEvent& event) {
 
 void MainFrame::OnInspector(wxCommandEvent &event) {
     if (inspector == nullptr) {
-        inspector = new InspectorFrame(this, winID::inspector, wxT("Inspecteur"));
+        inspector = new InspectorFrame(this, winID::inspector, wxT("Inspecteur"), this->language);
     }
     topPanel->SetFocusIgnoringChildren();
     topPanel->Disable();

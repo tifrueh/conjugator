@@ -26,7 +26,7 @@
 class TopPanel : public wxPanel {
     public:
         // Construct a new TopPanel.
-        explicit TopPanel(wxWindow* parent);
+        explicit TopPanel(wxWindow* parent, cjgt::Language* language);
 
         // Randomly retrieve as many verb forms as needed for the desired amount of
         // questions based on the selected verbs and tenses.

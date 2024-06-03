@@ -20,24 +20,21 @@
 class VerbViewPanel : public wxPanel {
     public:
         // Construct a new VerbViewPanel, specifying the tense as int.
-        VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb, const int &tense);
-
-        // Construct a new VerbViewPanel, specifying the tense as enum.
-        VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb, const verbDB::Tense& tense);
+        VerbViewPanel(wxWindow* parent, wxWindowID id, verbDB::Verb* verb, cjgt::Tense*);
 
         // Reset the verb of the verb view panel.
-        void setVerb(const verbDB::Verb& inputVerb);
+        void setVerb(verbDB::Verb* verb);
 
     private:
         wxBoxSizer* sizer;
 
-        verbDB::Verb verb;
-        int tense;
+        verbDB::Verb* verb;
+        cjgt::Tense* tense;
         std::wstring tenseString;
         std::wstring infinitifString;
 
         wxStaticText* titleLabel;
         wxStaticText* infinitifLabel;
         wxStaticText* translationLabel;
-        std::map<int, wxStaticText*> formLabels;
+        std::map<std::wstring, wxStaticText*> formLabels;
 };

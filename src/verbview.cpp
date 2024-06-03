@@ -4,7 +4,7 @@
 #include "verbview.hpp"
 
 
-VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : wxPanel(parent, id) {
+VerbView::VerbView(wxWindow* parent, wxWindowID id, verbDB::Verb* verb) : wxPanel(parent, id) {
     this->verb = verb;
     
     sizer = new wxBoxSizer(wxVERTICAL);
@@ -12,23 +12,23 @@ VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb &verb) : 
     tensebook = new wxChoicebook(this, wxID_ANY);
 
     // Create a verb view panel for each tense from present to conditionnel and add it to the tensebook.
-    for (int tense = verbDB::Tense::present; tense <= verbDB::Tense::conditionnel; tense++) {
+    for (cjgt::Tense* tense : this->language->getTenses()) {
         pages.insert({tense, new VerbViewPanel(tensebook, wxID_ANY, verb, tense)});
-        tensebook->InsertPage(tense - verbDB::Tense::present, pages.at(tense), wxString(cjgt::getTense(tense)));
+        tensebook->AddPage(pages.at(tense), wxString(tense->name));
     }
-    
+
     sizer->Add(tensebook, 0, wxEXPAND | wxALL, 10);
 
     this->SetSizerAndFit(sizer);
 
 }
 
-void VerbView::setVerb(const verbDB::Verb &inputVerb) {
-    verb = inputVerb;
-    
-    for (int tense = verbDB::Tense::present; tense <= verbDB::Tense::conditionnel; tense ++) {
+void VerbView::setVerb(verbDB::Verb* verb) {
+    this->verb = verb;
+
+    for (cjgt::Tense* tense : this->language->getTenses()) {
         pages.at(tense)->setVerb(verb);
     }
-    
+
     sizer->SetSizeHints(this);
 }

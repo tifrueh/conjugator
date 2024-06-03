@@ -3,6 +3,14 @@
 
 #include "conjugateur.hpp"
 
+bool cjgt::QuizData::operator==(const cjgt::QuizData& quizData) const {
+    return 
+        this->verb_name == quizData.verb_name &&
+        this->tense == quizData.tense &&
+        this->person == quizData.person &&
+        this->form == quizData.form;
+}
+
 cjgt::Language::Language(
         const std::wstring& name,
         const std::vector<Category>& categories,

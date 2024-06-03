@@ -12,6 +12,7 @@
 
 #include "id.hpp"
 #include "inspectorpanel.hpp"
+#include "conjugateur.hpp"
 #include "verb.db.hpp"
 
 #include "inspecteur.xpm"
@@ -21,7 +22,7 @@
 class InspectorFrame : public wxFrame {
     public:
         // Construct a new inspector frame.
-        InspectorFrame(wxWindow* parent, const wxWindowID& winID, const wxString& title);
+        InspectorFrame(wxWindow* parent, const wxWindowID& winID, const wxString& title, cjgt::Language* language);
         
         // Set the verb of the verbview to the one selected in the verbbox and set the
         // sizehints of the frame from the topsizer.

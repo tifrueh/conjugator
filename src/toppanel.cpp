@@ -4,9 +4,9 @@
 #include "toppanel.hpp"
 
 
-TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
+TopPanel::TopPanel(wxWindow* parent, cjgt::Language* language) : wxPanel(parent, wxID_ANY) {
 
-    this->language = &cjgt::french;
+    this->language = language;
 
     // Add a horizontal box sizer.
     topsizer = new wxBoxSizer(wxHORIZONTAL);

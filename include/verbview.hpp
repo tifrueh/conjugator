@@ -24,16 +24,17 @@
 class VerbView : public wxPanel {
     public:
         // Construct a new VerbView.
-        VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb& verb);
+        VerbView(wxWindow* parent, wxWindowID id, verbDB::Verb* verb);
 
         // Set the verb of all verb view panels.
-        void setVerb(const verbDB::Verb& inputVerb);
+        void setVerb(verbDB::Verb* verb);
 
     private:
         wxChoicebook* tensebook;
-        std::map<int, VerbViewPanel*> pages;
-        
+        std::map<cjgt::Tense*, VerbViewPanel*> pages;
+
         wxBoxSizer* sizer;
 
-        verbDB::Verb verb;
+        cjgt::Language* language;
+        verbDB::Verb* verb;
 };

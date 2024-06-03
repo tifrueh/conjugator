@@ -55,6 +55,7 @@ namespace cjgt {
             std::vector<verbDB::Verb*>::size_type getVerbCount(cjgt::Category*);
             std::vector<Tense*> getTenses();
             std::map<std::wstring, verbDB::Verb*> getVerbs();
+            verbDB::Verb* getVerb(std::wstring);
 
             QuizData getRandomQuizData(const std::vector<Category*>& categories, const std::vector<Tense*>& tenses);
 

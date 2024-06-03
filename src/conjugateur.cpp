@@ -53,6 +53,10 @@ std::map<std::wstring, verbDB::Verb*> cjgt::Language::getVerbs() {
     return this->verbs;
 }
 
+verbDB::Verb* cjgt::Language::getVerb(std::wstring verb) {
+    return this->verbs.at(verb);
+}
+
 cjgt::QuizData cjgt::Language::getRandomQuizData(
         const std::vector<cjgt::Category*>& categories,
         const std::vector<cjgt::Tense*>& tenses

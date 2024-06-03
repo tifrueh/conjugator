@@ -47,10 +47,8 @@ bool Conjugateur::OnInit() {
 
     locale->AddCatalog(wxT("wxstd"));
 
-    verbDB::initTypeVectors();
-
     this->SetAppDisplayName(wxT("Conjugateur"));
-    
+
     auto window = new MainFrame(wxT("Conjugateur"));
     window->Center();
 

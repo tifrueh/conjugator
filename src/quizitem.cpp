@@ -4,24 +4,16 @@
 #include "quizitem.hpp"
 
 
-QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::QuizData& quizData, const bool& translate) {
-    this->quizData = quizData;
+QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::QuizItem& data, const bool& translate) {
+    this->data = data;
     this->sizer = sizer;
     this->parent = parent;
 
-    std::wstring infinitif;
-
-    if (translate) {
-        infinitif = quizData.translation;
-    } else {
-        infinitif = quizData.infinitif;
-    }
-
     // Don't show a person if the question is prompting for a participe present form.
-    if (quizData.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
-        questionString = infinitif + L": " + quizData.tense;
+    if (*data.person == L"") {
+        questionString = *data.verb_name + L": " + data.tense->name;
     } else {
-        questionString = infinitif + L": " + quizData.tense + L" – " + quizData.person;
+        questionString = *data.verb_name + L": " + data.tense->name + L" – " + *data.person;
     }
 
     question = new wxStaticText(parent, 
@@ -60,21 +52,15 @@ void QuizItem::SetFocus() {
     textCtrl->SetFocus();
 }
 
-void QuizItem::setQuizData(const cjgt::QuizData& quizData, const bool& translate) {
-    this->quizData = quizData;
+void QuizItem::setQuizData(const cjgt::QuizItem& data, const bool& translate) {
+    this->data = data;
 
     std::wstring infinitif;
 
-    if(translate) {
-        infinitif = quizData.translation;
+    if (*data.person == L"") {
+        questionString = *data.verb_name + L": " + data.tense->name;
     } else {
-        infinitif = quizData.infinitif;
-    }
-
-    if (quizData.tense == cjgt::getTense(verbDB::Tense::participePresent)) {
-        questionString = infinitif + L": " + quizData.tense;
-    } else {
-        questionString = infinitif + L": " + quizData.tense + L" – " + quizData.person;
+        questionString = *data.verb_name + L": " + data.tense->name + L" – " + *data.person;
     }
 
     // Set the text colour back to default.
@@ -91,7 +77,7 @@ bool QuizItem::evaluate() {
     bool correct;
     std::wstring textCtrlString = std::wstring(textCtrl->GetValue().wchar_str());
 
-    correct = std::find(std::begin(quizData.forms), std::end(quizData.forms), textCtrlString) != std::end(quizData.forms);
+    correct = textCtrlString == *this->data.form;
 
     if (cjgt::strip(textCtrlString).empty()) {
         textCtrl->SetForegroundColour(wxNullColour);
@@ -109,13 +95,6 @@ bool QuizItem::evaluate() {
 
 void QuizItem::showSolution() {
     std::wstring solutionStr;
-    
-    solutionStr += quizData.forms.at(0);
-    
-    for (size_t formVariationIndex = 1; formVariationIndex < quizData.forms.size(); formVariationIndex++) {
-        solutionStr += L" /\n";
-        solutionStr += quizData.forms.at(formVariationIndex);
-    }
 
-    solution->SetLabelText(wxString(solutionStr));
+    solution->SetLabelText(wxString(*this->data.form));
 }

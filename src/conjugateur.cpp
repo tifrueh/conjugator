@@ -5,7 +5,6 @@
 
 cjgt::Language::Language(
         const std::wstring& name,
-        const std::vector<Person>& persons,
         const std::vector<Category>& categories,
         const std::vector<Tense>& tenses
 ) {
@@ -52,10 +51,11 @@ cjgt::QuizItem cjgt::Language::getRandomQuizItem(
     std::uniform_int_distribution<unsigned int> tense_distribution(0, tenses.size() - 1);
     cjgt::Tense* tense = tenses.at(tense_distribution(this->random_engine));
 
-    std::uniform_int_distribution<unsigned int> person_distribution(0, tense->persons.size() - 1);
-    cjgt::Person* person = tense->persons.at(person_distribution(this->random_engine));
+    std::uniform_int_distribution<std::vector<std::wstring>::size_type> person_distribution(0, tense->persons.size() - 1);
+    std::vector<std::wstring>::size_type person_index = person_distribution(this->random_engine);
+    std::wstring* person = &tense->persons.at(person_index);
 
-    std::wstring* form = this->getVerbForm(verb, person, tense);
+    std::wstring* form = this->getVerbForm(verb, person_index, tense);
 
     cjgt::QuizItem item;
     item.verb_name = &verb->name;
@@ -66,6 +66,10 @@ cjgt::QuizItem cjgt::Language::getRandomQuizItem(
     return item;
 }
 
-std::wstring* getVerbForm(verbDB::Verb* verb, cjgt::Person* person, cjgt::Tense* tense) {
-    return &verb->forms.at(tense->position + person->position);
+std::wstring* cjgt::Language::getVerbForm(
+                    verbDB::Verb* verb,
+                    const std::vector<std::wstring>::size_type& person,
+                    Tense* tense
+) {
+    return &verb->forms.at(tense->position + person);
 };

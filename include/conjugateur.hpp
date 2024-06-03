@@ -14,14 +14,6 @@
 // This namespace contains all functionality related to manipulating the verb database.
 namespace cjgt {
 
-    struct Person {
-        unsigned int id;
-        unsigned int position;
-        std::wstring name;
-
-        bool operator==(const Person& Person) const;
-    };
-
     struct Category {
         unsigned int id;
         std::wstring name;
@@ -30,10 +22,9 @@ namespace cjgt {
     };
 
     struct Tense {
-        unsigned int id;
-        unsigned int position;
+        std::vector<verbDB::Verb*>::size_type position;
         std::wstring name;
-        std::vector<Person*> persons;
+        std::vector<std::wstring> persons;
 
         bool operator==(const Tense& Tense) const;
     };
@@ -41,7 +32,7 @@ namespace cjgt {
     struct QuizItem {
         std::wstring* verb_name;
         Tense* tense;
-        Person* person;
+        std::wstring* person;
         std::wstring* form;
 
         bool operator==(const QuizItem& QuizItem) const;
@@ -51,7 +42,6 @@ namespace cjgt {
         public:
             Language(
                     const std::wstring& name,
-                    const std::vector<Person>& persons,
                     const std::vector<Category>& categories,
                     const std::vector<Tense>& tenses
             );
@@ -74,7 +64,11 @@ namespace cjgt {
             std::random_device random_device;
             std::default_random_engine random_engine;
 
-            std::wstring* getVerbForm(verbDB::Verb*, Person*, Tense*);
+            std::wstring* getVerbForm(
+                    verbDB::Verb* verb,
+                    const std::vector<std::wstring>::size_type& person,
+                    Tense* tense
+            );
     };
 
     extern Language french;

@@ -14,6 +14,8 @@
 // This namespace contains all functionality related to manipulating the verb database.
 namespace cjgt {
 
+    std::wstring strip(const std::wstring& string);
+
     struct Category {
         unsigned int id;
         std::wstring name;

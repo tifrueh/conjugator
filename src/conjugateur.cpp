@@ -73,3 +73,19 @@ std::wstring* cjgt::Language::getVerbForm(
 ) {
     return &verb->forms.at(tense->position + person);
 };
+
+std::wstring cjgt::strip(const std::wstring& string) {
+    std::wstring outstring = string;
+
+    // Calculate the beginning and the count of the stripped string.
+    const long unsigned int begin = outstring.find_first_not_of(' ');
+    const long unsigned int end = outstring.find_last_not_of(' ');
+    const long unsigned int count = end + 1 - begin;
+
+    if (outstring.empty() || begin == std::string::npos) {
+        return L"";
+    } else {
+        outstring = outstring.substr(begin, count);
+        return outstring;
+    }
+}

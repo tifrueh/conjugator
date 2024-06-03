@@ -12,5 +12,6 @@ srcs += files(
     'verbviewpanel.cpp'
 )
 
-# Execute meson.build in the 'verbs' subdir.
+# Execute meson.build in the 'verbs' and 'languages' subdir.
+subdir('languages')
 subdir('verbs')

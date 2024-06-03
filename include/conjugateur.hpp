@@ -51,8 +51,8 @@ namespace cjgt {
             void addVerb(verbDB::Verb*, Category*);
 
             std::wstring* getName();
-            std::vector<Category>* getCategories();
-            std::vector<Tense>* getTenses();
+            std::vector<Category*> getCategories();
+            std::vector<Tense*> getTenses();
             std::map<std::wstring, verbDB::Verb*>* getVerbs();
 
             QuizItem getRandomQuizItem(const std::vector<Category*>& categories, const std::vector<Tense*>& tenses);

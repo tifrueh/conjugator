@@ -24,12 +24,25 @@ std::wstring* cjgt::Language::getName() {
     return &this->name;
 }
 
-std::vector<cjgt::Category>* cjgt::Language::getCategories() {
-    return &this->categories;
+std::vector<cjgt::Category*> cjgt::Language::getCategories() {
+    std::vector<cjgt::Category*> output;
+
+    for (std::vector<cjgt::Category>::iterator it = this->categories.begin(); it != this->categories.end(); ++it) {
+        output.push_back(&(*it));
+    }
+
+    return output;
 }
 
-std::vector<cjgt::Tense>* cjgt::Language::getTenses() {
-    return &this->tenses;
+std::vector<cjgt::Tense*> cjgt::Language::getTenses() {
+
+    std::vector<cjgt::Tense*> output;
+
+    for (std::vector<cjgt::Tense>::iterator it = this->tenses.begin(); it != this->tenses.end(); ++it) {
+        output.push_back(&(*it));
+    }
+
+    return output;
 }
 
 std::map<std::wstring, verbDB::Verb*>* cjgt::Language::getVerbs() {

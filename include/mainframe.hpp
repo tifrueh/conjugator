@@ -36,7 +36,7 @@ class MainFrame : public wxFrame {
     
     private:
         wxAboutDialogInfo info;
-        cjgt::Language* language;
+        const cjgt::Language* language;
         wxMenuBar* menuBar;
         wxMenu* menuEdit;
         wxMenu* menuQuiz;

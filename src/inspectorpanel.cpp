@@ -4,13 +4,13 @@
 #include "inspectorpanel.hpp"
 
 
-InspectorPanel::InspectorPanel(wxWindow* parent, cjgt::Language* language) : wxPanel(parent, wxID_ANY) {
+InspectorPanel::InspectorPanel(wxWindow* parent, const cjgt::Language* language) : wxPanel(parent, wxID_ANY) {
     this->language = language;
     topsizer = new wxBoxSizer(wxHORIZONTAL);
 
     wxArrayString verbs = wxArrayString();
 
-    for (std::pair<std::wstring, verbDB::Verb*> element : this->language->getVerbs()) {
+    for (std::pair<std::wstring, const verbDB::Verb*> element : this->language->getVerbs()) {
         verbs.Add(wxString(element.first));
     }
 

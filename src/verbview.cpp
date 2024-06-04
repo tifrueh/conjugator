@@ -4,7 +4,7 @@
 #include "verbview.hpp"
 
 
-VerbView::VerbView(wxWindow* parent, wxWindowID id, verbDB::Verb* verb) : wxPanel(parent, id) {
+VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb* verb) : wxPanel(parent, id) {
     this->verb = verb;
     
     sizer = new wxBoxSizer(wxVERTICAL);
@@ -12,7 +12,7 @@ VerbView::VerbView(wxWindow* parent, wxWindowID id, verbDB::Verb* verb) : wxPane
     tensebook = new wxChoicebook(this, wxID_ANY);
 
     // Create a verb view panel for each tense from present to conditionnel and add it to the tensebook.
-    for (cjgt::Tense* tense : this->language->getTenses()) {
+    for (const cjgt::Tense* tense : this->language->getTenses()) {
         pages.insert({tense, new VerbViewPanel(tensebook, wxID_ANY, verb, tense)});
         tensebook->AddPage(pages.at(tense), wxString(tense->name));
     }
@@ -23,10 +23,10 @@ VerbView::VerbView(wxWindow* parent, wxWindowID id, verbDB::Verb* verb) : wxPane
 
 }
 
-void VerbView::setVerb(verbDB::Verb* verb) {
+void VerbView::setVerb(const verbDB::Verb* verb) {
     this->verb = verb;
 
-    for (cjgt::Tense* tense : this->language->getTenses()) {
+    for (const cjgt::Tense* tense : this->language->getTenses()) {
         pages.at(tense)->setVerb(verb);
     }
 

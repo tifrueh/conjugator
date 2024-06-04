@@ -20,16 +20,16 @@
 class VerbViewPanel : public wxPanel {
     public:
         // Construct a new VerbViewPanel, specifying the tense as int.
-        VerbViewPanel(wxWindow* parent, wxWindowID id, verbDB::Verb* verb, cjgt::Tense*);
+        VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb* verb, const cjgt::Tense*);
 
         // Reset the verb of the verb view panel.
-        void setVerb(verbDB::Verb* verb);
+        void setVerb(const verbDB::Verb* verb);
 
     private:
         wxBoxSizer* sizer;
 
-        verbDB::Verb* verb;
-        cjgt::Tense* tense;
+        const verbDB::Verb* verb;
+        const cjgt::Tense* tense;
         std::wstring tenseString;
         std::wstring infinitifString;
 

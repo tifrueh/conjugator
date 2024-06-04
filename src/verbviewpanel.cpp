@@ -4,7 +4,7 @@
 #include "verbviewpanel.hpp"
 
 
-VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, verbDB::Verb* verb, cjgt::Tense* tense) : wxPanel(parent, id) {
+VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb* verb, const cjgt::Tense* tense) : wxPanel(parent, id) {
     this->verb = verb;
     this->tense = tense;
     sizer = new wxBoxSizer(wxVERTICAL);
@@ -45,7 +45,7 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, verbDB::Verb* verb
 }
 
 
-void VerbViewPanel::setVerb(verbDB::Verb* verb) {
+void VerbViewPanel::setVerb(const verbDB::Verb* verb) {
     this->verb = verb;
 
     if (cjgt::strip(verb->forms[1]) == L"") {
@@ -58,7 +58,7 @@ void VerbViewPanel::setVerb(verbDB::Verb* verb) {
 
     for (std::vector<std::wstring>::size_type i = 0; i < this->tense->persons.size(); i++) {
         std::wstring person = this->tense->persons[i];
-        std::wstring* form = cjgt::getVerbForm(verb, i, this->tense);
+        const std::wstring* form = cjgt::getVerbForm(verb, i, this->tense);
         formLabels.at(person)->SetLabel(wxString(person) + wxT(" ") + *form);
 
         // Hide empty forms

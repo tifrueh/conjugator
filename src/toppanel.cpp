@@ -4,7 +4,7 @@
 #include "toppanel.hpp"
 
 
-TopPanel::TopPanel(wxWindow* parent, cjgt::Language* language) : wxPanel(parent, wxID_ANY) {
+TopPanel::TopPanel(wxWindow* parent, const cjgt::Language* language) : wxPanel(parent, wxID_ANY) {
 
     this->language = language;
 
@@ -87,7 +87,7 @@ TopPanel::TopPanel(wxWindow* parent, cjgt::Language* language) : wxPanel(parent,
 
     formSelectionSizer->AddSpacer(bigSpace);
 
-    for (cjgt::Category* category : this->language->getCategories()) {
+    for (const cjgt::Category* category : this->language->getCategories()) {
         this->categoryCheckBoxes[category] = new wxCheckBox(this, wxID_ANY, wxString(category->name));
         this->formSelectionSizer->Add(
                 this->categoryCheckBoxes[category],
@@ -111,7 +111,7 @@ TopPanel::TopPanel(wxWindow* parent, cjgt::Language* language) : wxPanel(parent,
 
     formSelectionSizer->AddSpacer(bigSpace);
 
-    for (cjgt::Tense* tense : this->language->getTenses()) {
+    for (const cjgt::Tense* tense : this->language->getTenses()) {
         this->tenseCheckBoxes[tense] = new wxCheckBox(this, wxID_ANY, wxString(tense->name));
         formSelectionSizer->Add(
                 this->tenseCheckBoxes[tense],
@@ -169,13 +169,13 @@ TopPanel::TopPanel(wxWindow* parent, cjgt::Language* language) : wxPanel(parent,
 }
 
 std::vector<cjgt::QuizData> TopPanel::GetQuizDatas(const unsigned int& count) {
-    std::vector<cjgt::Category*> usableCategories;
-    std::vector<cjgt::Tense*> usableTenses;
+    std::vector<const cjgt::Category*> usableCategories;
+    std::vector<const cjgt::Tense*> usableTenses;
     std::vector<cjgt::QuizData> quizDatas;
-    std::vector<verbDB::Verb*>::size_type usableVerbCount = 0;
-    std::vector<std::wstring*>::size_type usableFormCount = 0;
+    std::vector<const verbDB::Verb*>::size_type usableVerbCount = 0;
+    std::vector<const std::wstring*>::size_type usableFormCount = 0;
 
-    for (std::pair<cjgt::Category*, wxCheckBox*> element : this->categoryCheckBoxes) {
+    for (std::pair<const cjgt::Category*, wxCheckBox*> element : this->categoryCheckBoxes) {
 
         if (element.second->GetValue() == false) {
             continue;
@@ -186,7 +186,7 @@ std::vector<cjgt::QuizData> TopPanel::GetQuizDatas(const unsigned int& count) {
     }
 
 
-    for (std::pair<cjgt::Tense*, wxCheckBox*> element : this->tenseCheckBoxes) {
+    for (std::pair<const cjgt::Tense*, wxCheckBox*> element : this->tenseCheckBoxes) {
 
         if (element.second->GetValue() == false) {
             continue;
@@ -267,18 +267,18 @@ void TopPanel::UnselectAll() {
     SetAllTenses(false);
 }
 
-void TopPanel::SetLanguage(cjgt::Language* language) {
+void TopPanel::SetLanguage(const cjgt::Language* language) {
     this->language = language;
 }
 
 void TopPanel::SetAllVerbs(const bool& status) {
-    for (std::pair<cjgt::Category*, wxCheckBox*> element : this->categoryCheckBoxes) {
+    for (std::pair<const cjgt::Category*, wxCheckBox*> element : this->categoryCheckBoxes) {
         element.second->SetValue(true);
     }
 }
 
 void TopPanel::SetAllTenses(const bool& status) {
-    for (std::pair<cjgt::Tense*, wxCheckBox*> element : this->tenseCheckBoxes) {
+    for (std::pair<const cjgt::Tense*, wxCheckBox*> element : this->tenseCheckBoxes) {
         element.second->SetValue(true);
     }
 }

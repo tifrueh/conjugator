@@ -123,7 +123,7 @@ cjgt::Tense conditionnel {
     }
 };
 
-cjgt::Language cjgt::french(
+const cjgt::Language cjgt::french(
         L"French",
         categories,
         {

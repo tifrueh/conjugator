@@ -20,14 +20,14 @@
 class InspectorPanel : public wxPanel {
     public:
         // Construct a new inspector panel.
-        explicit InspectorPanel(wxWindow* parent, cjgt::Language* language);
+        explicit InspectorPanel(wxWindow* parent, const cjgt::Language* language);
 
         // Set the verb of the verbview to the one selected in the verbbox and set the
         // sizehints of the panel from the topsizer.
         void setVerbFromBox();
 
     private:
-        cjgt::Language* language;
+        const cjgt::Language* language;
         wxListBox* verbBox;
         wxBoxSizer* topsizer;
         VerbView* verbView;

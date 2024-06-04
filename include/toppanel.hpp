@@ -26,7 +26,7 @@
 class TopPanel : public wxPanel {
     public:
         // Construct a new TopPanel.
-        explicit TopPanel(wxWindow* parent, cjgt::Language* language);
+        explicit TopPanel(wxWindow* parent, const cjgt::Language* language);
 
         // Randomly retrieve as many verb forms as needed for the desired amount of
         // questions based on the selected verbs and tenses.
@@ -58,21 +58,21 @@ class TopPanel : public wxPanel {
         // Unselect all checkboxes.
         void UnselectAll();
 
-        void SetLanguage(cjgt::Language* language);
+        void SetLanguage(const cjgt::Language* language);
 
     private:
         int quizItemCount;
-        cjgt::Language* language;
+        const cjgt::Language* language;
         wxBoxSizer* topsizer = nullptr;
         wxStaticBoxSizer* formSelectionSizer = nullptr;
         wxStaticBoxSizer* quizBoxSizer = nullptr;
         wxFlexGridSizer* quizSizer = nullptr;
 
         wxStaticText* verbTypeTitle = nullptr;
-        std::map<cjgt::Category*, wxCheckBox*> categoryCheckBoxes;
+        std::map<const cjgt::Category*, wxCheckBox*> categoryCheckBoxes;
 
         wxStaticText* tenseTitle = nullptr;
-        std::map<cjgt::Tense*, wxCheckBox*> tenseCheckBoxes;
+        std::map<const cjgt::Tense*, wxCheckBox*> tenseCheckBoxes;
 
         wxStaticText* addSettingsTitle = nullptr;
         wxBoxSizer* buttonSizer = nullptr;

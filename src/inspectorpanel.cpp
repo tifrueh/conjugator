@@ -20,7 +20,7 @@ InspectorPanel::InspectorPanel(wxWindow* parent, const cjgt::Language* language)
     topsizer->Add(verbBox, 0, wxEXPAND, 0);
 
     // Initialise a new verbview with the currently selected verb.
-    verbView = new VerbView(this, wxID_ANY, this->language->getVerb(verbBox->GetStringSelection().ToStdWstring()));
+    verbView = new VerbView(this, wxID_ANY, this->language, this->language->getVerb(verbBox->GetStringSelection().ToStdWstring()));
 
     topsizer->Add(verbView, 1, wxEXPAND | wxALL, 0);
 

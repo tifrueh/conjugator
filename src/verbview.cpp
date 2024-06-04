@@ -4,7 +4,8 @@
 #include "verbview.hpp"
 
 
-VerbView::VerbView(wxWindow* parent, wxWindowID id, const verbDB::Verb* verb) : wxPanel(parent, id) {
+VerbView::VerbView(wxWindow* parent, wxWindowID id, const cjgt::Language* language, const verbDB::Verb* verb) : wxPanel(parent, id) {
+    this->language = language;
     this->verb = verb;
     
     sizer = new wxBoxSizer(wxVERTICAL);

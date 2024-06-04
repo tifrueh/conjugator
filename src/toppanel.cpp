@@ -37,9 +37,6 @@ TopPanel::TopPanel(wxWindow* parent, const cjgt::Language* language) : wxPanel(p
     tenseTitle = new wxStaticText(this, wxID_ANY, wxT("Temps"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
     tenseTitle->SetFont(titleFont);
 
-    addSettingsTitle = new wxStaticText(this, wxID_ANY, wxT("Paramètres additionels"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
-    addSettingsTitle->SetFont(titleFont);
-
     buttonSizer = new wxBoxSizer(wxHORIZONTAL);
 
     okayButton = new wxButton(this, winID::okayButton, wxT("Gérer"));

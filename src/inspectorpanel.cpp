@@ -14,7 +14,7 @@ InspectorPanel::InspectorPanel(wxWindow* parent, const cjgt::Language* language)
         verbs.Add(wxString(element.first));
     }
 
-    verbBox = new wxListBox(this, inspectorVerbBox, wxDefaultPosition, wxDefaultSize, verbs, wxLB_SINGLE);
+    verbBox = new wxListBox(this, inspectorVerbBox, wxDefaultPosition, wxDefaultSize, verbs, wxLB_SINGLE | wxLB_SORT);
     verbBox->SetSelection(0, true);
 
     topsizer->Add(verbBox, 0, wxEXPAND, 0);

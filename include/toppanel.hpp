@@ -74,7 +74,6 @@ class TopPanel : public wxPanel {
         wxStaticText* tenseTitle = nullptr;
         std::map<const cjgt::Tense*, wxCheckBox*> tenseCheckBoxes;
 
-        wxStaticText* addSettingsTitle = nullptr;
         wxBoxSizer* buttonSizer = nullptr;
         wxButton* okayButton = nullptr;
         wxButton* checkButton = nullptr;

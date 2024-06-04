@@ -50,7 +50,7 @@ namespace cjgt {
             std::vector<const Category*> getCategories() const;
             std::vector<const Tense*> getTenses() const;
             std::map<std::wstring, const verbDB::Verb*> getVerbs() const;
-            const verbDB::Verb* getVerb(std::wstring) const;
+            const verbDB::Verb* getVerb(const std::wstring& name) const;
 
             QuizData getRandomQuizData(const std::vector<const Category*>& categories, const std::vector<const Tense*>& tenses) const;
 

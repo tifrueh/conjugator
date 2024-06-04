@@ -57,7 +57,7 @@ std::map<std::wstring, const verbDB::Verb*> cjgt::Language::getVerbs() const {
     return this->verbs;
 }
 
-const verbDB::Verb* cjgt::Language::getVerb(std::wstring verb) const {
+const verbDB::Verb* cjgt::Language::getVerb(const std::wstring& verb) const {
     return this->verbs.at(verb);
 }
 

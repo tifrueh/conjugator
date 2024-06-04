@@ -29,7 +29,6 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
 
     sizer->Add(titleLabel, 0, wxEXPAND, 0);
     sizer->Add(infinitifLabel, 0, wxEXPAND, 0);
-    sizer->Add(translationLabel, 0, wxEXPAND, 0);
 
     sizer->AddSpacer(10);
 

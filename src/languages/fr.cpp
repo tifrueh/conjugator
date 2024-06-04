@@ -3,15 +3,6 @@
 
 #include "conjugateur.hpp"
 
-enum Categories : unsigned int { er, ir, oir, re };
-
-std::vector<cjgt::Category> categories = {
-    { Categories::er, L"er" },
-    { Categories::ir, L"ir" },
-    { Categories::oir, L"oir" },
-    { Categories::re, L"re" }
-};
-
 cjgt::Tense participe_present = {
     1,
     L"participe présent",
@@ -123,9 +114,42 @@ cjgt::Tense conditionnel {
     }
 };
 
+cjgt::Category er = {
+    L"-er",
+    {
+        &verbDB::acheter
+    }
+};
+
+cjgt::Category ir = {
+    L"-ir",
+    {
+        &verbDB::agir
+    }
+};
+
+cjgt::Category oir = {
+    L"-oir",
+    {
+        &verbDB::apercevoir
+    }
+};
+
+cjgt::Category re = {
+    L"-re",
+    {
+        &verbDB::apparaitre
+    }
+};
+
 const cjgt::Language cjgt::french(
         L"French",
-        categories,
+        {
+            er,
+            ir,
+            oir,
+            re,
+        },
         {
             participe_present,
             present,

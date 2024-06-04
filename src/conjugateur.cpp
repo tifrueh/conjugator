@@ -22,7 +22,7 @@ cjgt::Language::Language(
 
     for (cjgt::Category category : this->categories) {
         for (const verbDB::Verb* verb : category.verbs) {
-            this->verbs.at(verb->name) = verb;
+            this->verbs[verb->name] = verb;
         }
     }
 
@@ -72,7 +72,7 @@ cjgt::QuizData cjgt::Language::getRandomQuizData(
     std::uniform_int_distribution<std::vector<const cjgt::Category*>::size_type> category_distribution(0, categories.size() - 1);
     const cjgt::Category* category = categories.at(category_distribution(engine));
 
-    std::uniform_int_distribution<std::vector<const verbDB::Verb*>::size_type> verb_distribution(0, verbs.size() - 1);
+    std::uniform_int_distribution<std::vector<const verbDB::Verb*>::size_type> verb_distribution(0, category->verbs.size() - 1);
     const verbDB::Verb* verb = category->verbs.at(verb_distribution(engine));
 
     std::uniform_int_distribution<std::vector<const cjgt::Tense*>::size_type> tense_distribution(0, tenses.size() - 1);

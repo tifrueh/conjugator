@@ -15,7 +15,6 @@
 namespace cjgt {
 
     struct Category {
-        unsigned int id;
         std::wstring name;
         std::vector<const verbDB::Verb*> verbs;
 

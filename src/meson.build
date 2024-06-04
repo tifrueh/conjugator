@@ -13,5 +13,5 @@ srcs += files(
 )
 
 # Execute meson.build in the 'verbs' and 'languages' subdir.
-subdir('languages')
 subdir('verbs')
+subdir('languages')

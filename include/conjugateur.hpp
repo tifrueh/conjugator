@@ -23,6 +23,8 @@ namespace cjgt {
 
     struct Tense {
         std::vector<const verbDB::Verb*>::size_type position;
+        bool show_in_quiz;
+        bool show_in_inspecteur;
         std::wstring name;
         std::vector<std::wstring> persons;
 

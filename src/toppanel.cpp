@@ -112,13 +112,15 @@ TopPanel::TopPanel(wxWindow* parent, const cjgt::Language* language) : wxPanel(p
     formSelectionSizer->AddSpacer(bigSpace);
 
     for (const cjgt::Tense* tense : this->language->getTenses()) {
-        this->tenseCheckBoxes[tense] = new wxCheckBox(this, wxID_ANY, wxString(tense->name));
-        formSelectionSizer->Add(
-                this->tenseCheckBoxes[tense],
-                0,
-                wxEXPAND | wxLEFT | wxRIGHT,
-                bigSpace
-        );
+        if (tense->show_in_quiz) {
+            this->tenseCheckBoxes[tense] = new wxCheckBox(this, wxID_ANY, wxString(tense->name));
+            formSelectionSizer->Add(
+                    this->tenseCheckBoxes[tense],
+                    0,
+                    wxEXPAND | wxLEFT | wxRIGHT,
+                    bigSpace
+            );
+        }
     }
 
     this->SetAllTenses(true);

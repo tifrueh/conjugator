@@ -3,14 +3,26 @@
 
 #include "conjugateur.hpp"
 
+cjgt::Tense infinitif = {
+    0,
+    false,
+    false,
+    L"infinitif",
+    { L"" }
+};
+
 cjgt::Tense participe_present = {
-    1,
+    infinitif.position + infinitif.persons.size(),
+    true,
+    false,
     L"participe présent",
     { L"" }
 };
 
 cjgt::Tense present {
     participe_present.position + participe_present.persons.size(),
+    true,
+    true,
     L"présent",
     {
         L"je/j'",
@@ -26,6 +38,8 @@ cjgt::Tense present {
 
 cjgt::Tense imparfait {
     present.position + present.persons.size(),
+    true,
+    true,
     L"imparfait",
     {
         L"je/j'",
@@ -41,6 +55,8 @@ cjgt::Tense imparfait {
 
 cjgt::Tense futur {
     imparfait.position + imparfait.persons.size(),
+    true,
+    true,
     L"futur",
     {
         L"je/j'",
@@ -56,6 +72,8 @@ cjgt::Tense futur {
 
 cjgt::Tense passe_compose {
     futur.position + futur.persons.size(),
+    true,
+    true,
     L"passé composé",
     {
         L"je/j'",
@@ -71,6 +89,8 @@ cjgt::Tense passe_compose {
 
 cjgt::Tense plus_que_parfait {
     passe_compose.position + passe_compose.persons.size(),
+    true,
+    true,
     L"plus-que-parfait",
     {
         L"je/j'",
@@ -86,6 +106,8 @@ cjgt::Tense plus_que_parfait {
 
 cjgt::Tense subjonctif {
     plus_que_parfait.position + plus_que_parfait.persons.size(),
+    true,
+    true,
     L"subjonctif",
     {
         L"je/j'",
@@ -101,6 +123,8 @@ cjgt::Tense subjonctif {
 
 cjgt::Tense conditionnel {
     subjonctif.position + subjonctif.persons.size(),
+    true,
+    true,
     L"conditionnel",
     {
         L"je/j'",
@@ -151,6 +175,7 @@ const cjgt::Language cjgt::french(
             re,
         },
         {
+            infinitif,
             participe_present,
             present,
             imparfait,

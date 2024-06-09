@@ -8,7 +8,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
 
     SetIcon(wxICON(conjugateur));
 
-    info.SetName(wxT("Conjugateur"));
+    info.SetName(wxT("Conjugator"));
     info.SetCopyright(wxT("Copyright © 2023-2024 Timo Früh"));
     
     // Set version in the app info to TAG_STR only if not on macOS.
@@ -20,7 +20,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     // platform to support such a detailed "About" window.
     #ifdef __WXGTK__
         info.SetIcon(wxICON(conjugateur));
-        info.SetDescription(wxT("Entraîneur de conjugaison des verbes français"));
+        info.SetDescription(_("Verb conjugation trainer"));
         info.SetWebSite(wxT("https://github.com/tifrueh/conjugateur"), wxT("GitHub"));
         info.AddDeveloper(wxT("Timo Früh"));
 
@@ -50,9 +50,9 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     menuQuiz = new wxMenu();
     menuHelp = new wxMenu();
 
-    menuBar->Append(menuEdit, wxT("Édition"));
-    menuBar->Append(menuQuiz, wxT("Quiz"));
-    menuBar->Append(menuHelp, wxT("Aide"));
+    menuBar->Append(menuEdit, _("Edit"));
+    menuBar->Append(menuQuiz, _("Quiz"));
+    menuBar->Append(menuHelp, _("Help"));
 
     menuEdit->Append(wxID_CUT);
     menuEdit->Append(wxID_COPY);
@@ -60,17 +60,17 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     menuEdit->AppendSeparator();
     menuEdit->Append(wxID_SELECTALL);
 
-    menuQuiz->Append(winID::menuQuizSelectVerbs, wxT("Sélectionner tous les verbes\tCtrl-1"));
-    menuQuiz->Append(winID::menuQuizSelectTenses, wxT("Sélectionner tous les temps\tCtrl-2"));
-    menuQuiz->Append(winID::menuQuizUnselectAll, wxT("Désélectionner tout\tCtrl-0"));
+    menuQuiz->Append(winID::menuQuizSelectVerbs, _("Select all categories\tCtrl-1"));
+    menuQuiz->Append(winID::menuQuizSelectTenses, _("Select all tenses\tCtrl-2"));
+    menuQuiz->Append(winID::menuQuizUnselectAll, _("Unselect all\tCtrl-0"));
     menuQuiz->AppendSeparator();
-    menuQuiz->Append(winID::menuQuizOkay, wxT("Gérer\tCtrl-Enter"));
-    menuQuiz->Append(winID::menuQuizCheck, wxT("Contrôler\tCtrl-Shift-Enter"));
-    menuQuiz->Append(winID::menuQuizSolution, wxT("Solutions\tCtrl-S"));
+    menuQuiz->Append(winID::menuQuizOkay, _("Next\tCtrl-Enter"));
+    menuQuiz->Append(winID::menuQuizCheck, _("Check\tCtrl-Shift-Enter"));
+    menuQuiz->Append(winID::menuQuizSolution, _("Solutions\tCtrl-S"));
     menuQuiz->AppendSeparator();
-    menuQuiz->Append(winID::menuInspectorOpen, wxT("Ouvrir Inspecteur\tCtrl-I"));
+    menuQuiz->Append(winID::menuInspectorOpen, _("Open inspector\tCtrl-I"));
 
-    menuHelp->Append(wxID_ABOUT, wxT("À propos de Conjugateur"));
+    menuHelp->Append(wxID_ABOUT, _("About Conjugator"));
     menuHelp->AppendSeparator();
     menuHelp->Append(winID::menuHelpGitHub, wxT("GitHub"));
 
@@ -126,7 +126,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     }
 
     if (! disableUpdateChecker) {
-        menuHelp->Append(winID::menuHelpUpdateChecker, wxT("Rechercher des mises à jour"));
+        menuHelp->Append(winID::menuHelpUpdateChecker, _("Check for updates"));
     }
 
     if (! checkForUpdateOnStartupDefined) {
@@ -203,7 +203,7 @@ void MainFrame::OnGitHub(wxCommandEvent& event) {
 
 void MainFrame::OnInspector(wxCommandEvent &event) {
     if (inspector == nullptr) {
-        inspector = new InspectorFrame(this, winID::inspector, wxT("Inspecteur"), this->language);
+        inspector = new InspectorFrame(this, winID::inspector, wxT("Inspector"), this->language);
     }
     topPanel->SetFocusIgnoringChildren();
     topPanel->Disable();

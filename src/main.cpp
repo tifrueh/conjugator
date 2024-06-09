@@ -43,13 +43,13 @@ bool Conjugateur::OnInit() {
 
     locale = new wxLocale();
 
-    locale->Init(wxLANGUAGE_FRENCH);
+    locale->Init(wxLANGUAGE_DEFAULT);
 
     locale->AddCatalog(wxT("wxstd"));
 
-    this->SetAppDisplayName(wxT("Conjugateur"));
+    this->SetAppDisplayName(wxT("Conjugator"));
 
-    auto window = new MainFrame(wxT("Conjugateur"));
+    auto window = new MainFrame(wxT("Conjugator"));
     window->Center();
 
     window->Show();

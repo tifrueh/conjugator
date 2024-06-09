@@ -12,10 +12,10 @@ TopPanel::TopPanel(wxWindow* parent, const cjgt::Language* language) : wxPanel(p
     topsizer = new wxBoxSizer(wxHORIZONTAL);
 
     // Add a vertical static box sizer to hold the form selection checkboxes.
-    formSelectionSizer = new wxStaticBoxSizer(wxVERTICAL, this, wxT("Sélection de verbes/temps"));
+    formSelectionSizer = new wxStaticBoxSizer(wxVERTICAL, this, _("Category/tense selection"));
 
     // Add a vertical static box sizer to hold a sizer, which, in turn, will hold all quiz items.
-    quizBoxSizer = new wxStaticBoxSizer(wxVERTICAL, this, wxT("Quiz"));
+    quizBoxSizer = new wxStaticBoxSizer(wxVERTICAL, this, _("Quiz"));
 
     // Add a flex grid sizer to hold all quiz items.
     quizSizer = new wxFlexGridSizer(3, wxSize(10, 3));
@@ -28,20 +28,20 @@ TopPanel::TopPanel(wxWindow* parent, const cjgt::Language* language) : wxPanel(p
     }
 
     // Add all the contents of the formSelectionSizer and, in turn, add it to the topsizer.
-    verbTypeTitle = new wxStaticText(this, wxID_ANY, wxT("Types de verbes"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
+    verbTypeTitle = new wxStaticText(this, wxID_ANY, _("Categories"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
     wxFont titleFont = verbTypeTitle->GetFont();
     titleFont.Scale(1.1);
     titleFont.MakeBold();
     verbTypeTitle->SetFont(titleFont);
 
-    tenseTitle = new wxStaticText(this, wxID_ANY, wxT("Temps"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
+    tenseTitle = new wxStaticText(this, wxID_ANY, _("Tenses"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
     tenseTitle->SetFont(titleFont);
 
     buttonSizer = new wxBoxSizer(wxHORIZONTAL);
 
-    okayButton = new wxButton(this, winID::okayButton, wxT("Gérer"));
-    checkButton = new wxButton(this, winID::checkButton, wxT("Contrôler"));
-    solutionButton = new wxButton(this, winID::solutionButton, wxT("Solutions"));
+    okayButton = new wxButton(this, winID::okayButton, _("Next"));
+    checkButton = new wxButton(this, winID::checkButton, _("Check"));
+    solutionButton = new wxButton(this, winID::solutionButton, _("Solutions"));
 
     int smallSpace = 3;
     int midSpace = 5;
@@ -227,7 +227,7 @@ void TopPanel::GenerateQuiz() {
     try {
         quizDatas = GetQuizDatas((unsigned int) quizItems.size());
     } catch(const std::invalid_argument& exception) {
-        auto dlg = new wxMessageDialog(this, wxT("Il n'est pas possible de générer suffisamment de questions de quiz à partir de votre sélection. Veuillez sélectionner plus de verbes ou plus de temps."));
+        auto dlg = new wxMessageDialog(this, _("It wasn't possible to generate enough questions from your selection. Please select more categories or more tenses."));
         dlg->ShowModal();
         return;
     }

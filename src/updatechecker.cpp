@@ -20,7 +20,7 @@ void UpdateChecker::start(wxWindow* parent, const std::string& url, const int& r
 
     request = session.CreateRequest(parent, url, requestId);
     if (!request.IsOk() && failSilently == false) {
-        wxMessageDialog* dlg = new wxMessageDialog(parent, wxT("La requête n'a pas pu être traitée."), wxT("Erreur"));
+        wxMessageDialog* dlg = new wxMessageDialog(parent, _("The request wasn't able to be processed."), _("Error"));
         dlg->ShowModal();
         return;
     }
@@ -39,8 +39,7 @@ void UpdateChecker::showResult(wxWebRequestEvent& event) {
             if (failSilently == false) {
                 wxMessageDialog *dlgFailed = new wxMessageDialog(
                     parent,
-                    wxT("La requête web a échoué. Veuillez "
-                    "vérifier votre connexion Internet."),
+                    wxT("The web request failed. Please verify your internet connection."),
                     wxT("Erreur")
                 );
 
@@ -62,7 +61,7 @@ std::string UpdateChecker::getLatestVersion(const std::string& responseString) {
     if (keyPos != responseString.npos) {
         return responseString.substr(versionPos, versionEndPos - versionPos);
     } else {
-        return "Ne pas trouvé";
+        return "Not found.";
     }
 }
 
@@ -73,18 +72,18 @@ void UpdateChecker::showResultMessage(const std::string& responseString) {
 
     if (latestVersion != TAG_STR) {
 
-        message = L"Votre version: " + wxString(TAG_STR) + L"\n" +
-                  L"Dernière version: " + wxString(latestVersion) +
-                  L"\n\nEst-ce que vous voulez télécharger la dernière version?";
+        message = _("Your version: ") + wxString(TAG_STR) + L"\n" +
+                  _("Latest version: ") + wxString(latestVersion) +
+                  _("\n\nDo you want to download the latest version?");
 
-        dialog = new wxMessageDialog(parent, message, wxT("Mise à jour"), wxOK | wxCANCEL);
+        dialog = new wxMessageDialog(parent, message, _("Update"), wxOK | wxCANCEL);
 
         if (dialog->ShowModal() == wxID_OK) {
             wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/conjugateur/releases/latest"));
         }
 
     } else if (failSilently == false) {
-        dialog = new wxMessageDialog(parent, wxT("Vous utilisez déjà la dernière version."), wxT("Mise à jour"));
+        dialog = new wxMessageDialog(parent, _("You are already using the latest version."), _("Update"));
         dialog->ShowModal();
     }
 }

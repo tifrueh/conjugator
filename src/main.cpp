@@ -46,6 +46,7 @@ bool Conjugateur::OnInit() {
     locale->Init(wxLANGUAGE_DEFAULT);
 
     locale->AddCatalog(wxT("wxstd"));
+    locale->AddCatalog(wxT("conjugator"));
 
     this->SetAppDisplayName(wxT("Conjugator"));
 

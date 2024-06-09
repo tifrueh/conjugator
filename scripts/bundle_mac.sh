@@ -5,7 +5,7 @@ cd "${MESON_BUILD_ROOT}"
 
 # Define various useful path variables.
 MESON_RES_PATH="${MESON_SOURCE_ROOT}/resources"
-MESON_LC_FR_PATH="${MESON_RES_PATH}/lang/fr/LC_MESSAGES"
+MESON_LC_FR_PATH="${MESON_SOURCE_ROOT}/lang/fr/LC_MESSAGES"
 
 APP_PATH="${MESON_BUILD_ROOT}/Conjugateur.app"
 CONTENTS_PATH="${APP_PATH}/Contents"

@@ -1,6 +1,6 @@
 <div align="center">
     <img src="./resources/conjugator.svg" alt="Conjugator icon" width=256 height=256>
-    <h1>Conjugateur</h1>
+    <h1>Conjugator</h1>
     <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">
         <img alt="GitHub" src="https://img.shields.io/github/license/tifrueh/conjugateur" /></a>
     <a href="https://github.com/tifrueh/conjugateur/releases/latest">
@@ -40,10 +40,10 @@ installed via my homebrew repository:
     $ brew tap tifrueh/mytap
     ~~~
 
-2. Install Conjugateur
+2. Install Conjugator
 
     ~~~
-    $ brew install --cask tifrueh/mytap/conjugateur
+    $ brew install --cask tifrueh/mytap/conjugator
     ~~~
 
 ### macOS (PGK install)
@@ -96,5 +96,5 @@ install the program yourself. Instructions can be found in the
 
 ## More information
 
-To learn more about Conjugateur, please consult the
+To learn more about Conjugator, please consult the
 [wiki](https://github.com/tifrueh/conjugateur/wiki/).

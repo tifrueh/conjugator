@@ -274,12 +274,12 @@ void TopPanel::SetLanguage(const cjgt::Language* language) {
 
 void TopPanel::SetAllVerbs(const bool& status) {
     for (std::pair<const cjgt::Category*, wxCheckBox*> element : this->categoryCheckBoxes) {
-        element.second->SetValue(true);
+        element.second->SetValue(status);
     }
 }
 
 void TopPanel::SetAllTenses(const bool& status) {
     for (std::pair<const cjgt::Tense*, wxCheckBox*> element : this->tenseCheckBoxes) {
-        element.second->SetValue(true);
+        element.second->SetValue(status);
     }
 }

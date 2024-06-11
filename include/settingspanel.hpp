@@ -24,6 +24,8 @@ class SettingsPanel : public wxPanel {
         // Construct a new settings panel.
         explicit SettingsPanel(wxWindow* parent);
 
+        void writeConfig();
+
     private:
         wxBoxSizer* topsizer;
         wxBoxSizer* buttonsizer;

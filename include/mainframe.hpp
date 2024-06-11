@@ -102,6 +102,9 @@ class MainFrame : public wxFrame {
         // Reset the pointer to the settings window when destroying it.
         void OnSettingsClose(wxWindowDestroyEvent& event);
 
+        // Write new config to disk.
+        void OnSettingsSave(wxCommandEvent& event);
+
         // Check for updates.
         void checkForUpdates(const bool& failSilently = false);
 

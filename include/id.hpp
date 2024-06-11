@@ -34,5 +34,6 @@ enum winID {
     requestUpdateChecker,
     inspectorVerbBox,
     inspector,
-    settings
+    settings,
+    settingsSave
 };

@@ -17,3 +17,7 @@ SettingsFrame::SettingsFrame(wxWindow *parent, const wxWindowID &winID, const wx
 
     this->SetSizerAndFit(topSizer);
 }
+
+void SettingsFrame::writeConfig() {
+    this->settingsPanel->writeConfig();
+}

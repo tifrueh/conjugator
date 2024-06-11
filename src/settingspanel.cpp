@@ -29,7 +29,7 @@ SettingsPanel::SettingsPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     checkBoxStartupCheck = new wxCheckBox(this, wxID_ANY, _("Check for updates on startup"));
 
     buttonCancel = new wxButton(this, wxID_ANY, _("Cancel"));
-    buttonSave = new wxButton(this, wxID_ANY, _("Save"));
+    buttonSave = new wxButton(this, winID::settingsSave, _("Save"));
 
     buttonsizer->Add(
             buttonCancel,
@@ -90,4 +90,9 @@ SettingsPanel::SettingsPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     checkBoxStartupCheck->SetValue(checkForUpdateOnStartup);
 
     this->SetSizerAndFit(topsizer);
+}
+
+void SettingsPanel::writeConfig() {
+    wxConfigBase::Get()->Write("checkForUpdateOnStartup", this->checkBoxStartupCheck->GetValue());
+    wxConfigBase::Get()->Write("quizLanguage", this->choiceLang->GetSelection());
 }

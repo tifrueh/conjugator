@@ -116,4 +116,10 @@ class MainFrame : public wxFrame {
 
         // Handle update checker results.
         void HandleUpdateChecker(wxWebRequestEvent& event);
+
+        // Load the config.
+        void loadConfig();
+
+        // Reload the config.
+        void reloadConfig();
 };

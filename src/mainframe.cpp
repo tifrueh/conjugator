@@ -210,6 +210,7 @@ void MainFrame::OnSettings(wxCommandEvent &event) {
 
 void MainFrame::OnSettingsClose(wxWindowDestroyEvent& event) {
     settings = nullptr;
+    this->reloadConfig();
 }
 
 void MainFrame::OnSettingsSave(wxCommandEvent& event) {

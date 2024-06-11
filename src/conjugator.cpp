@@ -116,3 +116,13 @@ std::wstring cjgt::strip(const std::wstring& string) {
         return outstring;
     }
 }
+
+const cjgt::Language* cjgt::getLanguage(const cjgt::LanguageID& id) {
+    std::map<cjgt::LanguageID, const cjgt::Language*>::const_iterator element = cjgt::languages.find(id);
+
+    if (element == cjgt::languages.end()) {
+        return nullptr;
+    }
+
+    return element->second;
+};

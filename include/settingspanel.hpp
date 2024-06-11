@@ -32,5 +32,5 @@ class SettingsPanel : public wxPanel {
         wxStaticText* updateTitle;
         wxCheckBox* checkBoxStartupCheck;
         wxButton* buttonCancel;
-        wxButton* buttonOk;
+        wxButton* buttonSave;
 };

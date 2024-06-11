@@ -11,11 +11,11 @@ PRODUCTVERSION 1,0,0,0
         BLOCK "04090000"
         {
             VALUE "CompanyName",        "Timo Frueh\0"
-            VALUE "FileDescription",    "French verb conjugation trainer\0"
+            VALUE "FileDescription",    "Verb conjugation trainer\0"
             VALUE "FileVersion",        "@version@\0"
             VALUE "LegalCopyright",     "Copyright (c) 2023-2024 Timo Frueh\0"
-            VALUE "OriginalFilename",   "conjugateur.exe\0"
-            VALUE "ProductName",        "Conjugateur\0"
+            VALUE "OriginalFilename",   "conjugator.exe\0"
+            VALUE "ProductName",        "Conjugator\0"
             VALUE "ProductVersion",     "@version@\0"
         }
     }

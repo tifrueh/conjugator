@@ -5,7 +5,7 @@
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleExecutable</key>
-    <string>conjugateur</string>
+    <string>conjugator</string>
     <key>CFBundleIconFile</key>
     <string>conjugateur.icns</string>
     <key>CFBundleDevelopmentRegion</key>
@@ -17,7 +17,7 @@
     <key>CFBundleVersion</key>
     <string>@mac_bundle_version@</string>
     <key>CFBundleName</key>
-    <string>Conjugateur</string>
+    <string>Conjugator</string>
     <key>CFBundleIdentifier</key>
     <string>ch.tifrueh.conjugateur</string>
     <key>LSApplicationCategoryType</key>

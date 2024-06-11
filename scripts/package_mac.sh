@@ -9,7 +9,7 @@ if [ ! ${1} ]; then
 	exit
 fi
 
-echo "package_mac: packaging Conjugateur version ${1}"
+echo "package_mac: packaging Conjugator version ${1}"
 
 # Define default certificates to sign with.
 CERT_PKG=${CERT_PKG:-"Installer"}
@@ -30,16 +30,16 @@ fi
 
 # Define various useful path variables.
 DIST_PATH="${MESON_SOURCE_ROOT}/dist/macOS"
-COMPONENT_PKG_PATH="${MESON_BUILD_ROOT}/Conjugateur-macOS-universal-v${1}.component.pkg"
+COMPONENT_PKG_PATH="${MESON_BUILD_ROOT}/Conjugator-macOS-universal-v${1}.component.pkg"
 DISTFILE_PATH="${MESON_BUILD_ROOT}/distribution.dist"
-PKG_PATH="${DIST_PATH}/Conjugateur-macOS-universal-v${1}.pkg"
-BUNDLE_PATH="${MESON_BUILD_ROOT}/Conjugateur.app"
+PKG_PATH="${DIST_PATH}/Conjugator-macOS-universal-v${1}.pkg"
+BUNDLE_PATH="${MESON_BUILD_ROOT}/Conjugator.app"
 
 # Rebundle the app if it doesn't exist yet.
 if [ -d ${BUNDLE_PATH} ]; then
-	echo "package_mac: bundle \"Conjugateur.app\" exists, not rebundling"
+	echo "package_mac: bundle \"Conjugator.app\" exists, not rebundling"
 else
-	echo "package_mac: rebundling \"Conjugateur.app\""
+	echo "package_mac: rebundling \"Conjugator.app\""
 	/bin/sh "${MESON_SOURCE_ROOT}/scripts/bundle_mac.sh"
 fi
 

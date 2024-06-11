@@ -25,15 +25,15 @@ fi
 
 # Define various useful path variables.
 DIST_PATH="${MESON_SOURCE_ROOT}/dist/macOS"
-DMG_DIR_PATH="${MESON_BUILD_ROOT}/Conjugateur v${1}"
-DMG_PATH="${DIST_PATH}/Conjugateur-macOS-universal-v${1}.dmg"
-BUNDLE_PATH="${MESON_BUILD_ROOT}/Conjugateur.app"
+DMG_DIR_PATH="${MESON_BUILD_ROOT}/Conjugator v${1}"
+DMG_PATH="${DIST_PATH}/Conjugator-macOS-universal-v${1}.dmg"
+BUNDLE_PATH="${MESON_BUILD_ROOT}/Conjugator.app"
 
 # Rebundle the app if it doesn't exist yet.
 if [ -d ${BUNDLE_PATH} ]; then
-        echo "dmg_mac: bundle \"Conjugateur.app\" exists, not rebundling"
+        echo "dmg_mac: bundle \"Conjugator.app\" exists, not rebundling"
 else
-        echo "dmg_mac: rebundling \"Conjugateur.app\""
+        echo "dmg_mac: rebundling \"Conjugator.app\""
         /bin/sh "${MESON_SOURCE_ROOT}/scripts/bundle_mac.sh"
 fi
 
@@ -49,7 +49,7 @@ fi
 
 # Build a DMG from the bundle.
 mkdir -p "${DMG_DIR_PATH}"
-ditto "${BUNDLE_PATH}" "${DMG_DIR_PATH}/Conjugateur.app"
+ditto "${BUNDLE_PATH}" "${DMG_DIR_PATH}/Conjugator.app"
 
 hdiutil create -srcFolder "${DMG_DIR_PATH}" -o "${DMG_PATH}"
 

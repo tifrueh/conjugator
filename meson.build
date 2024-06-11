@@ -1,6 +1,6 @@
 # Define the project.
 project(
-    'conjugateur', 
+    'conjugator', 
     'cpp',
     default_options: [ 'cpp_std=c++17' ],
     license: 'GPL-3.0-or-later',
@@ -34,7 +34,7 @@ conf_data.set(
   'resources_dir', meson.project_source_root() + '/resources'
 )
 conf_data.set(
-  'config_filename', 'conjugateur.conf'
+  'config_filename', 'conjugator.conf'
 )
 
 # Define the wxWidgets dependency depending on the 'static_wxwidgets' option.
@@ -70,7 +70,7 @@ if host_machine.system() == 'darwin'
 
   # Set a different configuration filename
   conf_data.set(
-    'config_filename', 'ch.tifrueh.conjugateur.conf'
+    'config_filename', 'ch.tifrueh.conjugator.conf'
   )
 
 # Configuration only needed on Windows.
@@ -117,8 +117,8 @@ install_data('resources/conjugateur.svg')
 install_data('resources/conjugateur.desktop')
 
 # Configure the main executable.
-conjugateur = executable(
-    'conjugateur',
+conjugator = executable(
+    'conjugator',
     srcs,
     dependencies: deps,
     include_directories: incdir,
@@ -131,7 +131,7 @@ if host_machine.system() == 'darwin'
   run_target(
       'bundle_mac',
       command: 'scripts/bundle_mac.sh',
-      depends: [ conjugateur ],
+      depends: [ conjugator ],
       env: env
   )
 
@@ -139,7 +139,7 @@ if host_machine.system() == 'darwin'
       'package_mac',
       command: [ 
         'scripts/package_mac.sh', conf_data.get('version')],
-      depends: [ conjugateur ],
+      depends: [ conjugator ],
       env: env
   )
 
@@ -147,7 +147,7 @@ if host_machine.system() == 'darwin'
       'dmg_mac',
       command: [ 
         'scripts/dmg_mac.sh', conf_data.get('version')],
-      depends: [ conjugateur ],
+      depends: [ conjugator ],
       env: env
   )
 endif

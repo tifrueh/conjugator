@@ -19,6 +19,7 @@
 #include "id.hpp"
 #include "conjugator.hpp"
 #include "inspectorframe.hpp"
+#include "settingsframe.hpp"
 #include "toppanel.hpp"
 #include "updatechecker.hpp"
 
@@ -46,7 +47,8 @@ class MainFrame : public wxFrame {
         wxBoxSizer* topPanelSizer = nullptr;
         TopPanel* topPanel = nullptr;
         InspectorFrame* inspector = nullptr;
-        
+        SettingsFrame* settings = nullptr;
+
         // Enable all menus in the menu bar.
         void enableMenuBar();
 
@@ -94,6 +96,12 @@ class MainFrame : public wxFrame {
         // Update the verb in the verbview of the inspector when a new verb is selected
         // in the verbbox.
         void OnVerbBox(wxCommandEvent& event);
+
+        // Open the settings panel when the corresponding menu entry is selected.
+        void OnSettings(wxCommandEvent& event);
+
+        // Reset the pointer to the settings window when destroying it.
+        void OnSettingsClose(wxWindowDestroyEvent& event);
 
         // Check for updates.
         void checkForUpdates(const bool& failSilently = false);

@@ -33,5 +33,6 @@ enum winID {
     menuHelpUpdateChecker,
     requestUpdateChecker,
     inspectorVerbBox,
-    inspector
+    inspector,
+    settings
 };

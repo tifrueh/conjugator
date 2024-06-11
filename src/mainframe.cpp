@@ -69,6 +69,8 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     menuQuiz->Append(winID::menuQuizSolution, _("Solutions\tCtrl-S"));
     menuQuiz->AppendSeparator();
     menuQuiz->Append(winID::menuInspectorOpen, _("Open inspector\tCtrl-I"));
+    menuQuiz->AppendSeparator();
+    menuQuiz->Append(wxID_PREFERENCES, _("Settings…\tCtrl-,"));
 
     menuHelp->Append(wxID_ABOUT, _("About Conjugator"));
     menuHelp->AppendSeparator();
@@ -107,8 +109,10 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnGitHub, this, winID::menuHelpGitHub);
     Bind(wxEVT_MENU, &MainFrame::OnUpdateChecker, this, winID::menuHelpUpdateChecker);
     Bind(wxEVT_MENU, &MainFrame::OnInspector, this, winID::menuInspectorOpen);
+    Bind(wxEVT_MENU, &MainFrame::OnSettings, this, wxID_PREFERENCES);
     Bind(wxEVT_LISTBOX, &MainFrame::OnVerbBox, this, winID::inspectorVerbBox);
     Bind(wxEVT_DESTROY, &MainFrame::OnInspectorClose, this, winID::inspector);
+    Bind(wxEVT_DESTROY, &MainFrame::OnSettingsClose, this, winID::settings);
     Bind(wxEVT_WEBREQUEST_STATE, &MainFrame::HandleUpdateChecker, this, winID::requestUpdateChecker);
 
     wxStandardPaths::Get().SetFileLayout(wxStandardPaths::FileLayout_XDG);
@@ -220,6 +224,17 @@ void MainFrame::OnInspectorClose(wxWindowDestroyEvent& event) {
 
 void MainFrame::OnVerbBox(wxCommandEvent &event) {
     inspector->updateVerb();
+}
+
+void MainFrame::OnSettings(wxCommandEvent &event) {
+    if (settings == nullptr) {
+        settings = new SettingsFrame(this, winID::settings, _("Settings"));
+    };
+    settings->Show();
+}
+
+void MainFrame::OnSettingsClose(wxWindowDestroyEvent& event) {
+    settings = nullptr;
 }
 
 void MainFrame::checkForUpdates(const bool& failSilently) {

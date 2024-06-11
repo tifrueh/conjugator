@@ -6,6 +6,8 @@ srcs += files(
     'main.cpp',
     'mainframe.cpp',
     'quizitem.cpp',
+    'settingsframe.cpp',
+    'settingspanel.cpp',
     'toppanel.cpp',
     'updatechecker.cpp',
     'verbview.cpp',

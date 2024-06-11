@@ -94,7 +94,7 @@ elif host_machine.system() == 'windows'
   resources = windows.compile_resources(
     meson.current_build_dir() + '/configuration-files/resources.rc',
     args: wx_windres_args,
-    depend_files: [ meson.project_source_root() + '/resources/conjugateur.ico', 
+    depend_files: [ meson.project_source_root() + '/resources/conjugator.ico', 
       meson.project_source_root() + '/resources/inspecteur.ico' ]
   )
 
@@ -112,9 +112,9 @@ subdir('src')
 deps = [ wx ]
 
 ## Install the logo as png and svg, as well as the desktop entry.
-install_data('resources/conjugateur.png')
-install_data('resources/conjugateur.svg')
-install_data('resources/conjugateur.desktop')
+install_data('resources/conjugator.png')
+install_data('resources/conjugator.svg')
+install_data('resources/conjugator.desktop')
 
 # Configure the main executable.
 conjugator = executable(

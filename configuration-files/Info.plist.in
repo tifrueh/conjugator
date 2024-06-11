@@ -7,7 +7,7 @@
     <key>CFBundleExecutable</key>
     <string>conjugator</string>
     <key>CFBundleIconFile</key>
-    <string>conjugateur.icns</string>
+    <string>conjugator.icns</string>
     <key>CFBundleDevelopmentRegion</key>
     <string>en</string>
     <key>NSHumanReadableCopyright</key>

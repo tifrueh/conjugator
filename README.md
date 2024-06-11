@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./resources/conjugateur.svg" alt="Conjugateur icon" width=256 height=256>
+    <img src="./resources/conjugator.svg" alt="Conjugator icon" width=256 height=256>
     <h1>Conjugateur</h1>
     <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">
         <img alt="GitHub" src="https://img.shields.io/github/license/tifrueh/conjugateur" /></a>

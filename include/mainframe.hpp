@@ -22,7 +22,7 @@
 #include "toppanel.hpp"
 #include "updatechecker.hpp"
 
-#include "conjugateur.xpm"
+#include "conjugator.xpm"
 
 
 // The top-level frame containing the whole application.

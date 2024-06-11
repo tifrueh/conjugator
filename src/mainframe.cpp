@@ -6,7 +6,7 @@
 
 MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
 
-    SetIcon(wxICON(conjugateur));
+    SetIcon(wxICON(conjugator));
 
     info.SetName(wxT("Conjugator"));
     info.SetCopyright(wxT("Copyright © 2023-2024 Timo Früh"));
@@ -19,7 +19,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     // Add a bunch more info to the app, but only on GTK, as it is the only
     // platform to support such a detailed "About" window.
     #ifdef __WXGTK__
-        info.SetIcon(wxICON(conjugateur));
+        info.SetIcon(wxICON(conjugator));
         info.SetDescription(_("Verb conjugation trainer"));
         info.SetWebSite(wxT("https://github.com/tifrueh/conjugateur"), wxT("GitHub"));
         info.AddDeveloper(wxT("Timo Früh"));

@@ -14,6 +14,8 @@
 // This namespace contains all functionality related to manipulating the verb database.
 namespace cjgt {
 
+    enum LanguageID { French };
+
     struct Category {
         std::wstring name;
         std::vector<const verbDB::Verb*> verbs;
@@ -43,12 +45,12 @@ namespace cjgt {
     class Language{
         public:
             Language(
-                    const unsigned int& id,
+                    const LanguageID& id,
                     const std::vector<Category>& categories,
                     const std::vector<Tense>& tenses
             );
 
-            unsigned int getName() const;
+            LanguageID getID() const;
             std::vector<const Category*> getCategories() const;
             std::vector<const Tense*> getTenses() const;
             std::map<std::wstring, const verbDB::Verb*> getVerbs() const;
@@ -57,7 +59,7 @@ namespace cjgt {
             QuizData getRandomQuizData(const std::vector<const Category*>& categories, const std::vector<const Tense*>& tenses) const;
 
         private:
-            unsigned int id;
+            LanguageID id;
             std::vector<Category> categories;
             std::vector<Tense> tenses;
             std::map<std::wstring, const verbDB::Verb*> verbs;
@@ -71,7 +73,9 @@ namespace cjgt {
 
     std::wstring strip(const std::wstring& string);
 
-    enum Languages { French };
-
     extern const Language french;
+
+    const std::map<LanguageID, const Language*> languages = {
+        {LanguageID::French, &french}
+    };
 }

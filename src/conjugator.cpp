@@ -12,11 +12,11 @@ bool cjgt::QuizData::operator==(const cjgt::QuizData& quizData) const {
 }
 
 cjgt::Language::Language(
-        const std::wstring& name,
+        const LanguageID& id,
         const std::vector<Category>& categories,
         const std::vector<Tense>& tenses
 ) {
-    this->name = name;
+    this->id = id;
     this->categories = categories;
     this->tenses = tenses;
 
@@ -28,8 +28,8 @@ cjgt::Language::Language(
 
 }
 
-const std::wstring* cjgt::Language::getName() const {
-    return &this->name;
+cjgt::LanguageID cjgt::Language::getID() const {
+    return this->id;
 }
 
 std::vector<const cjgt::Category*> cjgt::Language::getCategories() const {

@@ -9,8 +9,13 @@
     #include <wx/wx.h>
 #endif
 
+#include <wx/config.h>
+
+
+#include <map>
 
 #include "id.hpp"
+#include "conjugator.hpp"
 
 
 // The only panel of the settings window.

@@ -218,7 +218,6 @@ void MainFrame::OnSettingsSave(wxCommandEvent& event) {
 
 void MainFrame::OnSettingsCancel(wxCommandEvent& event) {
     this->settings->Destroy();
-    this->settings = nullptr;
 }
 
 void MainFrame::checkForUpdates(const bool& failSilently) {

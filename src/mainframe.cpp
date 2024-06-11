@@ -122,7 +122,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     bool disableUpdateChecker = false;
     bool disableUpdateCheckerDefined = wxConfigBase::Get()->Read("disableUpdateChecker", &disableUpdateChecker);
 
-    unsigned int quizLanguage = cjgt::LanguageID::French;
+    size_t quizLanguage = cjgt::LanguageID::French;
     bool quizLanguageDefined = wxConfigBase::Get()->Read("quizLanguage", &quizLanguage);
 
     if (checkForUpdateOnStartup && ! disableUpdateChecker) {

@@ -78,4 +78,6 @@ namespace cjgt {
     const std::map<LanguageID, const Language*> languages = {
         {LanguageID::French, &french}
     };
+
+    const Language* getLanguage(const LanguageID& id);
 }

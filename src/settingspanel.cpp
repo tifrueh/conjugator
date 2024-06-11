@@ -80,5 +80,14 @@ SettingsPanel::SettingsPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
         5
     );
 
+    bool checkForUpdateOnStartup = true;
+    wxConfigBase::Get()->Read("checkForUpdateOnStartup", &checkForUpdateOnStartup);
+
+    size_t quizLanguage = cjgt::LanguageID::French;
+    wxConfigBase::Get()->Read("quizLanguage", &quizLanguage);
+
+    choiceLang->SetSelection(quizLanguage);
+    checkBoxStartupCheck->SetValue(checkForUpdateOnStartup);
+
     this->SetSizerAndFit(topsizer);
 }

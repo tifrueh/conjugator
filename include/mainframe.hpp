@@ -105,6 +105,9 @@ class MainFrame : public wxFrame {
         // Write new config to disk.
         void OnSettingsSave(wxCommandEvent& event);
 
+        // Close the settings window.
+        void OnSettingsCancel(wxCommandEvent& event);
+
         // Check for updates.
         void checkForUpdates(const bool& failSilently = false);
 

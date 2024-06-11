@@ -35,5 +35,6 @@ enum winID {
     inspectorVerbBox,
     inspector,
     settings,
-    settingsSave
+    settingsSave,
+    settingsCancel
 };

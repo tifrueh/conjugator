@@ -138,6 +138,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_BUTTON, &MainFrame::OnCheck, this, winID::checkButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnSolution, this, winID::solutionButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnSettingsSave, this, winID::settingsSave);
+    Bind(wxEVT_BUTTON, &MainFrame::OnSettingsCancel, this, winID::settingsCancel);
     Bind(wxEVT_MENU, &MainFrame::OnOkay, this, winID::menuQuizOkay);
     Bind(wxEVT_MENU, &MainFrame::OnCheck, this, winID::menuQuizCheck);
     Bind(wxEVT_MENU, &MainFrame::OnSolution, this, winID::menuQuizSolution);
@@ -250,6 +251,11 @@ void MainFrame::OnSettingsClose(wxWindowDestroyEvent& event) {
 
 void MainFrame::OnSettingsSave(wxCommandEvent& event) {
     this->settings->writeConfig();
+}
+
+void MainFrame::OnSettingsCancel(wxCommandEvent& event) {
+    this->settings->Destroy();
+    this->settings = nullptr;
 }
 
 void MainFrame::checkForUpdates(const bool& failSilently) {

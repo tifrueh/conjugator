@@ -75,7 +75,7 @@ namespace cjgt {
 
     extern const Language french;
 
-    const std::map<LanguageID, const Language*> languages = {
-        {LanguageID::French, &french}
+    const std::map<std::wstring, const Language*> languages = {
+        {L"Français", &french}
     };
 }

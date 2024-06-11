@@ -14,7 +14,11 @@ SettingsPanel::SettingsPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     titleFont.MakeBold();
     langTitle->SetFont(titleFont);
 
-    choiceLang = new wxChoice(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, {"Language 1"});
+    choiceLang = new wxChoice(this, wxID_ANY);
+
+    for (std::pair<std::wstring, const cjgt::Language*> language : cjgt::languages) {
+        choiceLang->Append(language.first);
+    }
 
     updateTitle = new wxStaticText(this, wxID_ANY, _("Update checker"));
 

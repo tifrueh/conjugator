@@ -12,7 +12,7 @@
 #include <wx/config.h>
 
 
-#include <map>
+#include <string>
 
 #include "id.hpp"
 #include "conjugator.hpp"

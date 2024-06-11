@@ -45,12 +45,12 @@ namespace cjgt {
     class Language{
         public:
             Language(
-                    const LanguageID& id,
+                    const std::wstring& name,
                     const std::vector<Category>& categories,
                     const std::vector<Tense>& tenses
             );
 
-            LanguageID getID() const;
+            const std::wstring* getName() const;
             std::vector<const Category*> getCategories() const;
             std::vector<const Tense*> getTenses() const;
             std::map<std::wstring, const verbDB::Verb*> getVerbs() const;
@@ -59,7 +59,7 @@ namespace cjgt {
             QuizData getRandomQuizData(const std::vector<const Category*>& categories, const std::vector<const Tense*>& tenses) const;
 
         private:
-            LanguageID id;
+            std::wstring name;
             std::vector<Category> categories;
             std::vector<Tense> tenses;
             std::map<std::wstring, const verbDB::Verb*> verbs;
@@ -75,7 +75,7 @@ namespace cjgt {
 
     extern const Language french;
 
-    const std::map<std::wstring, const Language*> languages = {
-        {L"Français", &french}
+    const std::map<LanguageID, const Language*> languages = {
+        {LanguageID::French, &french}
     };
 }

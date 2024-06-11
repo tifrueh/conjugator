@@ -288,7 +288,7 @@ cjgt::Category re = {
 };
 
 const cjgt::Language cjgt::french(
-        cjgt::LanguageID::French,
+        L"Français",
         {
             er,
             ir,

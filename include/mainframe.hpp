@@ -42,7 +42,6 @@ class MainFrame : public wxFrame {
         wxMenu* menuEdit;
         wxMenu* menuQuiz;
         wxMenu* menuHelp;
-        wxConfig* config;
         UpdateChecker updateChecker;
         wxBoxSizer* topPanelSizer = nullptr;
         TopPanel* topPanel = nullptr;

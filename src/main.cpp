@@ -24,6 +24,7 @@
 #include <wx/translation.h>
 #include <wx/uilocale.h>
 #include <wx/log.h>
+#include <wx/config.h>
 
 
 #include "mainframe.hpp"
@@ -55,6 +56,11 @@ bool Conjugator::OnInit() {
     translations->AddCatalog(wxT("conjugator"));
 
     wxTranslations::Set(translations);
+
+    wxStandardPaths::Get().SetFileLayout(wxStandardPaths::FileLayout_XDG);
+    wxConfig* config = new wxConfig("conjugator", "ch.tifrueh", CONFIG_FILENAME);
+
+    wxConfigBase::Set(config);
 
     this->SetAppDisplayName(wxT("Conjugator"));
 

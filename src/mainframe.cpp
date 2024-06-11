@@ -115,14 +115,11 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_DESTROY, &MainFrame::OnSettingsClose, this, winID::settings);
     Bind(wxEVT_WEBREQUEST_STATE, &MainFrame::HandleUpdateChecker, this, winID::requestUpdateChecker);
 
-    wxStandardPaths::Get().SetFileLayout(wxStandardPaths::FileLayout_XDG);
-    config = new wxConfig("conjugator", "ch.tifrueh", CONFIG_FILENAME);
-
     bool checkForUpdateOnStartup = true;
-    bool checkForUpdateOnStartupDefined = config->Read("checkForUpdateOnStartup", &checkForUpdateOnStartup);
+    bool checkForUpdateOnStartupDefined = wxConfigBase::Get()->Read("checkForUpdateOnStartup", &checkForUpdateOnStartup);
 
     bool disableUpdateChecker = false;
-    bool disableUpdateCheckerDefined = config->Read("disableUpdateChecker", &disableUpdateChecker);
+    bool disableUpdateCheckerDefined = wxConfigBase::Get()->Read("disableUpdateChecker", &disableUpdateChecker);
 
     if (checkForUpdateOnStartup && ! disableUpdateChecker) {
         // Check for updates and set failSilently to true
@@ -134,14 +131,12 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     }
 
     if (! checkForUpdateOnStartupDefined) {
-        config->Write("checkForUpdateOnStartup", checkForUpdateOnStartup);
+        wxConfigBase::Get()->Write("checkForUpdateOnStartup", checkForUpdateOnStartup);
     }
 
     if (! disableUpdateCheckerDefined) {
-        config->Write("disableUpdateChecker", disableUpdateChecker);
+        wxConfigBase::Get()->Write("disableUpdateChecker", disableUpdateChecker);
     }
-
-    delete config;
 
     SetSizerAndFit(topPanelSizer);
 }

@@ -13,7 +13,7 @@
 #include <algorithm>
 #include <string>
 
-#include "conjugateur.hpp"
+#include "conjugator.hpp"
 #include "verb.db.hpp"
 
 

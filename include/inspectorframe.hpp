@@ -12,7 +12,7 @@
 
 #include "id.hpp"
 #include "inspectorpanel.hpp"
-#include "conjugateur.hpp"
+#include "conjugator.hpp"
 #include "verb.db.hpp"
 
 #include "inspecteur.xpm"

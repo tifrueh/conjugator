@@ -16,7 +16,7 @@
 #include <map>
 #include <vector>
 
-#include "conjugateur.hpp"
+#include "conjugator.hpp"
 #include "id.hpp"
 #include "quizitem.hpp"
 

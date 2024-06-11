@@ -17,7 +17,7 @@
 
 
 #include "id.hpp"
-#include "conjugateur.hpp"
+#include "conjugator.hpp"
 #include "inspectorframe.hpp"
 #include "toppanel.hpp"
 #include "updatechecker.hpp"

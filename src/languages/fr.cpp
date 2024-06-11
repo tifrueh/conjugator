@@ -1,7 +1,7 @@
 // Copyright (C) 2023-2024 Timo Früh
 // The full copyright notice can be found in ../main.cpp
 
-#include "conjugateur.hpp"
+#include "conjugator.hpp"
 
 cjgt::Tense infinitif = {
     0,

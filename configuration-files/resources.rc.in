@@ -1,4 +1,4 @@
-conjugateur ICON "@resources_dir@/conjugateur.ico"
+conjugator ICON "@resources_dir@/conjugator.ico"
 inspecteur ICON "@resources_dir@/inspecteur.ico"
 #include "wx/msw/wx.rc"
 

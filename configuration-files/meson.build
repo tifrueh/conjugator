@@ -7,7 +7,7 @@ if host_machine.system() == 'darwin'
     configuration: conf_data
   )
 
-# Configure resources.rc and conjugateur.iss on Windows.
+# Configure resources.rc and conjugator.iss on Windows.
 elif host_machine.system() == 'windows' 
   
   configure_file(
@@ -17,8 +17,8 @@ elif host_machine.system() == 'windows'
   )
 
   configure_file(
-    input: 'conjugateur.iss.in',
-    output: 'conjugateur.iss',
+    input: 'conjugator.iss.in',
+    output: 'conjugator.iss',
     configuration: conf_data
   )
 

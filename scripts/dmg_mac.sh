@@ -55,5 +55,5 @@ hdiutil create -srcFolder "${DMG_DIR_PATH}" -o "${DMG_PATH}"
 
 # Build the final installer package, and sign it if codesigning is enabled.
 if [ ${CODESIGN} ]; then
-    codesign -s "${CERT_APPL}" --timestamp -i "ch.tifrueh.conjugateur" "${DMG_PATH}"
+    codesign -s "${CERT_APPL}" --timestamp -i "ch.tifrueh.conjugator" "${DMG_PATH}"
 fi

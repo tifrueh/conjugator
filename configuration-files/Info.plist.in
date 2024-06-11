@@ -19,7 +19,7 @@
     <key>CFBundleName</key>
     <string>Conjugator</string>
     <key>CFBundleIdentifier</key>
-    <string>ch.tifrueh.conjugateur</string>
+    <string>ch.tifrueh.conjugator</string>
     <key>LSApplicationCategoryType</key>
     <string>public.app-category.education</string>
     <key>CFBundlePackageType</key>

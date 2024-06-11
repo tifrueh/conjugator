@@ -1,4 +1,4 @@
-// Conjugateur: French verb conjugation trainer
+// Conjugator: Verb conjugation trainer
 // Copyright (C) 2023-2024 Timo Früh
 
 // This program is free software: you can redistribute it and/or modify
@@ -29,17 +29,17 @@
 
 
 // The main app class with a locale and an overridden OnInit().
-class Conjugateur : public wxApp {
+class Conjugator : public wxApp {
     public:
         bool OnInit() override;
         wxLocale* locale;
 };
 
-wxIMPLEMENT_APP(Conjugateur);
+wxIMPLEMENT_APP(Conjugator);
 
 // Set the locale, initialise verbDB, set the app name and initialise the
 // main top-level frame.
-bool Conjugateur::OnInit() {
+bool Conjugator::OnInit() {
 
     locale = new wxLocale();
 

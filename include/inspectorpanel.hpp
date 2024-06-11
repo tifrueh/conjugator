@@ -10,7 +10,7 @@
 #endif
 
 
-#include "conjugateur.hpp"
+#include "conjugator.hpp"
 #include "id.hpp"
 #include "verbview.hpp"
 #include "verb.db.hpp"

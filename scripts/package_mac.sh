@@ -55,7 +55,7 @@ fi
 
 # Build a component package from the bundle.
 pkgbuild --component "${BUNDLE_PATH}"\
-	--identifier "ch.tifrueh.conjugateur" \
+	--identifier "ch.tifrueh.conjugator" \
 	--version "${1}" \
 	--install-location "/Applications" \
 	--compression "latest" \

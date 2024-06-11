@@ -5,15 +5,50 @@
 
 
 SettingsPanel::SettingsPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
-    topsizer = new wxBoxSizer(wxHORIZONTAL);
-    buttonsizer = new wxBoxSizer(wxVERTICAL);
+    topsizer = new wxBoxSizer(wxVERTICAL);
+    buttonsizer = new wxBoxSizer(wxHORIZONTAL);
 
-    testtitle = new wxStaticText(this, wxID_ANY, _("Quiz language"));
+    langTitle = new wxStaticText(this, wxID_ANY, _("Quiz language"));
+
+    wxFont titleFont = langTitle->GetFont();
+    titleFont.MakeBold();
+    langTitle->SetFont(titleFont);
+
+    choiceLang = new wxChoice(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, {"Language 1"});
+
+    updateTitle = new wxStaticText(this, wxID_ANY, _("Update checker"));
+
+    titleFont = updateTitle->GetFont();
+    titleFont.MakeBold();
+    updateTitle->SetFont(titleFont);
+
+    checkBoxStartupCheck = new wxCheckBox(this, wxID_ANY, _("Check for updates on startup"));
 
     topsizer->Add(
-        testtitle,
+        langTitle,
         0,
-        wxEXPAND | wxALL,
+        wxEXPAND | wxBOTTOM,
+        5
+    );
+
+    topsizer->Add(
+        choiceLang,
+        0,
+        wxEXPAND | wxBOTTOM,
+        20
+    );
+
+    topsizer->Add(
+        updateTitle,
+        0,
+        wxEXPAND | wxBOTTOM,
+        5
+    );
+
+    topsizer->Add(
+        checkBoxStartupCheck,
+        0,
+        wxEXPAND | wxBOTTOM,
         5
     );
 

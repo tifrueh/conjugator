@@ -22,5 +22,10 @@ class SettingsPanel : public wxPanel {
     private:
         wxBoxSizer* topsizer;
         wxBoxSizer* buttonsizer;
-        wxStaticText* testtitle;
+        wxStaticText* langTitle;
+        wxChoice* choiceLang;
+        wxStaticText* updateTitle;
+        wxCheckBox* checkBoxStartupCheck;
+        wxButton* buttonCancel;
+        wxButton* buttonOk;
 };

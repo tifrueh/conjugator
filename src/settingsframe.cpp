@@ -13,7 +13,7 @@ SettingsFrame::SettingsFrame(wxWindow *parent, const wxWindowID &winID, const wx
 
     settingsPanel = new SettingsPanel(this);
 
-    topSizer->Add(settingsPanel, 1, wxEXPAND, 0);
+    topSizer->Add(settingsPanel, 1, wxEXPAND | wxALL, 20);
 
     this->SetSizerAndFit(topSizer);
 }

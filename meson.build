@@ -99,7 +99,12 @@ elif host_machine.system() == 'windows'
   )
 
   srcs += resources
-    
+
+# Configuration only needed on Linux.
+elif host_machine.system() == 'linux'
+  install_data('resources/conjugator.png', install_dir : 'share/icons/hicolor/512x512/apps/')
+  install_data('resources/conjugator.desktop', install_dir : 'share/applications/')
+
 endif
 
 # Execute meson.build in the 'configuration-files' subdir.
@@ -113,8 +118,6 @@ deps = [ wx ]
 
 ## Install the logo as png and svg, as well as the desktop entry.
 install_data('resources/conjugator.svg')
-install_data('resources/conjugator.png', install_dir : 'share/icons/hicolor/512x512/apps/')
-install_data('resources/conjugator.desktop', install_dir : 'share/applications/')
 install_data('lang/fr/LC_MESSAGES/conjugator.mo', install_dir : 'share/locale/fr/LC_MESSAGES/')
 install_data('lang/de/LC_MESSAGES/conjugator.mo', install_dir : 'share/locale/de/LC_MESSAGES/')
 

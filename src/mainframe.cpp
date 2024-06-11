@@ -115,11 +115,15 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_DESTROY, &MainFrame::OnSettingsClose, this, winID::settings);
     Bind(wxEVT_WEBREQUEST_STATE, &MainFrame::HandleUpdateChecker, this, winID::requestUpdateChecker);
 
+    // Read config.
     bool checkForUpdateOnStartup = true;
     bool checkForUpdateOnStartupDefined = wxConfigBase::Get()->Read("checkForUpdateOnStartup", &checkForUpdateOnStartup);
 
     bool disableUpdateChecker = false;
     bool disableUpdateCheckerDefined = wxConfigBase::Get()->Read("disableUpdateChecker", &disableUpdateChecker);
+
+    unsigned int quizLanguage = cjgt::LanguageID::French;
+    bool quizLanguageDefined = wxConfigBase::Get()->Read("quizLanguage", &quizLanguage);
 
     if (checkForUpdateOnStartup && ! disableUpdateChecker) {
         // Check for updates and set failSilently to true
@@ -130,12 +134,17 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
         menuHelp->Append(winID::menuHelpUpdateChecker, _("Check for updates"));
     }
 
+    // Initialise config if some keys are not defined yet.
     if (! checkForUpdateOnStartupDefined) {
         wxConfigBase::Get()->Write("checkForUpdateOnStartup", checkForUpdateOnStartup);
     }
 
     if (! disableUpdateCheckerDefined) {
         wxConfigBase::Get()->Write("disableUpdateChecker", disableUpdateChecker);
+    }
+
+    if (! quizLanguageDefined) {
+        wxConfigBase::Get()->Write("quizLanguage", quizLanguage);
     }
 
     SetSizerAndFit(topPanelSizer);

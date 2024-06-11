@@ -115,6 +115,8 @@ deps = [ wx ]
 install_data('resources/conjugator.png')
 install_data('resources/conjugator.svg')
 install_data('resources/conjugator.desktop')
+install_data('lang/fr/LC_MESSAGES/conjugator.mo', install_dir : 'share/locale/fr/LC_MESSAGES/')
+install_data('lang/de/LC_MESSAGES/conjugator.mo', install_dir : 'share/locale/de/LC_MESSAGES/')
 
 # Configure the main executable.
 conjugator = executable(

@@ -21,7 +21,9 @@
 #endif
 
 #include <wx/aboutdlg.h>
-#include <wx/intl.h>
+#include <wx/translation.h>
+#include <wx/uilocale.h>
+#include <wx/log.h>
 
 
 #include "mainframe.hpp"
@@ -32,7 +34,7 @@
 class Conjugator : public wxApp {
     public:
         bool OnInit() override;
-        wxLocale* locale;
+        wxTranslations* translations;
 };
 
 wxIMPLEMENT_APP(Conjugator);
@@ -41,12 +43,18 @@ wxIMPLEMENT_APP(Conjugator);
 // main top-level frame.
 bool Conjugator::OnInit() {
 
-    locale = new wxLocale();
+    wxUILocale::UseDefault();
 
-    locale->Init(wxLANGUAGE_DEFAULT);
+    translations = new wxTranslations();
 
-    locale->AddCatalog(wxT("wxstd"));
-    locale->AddCatalog(wxT("conjugator"));
+    wxString language = wxUILocale::GetLanguageCanonicalName(wxUILocale::GetSystemLanguage());
+
+    translations->SetLanguage(language);
+
+    translations->AddCatalog(wxT("wxstd"));
+    translations->AddCatalog(wxT("conjugator"));
+
+    wxTranslations::Set(translations);
 
     this->SetAppDisplayName(wxT("Conjugator"));
 

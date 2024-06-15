@@ -303,6 +303,7 @@ void TopPanel::SetCategoryCheckBoxes(std::vector<const cjgt::Category*>) {
 
     this->SetAllVerbs(true);
     this->categorySelectionSizer->Layout();
+    this->topsizer->SetSizeHints(this);
 };
 
 void TopPanel::SetTenseCheckBoxes(std::vector<const cjgt::Tense*>) {
@@ -330,4 +331,5 @@ void TopPanel::SetTenseCheckBoxes(std::vector<const cjgt::Tense*>) {
 
     this->SetAllTenses(true);
     this->tenseSelectionSizer->Layout();
+    this->topsizer->SetSizeHints(this);
 };

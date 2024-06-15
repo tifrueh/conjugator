@@ -217,6 +217,7 @@ void MainFrame::OnSettingsSave(wxCommandEvent& event) {
     this->settings->Destroy();
     this->reloadConfig();
     topPanel->SetLanguage(language);
+    this->computeNewSize();
 }
 
 void MainFrame::OnSettingsCancel(wxCommandEvent& event) {

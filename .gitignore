@@ -42,3 +42,6 @@
 
 # ccls
 .ccls-cache
+
+# clangd
+.cache

@@ -21,7 +21,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     #ifdef __WXGTK__
         info.SetIcon(wxICON(conjugator));
         info.SetDescription(_("Verb conjugation trainer"));
-        info.SetWebSite(wxT("https://github.com/tifrueh/conjugateur"), wxT("GitHub"));
+        info.SetWebSite(wxT("https://github.com/tifrueh/conjugator"), wxT("GitHub"));
         info.AddDeveloper(wxT("Timo Früh"));
 
         info.SetLicense(wxT("This program is free software: you can redistribute it and/or modify\n"
@@ -177,7 +177,7 @@ void MainFrame::OnUnselectAll(wxCommandEvent& event) {
 }
 
 void MainFrame::OnGitHub(wxCommandEvent& event) {
-    wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/conjugateur/wiki/"));
+    wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/conjugator/wiki/"));
 }
 
 void MainFrame::OnInspector(wxCommandEvent &event) {
@@ -226,7 +226,7 @@ void MainFrame::OnSettingsCancel(wxCommandEvent& event) {
 
 void MainFrame::checkForUpdates(const bool& failSilently) {
     updateChecker.setFailSilently(failSilently);
-    updateChecker.start(this, "https://api.github.com/repos/tifrueh/conjugateur/releases/latest", winID::requestUpdateChecker);
+    updateChecker.start(this, "https://api.github.com/repos/tifrueh/conjugator/releases/latest", winID::requestUpdateChecker);
 }
 
 void MainFrame::OnUpdateChecker(wxCommandEvent& event) {

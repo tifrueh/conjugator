@@ -79,7 +79,7 @@ void UpdateChecker::showResultMessage(const std::string& responseString) {
         dialog = new wxMessageDialog(parent, message, _("Update"), wxOK | wxCANCEL);
 
         if (dialog->ShowModal() == wxID_OK) {
-            wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/conjugateur/releases/latest"));
+            wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/conjugator/releases/latest"));
         }
 
     } else if (failSilently == false) {

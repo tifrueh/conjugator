@@ -2,15 +2,15 @@
     <img src="./resources/conjugator.svg" alt="Conjugator icon" width=256 height=256>
     <h1>Conjugator</h1>
     <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">
-        <img alt="GitHub" src="https://img.shields.io/github/license/tifrueh/conjugateur" /></a>
-    <a href="https://github.com/tifrueh/conjugateur/releases/latest">
-        <img alt="GitHub tag (with filter)" src="https://img.shields.io/github/v/tag/tifrueh/conjugateur" /></a>
+        <img alt="GitHub" src="https://img.shields.io/github/license/tifrueh/conjugator" /></a>
+    <a href="https://github.com/tifrueh/conjugator/releases/latest">
+        <img alt="GitHub tag (with filter)" src="https://img.shields.io/github/v/tag/tifrueh/conjugator" /></a>
     <p></p>
 </div>
 
-This application is designed to help students study French verbs. The latest
-release can be downloaded from the [releases of the GitHub
-repo](https://github.com/tifrueh/conjugateur/releases/latest). 
+This application is designed to help students study verbs. The latest release
+can be downloaded from the [releases of the GitHub
+repo](https://github.com/tifrueh/conjugator/releases/latest). 
 
 ## Features
 
@@ -50,7 +50,7 @@ installed via my homebrew repository:
 
 If you don't have homebrew you can also use the installer package for macOS
 (`>=12`) from the [latest
-release](https://github.com/tifrueh/conjugateur/releases/latest).
+release](https://github.com/tifrueh/conjugator/releases/latest).
 
 1. Download the installer package
 
@@ -62,7 +62,7 @@ release](https://github.com/tifrueh/conjugateur/releases/latest).
 
 If you'd rather not use an installer package, you can also download the
 application packaged in a DMG for macOS (`>=12`) from the [latest
-release](https://github.com/tifrueh/conjugateur/releases/latest).
+release](https://github.com/tifrueh/conjugator/releases/latest).
 
 1. Download the DMG
 
@@ -74,7 +74,7 @@ release](https://github.com/tifrueh/conjugateur/releases/latest).
 ### Windows
 
 An installer executable for x86_64 Windows can be downloaded from the [latest
-release](https://github.com/tifrueh/conjugateur/releases/latest).
+release](https://github.com/tifrueh/conjugator/releases/latest).
 
 1. Download the installer executable
 
@@ -92,9 +92,9 @@ permissions._
 
 If your system is neither macOS nor x86_64 Windows, you'll have to compile and
 install the program yourself. Instructions can be found in the
-[wiki](https://github.com/tifrueh/conjugateur/wiki/02-Building).
+[wiki](https://github.com/tifrueh/conjugator/wiki/02-Building).
 
 ## More information
 
 To learn more about Conjugator, please consult the
-[wiki](https://github.com/tifrueh/conjugateur/wiki/).
+[wiki](https://github.com/tifrueh/conjugator/wiki/).

@@ -12,7 +12,7 @@ VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb
     if (cjgt::strip(verb->forms[1]) == L"") {
         infinitifString = verb->name;
     } else {
-        infinitifString = verb->name + L" – " + verb->forms[0];
+        infinitifString = verb->name + L" – " + verb->forms[1];
     }
 
     titleLabel = new wxStaticText(this, wxID_ANY, wxString(this->tense->name));

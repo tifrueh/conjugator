@@ -39,8 +39,8 @@ void UpdateChecker::showResult(wxWebRequestEvent& event) {
             if (failSilently == false) {
                 wxMessageDialog *dlgFailed = new wxMessageDialog(
                     parent,
-                    wxT("The web request failed. Please verify your internet connection."),
-                    wxT("Erreur")
+                    _("The web request failed. Please verify your internet connection."),
+                    _("Error")
                 );
 
                 dlgFailed->ShowModal();

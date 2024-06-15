@@ -211,6 +211,7 @@ void MainFrame::OnSettings(wxCommandEvent &event) {
 void MainFrame::OnSettingsClose(wxWindowDestroyEvent& event) {
     settings = nullptr;
     this->reloadConfig();
+    topPanel->SetLanguage(language);
 }
 
 void MainFrame::OnSettingsSave(wxCommandEvent& event) {

@@ -14,6 +14,9 @@ TopPanel::TopPanel(wxWindow* parent, const cjgt::Language* language) : wxPanel(p
     // Add a vertical static box sizer to hold the form selection checkboxes.
     formSelectionSizer = new wxStaticBoxSizer(wxVERTICAL, this, _("Category/tense selection"));
 
+    categorySelectionSizer = new wxBoxSizer(wxVERTICAL);
+    tenseSelectionSizer = new wxBoxSizer(wxVERTICAL);
+
     // Add a vertical static box sizer to hold a sizer, which, in turn, will hold all quiz items.
     quizBoxSizer = new wxStaticBoxSizer(wxVERTICAL, this, _("Quiz"));
 
@@ -84,18 +87,15 @@ TopPanel::TopPanel(wxWindow* parent, const cjgt::Language* language) : wxPanel(p
 
     formSelectionSizer->AddSpacer(bigSpace);
 
-    for (const cjgt::Category* category : this->language->getCategories()) {
-        this->categoryCheckBoxes[category] = new wxCheckBox(this, wxID_ANY, wxString(category->name));
-        this->formSelectionSizer->Add(
-                this->categoryCheckBoxes[category],
-                0,
-                wxEXPAND | wxLEFT | wxRIGHT,
-                bigSpace
-        );
-        this->formSelectionSizer->AddSpacer(smallSpace);
-    }
+    formSelectionSizer->Add(
+        categorySelectionSizer,
+        0,
+        wxEXPAND |
+        wxLEFT | wxRIGHT,
+        bigSpace
+    );
 
-    this->SetAllVerbs(true);
+    this->SetCategoryCheckBoxes(language->getCategories());
 
     formSelectionSizer->AddSpacer(hugeSpace);
 
@@ -109,20 +109,15 @@ TopPanel::TopPanel(wxWindow* parent, const cjgt::Language* language) : wxPanel(p
 
     formSelectionSizer->AddSpacer(bigSpace);
 
-    for (const cjgt::Tense* tense : this->language->getTenses()) {
-        if (tense->show_in_quiz) {
-            this->tenseCheckBoxes[tense] = new wxCheckBox(this, wxID_ANY, wxString(tense->name));
-            formSelectionSizer->Add(
-                    this->tenseCheckBoxes[tense],
-                    0,
-                    wxEXPAND | wxLEFT | wxRIGHT,
-                    bigSpace
-            );
-            this->formSelectionSizer->AddSpacer(smallSpace);
-        }
-    }
+    formSelectionSizer->Add(
+        tenseSelectionSizer,
+        0,
+        wxEXPAND |
+        wxLEFT | wxRIGHT,
+        bigSpace
+    );
 
-    this->SetAllTenses(true);
+    this->SetTenseCheckBoxes(language->getTenses());
 
     formSelectionSizer->AddStretchSpacer();
 
@@ -270,6 +265,8 @@ void TopPanel::UnselectAll() {
 
 void TopPanel::SetLanguage(const cjgt::Language* language) {
     this->language = language;
+    this->SetCategoryCheckBoxes(this->language->getCategories());
+    this->SetTenseCheckBoxes(this->language->getTenses());
 }
 
 void TopPanel::SetAllVerbs(const bool& status) {
@@ -283,3 +280,50 @@ void TopPanel::SetAllTenses(const bool& status) {
         element.second->SetValue(status);
     }
 }
+
+void TopPanel::SetCategoryCheckBoxes(std::vector<const cjgt::Category*>) {
+    this->categorySelectionSizer->Clear();
+
+    for (std::pair<const cjgt::Category*, wxCheckBox*> checkBox : this->categoryCheckBoxes) {
+        checkBox.second->Destroy();
+    }
+
+    for (const cjgt::Category* category : this->language->getCategories()) {
+        this->categoryCheckBoxes[category] = new wxCheckBox(this, wxID_ANY, wxString(category->name));
+        this->categorySelectionSizer->Add(
+                this->categoryCheckBoxes[category],
+                0,
+                wxEXPAND | wxLEFT | wxRIGHT,
+                10
+        );
+        this->categorySelectionSizer->AddSpacer(3);
+    }
+
+    this->SetAllVerbs(true);
+    this->categorySelectionSizer->Layout();
+};
+
+void TopPanel::SetTenseCheckBoxes(std::vector<const cjgt::Tense*>) {
+    this->tenseSelectionSizer->Clear();
+
+    for (std::pair<const cjgt::Tense*, wxCheckBox*> checkBox : this->tenseCheckBoxes) {
+        this->tenseSelectionSizer->Detach(checkBox.second);
+        checkBox.second->Destroy();
+    }
+
+    for (const cjgt::Tense* tense : this->language->getTenses()) {
+        if (tense->show_in_quiz) {
+            this->tenseCheckBoxes[tense] = new wxCheckBox(this, wxID_ANY, wxString(tense->name));
+            this->tenseSelectionSizer->Add(
+                    this->tenseCheckBoxes[tense],
+                    0,
+                    wxEXPAND | wxLEFT | wxRIGHT,
+                    10
+            );
+            this->tenseSelectionSizer->AddSpacer(3);
+        }
+    }
+
+    this->SetAllTenses(true);
+    this->tenseSelectionSizer->Layout();
+};

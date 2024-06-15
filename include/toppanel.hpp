@@ -65,6 +65,8 @@ class TopPanel : public wxPanel {
         const cjgt::Language* language;
         wxBoxSizer* topsizer = nullptr;
         wxStaticBoxSizer* formSelectionSizer = nullptr;
+        wxBoxSizer* categorySelectionSizer = nullptr;
+        wxBoxSizer* tenseSelectionSizer = nullptr;
         wxStaticBoxSizer* quizBoxSizer = nullptr;
         wxFlexGridSizer* quizSizer = nullptr;
 
@@ -79,6 +81,9 @@ class TopPanel : public wxPanel {
         wxButton* checkButton = nullptr;
         wxButton* solutionButton = nullptr;
         std::vector<QuizItem*> quizItems;
+
+        void SetCategoryCheckBoxes(std::vector<const cjgt::Category*>);
+        void SetTenseCheckBoxes(std::vector<const cjgt::Tense*>);
 
         void SetAllVerbs(const bool& status);
         void SetAllTenses(const bool& status);

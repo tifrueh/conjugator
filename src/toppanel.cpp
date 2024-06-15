@@ -288,6 +288,8 @@ void TopPanel::SetCategoryCheckBoxes(std::vector<const cjgt::Category*>) {
         checkBox.second->Destroy();
     }
 
+    this->categoryCheckBoxes.clear();
+
     for (const cjgt::Category* category : this->language->getCategories()) {
         this->categoryCheckBoxes[category] = new wxCheckBox(this, wxID_ANY, wxString(category->name));
         this->categorySelectionSizer->Add(
@@ -310,6 +312,8 @@ void TopPanel::SetTenseCheckBoxes(std::vector<const cjgt::Tense*>) {
         this->tenseSelectionSizer->Detach(checkBox.second);
         checkBox.second->Destroy();
     }
+
+    this->tenseCheckBoxes.clear();
 
     for (const cjgt::Tense* tense : this->language->getTenses()) {
         if (tense->show_in_quiz) {

@@ -31,7 +31,7 @@ repo](https://github.com/tifrueh/conjugator/releases/latest).
 
 ### macOS (homebrew)
 
-A precompiled and packaged version for macOS (`>=12`) can be downloaded and
+A compiled and packaged version for macOS (`>=12`) can be downloaded and
 installed via my homebrew repository:
 
 1. Tap my homebrew tap

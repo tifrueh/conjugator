@@ -33,33 +33,33 @@ class MainFrame : public wxFrame {
         explicit MainFrame(const wxString& title);
 
         // Return the app info.
-        wxAboutDialogInfo GetInfo();
+        wxAboutDialogInfo get_info();
     
     private:
         wxAboutDialogInfo info;
         const cjgt::Language* language;
-        wxMenuBar* menuBar;
-        wxMenu* menuEdit;
-        wxMenu* menuQuiz;
-        wxMenu* menuHelp;
-        UpdateChecker updateChecker;
-        wxBoxSizer* topPanelSizer = nullptr;
-        TopPanel* topPanel = nullptr;
+        wxMenuBar* menu_bar;
+        wxMenu* menu_edit;
+        wxMenu* menu_quiz;
+        wxMenu* menu_help;
+        UpdateChecker update_checker;
+        wxBoxSizer* top_panel_sizer = nullptr;
+        TopPanel* top_panel = nullptr;
         InspectorFrame* inspector = nullptr;
         SettingsFrame* settings = nullptr;
 
         // Enable all menus in the menu bar.
-        void enableMenuBar();
+        void enable_menu_bar();
 
         // Disable all menus in the menu bar.
-        void disableMenuBar();
+        void disable_menu_bar();
 
         // Resize the mainframe only if more space is needed.
-        void computeNewSize();
+        void compute_new_size();
 
-        // Regenerate the quiz and compute the new size of the mainframe when the okay
+        // Regenerate the quiz and compute the new size of the mainframe when the next
         // button is clicked.
-        void OnOkay(wxCommandEvent& event);
+        void OnNext(wxCommandEvent& event);
 
         // Check all answers when the check button is clicked.
         void OnCheck(wxCommandEvent& event);
@@ -118,8 +118,8 @@ class MainFrame : public wxFrame {
         void HandleUpdateChecker(wxWebRequestEvent& event);
 
         // Load the config.
-        void loadConfig();
+        void load_config();
 
         // Reload the config.
-        void reloadConfig();
+        void reload_config();
 };

@@ -8,23 +8,23 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
 
     SetIcon(wxICON(conjugator));
 
-    info.SetName(wxT("Conjugator"));
-    info.SetCopyright(wxT("Copyright © 2023-2024 Timo Früh"));
+    this->info.SetName(wxT("Conjugator"));
+    this->info.SetCopyright(wxT("Copyright © 2023-2024 Timo Früh"));
     
     // Set version in the app info to TAG_STR only if not on macOS.
     #ifndef __WXOSX__
-        info.SetVersion(TAG_STR);
+        this->info.SetVersion(TAG_STR);
     #endif
 
     // Add a bunch more info to the app, but only on GTK, as it is the only
     // platform to support such a detailed "About" window.
     #ifdef __WXGTK__
-        info.SetIcon(wxICON(conjugator));
-        info.SetDescription(_("Verb conjugation trainer"));
-        info.SetWebSite(wxT("https://github.com/tifrueh/conjugator"), wxT("GitHub"));
-        info.AddDeveloper(wxT("Timo Früh"));
+        this->info.SetIcon(wxICON(conjugator));
+        this->info.SetDescription(_("Verb conjugation trainer"));
+        this->info.SetWebSite(wxT("https://github.com/tifrueh/conjugator"), wxT("GitHub"));
+        this->info.AddDeveloper(wxT("Timo Früh"));
 
-        info.SetLicense(wxT("This program is free software: you can redistribute it and/or modify\n"
+        this->info.SetLicense(wxT("This program is free software: you can redistribute it and/or modify\n"
                             "it under the terms of the GNU General Public License as published by\n"
                             "the Free Software Foundation, either version 3 of the License, or\n"
                             "(at your option) any later version.\n"
@@ -38,71 +38,71 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
                             "along with this program.  If not, see <https://www.gnu.org/licenses/>."));
 
 
-        info.AddTranslator(wxT("Stephane Junique"));
-        info.AddTranslator(wxT("Nicolas Velin"));
-        info.AddTranslator(wxT("Gérard Durand"));
+        this->info.AddTranslator(wxT("Stephane Junique"));
+        this->info.AddTranslator(wxT("Nicolas Velin"));
+        this->info.AddTranslator(wxT("Gérard Durand"));
     #endif
 
     // Define a menu bar and add all menu items.
-    menuBar = new wxMenuBar();
+    this->menu_bar = new wxMenuBar();
 
-    menuEdit = new wxMenu();
-    menuQuiz = new wxMenu();
-    menuHelp = new wxMenu();
+    this->menu_edit = new wxMenu();
+    this->menu_quiz = new wxMenu();
+    this->menu_help = new wxMenu();
 
-    menuBar->Append(menuEdit, _("Edit"));
-    menuBar->Append(menuQuiz, _("Quiz"));
-    menuBar->Append(menuHelp, _("Help"));
+    this->menu_bar->Append(this->menu_edit, _("Edit"));
+    this->menu_bar->Append(this->menu_quiz, _("Quiz"));
+    this->menu_bar->Append(this->menu_help, _("Help"));
 
-    menuEdit->Append(wxID_CUT);
-    menuEdit->Append(wxID_COPY);
-    menuEdit->Append(wxID_PASTE);
-    menuEdit->AppendSeparator();
-    menuEdit->Append(wxID_SELECTALL);
+    this->menu_edit->Append(wxID_CUT);
+    this->menu_edit->Append(wxID_COPY);
+    this->menu_edit->Append(wxID_PASTE);
+    this->menu_edit->AppendSeparator();
+    this->menu_edit->Append(wxID_SELECTALL);
 
-    menuQuiz->Append(winID::menu_select_categories, _("Select all categories\tCtrl-1"));
-    menuQuiz->Append(winID::menu_select_tenses, _("Select all tenses\tCtrl-2"));
-    menuQuiz->Append(winID::menu_unselect_all, _("Unselect all\tCtrl-0"));
-    menuQuiz->AppendSeparator();
-    menuQuiz->Append(winID::menu_next, _("Next\tCtrl-Enter"));
-    menuQuiz->Append(winID::menu_check, _("Check\tCtrl-Shift-Enter"));
-    menuQuiz->Append(winID::menu_solutions, _("Solutions\tCtrl-S"));
-    menuQuiz->AppendSeparator();
-    menuQuiz->Append(winID::menu_inspector, _("Open inspector\tCtrl-I"));
-    menuQuiz->AppendSeparator();
-    menuQuiz->Append(wxID_PREFERENCES, _("Settings…\tCtrl-,"));
+    this->menu_quiz->Append(winID::menu_select_categories, _("Select all categories\tCtrl-1"));
+    this->menu_quiz->Append(winID::menu_select_tenses, _("Select all tenses\tCtrl-2"));
+    this->menu_quiz->Append(winID::menu_unselect_all, _("Unselect all\tCtrl-0"));
+    this->menu_quiz->AppendSeparator();
+    this->menu_quiz->Append(winID::menu_next, _("Next\tCtrl-Enter"));
+    this->menu_quiz->Append(winID::menu_check, _("Check\tCtrl-Shift-Enter"));
+    this->menu_quiz->Append(winID::menu_solutions, _("Solutions\tCtrl-S"));
+    this->menu_quiz->AppendSeparator();
+    this->menu_quiz->Append(winID::menu_inspector, _("Open inspector\tCtrl-I"));
+    this->menu_quiz->AppendSeparator();
+    this->menu_quiz->Append(wxID_PREFERENCES, _("Settings…\tCtrl-,"));
 
-    menuHelp->Append(wxID_ABOUT, _("About Conjugator"));
-    menuHelp->AppendSeparator();
-    menuHelp->Append(winID::menu_github, wxT("GitHub"));
+    this->menu_help->Append(wxID_ABOUT, _("About Conjugator"));
+    this->menu_help->AppendSeparator();
+    this->menu_help->Append(winID::menu_github, wxT("GitHub"));
 
-    this->SetMenuBar(menuBar);
+    this->SetMenuBar(this->menu_bar);
 
     // Read config.
-    this->loadConfig();
+    this->load_config();
 
     // Create a new top panel in which all windows will reside (so that
     // keyboard focus is handled automatically).
-    topPanel = new TopPanel(this, this->language);
-    topPanel->ResetFocus();
+    this->top_panel = new TopPanel(this, this->language);
+    this->top_panel->ResetFocus();
 
     // Create a new wxBoxSizer and add the top panel to it.
-    topPanelSizer = new wxBoxSizer(wxVERTICAL);
+    this->top_panel_sizer = new wxBoxSizer(wxVERTICAL);
 
-    topPanelSizer->Add(
-        topPanel,
+    this->top_panel_sizer->Add(
+        this->top_panel,
         1,
         wxEXPAND | wxALL,
         0
     );
 
     // Bind events to their corresponding method.
-    Bind(wxEVT_BUTTON, &MainFrame::OnOkay, this, winID::button_next);
+    Bind(wxEVT_BUTTON, &MainFrame::OnNext, this, winID::button_next);
     Bind(wxEVT_BUTTON, &MainFrame::OnCheck, this, winID::button_check);
     Bind(wxEVT_BUTTON, &MainFrame::OnSolution, this, winID::button_solutions);
     Bind(wxEVT_BUTTON, &MainFrame::OnSettingsSave, this, winID::settings_save);
     Bind(wxEVT_BUTTON, &MainFrame::OnSettingsCancel, this, winID::settings_cancel);
-    Bind(wxEVT_MENU, &MainFrame::OnOkay, this, winID::menu_next);
+    Bind(wxEVT_MENU, &MainFrame::OnNext, this, winID::menu_next);
     Bind(wxEVT_MENU, &MainFrame::OnCheck, this, winID::menu_check);
     Bind(wxEVT_MENU, &MainFrame::OnSolution, this, winID::menu_solutions);
     Bind(wxEVT_MENU, &MainFrame::OnSelectVerbs, this, winID::menu_select_categories);
@@ -118,62 +118,62 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_DESTROY, &MainFrame::OnSettingsClose, this, winID::settings);
     Bind(wxEVT_WEBREQUEST_STATE, &MainFrame::HandleUpdateChecker, this, winID::request_update_checker);
 
-    SetSizerAndFit(topPanelSizer);
+    SetSizerAndFit(this->top_panel_sizer);
 }
 
-void MainFrame::enableMenuBar() {
-    for (size_t menu = 0; menu < menuBar->GetMenuCount(); menu++) {
-        menuBar->EnableTop(menu, true);
+void MainFrame::enable_menu_bar() {
+    for (size_t menu = 0; menu < this->menu_bar->GetMenuCount(); menu++) {
+        this->menu_bar->EnableTop(menu, true);
     }
 }
 
-void MainFrame::disableMenuBar() {
-    for (size_t menu = 0; menu < menuBar->GetMenuCount(); menu++) {
-        menuBar->EnableTop(menu, false);
+void MainFrame::disable_menu_bar() {
+    for (size_t menu = 0; menu < this->menu_bar->GetMenuCount(); menu++) {
+        this->menu_bar->EnableTop(menu, false);
     }
 }
 
-void MainFrame::computeNewSize() {
-    topPanelSizer->Layout();
+void MainFrame::compute_new_size() {
+    this->top_panel_sizer->Layout();
 
-    if (this->GetClientSize().GetX() < topPanelSizer->GetMinSize().GetX()) {
-        topPanelSizer->SetSizeHints(this);
+    if (this->GetClientSize().GetX() < this->top_panel_sizer->GetMinSize().GetX()) {
+        this->top_panel_sizer->SetSizeHints(this);
     } else {
-        this->SetMinClientSize(topPanelSizer->ComputeFittingClientSize(this));
+        this->SetMinClientSize(this->top_panel_sizer->ComputeFittingClientSize(this));
     }
 }
 
-void MainFrame::OnOkay(wxCommandEvent& event) {
-    topPanel->GenerateQuiz();
-    topPanel->ResetFocus();
+void MainFrame::OnNext(wxCommandEvent& event) {
+    this->top_panel->GenerateQuiz();
+    this->top_panel->ResetFocus();
 
-    computeNewSize();
+    compute_new_size();
 }
 
 void MainFrame::OnCheck(wxCommandEvent& event) {
-    topPanel->Check();
+    this->top_panel->Check();
 }
 
 void MainFrame::OnSolution(wxCommandEvent& event) {
-    topPanel->ShowSolutions();
+    this->top_panel->ShowSolutions();
 
-    computeNewSize();
+    compute_new_size();
 }
 
 void MainFrame::OnAbout(wxCommandEvent& event) {
-   wxAboutBox(GetInfo(), this);
+   wxAboutBox(get_info(), this);
 }
 
 void MainFrame::OnSelectVerbs(wxCommandEvent& event) {
-    topPanel->SelectAllVerbs();
+    this->top_panel->SelectAllVerbs();
 }
 
 void MainFrame::OnSelectTenses(wxCommandEvent& event) {
-    topPanel->SelectAllTenses();
+    this->top_panel->SelectAllTenses();
 }
 
 void MainFrame::OnUnselectAll(wxCommandEvent& event) {
-    topPanel->UnselectAll();
+    this->top_panel->UnselectAll();
 }
 
 void MainFrame::OnGitHub(wxCommandEvent& event) {
@@ -181,43 +181,43 @@ void MainFrame::OnGitHub(wxCommandEvent& event) {
 }
 
 void MainFrame::OnInspector(wxCommandEvent &event) {
-    if (inspector == nullptr) {
-        inspector = new InspectorFrame(this, winID::inspector, wxT("Inspector"), this->language);
+    if (this->inspector == nullptr) {
+        this->inspector = new InspectorFrame(this, winID::inspector, wxT("Inspector"), this->language);
     }
-    topPanel->SetFocusIgnoringChildren();
-    topPanel->Disable();
-    this->disableMenuBar();
-    inspector->Show();
+    this->top_panel->SetFocusIgnoringChildren();
+    this->top_panel->Disable();
+    this->disable_menu_bar();
+    this->inspector->Show();
 }
 
 void MainFrame::OnInspectorClose(wxWindowDestroyEvent& event) {
-    inspector = nullptr;
-    this->enableMenuBar();
-    topPanel->Enable();
-    topPanel->ResetFocus();
+    this->inspector = nullptr;
+    this->enable_menu_bar();
+    this->top_panel->Enable();
+    this->top_panel->ResetFocus();
 }
 
 void MainFrame::OnVerbBox(wxCommandEvent &event) {
-    inspector->update_verb();
+    this->inspector->update_verb();
 }
 
 void MainFrame::OnSettings(wxCommandEvent &event) {
-    if (settings == nullptr) {
-        settings = new SettingsFrame(this, winID::settings, _("Settings"));
+    if (this->settings == nullptr) {
+        this->settings = new SettingsFrame(this, winID::settings, _("Settings"));
     };
-    settings->Show();
+    this->settings->Show();
 }
 
 void MainFrame::OnSettingsClose(wxWindowDestroyEvent& event) {
-    settings = nullptr;
+    this->settings = nullptr;
 }
 
 void MainFrame::OnSettingsSave(wxCommandEvent& event) {
     this->settings->writeConfig();
     this->settings->Destroy();
-    this->reloadConfig();
-    topPanel->SetLanguage(language);
-    this->computeNewSize();
+    this->reload_config();
+    this->top_panel->SetLanguage(language);
+    this->compute_new_size();
 }
 
 void MainFrame::OnSettingsCancel(wxCommandEvent& event) {
@@ -225,8 +225,8 @@ void MainFrame::OnSettingsCancel(wxCommandEvent& event) {
 }
 
 void MainFrame::checkForUpdates(const bool& failSilently) {
-    updateChecker.setFailSilently(failSilently);
-    updateChecker.start(this, "https://api.github.com/repos/tifrueh/conjugator/releases/latest", winID::request_update_checker);
+    this->update_checker.setFailSilently(failSilently);
+    this->update_checker.start(this, "https://api.github.com/repos/tifrueh/conjugator/releases/latest", winID::request_update_checker);
 }
 
 void MainFrame::OnUpdateChecker(wxCommandEvent& event) {
@@ -234,14 +234,14 @@ void MainFrame::OnUpdateChecker(wxCommandEvent& event) {
 }
 
 void MainFrame::HandleUpdateChecker(wxWebRequestEvent& event) {
-    updateChecker.showResult(event);
+    this->update_checker.showResult(event);
 }
 
-wxAboutDialogInfo MainFrame::GetInfo() {
+wxAboutDialogInfo MainFrame::get_info() {
     return info;
 }
 
-void MainFrame::loadConfig() {
+void MainFrame::load_config() {
     bool checkForUpdateOnStartup = true;
     bool checkForUpdateOnStartupDefined = wxConfigBase::Get()->Read("checkForUpdateOnStartup", &checkForUpdateOnStartup);
 
@@ -254,7 +254,7 @@ void MainFrame::loadConfig() {
     }
 
     if (! disableUpdateChecker) {
-        menuHelp->Append(winID::menu_update_checker, _("Check for updates"));
+        this->menu_help->Append(winID::menu_update_checker, _("Check for updates"));
     }
 
     // Initialise config if some keys are not defined yet.
@@ -267,11 +267,11 @@ void MainFrame::loadConfig() {
     }
 
     // Load the reloadable part of the config.
-    this->reloadConfig();
+    this->reload_config();
 
 }
 
-void MainFrame::reloadConfig() {
+void MainFrame::reload_config() {
     size_t quizLanguage = cjgt::LanguageID::French;
     bool quizLanguageDefined = wxConfigBase::Get()->Read("quizLanguage", &quizLanguage);
 

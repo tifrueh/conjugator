@@ -60,21 +60,21 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     menuEdit->AppendSeparator();
     menuEdit->Append(wxID_SELECTALL);
 
-    menuQuiz->Append(winID::menuQuizSelectVerbs, _("Select all categories\tCtrl-1"));
-    menuQuiz->Append(winID::menuQuizSelectTenses, _("Select all tenses\tCtrl-2"));
-    menuQuiz->Append(winID::menuQuizUnselectAll, _("Unselect all\tCtrl-0"));
+    menuQuiz->Append(winID::menu_select_categories, _("Select all categories\tCtrl-1"));
+    menuQuiz->Append(winID::menu_select_tenses, _("Select all tenses\tCtrl-2"));
+    menuQuiz->Append(winID::menu_unselect_all, _("Unselect all\tCtrl-0"));
     menuQuiz->AppendSeparator();
-    menuQuiz->Append(winID::menuQuizOkay, _("Next\tCtrl-Enter"));
-    menuQuiz->Append(winID::menuQuizCheck, _("Check\tCtrl-Shift-Enter"));
-    menuQuiz->Append(winID::menuQuizSolution, _("Solutions\tCtrl-S"));
+    menuQuiz->Append(winID::menu_next, _("Next\tCtrl-Enter"));
+    menuQuiz->Append(winID::menu_check, _("Check\tCtrl-Shift-Enter"));
+    menuQuiz->Append(winID::menu_solutions, _("Solutions\tCtrl-S"));
     menuQuiz->AppendSeparator();
-    menuQuiz->Append(winID::menuInspectorOpen, _("Open inspector\tCtrl-I"));
+    menuQuiz->Append(winID::menu_inspector, _("Open inspector\tCtrl-I"));
     menuQuiz->AppendSeparator();
     menuQuiz->Append(wxID_PREFERENCES, _("Settings…\tCtrl-,"));
 
     menuHelp->Append(wxID_ABOUT, _("About Conjugator"));
     menuHelp->AppendSeparator();
-    menuHelp->Append(winID::menuHelpGitHub, wxT("GitHub"));
+    menuHelp->Append(winID::menu_github, wxT("GitHub"));
 
     this->SetMenuBar(menuBar);
 
@@ -97,26 +97,26 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     );
 
     // Bind events to their corresponding method.
-    Bind(wxEVT_BUTTON, &MainFrame::OnOkay, this, winID::okayButton);
-    Bind(wxEVT_BUTTON, &MainFrame::OnCheck, this, winID::checkButton);
-    Bind(wxEVT_BUTTON, &MainFrame::OnSolution, this, winID::solutionButton);
-    Bind(wxEVT_BUTTON, &MainFrame::OnSettingsSave, this, winID::settingsSave);
-    Bind(wxEVT_BUTTON, &MainFrame::OnSettingsCancel, this, winID::settingsCancel);
-    Bind(wxEVT_MENU, &MainFrame::OnOkay, this, winID::menuQuizOkay);
-    Bind(wxEVT_MENU, &MainFrame::OnCheck, this, winID::menuQuizCheck);
-    Bind(wxEVT_MENU, &MainFrame::OnSolution, this, winID::menuQuizSolution);
-    Bind(wxEVT_MENU, &MainFrame::OnSelectVerbs, this, winID::menuQuizSelectVerbs);
-    Bind(wxEVT_MENU, &MainFrame::OnSelectTenses, this, winID::menuQuizSelectTenses);
-    Bind(wxEVT_MENU, &MainFrame::OnUnselectAll, this, winID::menuQuizUnselectAll);
+    Bind(wxEVT_BUTTON, &MainFrame::OnOkay, this, winID::button_next);
+    Bind(wxEVT_BUTTON, &MainFrame::OnCheck, this, winID::button_check);
+    Bind(wxEVT_BUTTON, &MainFrame::OnSolution, this, winID::button_solutions);
+    Bind(wxEVT_BUTTON, &MainFrame::OnSettingsSave, this, winID::settings_save);
+    Bind(wxEVT_BUTTON, &MainFrame::OnSettingsCancel, this, winID::settings_cancel);
+    Bind(wxEVT_MENU, &MainFrame::OnOkay, this, winID::menu_next);
+    Bind(wxEVT_MENU, &MainFrame::OnCheck, this, winID::menu_check);
+    Bind(wxEVT_MENU, &MainFrame::OnSolution, this, winID::menu_solutions);
+    Bind(wxEVT_MENU, &MainFrame::OnSelectVerbs, this, winID::menu_select_categories);
+    Bind(wxEVT_MENU, &MainFrame::OnSelectTenses, this, winID::menu_select_tenses);
+    Bind(wxEVT_MENU, &MainFrame::OnUnselectAll, this, winID::menu_unselect_all);
     Bind(wxEVT_MENU, &MainFrame::OnAbout, this, wxID_ABOUT);
-    Bind(wxEVT_MENU, &MainFrame::OnGitHub, this, winID::menuHelpGitHub);
-    Bind(wxEVT_MENU, &MainFrame::OnUpdateChecker, this, winID::menuHelpUpdateChecker);
-    Bind(wxEVT_MENU, &MainFrame::OnInspector, this, winID::menuInspectorOpen);
+    Bind(wxEVT_MENU, &MainFrame::OnGitHub, this, winID::menu_github);
+    Bind(wxEVT_MENU, &MainFrame::OnUpdateChecker, this, winID::menu_update_checker);
+    Bind(wxEVT_MENU, &MainFrame::OnInspector, this, winID::menu_inspector);
     Bind(wxEVT_MENU, &MainFrame::OnSettings, this, wxID_PREFERENCES);
-    Bind(wxEVT_LISTBOX, &MainFrame::OnVerbBox, this, winID::inspectorVerbBox);
+    Bind(wxEVT_LISTBOX, &MainFrame::OnVerbBox, this, winID::inspector_verb_box);
     Bind(wxEVT_DESTROY, &MainFrame::OnInspectorClose, this, winID::inspector);
     Bind(wxEVT_DESTROY, &MainFrame::OnSettingsClose, this, winID::settings);
-    Bind(wxEVT_WEBREQUEST_STATE, &MainFrame::HandleUpdateChecker, this, winID::requestUpdateChecker);
+    Bind(wxEVT_WEBREQUEST_STATE, &MainFrame::HandleUpdateChecker, this, winID::request_update_checker);
 
     SetSizerAndFit(topPanelSizer);
 }
@@ -226,7 +226,7 @@ void MainFrame::OnSettingsCancel(wxCommandEvent& event) {
 
 void MainFrame::checkForUpdates(const bool& failSilently) {
     updateChecker.setFailSilently(failSilently);
-    updateChecker.start(this, "https://api.github.com/repos/tifrueh/conjugator/releases/latest", winID::requestUpdateChecker);
+    updateChecker.start(this, "https://api.github.com/repos/tifrueh/conjugator/releases/latest", winID::request_update_checker);
 }
 
 void MainFrame::OnUpdateChecker(wxCommandEvent& event) {
@@ -254,7 +254,7 @@ void MainFrame::loadConfig() {
     }
 
     if (! disableUpdateChecker) {
-        menuHelp->Append(winID::menuHelpUpdateChecker, _("Check for updates"));
+        menuHelp->Append(winID::menu_update_checker, _("Check for updates"));
     }
 
     // Initialise config if some keys are not defined yet.

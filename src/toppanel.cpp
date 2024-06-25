@@ -42,9 +42,9 @@ TopPanel::TopPanel(wxWindow* parent, const cjgt::Language* language) : wxPanel(p
 
     buttonSizer = new wxBoxSizer(wxHORIZONTAL);
 
-    okayButton = new wxButton(this, winID::okayButton, _("Next"));
-    checkButton = new wxButton(this, winID::checkButton, _("Check"));
-    solutionButton = new wxButton(this, winID::solutionButton, _("Solutions"));
+    okayButton = new wxButton(this, winID::button_next, _("Next"));
+    checkButton = new wxButton(this, winID::button_check, _("Check"));
+    solutionButton = new wxButton(this, winID::button_solutions, _("Solutions"));
 
     int smallSpace = 3;
     int midSpace = 5;

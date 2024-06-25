@@ -7,64 +7,64 @@
 VerbViewPanel::VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb* verb, const cjgt::Tense* tense) : wxPanel(parent, id) {
     this->verb = verb;
     this->tense = tense;
-    sizer = new wxBoxSizer(wxVERTICAL);
+    this->sizer = new wxBoxSizer(wxVERTICAL);
 
     if (cjgt::strip(verb->forms[1]) == L"") {
-        infinitifString = verb->name;
+        this->infinitive_string = verb->name;
     } else {
-        infinitifString = verb->name + L" – " + verb->forms[1];
+        this->infinitive_string = verb->name + L" – " + verb->forms[1];
     }
 
-    titleLabel = new wxStaticText(this, wxID_ANY, wxString(this->tense->name));
-    titleLabel->SetMinSize(wxSize(200, titleLabel->GetMinHeight()));
+    this->label_title = new wxStaticText(this, wxID_ANY, wxString(this->tense->name));
+    this->label_title->SetMinSize(wxSize(200, this->label_title->GetMinHeight()));
 
-    infinitifLabel = new wxStaticText(this, wxID_ANY, wxString(infinitifString));
+    this->label_infinitive = new wxStaticText(this, wxID_ANY, wxString(this->infinitive_string));
 
-    wxFont titleFont = titleLabel->GetFont();
+    wxFont titleFont = this->label_title->GetFont();
     titleFont.Scale(1.5);
     titleFont.MakeBold();
-    titleLabel->SetFont(titleFont);
+    this->label_title->SetFont(titleFont);
 
-    sizer->AddSpacer(5);
+    this->sizer->AddSpacer(5);
 
-    sizer->Add(titleLabel, 0, wxEXPAND, 0);
-    sizer->Add(infinitifLabel, 0, wxEXPAND, 0);
+    this->sizer->Add(this->label_title, 0, wxEXPAND, 0);
+    this->sizer->Add(this->label_infinitive, 0, wxEXPAND, 0);
 
-    sizer->AddSpacer(10);
+    this->sizer->AddSpacer(10);
 
     // Add a label so the sizer for each verb form of the tense.
     for (std::wstring person : this->tense->persons) {
-        formLabels.insert({person, new wxStaticText(this, wxID_ANY, wxEmptyString)});
-        sizer->Add(formLabels.at(person), 0, wxEXPAND, 0);
+        this->labels_forms.insert({person, new wxStaticText(this, wxID_ANY, wxEmptyString)});
+        sizer->Add(this->labels_forms.at(person), 0, wxEXPAND, 0);
     }
 
     this->SetSizerAndFit(sizer);
 
-    this->setVerb(verb);
+    this->set_verb(verb);
 }
 
 
-void VerbViewPanel::setVerb(const verbDB::Verb* verb) {
+void VerbViewPanel::set_verb(const verbDB::Verb* verb) {
     this->verb = verb;
 
     if (cjgt::strip(verb->forms[1]) == L"") {
-        infinitifString = verb->name;
+        this->infinitive_string = verb->name;
     } else {
-        infinitifString = verb->name + L" – " + verb->forms[1];
+        this->infinitive_string = verb->name + L" – " + verb->forms[1];
     }
 
-   infinitifLabel->SetLabel(infinitifString);
+   this->label_infinitive->SetLabel(this->infinitive_string);
 
     for (std::vector<std::wstring>::size_type i = 0; i < this->tense->persons.size(); i++) {
         std::wstring person = this->tense->persons[i];
         const std::wstring* form = cjgt::get_verb_form(verb, i, this->tense);
-        formLabels.at(person)->SetLabel(wxString(person) + wxT(" ") + *form);
+        this->labels_forms.at(person)->SetLabel(wxString(person) + wxT(" ") + *form);
 
         // Hide empty forms
         if (*form == L"") {
-            sizer->Hide(formLabels.at(person));
+            sizer->Hide(this->labels_forms.at(person));
         } else {
-            sizer->Show(formLabels.at(person));
+            sizer->Show(this->labels_forms.at(person));
         }
     }
 

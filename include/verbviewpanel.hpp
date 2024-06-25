@@ -23,17 +23,17 @@ class VerbViewPanel : public wxPanel {
         VerbViewPanel(wxWindow* parent, wxWindowID id, const verbDB::Verb* verb, const cjgt::Tense*);
 
         // Reset the verb of the verb view panel.
-        void setVerb(const verbDB::Verb* verb);
+        void set_verb(const verbDB::Verb* verb);
 
     private:
         wxBoxSizer* sizer;
 
         const verbDB::Verb* verb;
         const cjgt::Tense* tense;
-        std::wstring tenseString;
-        std::wstring infinitifString;
+        std::wstring tense_string;
+        std::wstring infinitive_string;
 
-        wxStaticText* titleLabel;
-        wxStaticText* infinitifLabel;
-        std::map<std::wstring, wxStaticText*> formLabels;
+        wxStaticText* label_title;
+        wxStaticText* label_infinitive;
+        std::map<std::wstring, wxStaticText*> labels_forms;
 };

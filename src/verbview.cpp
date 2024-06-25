@@ -31,7 +31,7 @@ void VerbView::set_verb(const verbDB::Verb* verb) {
 
     for (const cjgt::Tense* tense : this->language->get_tenses()) {
         if (tense->show_in_inspecteur) {
-            this->pages.at(tense)->setVerb(verb);
+            this->pages.at(tense)->set_verb(verb);
         }
     }
 

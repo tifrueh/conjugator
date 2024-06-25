@@ -30,61 +30,61 @@ class TopPanel : public wxPanel {
 
         // Randomly retrieve as many verb forms as needed for the desired amount of
         // questions based on the selected verbs and tenses.
-        std::vector<cjgt::QuizData> GetQuizDatas(const unsigned int& count);
+        std::vector<cjgt::QuizData> get_quiz_datas(const unsigned int& count);
 
         // Reset the keyboard focus to the first quiz item.
-        void ResetFocus();
+        void reset_focus();
 
         // Generate a new quiz. Show a message if there are not enough possible verb
         // forms selected to generate the desired amount of questions.
         // Note: This error should not be possible, but it was possible during early
         // development stages, when not many verbs were added yet, so it'll just stay
         // in place as a safety measure.
-        void GenerateQuiz();
+        void generate_quiz();
 
         // Evaluate all quiz items.
-        void Check();
+        void check();
 
         // Evaluate all quiz items, show all solutions and set the size hints of the
         // topsizer to accommodate the solution labels.
-        void ShowSolutions();
+        void show_solutions();
 
-        // Select all verb suffix checkboxes.
-        void SelectAllVerbs();
+        // Select all category checkboxes.
+        void select_all_categories();
 
         // Select all tense checkboxes.
-        void SelectAllTenses();
+        void select_all_tenses();
 
         // Unselect all checkboxes.
-        void UnselectAll();
+        void unselect_all();
 
-        void SetLanguage(const cjgt::Language* language);
+        void set_language(const cjgt::Language* language);
 
     private:
-        int quizItemCount;
+        int quiz_items_count;
         const cjgt::Language* language;
-        wxBoxSizer* topsizer = nullptr;
-        wxStaticBoxSizer* formSelectionSizer = nullptr;
-        wxBoxSizer* categorySelectionSizer = nullptr;
-        wxBoxSizer* tenseSelectionSizer = nullptr;
-        wxStaticBoxSizer* quizBoxSizer = nullptr;
-        wxFlexGridSizer* quizSizer = nullptr;
+        wxBoxSizer* top_sizer = nullptr;
+        wxStaticBoxSizer* sizer_control_box = nullptr;
+        wxBoxSizer* sizer_categories = nullptr;
+        wxBoxSizer* sizer_tenses = nullptr;
+        wxStaticBoxSizer* sizer_quiz_box = nullptr;
+        wxFlexGridSizer* sizer_quiz = nullptr;
 
-        wxStaticText* verbTypeTitle = nullptr;
-        std::map<const cjgt::Category*, wxCheckBox*> categoryCheckBoxes;
+        wxStaticText* title_categories = nullptr;
+        std::map<const cjgt::Category*, wxCheckBox*> check_boxes_category;
 
-        wxStaticText* tenseTitle = nullptr;
-        std::map<const cjgt::Tense*, wxCheckBox*> tenseCheckBoxes;
+        wxStaticText* title_tenses = nullptr;
+        std::map<const cjgt::Tense*, wxCheckBox*> check_boxes_tense;
 
-        wxBoxSizer* buttonSizer = nullptr;
-        wxButton* okayButton = nullptr;
-        wxButton* checkButton = nullptr;
-        wxButton* solutionButton = nullptr;
-        std::vector<QuizItem*> quizItems;
+        wxBoxSizer* sizer_buttons = nullptr;
+        wxButton* button_next = nullptr;
+        wxButton* button_check = nullptr;
+        wxButton* button_solutions = nullptr;
+        std::vector<QuizItem*> quiz_items;
 
-        void SetCategoryCheckBoxes(std::vector<const cjgt::Category*>);
-        void SetTenseCheckBoxes(std::vector<const cjgt::Tense*>);
+        void set_categories();
+        void set_tenses();
 
-        void SetAllVerbs(const bool& status);
-        void SetAllTenses(const bool& status);
+        void set_category_check_boxes(const bool& status);
+        void set_tense_check_boxes(const bool& status);
 };

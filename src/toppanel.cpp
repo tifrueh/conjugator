@@ -9,169 +9,168 @@ TopPanel::TopPanel(wxWindow* parent, const cjgt::Language* language) : wxPanel(p
     this->language = language;
 
     // Add a horizontal box sizer.
-    topsizer = new wxBoxSizer(wxHORIZONTAL);
+    this->top_sizer = new wxBoxSizer(wxHORIZONTAL);
 
     // Add a vertical static box sizer to hold the form selection checkboxes.
-    formSelectionSizer = new wxStaticBoxSizer(wxVERTICAL, this, _("Category/tense selection"));
+    this->sizer_control_box = new wxStaticBoxSizer(wxVERTICAL, this, _("Category/tense selection"));
 
-    categorySelectionSizer = new wxBoxSizer(wxVERTICAL);
-    tenseSelectionSizer = new wxBoxSizer(wxVERTICAL);
+    this->sizer_categories = new wxBoxSizer(wxVERTICAL);
+    this->sizer_tenses = new wxBoxSizer(wxVERTICAL);
 
     // Add a vertical static box sizer to hold a sizer, which, in turn, will hold all quiz items.
-    quizBoxSizer = new wxStaticBoxSizer(wxVERTICAL, this, _("Quiz"));
+    this->sizer_quiz_box = new wxStaticBoxSizer(wxVERTICAL, this, _("Quiz"));
 
     // Add a flex grid sizer to hold all quiz items.
-    quizSizer = new wxFlexGridSizer(3, wxSize(10, 3));
-    quizSizer->AddGrowableCol(1, 1);
+    this->sizer_quiz = new wxFlexGridSizer(3, wxSize(10, 3));
+    this->sizer_quiz->AddGrowableCol(1, 1);
 
-    quizItemCount = 15;
+    this->quiz_items_count = 15;
 
-    for (int i = 0; i < quizItemCount; i++) {
-        quizSizer->AddGrowableRow(i, 1);
+    for (int i = 0; i < this->quiz_items_count; i++) {
+        this->sizer_quiz->AddGrowableRow(i, 1);
     }
 
     // Add all the contents of the formSelectionSizer and, in turn, add it to the topsizer.
-    verbTypeTitle = new wxStaticText(this, wxID_ANY, _("Categories"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
-    wxFont titleFont = verbTypeTitle->GetFont();
+    this->title_categories = new wxStaticText(this, wxID_ANY, _("Categories"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
+    wxFont titleFont = this->title_categories->GetFont();
     titleFont.Scale(1.1);
     titleFont.MakeBold();
-    verbTypeTitle->SetFont(titleFont);
+    this->title_categories->SetFont(titleFont);
 
-    tenseTitle = new wxStaticText(this, wxID_ANY, _("Tenses"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
-    tenseTitle->SetFont(titleFont);
+    this->title_tenses = new wxStaticText(this, wxID_ANY, _("Tenses"), wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
+    this->title_tenses->SetFont(titleFont);
 
-    buttonSizer = new wxBoxSizer(wxHORIZONTAL);
+    this->sizer_buttons = new wxBoxSizer(wxHORIZONTAL);
 
-    okayButton = new wxButton(this, winID::button_next, _("Next"));
-    checkButton = new wxButton(this, winID::button_check, _("Check"));
-    solutionButton = new wxButton(this, winID::button_solutions, _("Solutions"));
+    this->button_next = new wxButton(this, winID::button_next, _("Next"));
+    this->button_check = new wxButton(this, winID::button_check, _("Check"));
+    this->button_solutions = new wxButton(this, winID::button_solutions, _("Solutions"));
 
-    int smallSpace = 3;
     int midSpace = 5;
     int bigSpace = 10;
     int hugeSpace = 15;
 
-    buttonSizer->Add(
-        okayButton,
+    this->sizer_buttons->Add(
+        this->button_next,
         0,
         wxEXPAND |
         wxALL,
         midSpace
     );
 
-    buttonSizer->Add(
-        checkButton,
+    this->sizer_buttons->Add(
+        this->button_check,
         0,
         wxEXPAND |
         wxALL,
         midSpace
     );
 
-    buttonSizer->Add(
-        solutionButton,
+    this->sizer_buttons->Add(
+        this->button_solutions,
         0,
         wxEXPAND |
         wxALL,
         midSpace
     );
 
-    formSelectionSizer->AddSpacer(bigSpace);
+    this->sizer_control_box->AddSpacer(bigSpace);
 
-    formSelectionSizer->Add(
-        verbTypeTitle,
+    this->sizer_control_box->Add(
+        this->title_categories,
         0,
         wxEXPAND |
         wxLEFT | wxRIGHT,
         bigSpace
     );
 
-    formSelectionSizer->AddSpacer(bigSpace);
+    this->sizer_control_box->AddSpacer(bigSpace);
 
-    formSelectionSizer->Add(
-        categorySelectionSizer,
+    this->sizer_control_box->Add(
+        this->sizer_categories,
         0,
         wxEXPAND |
         wxLEFT | wxRIGHT,
         bigSpace
     );
 
-    this->SetCategoryCheckBoxes(language->get_categories());
+    this->set_categories();
 
-    formSelectionSizer->AddSpacer(hugeSpace);
+    this->sizer_control_box->AddSpacer(hugeSpace);
 
-    formSelectionSizer->Add(
-        tenseTitle,
+    this->sizer_control_box->Add(
+        this->title_tenses,
         0,
         wxEXPAND |
         wxLEFT | wxRIGHT,
         bigSpace
     );
 
-    formSelectionSizer->AddSpacer(bigSpace);
+    this->sizer_control_box->AddSpacer(bigSpace);
 
-    formSelectionSizer->Add(
-        tenseSelectionSizer,
+    this->sizer_control_box->Add(
+        this->sizer_tenses,
         0,
         wxEXPAND |
         wxLEFT | wxRIGHT,
         bigSpace
     );
 
-    this->SetTenseCheckBoxes(language->get_tenses());
+    this->set_tenses();
 
-    formSelectionSizer->AddStretchSpacer();
+    this->sizer_control_box->AddStretchSpacer();
 
-    formSelectionSizer->Add(
-        buttonSizer,
+    this->sizer_control_box->Add(
+        this->sizer_buttons,
         0,
         wxCENTER |
         wxTOP,
-        15
+        hugeSpace
     );
 
-    std::vector<cjgt::QuizData> quizDatas = GetQuizDatas(quizItemCount);
+    std::vector<cjgt::QuizData> quizDatas = get_quiz_datas(this->quiz_items_count);
     QuizItem* itemPtr = nullptr;
 
-    for (int i = 0; i < quizItemCount; i++) {
-        itemPtr = new QuizItem(this, quizSizer, quizDatas.at(i));
-        quizItems.push_back(itemPtr);
+    for (int i = 0; i < this->quiz_items_count; i++) {
+        itemPtr = new QuizItem(this, this->sizer_quiz, quizDatas.at(i));
+        quiz_items.push_back(itemPtr);
     }
 
-    quizBoxSizer->Add(
-        quizSizer,
+    this->sizer_quiz_box->Add(
+        this->sizer_quiz,
         1,
         wxEXPAND | wxALL,
         bigSpace
     );
 
-    topsizer->Add(
-        formSelectionSizer,
+    this->top_sizer->Add(
+        this->sizer_control_box,
         0,
         wxEXPAND | wxTOP | wxBOTTOM | wxLEFT,
         20
     );
 
-    topsizer->AddSpacer(bigSpace);
+    this->top_sizer->AddSpacer(bigSpace);
 
-    // Add the quizBoxSizer to the topsizer.
-    topsizer->Add(
-        quizBoxSizer,
+    // Add the sizer_quiz_box to the topsizer.
+    this->top_sizer->Add(
+        this->sizer_quiz_box,
         1,
         wxEXPAND | wxTOP | wxBOTTOM | wxRIGHT,
         20
     );
 
-    SetSizerAndFit(topsizer);
+    SetSizerAndFit(this->top_sizer);
 }
 
-std::vector<cjgt::QuizData> TopPanel::GetQuizDatas(const unsigned int& count) {
+std::vector<cjgt::QuizData> TopPanel::get_quiz_datas(const unsigned int& count) {
     std::vector<const cjgt::Category*> usableCategories;
     std::vector<const cjgt::Tense*> usableTenses;
     std::vector<cjgt::QuizData> quizDatas;
     std::vector<const verbDB::Verb*>::size_type usableVerbCount = 0;
     std::vector<const std::wstring*>::size_type usableFormCount = 0;
 
-    for (std::pair<const cjgt::Category*, wxCheckBox*> element : this->categoryCheckBoxes) {
+    for (std::pair<const cjgt::Category*, wxCheckBox*> element : this->check_boxes_category) {
 
         if (element.second->GetValue() == false) {
             continue;
@@ -182,7 +181,7 @@ std::vector<cjgt::QuizData> TopPanel::GetQuizDatas(const unsigned int& count) {
     }
 
 
-    for (std::pair<const cjgt::Tense*, wxCheckBox*> element : this->tenseCheckBoxes) {
+    for (std::pair<const cjgt::Tense*, wxCheckBox*> element : this->check_boxes_tense) {
 
         if (element.second->GetValue() == false) {
             continue;
@@ -211,125 +210,125 @@ std::vector<cjgt::QuizData> TopPanel::GetQuizDatas(const unsigned int& count) {
     return quizDatas;
 }
 
-void TopPanel::ResetFocus() {
-    quizItems.at(0)->set_focus();
+void TopPanel::reset_focus() {
+    this->quiz_items.at(0)->set_focus();
 }
 
-void TopPanel::GenerateQuiz() {
+void TopPanel::generate_quiz() {
 
     std::vector<cjgt::QuizData> quizDatas;
 
     try {
-        quizDatas = GetQuizDatas((unsigned int) quizItems.size());
+        quizDatas = this->get_quiz_datas((unsigned int) this->quiz_items.size());
     } catch(const std::invalid_argument& exception) {
         auto dlg = new wxMessageDialog(this, _("It wasn't possible to generate enough questions from your selection. Please select more categories or more tenses."));
         dlg->ShowModal();
         return;
     }
 
-    for (long unsigned int i = 0; i < quizItems.size(); i++) {
-        quizItems.at(i)->set_quiz_data(quizDatas.at(i));
+    for (long unsigned int i = 0; i < this->quiz_items.size(); i++) {
+        this->quiz_items.at(i)->set_quiz_data(quizDatas.at(i));
     }
 
-    topsizer->SetSizeHints(this);
+    this->top_sizer->SetSizeHints(this);
 }
 
-void TopPanel::Check() {
-    for (QuizItem* item : quizItems) {
+void TopPanel::check() {
+    for (QuizItem* item : this->quiz_items) {
         item->evaluate();
     }
 }
 
-void TopPanel::ShowSolutions() {
-    for (QuizItem* item : quizItems) {
+void TopPanel::show_solutions() {
+    for (QuizItem* item : this->quiz_items) {
         item->evaluate();
         item->show_solution();
     }
 
-    topsizer->SetSizeHints(this);
+    this->top_sizer->SetSizeHints(this);
 
 }
 
-void TopPanel::SelectAllVerbs() {
-    SetAllVerbs(true);
+void TopPanel::select_all_categories() {
+    set_category_check_boxes(true);
 }
 
-void TopPanel::SelectAllTenses() {
-    SetAllTenses(true);
+void TopPanel::select_all_tenses() {
+    set_tense_check_boxes(true);
 }
 
-void TopPanel::UnselectAll() {
-    SetAllVerbs(false);
-    SetAllTenses(false);
+void TopPanel::unselect_all() {
+    set_category_check_boxes(false);
+    set_tense_check_boxes(false);
 }
 
-void TopPanel::SetLanguage(const cjgt::Language* language) {
+void TopPanel::set_language(const cjgt::Language* language) {
     this->language = language;
-    this->SetCategoryCheckBoxes(this->language->get_categories());
-    this->SetTenseCheckBoxes(this->language->get_tenses());
+    this->set_categories();
+    this->set_tenses();
 }
 
-void TopPanel::SetAllVerbs(const bool& status) {
-    for (std::pair<const cjgt::Category*, wxCheckBox*> element : this->categoryCheckBoxes) {
+void TopPanel::set_category_check_boxes(const bool& status) {
+    for (std::pair<const cjgt::Category*, wxCheckBox*> element : this->check_boxes_category) {
         element.second->SetValue(status);
     }
 }
 
-void TopPanel::SetAllTenses(const bool& status) {
-    for (std::pair<const cjgt::Tense*, wxCheckBox*> element : this->tenseCheckBoxes) {
+void TopPanel::set_tense_check_boxes(const bool& status) {
+    for (std::pair<const cjgt::Tense*, wxCheckBox*> element : this->check_boxes_tense) {
         element.second->SetValue(status);
     }
 }
 
-void TopPanel::SetCategoryCheckBoxes(std::vector<const cjgt::Category*>) {
-    this->categorySelectionSizer->Clear();
+void TopPanel::set_categories() {
+    this->sizer_categories->Clear();
 
-    for (std::pair<const cjgt::Category*, wxCheckBox*> checkBox : this->categoryCheckBoxes) {
+    for (std::pair<const cjgt::Category*, wxCheckBox*> checkBox : this->check_boxes_category) {
         checkBox.second->Destroy();
     }
 
-    this->categoryCheckBoxes.clear();
+    this->check_boxes_category.clear();
 
     for (const cjgt::Category* category : this->language->get_categories()) {
-        this->categoryCheckBoxes[category] = new wxCheckBox(this, wxID_ANY, wxString(category->name));
-        this->categorySelectionSizer->Add(
-                this->categoryCheckBoxes[category],
+        this->check_boxes_category[category] = new wxCheckBox(this, wxID_ANY, wxString(category->name));
+        this->sizer_categories->Add(
+                this->check_boxes_category[category],
                 0,
                 wxEXPAND | wxLEFT | wxRIGHT,
                 10
         );
-        this->categorySelectionSizer->AddSpacer(3);
+        this->sizer_categories->AddSpacer(3);
     }
 
-    this->SetAllVerbs(true);
-    this->categorySelectionSizer->Layout();
-    this->topsizer->SetSizeHints(this);
+    this->set_category_check_boxes(true);
+    this->sizer_categories->Layout();
+    this->top_sizer->SetSizeHints(this);
 };
 
-void TopPanel::SetTenseCheckBoxes(std::vector<const cjgt::Tense*>) {
-    this->tenseSelectionSizer->Clear();
+void TopPanel::set_tenses() {
+    this->sizer_tenses->Clear();
 
-    for (std::pair<const cjgt::Tense*, wxCheckBox*> checkBox : this->tenseCheckBoxes) {
-        this->tenseSelectionSizer->Detach(checkBox.second);
+    for (std::pair<const cjgt::Tense*, wxCheckBox*> checkBox : this->check_boxes_tense) {
+        this->sizer_tenses->Detach(checkBox.second);
         checkBox.second->Destroy();
     }
 
-    this->tenseCheckBoxes.clear();
+    this->check_boxes_tense.clear();
 
     for (const cjgt::Tense* tense : this->language->get_tenses()) {
         if (tense->show_in_quiz) {
-            this->tenseCheckBoxes[tense] = new wxCheckBox(this, wxID_ANY, wxString(tense->name));
-            this->tenseSelectionSizer->Add(
-                    this->tenseCheckBoxes[tense],
+            this->check_boxes_tense[tense] = new wxCheckBox(this, wxID_ANY, wxString(tense->name));
+            this->sizer_tenses->Add(
+                    this->check_boxes_tense[tense],
                     0,
                     wxEXPAND | wxLEFT | wxRIGHT,
                     10
             );
-            this->tenseSelectionSizer->AddSpacer(3);
+            this->sizer_tenses->AddSpacer(3);
         }
     }
 
-    this->SetAllTenses(true);
-    this->tenseSelectionSizer->Layout();
-    this->topsizer->SetSizeHints(this);
+    this->set_tense_check_boxes(true);
+    this->sizer_tenses->Layout();
+    this->top_sizer->SetSizeHints(this);
 };

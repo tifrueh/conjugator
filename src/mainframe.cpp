@@ -84,7 +84,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     // Create a new top panel in which all windows will reside (so that
     // keyboard focus is handled automatically).
     this->top_panel = new TopPanel(this, this->language);
-    this->top_panel->ResetFocus();
+    this->top_panel->reset_focus();
 
     // Create a new wxBoxSizer and add the top panel to it.
     this->top_panel_sizer = new wxBoxSizer(wxVERTICAL);
@@ -144,18 +144,18 @@ void MainFrame::compute_new_size() {
 }
 
 void MainFrame::OnNext(wxCommandEvent& event) {
-    this->top_panel->GenerateQuiz();
-    this->top_panel->ResetFocus();
+    this->top_panel->generate_quiz();
+    this->top_panel->reset_focus();
 
     compute_new_size();
 }
 
 void MainFrame::OnCheck(wxCommandEvent& event) {
-    this->top_panel->Check();
+    this->top_panel->check();
 }
 
 void MainFrame::OnSolution(wxCommandEvent& event) {
-    this->top_panel->ShowSolutions();
+    this->top_panel->show_solutions();
 
     compute_new_size();
 }
@@ -165,15 +165,15 @@ void MainFrame::OnAbout(wxCommandEvent& event) {
 }
 
 void MainFrame::OnSelectVerbs(wxCommandEvent& event) {
-    this->top_panel->SelectAllVerbs();
+    this->top_panel->select_all_categories();
 }
 
 void MainFrame::OnSelectTenses(wxCommandEvent& event) {
-    this->top_panel->SelectAllTenses();
+    this->top_panel->select_all_tenses();
 }
 
 void MainFrame::OnUnselectAll(wxCommandEvent& event) {
-    this->top_panel->UnselectAll();
+    this->top_panel->unselect_all();
 }
 
 void MainFrame::OnGitHub(wxCommandEvent& event) {
@@ -194,7 +194,7 @@ void MainFrame::OnInspectorClose(wxWindowDestroyEvent& event) {
     this->inspector = nullptr;
     this->enable_menu_bar();
     this->top_panel->Enable();
-    this->top_panel->ResetFocus();
+    this->top_panel->reset_focus();
 }
 
 void MainFrame::OnVerbBox(wxCommandEvent &event) {
@@ -216,7 +216,7 @@ void MainFrame::OnSettingsSave(wxCommandEvent& event) {
     this->settings->write_config();
     this->settings->Destroy();
     this->reload_config();
-    this->top_panel->SetLanguage(language);
+    this->top_panel->set_language(language);
     this->compute_new_size();
 }
 

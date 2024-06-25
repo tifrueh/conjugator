@@ -26,9 +26,9 @@ class InspectorFrame : public wxFrame {
         
         // Set the verb of the verbview to the one selected in the verbbox and set the
         // sizehints of the frame from the topsizer.
-        void updateVerb();
+        void update_verb();
 
     private:
-        wxBoxSizer* topSizer;
-        InspectorPanel* inspectorPanel;
+        wxBoxSizer* top_sizer;
+        InspectorPanel* inspector_panel;
 };

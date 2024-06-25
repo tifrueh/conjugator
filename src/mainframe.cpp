@@ -198,7 +198,7 @@ void MainFrame::OnInspectorClose(wxWindowDestroyEvent& event) {
 }
 
 void MainFrame::OnVerbBox(wxCommandEvent &event) {
-    inspector->updateVerb();
+    inspector->update_verb();
 }
 
 void MainFrame::OnSettings(wxCommandEvent &event) {

@@ -10,16 +10,16 @@
 InspectorFrame::InspectorFrame(wxWindow *parent, const wxWindowID &winID, const wxString &title, const cjgt::Language* language) : wxFrame(parent, winID, title, wxDefaultPosition, wxDefaultSize, wxINSPECTEUR_STYLE) {
     SetIcon(wxICON(inspecteur));
 
-    topSizer = new wxBoxSizer(wxHORIZONTAL);
+    this->top_sizer = new wxBoxSizer(wxHORIZONTAL);
 
-    inspectorPanel = new InspectorPanel(this, language);
+    this->inspector_panel = new InspectorPanel(this, language);
 
-    topSizer->Add(inspectorPanel, 1, wxEXPAND, 0);
+    this->top_sizer->Add(this->inspector_panel, 1, wxEXPAND, 0);
 
-    this->SetSizerAndFit(topSizer);
+    this->SetSizerAndFit(this->top_sizer);
 }
 
-void InspectorFrame::updateVerb() {
-    inspectorPanel->setVerbFromBox();
-    topSizer->SetSizeHints(this);
+void InspectorFrame::update_verb() {
+    this->inspector_panel->setVerbFromBox();
+    this->top_sizer->SetSizeHints(this);
 }

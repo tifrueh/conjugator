@@ -18,8 +18,6 @@ repo](https://github.com/tifrueh/conjugator/releases/latest).
 
 - Select which verb types and which tenses you want to be asked about
 
-- Optionally display the infinitive in German to also study translations
-
 - Get feedback on the correctness of your answers without showing solutions
 
 - Compare your answer to the solutions

@@ -20,9 +20,9 @@ class SettingsFrame : public wxFrame {
         // Construct a new settings frame.
         SettingsFrame(wxWindow* parent, const wxWindowID& winID, const wxString& title);
 
-        void writeConfig();
+        void write_config();
 
     private:
-        wxBoxSizer* topSizer;
-        SettingsPanel* settingsPanel;
+        wxBoxSizer* top_sizer;
+        SettingsPanel* settings_panel;
 };

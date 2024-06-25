@@ -9,15 +9,15 @@
 
 SettingsFrame::SettingsFrame(wxWindow *parent, const wxWindowID &winID, const wxString &title) : wxFrame(parent, winID, title, wxDefaultPosition, wxDefaultSize, wxINSPECTEUR_STYLE) {
 
-    topSizer = new wxBoxSizer(wxHORIZONTAL);
+    this->top_sizer = new wxBoxSizer(wxHORIZONTAL);
 
-    settingsPanel = new SettingsPanel(this);
+    this->settings_panel = new SettingsPanel(this);
 
-    topSizer->Add(settingsPanel, 1, wxEXPAND | wxALL, 20);
+    this->top_sizer->Add(this->settings_panel, 1, wxEXPAND | wxALL, 20);
 
-    this->SetSizerAndFit(topSizer);
+    this->SetSizerAndFit(this->top_sizer);
 }
 
-void SettingsFrame::writeConfig() {
-    this->settingsPanel->writeConfig();
+void SettingsFrame::write_config() {
+    this->settings_panel->writeConfig();
 }

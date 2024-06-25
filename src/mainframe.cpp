@@ -213,7 +213,7 @@ void MainFrame::OnSettingsClose(wxWindowDestroyEvent& event) {
 }
 
 void MainFrame::OnSettingsSave(wxCommandEvent& event) {
-    this->settings->writeConfig();
+    this->settings->write_config();
     this->settings->Destroy();
     this->reload_config();
     this->top_panel->SetLanguage(language);

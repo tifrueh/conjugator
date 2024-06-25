@@ -5,76 +5,76 @@
 
 
 SettingsPanel::SettingsPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
-    topsizer = new wxBoxSizer(wxVERTICAL);
-    buttonsizer = new wxBoxSizer(wxHORIZONTAL);
+    this->top_sizer = new wxBoxSizer(wxVERTICAL);
+    this->button_sizer = new wxBoxSizer(wxHORIZONTAL);
 
-    langTitle = new wxStaticText(this, wxID_ANY, _("Quiz language"));
+    this->title_lang = new wxStaticText(this, wxID_ANY, _("Quiz language"));
 
-    wxFont titleFont = langTitle->GetFont();
+    wxFont titleFont = this->title_lang->GetFont();
     titleFont.MakeBold();
-    langTitle->SetFont(titleFont);
+    this->title_lang->SetFont(titleFont);
 
-    choiceLang = new wxChoice(this, wxID_ANY);
+    this->choice_lang = new wxChoice(this, wxID_ANY);
 
     for (std::pair<cjgt::LanguageID, const cjgt::Language*> language : cjgt::languages) {
-        choiceLang->Insert(*language.second->get_name(), language.first);
+        this->choice_lang->Insert(*language.second->get_name(), language.first);
     }
 
-    updateTitle = new wxStaticText(this, wxID_ANY, _("Update checker"));
+    this->title_update = new wxStaticText(this, wxID_ANY, _("Update checker"));
 
-    titleFont = updateTitle->GetFont();
+    titleFont = this->title_update->GetFont();
     titleFont.MakeBold();
-    updateTitle->SetFont(titleFont);
+    this->title_update->SetFont(titleFont);
 
-    checkBoxStartupCheck = new wxCheckBox(this, wxID_ANY, _("Check for updates on startup"));
+    do_startup_check = new wxCheckBox(this, wxID_ANY, _("Check for updates on startup"));
 
-    buttonCancel = new wxButton(this, winID::settings_cancel, _("Cancel"));
-    buttonSave = new wxButton(this, winID::settings_cancel, _("Save"));
+    this->button_cancel = new wxButton(this, winID::settings_cancel, _("Cancel"));
+    this->button_save = new wxButton(this, winID::settings_cancel, _("Save"));
 
-    buttonsizer->Add(
-            buttonCancel,
+    this->button_sizer->Add(
+            this->button_cancel,
             1,
             wxEXPAND | wxALL,
             5
     );
 
-    buttonsizer->Add(
-            buttonSave,
+    this->button_sizer->Add(
+            this->button_save,
             1,
             wxEXPAND | wxALL,
             5
     );
 
-    topsizer->Add(
-        langTitle,
+    this->top_sizer->Add(
+        this->title_lang,
         0,
         wxEXPAND | wxBOTTOM,
         5
     );
 
-    topsizer->Add(
-        choiceLang,
+    this->top_sizer->Add(
+        this->choice_lang,
         0,
         wxEXPAND | wxBOTTOM,
         20
     );
 
-    topsizer->Add(
-        updateTitle,
+    this->top_sizer->Add(
+        this->title_update,
         0,
         wxEXPAND | wxBOTTOM,
         5
     );
 
-    topsizer->Add(
-        checkBoxStartupCheck,
+    this->top_sizer->Add(
+        do_startup_check,
         0,
         wxEXPAND | wxBOTTOM,
         5
     );
 
-    topsizer->Add(
-        buttonsizer,
+    this->top_sizer->Add(
+        this->button_sizer,
         0,
         wxEXPAND | wxALL,
         5
@@ -86,13 +86,13 @@ SettingsPanel::SettingsPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     size_t quizLanguage = cjgt::LanguageID::French;
     wxConfigBase::Get()->Read("quizLanguage", &quizLanguage);
 
-    choiceLang->SetSelection(quizLanguage);
-    checkBoxStartupCheck->SetValue(checkForUpdateOnStartup);
+    this->choice_lang->SetSelection(quizLanguage);
+    do_startup_check->SetValue(checkForUpdateOnStartup);
 
-    this->SetSizerAndFit(topsizer);
+    this->SetSizerAndFit(this->top_sizer);
 }
 
-void SettingsPanel::writeConfig() {
-    wxConfigBase::Get()->Write("checkForUpdateOnStartup", this->checkBoxStartupCheck->GetValue());
-    wxConfigBase::Get()->Write("quizLanguage", this->choiceLang->GetSelection());
+void SettingsPanel::write_config() {
+    wxConfigBase::Get()->Write("checkForUpdateOnStartup", this->do_startup_check->GetValue());
+    wxConfigBase::Get()->Write("quizLanguage", this->choice_lang->GetSelection());
 }

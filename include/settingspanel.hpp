@@ -24,15 +24,15 @@ class SettingsPanel : public wxPanel {
         // Construct a new settings panel.
         explicit SettingsPanel(wxWindow* parent);
 
-        void writeConfig();
+        void write_config();
 
     private:
-        wxBoxSizer* topsizer;
-        wxBoxSizer* buttonsizer;
-        wxStaticText* langTitle;
-        wxChoice* choiceLang;
-        wxStaticText* updateTitle;
-        wxCheckBox* checkBoxStartupCheck;
-        wxButton* buttonCancel;
-        wxButton* buttonSave;
+        wxBoxSizer* top_sizer;
+        wxBoxSizer* button_sizer;
+        wxStaticText* title_lang;
+        wxChoice* choice_lang;
+        wxStaticText* title_update;
+        wxCheckBox* do_startup_check;
+        wxButton* button_cancel;
+        wxButton* button_save;
 };

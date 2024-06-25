@@ -19,5 +19,5 @@ SettingsFrame::SettingsFrame(wxWindow *parent, const wxWindowID &winID, const wx
 }
 
 void SettingsFrame::write_config() {
-    this->settings_panel->writeConfig();
+    this->settings_panel->write_config();
 }

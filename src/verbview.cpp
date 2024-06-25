@@ -13,7 +13,7 @@ VerbView::VerbView(wxWindow* parent, wxWindowID id, const cjgt::Language* langua
     tensebook = new wxChoicebook(this, wxID_ANY);
 
     // Create a verb view panel for each tense from present to conditionnel and add it to the tensebook.
-    for (const cjgt::Tense* tense : this->language->getTenses()) {
+    for (const cjgt::Tense* tense : this->language->get_tenses()) {
         if (tense->show_in_inspecteur) {
             pages.insert({tense, new VerbViewPanel(tensebook, wxID_ANY, verb, tense)});
             tensebook->AddPage(pages.at(tense), wxString(tense->name));
@@ -29,7 +29,7 @@ VerbView::VerbView(wxWindow* parent, wxWindowID id, const cjgt::Language* langua
 void VerbView::setVerb(const verbDB::Verb* verb) {
     this->verb = verb;
 
-    for (const cjgt::Tense* tense : this->language->getTenses()) {
+    for (const cjgt::Tense* tense : this->language->get_tenses()) {
         if (tense->show_in_inspecteur) {
             pages.at(tense)->setVerb(verb);
         }

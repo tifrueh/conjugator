@@ -17,7 +17,7 @@ SettingsPanel::SettingsPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     choiceLang = new wxChoice(this, wxID_ANY);
 
     for (std::pair<cjgt::LanguageID, const cjgt::Language*> language : cjgt::languages) {
-        choiceLang->Insert(*language.second->getName(), language.first);
+        choiceLang->Insert(*language.second->get_name(), language.first);
     }
 
     updateTitle = new wxStaticText(this, wxID_ANY, _("Update checker"));

@@ -57,7 +57,7 @@ void VerbViewPanel::setVerb(const verbDB::Verb* verb) {
 
     for (std::vector<std::wstring>::size_type i = 0; i < this->tense->persons.size(); i++) {
         std::wstring person = this->tense->persons[i];
-        const std::wstring* form = cjgt::getVerbForm(verb, i, this->tense);
+        const std::wstring* form = cjgt::get_verb_form(verb, i, this->tense);
         formLabels.at(person)->SetLabel(wxString(person) + wxT(" ") + *form);
 
         // Hide empty forms

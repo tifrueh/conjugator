@@ -10,7 +10,7 @@ InspectorPanel::InspectorPanel(wxWindow* parent, const cjgt::Language* language)
 
     wxArrayString verbs = wxArrayString();
 
-    for (std::pair<std::wstring, const verbDB::Verb*> element : this->language->getVerbs()) {
+    for (std::pair<std::wstring, const verbDB::Verb*> element : this->language->get_verbs()) {
         verbs.Add(wxString(element.first));
     }
 
@@ -20,7 +20,7 @@ InspectorPanel::InspectorPanel(wxWindow* parent, const cjgt::Language* language)
     topsizer->Add(verbBox, 0, wxEXPAND, 0);
 
     // Initialise a new verbview with the currently selected verb.
-    verbView = new VerbView(this, wxID_ANY, this->language, this->language->getVerb(verbBox->GetStringSelection().ToStdWstring()));
+    verbView = new VerbView(this, wxID_ANY, this->language, this->language->get_verb(verbBox->GetStringSelection().ToStdWstring()));
 
     topsizer->Add(verbView, 1, wxEXPAND | wxALL, 0);
 
@@ -28,7 +28,7 @@ InspectorPanel::InspectorPanel(wxWindow* parent, const cjgt::Language* language)
 }
 
 void InspectorPanel::setVerbFromBox() {
-    verbView->setVerb(this->language->getVerb(verbBox->GetStringSelection().ToStdWstring()));
+    verbView->setVerb(this->language->get_verb(verbBox->GetStringSelection().ToStdWstring()));
 
     topsizer->SetSizeHints(this);
 }

@@ -279,7 +279,7 @@ void MainFrame::reloadConfig() {
         wxConfigBase::Get()->Write("quizLanguage", quizLanguage);
     }
 
-    const cjgt::Language* config_language = cjgt::getLanguage((cjgt::LanguageID) quizLanguage);
+    const cjgt::Language* config_language = cjgt::get_language((cjgt::LanguageID) quizLanguage);
 
     if (config_language == nullptr) {
         this->language = &cjgt::french;

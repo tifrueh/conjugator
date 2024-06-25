@@ -95,7 +95,7 @@ TopPanel::TopPanel(wxWindow* parent, const cjgt::Language* language) : wxPanel(p
         bigSpace
     );
 
-    this->SetCategoryCheckBoxes(language->getCategories());
+    this->SetCategoryCheckBoxes(language->get_categories());
 
     formSelectionSizer->AddSpacer(hugeSpace);
 
@@ -117,7 +117,7 @@ TopPanel::TopPanel(wxWindow* parent, const cjgt::Language* language) : wxPanel(p
         bigSpace
     );
 
-    this->SetTenseCheckBoxes(language->getTenses());
+    this->SetTenseCheckBoxes(language->get_tenses());
 
     formSelectionSizer->AddStretchSpacer();
 
@@ -197,7 +197,7 @@ std::vector<cjgt::QuizData> TopPanel::GetQuizDatas(const unsigned int& count) {
     }
 
     for (unsigned int i = 0; i < count; i++) {
-        cjgt::QuizData quizData = this->language->getRandomQuizData(usableCategories, usableTenses);
+        cjgt::QuizData quizData = this->language->get_random_quiz_data(usableCategories, usableTenses);
 
         if (std::find(quizDatas.begin(), quizDatas.end(), quizData) != quizDatas.end()) {
             i--;
@@ -265,8 +265,8 @@ void TopPanel::UnselectAll() {
 
 void TopPanel::SetLanguage(const cjgt::Language* language) {
     this->language = language;
-    this->SetCategoryCheckBoxes(this->language->getCategories());
-    this->SetTenseCheckBoxes(this->language->getTenses());
+    this->SetCategoryCheckBoxes(this->language->get_categories());
+    this->SetTenseCheckBoxes(this->language->get_tenses());
 }
 
 void TopPanel::SetAllVerbs(const bool& status) {
@@ -290,7 +290,7 @@ void TopPanel::SetCategoryCheckBoxes(std::vector<const cjgt::Category*>) {
 
     this->categoryCheckBoxes.clear();
 
-    for (const cjgt::Category* category : this->language->getCategories()) {
+    for (const cjgt::Category* category : this->language->get_categories()) {
         this->categoryCheckBoxes[category] = new wxCheckBox(this, wxID_ANY, wxString(category->name));
         this->categorySelectionSizer->Add(
                 this->categoryCheckBoxes[category],
@@ -316,7 +316,7 @@ void TopPanel::SetTenseCheckBoxes(std::vector<const cjgt::Tense*>) {
 
     this->tenseCheckBoxes.clear();
 
-    for (const cjgt::Tense* tense : this->language->getTenses()) {
+    for (const cjgt::Tense* tense : this->language->get_tenses()) {
         if (tense->show_in_quiz) {
             this->tenseCheckBoxes[tense] = new wxCheckBox(this, wxID_ANY, wxString(tense->name));
             this->tenseSelectionSizer->Add(

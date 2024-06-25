@@ -50,13 +50,13 @@ namespace cjgt {
                     const std::vector<Tense>& tenses
             );
 
-            const std::wstring* getName() const;
-            std::vector<const Category*> getCategories() const;
-            std::vector<const Tense*> getTenses() const;
-            std::map<std::wstring, const verbDB::Verb*> getVerbs() const;
-            const verbDB::Verb* getVerb(const std::wstring& name) const;
+            const std::wstring* get_name() const;
+            std::vector<const Category*> get_categories() const;
+            std::vector<const Tense*> get_tenses() const;
+            std::map<std::wstring, const verbDB::Verb*> get_verbs() const;
+            const verbDB::Verb* get_verb(const std::wstring& name) const;
 
-            QuizData getRandomQuizData(const std::vector<const Category*>& categories, const std::vector<const Tense*>& tenses) const;
+            QuizData get_random_quiz_data(const std::vector<const Category*>& categories, const std::vector<const Tense*>& tenses) const;
 
         private:
             std::wstring name;
@@ -65,7 +65,7 @@ namespace cjgt {
             std::map<std::wstring, const verbDB::Verb*> verbs;
     };
 
-    const std::wstring* getVerbForm(
+    const std::wstring* get_verb_form(
             const verbDB::Verb* verb,
             const std::vector<std::wstring>::size_type& person,
             const Tense* tense
@@ -79,5 +79,5 @@ namespace cjgt {
         {LanguageID::French, &french}
     };
 
-    const Language* getLanguage(const LanguageID& id);
+    const Language* get_language(const LanguageID& id);
 }

@@ -28,11 +28,11 @@ cjgt::Language::Language(
 
 }
 
-const std::wstring* cjgt::Language::getName() const {
+const std::wstring* cjgt::Language::get_name() const {
     return &this->name;
 }
 
-std::vector<const cjgt::Category*> cjgt::Language::getCategories() const {
+std::vector<const cjgt::Category*> cjgt::Language::get_categories() const {
     std::vector<const cjgt::Category*> output;
 
     for (std::vector<cjgt::Category>::const_iterator it = this->categories.begin(); it != this->categories.end(); ++it) {
@@ -42,7 +42,7 @@ std::vector<const cjgt::Category*> cjgt::Language::getCategories() const {
     return output;
 }
 
-std::vector<const cjgt::Tense*> cjgt::Language::getTenses() const {
+std::vector<const cjgt::Tense*> cjgt::Language::get_tenses() const {
 
     std::vector<const cjgt::Tense*> output;
 
@@ -53,15 +53,15 @@ std::vector<const cjgt::Tense*> cjgt::Language::getTenses() const {
     return output;
 }
 
-std::map<std::wstring, const verbDB::Verb*> cjgt::Language::getVerbs() const {
+std::map<std::wstring, const verbDB::Verb*> cjgt::Language::get_verbs() const {
     return this->verbs;
 }
 
-const verbDB::Verb* cjgt::Language::getVerb(const std::wstring& verb) const {
+const verbDB::Verb* cjgt::Language::get_verb(const std::wstring& verb) const {
     return this->verbs.at(verb);
 }
 
-cjgt::QuizData cjgt::Language::getRandomQuizData(
+cjgt::QuizData cjgt::Language::get_random_quiz_data(
         const std::vector<const cjgt::Category*>& categories,
         const std::vector<const cjgt::Tense*>& tenses
 ) const {
@@ -82,7 +82,7 @@ cjgt::QuizData cjgt::Language::getRandomQuizData(
     std::vector<std::wstring>::size_type person_index = person_distribution(engine);
     const std::wstring* person = &tense->persons.at(person_index);
 
-    const std::wstring* form = getVerbForm(verb, person_index, tense);
+    const std::wstring* form = get_verb_form(verb, person_index, tense);
 
     cjgt::QuizData data;
     data.verb_name = &verb->name;
@@ -93,7 +93,7 @@ cjgt::QuizData cjgt::Language::getRandomQuizData(
     return data;
 }
 
-const std::wstring* cjgt::getVerbForm(
+const std::wstring* cjgt::get_verb_form(
                     const verbDB::Verb* verb,
                     const std::vector<std::wstring>::size_type& person,
                     const Tense* tense
@@ -117,7 +117,7 @@ std::wstring cjgt::strip(const std::wstring& string) {
     }
 }
 
-const cjgt::Language* cjgt::getLanguage(const cjgt::LanguageID& id) {
+const cjgt::Language* cjgt::get_language(const cjgt::LanguageID& id) {
     std::map<cjgt::LanguageID, const cjgt::Language*>::const_iterator element = cjgt::languages.find(id);
 
     if (element == cjgt::languages.end()) {

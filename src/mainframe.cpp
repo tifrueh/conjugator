@@ -225,7 +225,7 @@ void MainFrame::OnSettingsCancel(wxCommandEvent& event) {
 }
 
 void MainFrame::checkForUpdates(const bool& failSilently) {
-    this->update_checker.setFailSilently(failSilently);
+    this->update_checker.set_fail_silently(failSilently);
     this->update_checker.start(this, "https://api.github.com/repos/tifrueh/conjugator/releases/latest", winID::request_update_checker);
 }
 
@@ -234,7 +234,7 @@ void MainFrame::OnUpdateChecker(wxCommandEvent& event) {
 }
 
 void MainFrame::HandleUpdateChecker(wxWebRequestEvent& event) {
-    this->update_checker.showResult(event);
+    this->update_checker.show_result(event);
 }
 
 wxAboutDialogInfo MainFrame::get_info() {

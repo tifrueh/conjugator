@@ -6,20 +6,20 @@
 
 
 UpdateChecker::UpdateChecker() {
-    request = wxWebRequest();
-    session = wxWebSession::GetDefault();
-    failSilently = false;
+    this->request = wxWebRequest();
+    this->session = wxWebSession::GetDefault();
+    this->fail_silently = false;
 }
 
 void UpdateChecker::start(wxWindow* parent, const std::string& url, const int& requestId) {
     this->parent = parent;
 
-    if (request.IsOk() && request.GetState() == wxWebRequest::State_Active) {
-        request.Cancel();
+    if (this->request.IsOk() && this->request.GetState() == wxWebRequest::State_Active) {
+        this->request.Cancel();
     }
 
-    request = session.CreateRequest(parent, url, requestId);
-    if (!request.IsOk() && failSilently == false) {
+    this->request = session.CreateRequest(parent, url, requestId);
+    if (!this->request.IsOk() && this->fail_silently == false) {
         wxMessageDialog* dlg = new wxMessageDialog(parent, _("The request wasn't able to be processed."), _("Error"));
         dlg->ShowModal();
         return;
@@ -28,15 +28,15 @@ void UpdateChecker::start(wxWindow* parent, const std::string& url, const int& r
     request.Start();
 }
 
-void UpdateChecker::showResult(wxWebRequestEvent& event) {
+void UpdateChecker::show_result(wxWebRequestEvent& event) {
     switch(event.GetState()) {
         case wxWebRequest::State_Completed: {
-            showResultMessage(event.GetResponse().AsString().ToStdString());
+            show_result_message(event.GetResponse().AsString().ToStdString());
             break;
         }
         case wxWebRequest::State_Failed: {
 
-            if (failSilently == false) {
+            if (this->fail_silently == false) {
                 wxMessageDialog *dlgFailed = new wxMessageDialog(
                     parent,
                     _("The web request failed. Please verify your internet connection."),
@@ -54,7 +54,7 @@ void UpdateChecker::showResult(wxWebRequestEvent& event) {
     }
 }
 
-std::string UpdateChecker::getLatestVersion(const std::string& responseString) {
+std::string UpdateChecker::get_latest_version(const std::string& responseString) {
     size_t keyPos = responseString.find("\"tag_name\"");
     size_t versionPos = keyPos + 12;
     size_t versionEndPos = responseString.find("\"", versionPos);
@@ -65,8 +65,8 @@ std::string UpdateChecker::getLatestVersion(const std::string& responseString) {
     }
 }
 
-void UpdateChecker::showResultMessage(const std::string& responseString) {
-    std::string latestVersion = getLatestVersion(responseString);
+void UpdateChecker::show_result_message(const std::string& responseString) {
+    std::string latestVersion = get_latest_version(responseString);
     wxString message;
     wxMessageDialog* dialog = nullptr;
 
@@ -82,12 +82,12 @@ void UpdateChecker::showResultMessage(const std::string& responseString) {
             wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/conjugator/releases/latest"));
         }
 
-    } else if (failSilently == false) {
+    } else if (this->fail_silently == false) {
         dialog = new wxMessageDialog(parent, _("You are already using the latest version."), _("Update"));
         dialog->ShowModal();
     }
 }
 
-void UpdateChecker::setFailSilently(const bool& failSilently) {
-    this->failSilently = failSilently;
+void UpdateChecker::set_fail_silently(const bool& failSilently) {
+    this->fail_silently = failSilently;
 }

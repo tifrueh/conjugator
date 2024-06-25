@@ -6,7 +6,7 @@
 
 InspectorPanel::InspectorPanel(wxWindow* parent, const cjgt::Language* language) : wxPanel(parent, wxID_ANY) {
     this->language = language;
-    topsizer = new wxBoxSizer(wxHORIZONTAL);
+    this->top_sizer = new wxBoxSizer(wxHORIZONTAL);
 
     wxArrayString verbs = wxArrayString();
 
@@ -14,21 +14,21 @@ InspectorPanel::InspectorPanel(wxWindow* parent, const cjgt::Language* language)
         verbs.Add(wxString(element.first));
     }
 
-    verbBox = new wxListBox(this, winID::inspector_verb_box, wxDefaultPosition, wxDefaultSize, verbs, wxLB_SINGLE | wxLB_SORT);
-    verbBox->SetSelection(0, true);
+    this->verb_box = new wxListBox(this, winID::inspector_verb_box, wxDefaultPosition, wxDefaultSize, verbs, wxLB_SINGLE | wxLB_SORT);
+    this->verb_box->SetSelection(0, true);
 
-    topsizer->Add(verbBox, 0, wxEXPAND, 0);
+    this->top_sizer->Add(this->verb_box, 0, wxEXPAND, 0);
 
     // Initialise a new verbview with the currently selected verb.
-    verbView = new VerbView(this, wxID_ANY, this->language, this->language->get_verb(verbBox->GetStringSelection().ToStdWstring()));
+    this->verb_view = new VerbView(this, wxID_ANY, this->language, this->language->get_verb(this->verb_box->GetStringSelection().ToStdWstring()));
 
-    topsizer->Add(verbView, 1, wxEXPAND | wxALL, 0);
+    this->top_sizer->Add(this->verb_view, 1, wxEXPAND | wxALL, 0);
 
-    this->SetSizerAndFit(topsizer);
+    this->SetSizerAndFit(this->top_sizer);
 }
 
-void InspectorPanel::setVerbFromBox() {
-    verbView->setVerb(this->language->get_verb(verbBox->GetStringSelection().ToStdWstring()));
+void InspectorPanel::set_verb_from_box() {
+    this->verb_view->setVerb(this->language->get_verb(verb_box->GetStringSelection().ToStdWstring()));
 
-    topsizer->SetSizeHints(this);
+    this->top_sizer->SetSizeHints(this);
 }

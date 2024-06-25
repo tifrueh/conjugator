@@ -20,6 +20,6 @@ InspectorFrame::InspectorFrame(wxWindow *parent, const wxWindowID &winID, const 
 }
 
 void InspectorFrame::update_verb() {
-    this->inspector_panel->setVerbFromBox();
+    this->inspector_panel->set_verb_from_box();
     this->top_sizer->SetSizeHints(this);
 }

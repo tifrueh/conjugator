@@ -105,7 +105,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnNext, this, winID::menu_next);
     Bind(wxEVT_MENU, &MainFrame::OnCheck, this, winID::menu_check);
     Bind(wxEVT_MENU, &MainFrame::OnSolution, this, winID::menu_solutions);
-    Bind(wxEVT_MENU, &MainFrame::OnSelectVerbs, this, winID::menu_select_categories);
+    Bind(wxEVT_MENU, &MainFrame::OnSelectCategories, this, winID::menu_select_categories);
     Bind(wxEVT_MENU, &MainFrame::OnSelectTenses, this, winID::menu_select_tenses);
     Bind(wxEVT_MENU, &MainFrame::OnUnselectAll, this, winID::menu_unselect_all);
     Bind(wxEVT_MENU, &MainFrame::OnAbout, this, wxID_ABOUT);
@@ -164,7 +164,7 @@ void MainFrame::OnAbout(wxCommandEvent& event) {
    wxAboutBox(get_info(), this);
 }
 
-void MainFrame::OnSelectVerbs(wxCommandEvent& event) {
+void MainFrame::OnSelectCategories(wxCommandEvent& event) {
     this->top_panel->select_all_categories();
 }
 

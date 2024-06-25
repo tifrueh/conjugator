@@ -72,7 +72,7 @@ class MainFrame : public wxFrame {
         void OnAbout(wxCommandEvent& event);
 
         // Select all verbs when the corresponding menu entry is selected.
-        void OnSelectVerbs(wxCommandEvent& event);
+        void OnSelectCategories(wxCommandEvent& event);
 
         // Select all tenses when the corresponding menu entry is selected.
         void OnSelectTenses(wxCommandEvent& event);

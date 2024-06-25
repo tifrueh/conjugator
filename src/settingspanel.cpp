@@ -26,10 +26,10 @@ SettingsPanel::SettingsPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     titleFont.MakeBold();
     this->title_update->SetFont(titleFont);
 
-    do_startup_check = new wxCheckBox(this, wxID_ANY, _("Check for updates on startup"));
+    this->do_startup_check = new wxCheckBox(this, wxID_ANY, _("Check for updates on startup"));
 
     this->button_cancel = new wxButton(this, winID::settings_cancel, _("Cancel"));
-    this->button_save = new wxButton(this, winID::settings_cancel, _("Save"));
+    this->button_save = new wxButton(this, winID::settings_save, _("Save"));
 
     this->button_sizer->Add(
             this->button_cancel,
@@ -87,7 +87,7 @@ SettingsPanel::SettingsPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     wxConfigBase::Get()->Read("quizLanguage", &quizLanguage);
 
     this->choice_lang->SetSelection(quizLanguage);
-    do_startup_check->SetValue(checkForUpdateOnStartup);
+    this->do_startup_check->SetValue(checkForUpdateOnStartup);
 
     this->SetSizerAndFit(this->top_sizer);
 }

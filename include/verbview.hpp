@@ -27,7 +27,7 @@ class VerbView : public wxPanel {
         VerbView(wxWindow* parent, wxWindowID id, const cjgt::Language* language, const verbDB::Verb* verb);
 
         // Set the verb of all verb view panels.
-        void setVerb(const verbDB::Verb* verb);
+        void set_verb(const verbDB::Verb* verb);
 
     private:
         wxChoicebook* tensebook;

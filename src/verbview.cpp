@@ -8,32 +8,32 @@ VerbView::VerbView(wxWindow* parent, wxWindowID id, const cjgt::Language* langua
     this->language = language;
     this->verb = verb;
     
-    sizer = new wxBoxSizer(wxVERTICAL);
-    
-    tensebook = new wxChoicebook(this, wxID_ANY);
+    this->sizer = new wxBoxSizer(wxVERTICAL);
+
+    this->tensebook = new wxChoicebook(this, wxID_ANY);
 
     // Create a verb view panel for each tense from present to conditionnel and add it to the tensebook.
     for (const cjgt::Tense* tense : this->language->get_tenses()) {
         if (tense->show_in_inspecteur) {
-            pages.insert({tense, new VerbViewPanel(tensebook, wxID_ANY, verb, tense)});
-            tensebook->AddPage(pages.at(tense), wxString(tense->name));
+            this->pages.insert({tense, new VerbViewPanel(this->tensebook, wxID_ANY, verb, tense)});
+            this->tensebook->AddPage(this->pages.at(tense), wxString(tense->name));
         }
     }
 
-    sizer->Add(tensebook, 0, wxEXPAND | wxALL, 10);
+    this->sizer->Add(tensebook, 0, wxEXPAND | wxALL, 10);
 
     this->SetSizerAndFit(sizer);
 
 }
 
-void VerbView::setVerb(const verbDB::Verb* verb) {
+void VerbView::set_verb(const verbDB::Verb* verb) {
     this->verb = verb;
 
     for (const cjgt::Tense* tense : this->language->get_tenses()) {
         if (tense->show_in_inspecteur) {
-            pages.at(tense)->setVerb(verb);
+            this->pages.at(tense)->setVerb(verb);
         }
     }
 
-    sizer->SetSizeHints(this);
+    this->sizer->SetSizeHints(this);
 }

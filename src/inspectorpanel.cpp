@@ -28,7 +28,7 @@ InspectorPanel::InspectorPanel(wxWindow* parent, const cjgt::Language* language)
 }
 
 void InspectorPanel::set_verb_from_box() {
-    this->verb_view->setVerb(this->language->get_verb(verb_box->GetStringSelection().ToStdWstring()));
+    this->verb_view->set_verb(this->language->get_verb(verb_box->GetStringSelection().ToStdWstring()));
 
     this->top_sizer->SetSizeHints(this);
 }

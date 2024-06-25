@@ -26,24 +26,24 @@ class QuizItem {
         QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::QuizData& data, const bool& translate = false);
 
         // Set the focus to the text control.
-        void SetFocus();
+        void set_focus();
 
         // Reset the verb form this quiz item should ask for.
-        void setQuizData(const cjgt::QuizData& data, const bool& translate = false);
+        void set_quiz_data(const cjgt::QuizData& data, const bool& translate = false);
 
         // Check if the given answer in the text control is correct and colour it
         // correspondingly.
         bool evaluate();
 
         // Show the solution to the question.
-        void showSolution();
+        void show_solution();
 
     private:
         wxFlexGridSizer* sizer;
         wxWindow* parent;
         cjgt::QuizData data;
         wxStaticText* question = nullptr;
-        wxTextCtrl* textCtrl = nullptr;
+        wxTextCtrl* text_ctrl = nullptr;
         wxStaticText* solution = nullptr;
-        std::wstring questionString;
+        std::wstring question_string;
 };

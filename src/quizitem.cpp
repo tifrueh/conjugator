@@ -11,36 +11,36 @@ QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::QuizDat
 
     // Don't show a person if the question is prompting for a participe present form.
     if (*data.person == L"") {
-        questionString = *data.verb_name + L": " + data.tense->name;
+        this->question_string = *data.verb_name + L": " + data.tense->name;
     } else {
-        questionString = *data.verb_name + L": " + data.tense->name + L" – " + *data.person;
+        this->question_string = *data.verb_name + L": " + data.tense->name + L" – " + *data.person;
     }
 
-    question = new wxStaticText(parent, 
+    this->question = new wxStaticText(parent, 
         wxID_ANY, 
-        wxString(questionString)
+        wxString(this->question_string)
     );
 
     // Create a text control with a minimum width of 150.
-    textCtrl = new wxTextCtrl(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(150, wxDefaultSize.GetY()));
+    this->text_ctrl = new wxTextCtrl(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(150, wxDefaultSize.GetY()));
 
-    solution = new wxStaticText(parent, wxID_ANY, wxEmptyString);
+    this->solution = new wxStaticText(parent, wxID_ANY, wxEmptyString);
 
-    sizer->Add(
+    this->sizer->Add(
         question,
         0,
         wxALIGN_CENTER_VERTICAL,
         0
     );
 
-    sizer->Add(
-        textCtrl,
+    this->sizer->Add(
+        this->text_ctrl,
         0,
         wxEXPAND | wxALIGN_CENTER_VERTICAL,
         0
     );
 
-   sizer->Add(
+   this->sizer->Add(
         solution,
         0,
         wxALIGN_CENTER_VERTICAL | wxALIGN_LEFT,
@@ -48,53 +48,53 @@ QuizItem::QuizItem(wxWindow* parent, wxFlexGridSizer* sizer, const cjgt::QuizDat
     );
 }
 
-void QuizItem::SetFocus() {
-    textCtrl->SetFocus();
+void QuizItem::set_focus() {
+    this->text_ctrl->SetFocus();
 }
 
-void QuizItem::setQuizData(const cjgt::QuizData& data, const bool& translate) {
+void QuizItem::set_quiz_data(const cjgt::QuizData& data, const bool& translate) {
     this->data = data;
 
     std::wstring infinitif;
 
     if (*data.person == L"") {
-        questionString = *data.verb_name + L": " + data.tense->name;
+        this->question_string = *data.verb_name + L": " + data.tense->name;
     } else {
-        questionString = *data.verb_name + L": " + data.tense->name + L" – " + *data.person;
+        this->question_string = *data.verb_name + L": " + data.tense->name + L" – " + *data.person;
     }
 
     // Set the text colour back to default.
-    textCtrl->SetForegroundColour(wxNullColour);
+    this->text_ctrl->SetForegroundColour(wxNullColour);
 
-    textCtrl->Clear();
+    this->text_ctrl->Clear();
 
-    solution->SetLabelText(wxEmptyString);
+    this->solution->SetLabelText(wxEmptyString);
 
-    question->SetLabelText(questionString);
+    this->question->SetLabelText(this->question_string);
 }
 
 bool QuizItem::evaluate() {
     bool correct;
-    std::wstring textCtrlString = std::wstring(textCtrl->GetValue().wchar_str());
+    std::wstring text_ctrl_string = std::wstring(this->text_ctrl->GetValue().wchar_str());
 
-    correct = textCtrlString == *this->data.form;
+    correct = text_ctrl_string == *this->data.form;
 
-    if (cjgt::strip(textCtrlString).empty()) {
-        textCtrl->SetForegroundColour(wxNullColour);
+    if (cjgt::strip(text_ctrl_string).empty()) {
+        this->text_ctrl->SetForegroundColour(wxNullColour);
     }
     else if (correct) {
-        textCtrl->SetForegroundColour(*wxGREEN);
+        this->text_ctrl->SetForegroundColour(*wxGREEN);
     } else {
-        textCtrl->SetForegroundColour(*wxRED);
+        this->text_ctrl->SetForegroundColour(*wxRED);
     }
 
-    textCtrl->Refresh();
+    this->text_ctrl->Refresh();
 
     return correct;
 }
 
-void QuizItem::showSolution() {
+void QuizItem::show_solution() {
     std::wstring solutionStr;
 
-    solution->SetLabelText(wxString(*this->data.form));
+    this->solution->SetLabelText(wxString(*this->data.form));
 }

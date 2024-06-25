@@ -212,7 +212,7 @@ std::vector<cjgt::QuizData> TopPanel::GetQuizDatas(const unsigned int& count) {
 }
 
 void TopPanel::ResetFocus() {
-    quizItems.at(0)->SetFocus();
+    quizItems.at(0)->set_focus();
 }
 
 void TopPanel::GenerateQuiz() {
@@ -228,7 +228,7 @@ void TopPanel::GenerateQuiz() {
     }
 
     for (long unsigned int i = 0; i < quizItems.size(); i++) {
-        quizItems.at(i)->setQuizData(quizDatas.at(i));
+        quizItems.at(i)->set_quiz_data(quizDatas.at(i));
     }
 
     topsizer->SetSizeHints(this);
@@ -243,7 +243,7 @@ void TopPanel::Check() {
 void TopPanel::ShowSolutions() {
     for (QuizItem* item : quizItems) {
         item->evaluate();
-        item->showSolution();
+        item->show_solution();
     }
 
     topsizer->SetSizeHints(this);

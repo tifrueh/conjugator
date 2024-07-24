@@ -1,0 +1,6 @@
+# List of source files containing translatable strings.
+
+src/mainframe.cpp
+src/settingspanel.cpp
+src/toppanel.cpp
+src/updatechecker.cpp

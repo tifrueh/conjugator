@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Conjugator Wiki
+    url: "https://github.com/tifrueh/conjugator/wiki"
+    about: You might be able to find the answer to your question here.
+  - name: Security vulnerabilities
+    url: "https://github.com/tifrueh/conjugator/security/advisories/new"
+    about: Please report security vulnerabilities here.

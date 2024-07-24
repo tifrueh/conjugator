@@ -3,6 +3,6 @@ i18n = import('i18n')
 
 i18n.gettext(
   meson.project_name(),
-  args: [ '-k_' ],
+  args: [ '--from-code=utf-8', '-k_' ],
   install: true
 )

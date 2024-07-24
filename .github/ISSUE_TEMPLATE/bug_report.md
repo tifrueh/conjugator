@@ -30,3 +30,5 @@ OS and version: [e.g. macos 14.5]
 Conjugator version: [e.g. 1.0.3]
 
 #### Additional context
+
+Add any other context about the problem here.

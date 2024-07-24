@@ -35,13 +35,9 @@ DISTFILE_PATH="${MESON_BUILD_ROOT}/distribution.dist"
 PKG_PATH="${DIST_PATH}/Conjugator-macOS-universal-v${1}.pkg"
 BUNDLE_PATH="${MESON_BUILD_ROOT}/Conjugator.app"
 
-# Rebundle the app if it doesn't exist yet.
-if [ -d ${BUNDLE_PATH} ]; then
-	echo "package_mac: bundle \"Conjugator.app\" exists, not rebundling"
-else
-	echo "package_mac: rebundling \"Conjugator.app\""
-	/bin/sh "${MESON_SOURCE_ROOT}/scripts/bundle_mac.sh"
-fi
+# Bundle the app.
+echo "package_mac: Bundling \"Conjugator.app\""
+/bin/sh "${MESON_SOURCE_ROOT}/scripts/bundle_mac.sh"
 
 # Sign the bundle if codesigning is enabled.
 if [ ${CODESIGN} ]; then

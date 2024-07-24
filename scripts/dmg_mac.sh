@@ -29,13 +29,9 @@ DMG_DIR_PATH="${MESON_BUILD_ROOT}/Conjugator v${1}"
 DMG_PATH="${DIST_PATH}/Conjugator-macOS-universal-v${1}.dmg"
 BUNDLE_PATH="${MESON_BUILD_ROOT}/Conjugator.app"
 
-# Rebundle the app if it doesn't exist yet.
-if [ -d ${BUNDLE_PATH} ]; then
-        echo "dmg_mac: bundle \"Conjugator.app\" exists, not rebundling"
-else
-        echo "dmg_mac: rebundling \"Conjugator.app\""
-        /bin/sh "${MESON_SOURCE_ROOT}/scripts/bundle_mac.sh"
-fi
+# Bundle the app.
+echo "dmg_mac: Bundling \"Conjugator.app\""
+/bin/sh "${MESON_SOURCE_ROOT}/scripts/bundle_mac.sh"
 
 # Sign the bundle if codesigning is enabled.
 if [ ${CODESIGN} ]; then

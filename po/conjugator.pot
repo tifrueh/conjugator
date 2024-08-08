@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the conjugator package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: conjugator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-08 13:40+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/mainframe.cpp:23
+msgid "Verb conjugation trainer"
+msgstr ""
+
+#: src/mainframe.cpp:53
+msgid "Edit"
+msgstr ""
+
+#: src/mainframe.cpp:54 src/toppanel.cpp:21
+msgid "Quiz"
+msgstr ""
+
+#: src/mainframe.cpp:55
+msgid "Help"
+msgstr ""
+
+#: src/mainframe.cpp:63
+msgid "Select all categories\tCtrl-1"
+msgstr ""
+
+#: src/mainframe.cpp:64
+msgid "Select all tenses\tCtrl-2"
+msgstr ""
+
+#: src/mainframe.cpp:65
+msgid "Unselect all\tCtrl-0"
+msgstr ""
+
+#: src/mainframe.cpp:67
+msgid "Next\tCtrl-Enter"
+msgstr ""
+
+#: src/mainframe.cpp:68
+msgid "Check\tCtrl-Shift-Enter"
+msgstr ""
+
+#: src/mainframe.cpp:69
+msgid "Solutions\tCtrl-S"
+msgstr ""
+
+#: src/mainframe.cpp:71
+msgid "Open inspector\tCtrl-I"
+msgstr ""
+
+#: src/mainframe.cpp:73
+msgid "Settings…\tCtrl-,"
+msgstr ""
+
+#: src/mainframe.cpp:75
+msgid "About Conjugator"
+msgstr ""
+
+#: src/mainframe.cpp:206
+msgid "Settings"
+msgstr ""
+
+#: src/mainframe.cpp:257
+msgid "Check for updates"
+msgstr ""
+
+#: src/settingspanel.cpp:11
+msgid "Quiz language"
+msgstr ""
+
+#: src/settingspanel.cpp:23
+msgid "Update checker"
+msgstr ""
+
+#: src/settingspanel.cpp:29
+msgid "Check for updates on startup"
+msgstr ""
+
+#: src/settingspanel.cpp:31
+msgid "Cancel"
+msgstr ""
+
+#: src/settingspanel.cpp:32
+msgid "Save"
+msgstr ""
+
+#: src/toppanel.cpp:15
+msgid "Category/tense selection"
+msgstr ""
+
+#: src/toppanel.cpp:34
+msgid "Categories"
+msgstr ""
+
+#: src/toppanel.cpp:40
+msgid "Tenses"
+msgstr ""
+
+#: src/toppanel.cpp:45
+msgid "Next"
+msgstr ""
+
+#: src/toppanel.cpp:46
+msgid "Check"
+msgstr ""
+
+#: src/toppanel.cpp:47
+msgid "Solutions"
+msgstr ""
+
+#: src/toppanel.cpp:224
+msgid ""
+"It wasn't possible to generate enough questions from your selection. Please "
+"select more categories or more tenses."
+msgstr ""
+
+#: src/updatechecker.cpp:23
+msgid "The request wasn't able to be processed."
+msgstr ""
+
+#: src/updatechecker.cpp:23 src/updatechecker.cpp:43
+msgid "Error"
+msgstr ""
+
+#: src/updatechecker.cpp:42
+msgid "The web request failed. Please verify your internet connection."
+msgstr ""
+
+#: src/updatechecker.cpp:75
+msgid "Your version: "
+msgstr ""
+
+#: src/updatechecker.cpp:76
+msgid "Latest version: "
+msgstr ""
+
+#: src/updatechecker.cpp:77
+msgid ""
+"\n"
+"\n"
+"Do you want to download the latest version?"
+msgstr ""
+
+#: src/updatechecker.cpp:79 src/updatechecker.cpp:86
+msgid "Update"
+msgstr ""
+
+#: src/updatechecker.cpp:86
+msgid "You are already using the latest version."
+msgstr ""

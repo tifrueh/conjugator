@@ -46,7 +46,10 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 [Files]
 Source: "build\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "LICENSE.md"; DestDir: "{app}"; Flags: ignoreversion
-Source: "resources\lang\fr\LC_MESSAGES\wxstd.mo"; DestDir: "{app}\fr"; Flags: ignoreversion
+Source: "build\wxstd\fr\wxstd.mo"; DestDir: "{app}\fr"; Flags: ignoreversion
+Source: "build\wxstd\de\wxstd.mo"; DestDir: "{app}\de"; Flags: ignoreversion
+Source: "build\po\fr\LC_MESSAGES\conjugator.mo"; DestDir: "{app}\fr"; Flags: ignoreversion
+Source: "build\po\de\LC_MESSAGES\conjugator.mo"; DestDir: "{app}\de"; Flags: ignoreversion
 Source: "resources\conjugator.ico"; DestDir: "{app}"; Flags: ignoreversion
 Source: "resources\inspecteur.ico"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files

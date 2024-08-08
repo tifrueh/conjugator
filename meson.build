@@ -167,3 +167,13 @@ if host_machine.system() == 'darwin'
       env: env
   )
 endif
+
+# Windows-exclusive custom targets (see scripts/).
+if host_machine.system() == 'windows'
+  run_target(
+      'package_win',
+      command: 'scripts/package_win.sh',
+      depends: [ conjugator ],
+      env: env
+  )
+endif

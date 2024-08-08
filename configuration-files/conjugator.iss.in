@@ -4,9 +4,9 @@
 #define MyAppName "Conjugator"
 #define MyAppVersion "@version@"
 #define MyAppPublisher "Timo Frueh"
-#define MyAppURL "https://github.com/tifrueh/conjugateur"
+#define MyAppURL "https://github.com/tifrueh/conjugator"
 #define MyAppCopyright "Copyright (c) 2023 Timo Frueh"
-#define MyAppExeName "conjugateur.exe"
+#define MyAppExeName "conjugator.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -28,7 +28,7 @@ LicenseFile=resources\LICENSE.rtf
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=dist\win
-OutputBaseFilename=Conjugateur-Windows-x86_64-v{#MyAppVersion}-setup
+OutputBaseFilename=Conjugator-Windows-x86_64-v{#MyAppVersion}-setup
 SetupIconFile=resources\conjugator.ico
 Compression=lzma
 SolidCompression=yes

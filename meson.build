@@ -8,6 +8,16 @@ project(
     version: '1.0.3-git'
 )
 
+# Try to get version string from git or use project version if that fails.
+git_describe = run_command('git', 'describe', '--tags', check: false)
+git_describe_out = git_describe.stdout().strip()
+
+version = meson.project_version()
+
+if git_describe_out != ''
+  version = git_describe_out.substring(1)
+endif
+
 # Specify the include directories.
 incdir = include_directories([ 'include' , 'configuration-files' ])
 
@@ -22,10 +32,10 @@ conf_data = configuration_data()
 
 # Set configuration variables.
 conf_data.set(
-  'version', meson.project_version()
+  'version', version
 )
 conf_data.set(
-  'tag', 'v' + meson.project_version()
+  'tag', 'v' + version
 )
 conf_data.set(
   'project_source_root', meson.project_source_root()

@@ -26,11 +26,13 @@ mkdir "${APP_PATH}"
 # Create all necessary subdirectories of the bundle.
 install -d -m 755 "${CONTENTS_PATH}" "${RES_PATH}" "${EXE_PATH}" "${LC_FR_PATH}" "${LC_DE_PATH}"
 
+# Compile and install the wxstd catalogues.
+msgfmt -o "${LC_FR_PATH}/wxstd.mo" "${MESON_RES_PATH}/wxstd/fr.po"
+msgfmt -o "${LC_DE_PATH}/wxstd.mo" "${MESON_RES_PATH}/wxstd/de.po"
+
 # Install all necessary files to their correct locations inside the bundle.
 install -m 644 "${MESON_BUILD_ROOT}/configuration-files/Info.plist" "${CONTENTS_PATH}"
 install -m 644 "${MESON_RES_PATH}/conjugator.icns" "${RES_PATH}"
-install -m 644 "${MESON_RES_PATH}/mo/fr/LC_MESSAGES/wxstd.mo" "${LC_FR_PATH}"
 install -m 644 "${MESON_LC_FR_PATH}/conjugator.mo" "${LC_FR_PATH}"
-install -m 644 "${MESON_RES_PATH}/mo/de/LC_MESSAGES/wxstd.mo" "${LC_DE_PATH}"
 install -m 644 "${MESON_LC_DE_PATH}/conjugator.mo" "${LC_DE_PATH}"
 install -s -m 755 "${MESON_BUILD_ROOT}/conjugator" "${EXE_PATH}"

@@ -129,10 +129,8 @@ deps = [ wx ]
 # Handle i18n in the 'po' subdir.
 subdir('po')
 
-## Install the logo as png and svg, as well as the desktop entry.
+## Install the logo as svg.
 install_data('resources/conjugator.svg')
-install_data('resources/mo/fr/LC_MESSAGES/wxstd.mo', install_dir : 'share/locale/fr/LC_MESSAGES/')
-install_data('resources/mo/de/LC_MESSAGES/wxstd.mo', install_dir : 'share/locale/de/LC_MESSAGES/')
 
 # Configure the main executable.
 conjugator = executable(

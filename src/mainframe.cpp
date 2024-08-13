@@ -70,7 +70,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     this->menu_quiz->AppendSeparator();
     this->menu_quiz->Append(winID::menu_inspector, _("Open inspector\tCtrl-I"));
     this->menu_quiz->AppendSeparator();
-    this->menu_quiz->Append(wxID_PREFERENCES, _("Settings…\tCtrl-,"));
+    this->menu_quiz->Append(wxID_PREFERENCES, _("Settings\tCtrl-,"));
 
     this->menu_help->Append(wxID_ABOUT, _("About Conjugator"));
     this->menu_help->AppendSeparator();

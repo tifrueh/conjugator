@@ -147,7 +147,7 @@ if host_machine.system() == 'darwin'
   run_target(
       'bundle_mac',
       command: 'scripts/bundle_mac.sh',
-      depends: [ conjugator ],
+      depends: [ conjugator, gettext_return[0] ],
       env: env
   )
 
@@ -155,7 +155,7 @@ if host_machine.system() == 'darwin'
       'package_mac',
       command: [ 
         'scripts/package_mac.sh', conf_data.get('version')],
-      depends: [ conjugator ],
+      depends: [ conjugator, gettext_return[0] ],
       env: env
   )
 
@@ -163,7 +163,7 @@ if host_machine.system() == 'darwin'
       'dmg_mac',
       command: [ 
         'scripts/dmg_mac.sh', conf_data.get('version')],
-      depends: [ conjugator ],
+      depends: [ conjugator, gettext_return[0] ],
       env: env
   )
 endif
@@ -173,7 +173,7 @@ if host_machine.system() == 'windows'
   run_target(
       'package_win',
       command: 'scripts/package_win.sh',
-      depends: [ conjugator ],
+      depends: [ conjugator, gettext_return[0] ],
       env: env
   )
 endif

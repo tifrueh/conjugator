@@ -62,7 +62,7 @@ msgstr "Inspector öffnen\tCtrl-I"
 
 #: src/mainframe.cpp:73
 msgid "Settings\tCtrl-,"
-msgstr "Einstellungen\tCtrl-"
+msgstr "Einstellungen\tCtrl-,"
 
 #: src/mainframe.cpp:75
 msgid "About Conjugator"

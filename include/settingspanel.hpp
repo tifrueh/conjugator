@@ -28,6 +28,7 @@ class SettingsPanel : public wxPanel {
 
     private:
         wxBoxSizer* top_sizer;
+        wxBoxSizer* settings_sizer;
         wxBoxSizer* button_sizer;
         wxStaticText* title_lang;
         wxChoice* choice_lang;

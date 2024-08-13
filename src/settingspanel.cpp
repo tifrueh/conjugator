@@ -6,6 +6,7 @@
 
 SettingsPanel::SettingsPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     this->top_sizer = new wxBoxSizer(wxVERTICAL);
+    this->settings_sizer = new wxBoxSizer(wxVERTICAL);
     this->button_sizer = new wxBoxSizer(wxHORIZONTAL);
 
     this->title_lang = new wxStaticText(this, wxID_ANY, _("Quiz language"));
@@ -35,38 +36,38 @@ SettingsPanel::SettingsPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
             this->button_cancel,
             1,
             wxEXPAND | wxALL,
-            5
+            0
     );
 
     this->button_sizer->Add(
             this->button_save,
             1,
             wxEXPAND | wxALL,
-            5
+            0
     );
 
-    this->top_sizer->Add(
+    this->settings_sizer->Add(
         this->title_lang,
         0,
         wxEXPAND | wxBOTTOM,
         5
     );
 
-    this->top_sizer->Add(
+    this->settings_sizer->Add(
         this->choice_lang,
         0,
         wxEXPAND | wxBOTTOM,
         20
     );
 
-    this->top_sizer->Add(
+    this->settings_sizer->Add(
         this->title_update,
         0,
         wxEXPAND | wxBOTTOM,
         5
     );
 
-    this->top_sizer->Add(
+    this->settings_sizer->Add(
         do_startup_check,
         0,
         wxEXPAND | wxBOTTOM,
@@ -74,10 +75,17 @@ SettingsPanel::SettingsPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     );
 
     this->top_sizer->Add(
-        this->button_sizer,
+        this->settings_sizer,
         0,
         wxEXPAND | wxALL,
-        5
+        20
+    );
+
+    this->top_sizer->Add(
+        this->button_sizer,
+        0,
+        wxEXPAND | wxRIGHT | wxBOTTOM | wxLEFT,
+        20
     );
 
     bool checkForUpdateOnStartup = true;

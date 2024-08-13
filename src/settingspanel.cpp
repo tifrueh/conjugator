@@ -35,15 +35,15 @@ SettingsPanel::SettingsPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY) {
     this->button_sizer->Add(
             this->button_cancel,
             1,
-            wxEXPAND | wxALL,
-            0
+            wxEXPAND | wxRIGHT,
+            5
     );
 
     this->button_sizer->Add(
             this->button_save,
             1,
-            wxEXPAND | wxALL,
-            0
+            wxEXPAND | wxLEFT,
+            5
     );
 
     this->settings_sizer->Add(

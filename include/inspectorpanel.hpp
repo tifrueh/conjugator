@@ -9,6 +9,9 @@
     #include <wx/wx.h>
 #endif
 
+#include <map>
+#include <string>
+
 
 #include "conjugator.hpp"
 #include "id.hpp"
@@ -31,4 +34,5 @@ class InspectorPanel : public wxPanel {
         wxListBox* verb_box;
         wxBoxSizer* top_sizer;
         VerbView* verb_view;
+        std::map<std::wstring, const verbDB::Verb*> verb_map;
 };

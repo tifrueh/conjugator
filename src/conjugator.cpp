@@ -19,13 +19,6 @@ cjgt::Language::Language(
     this->name = name;
     this->categories = categories;
     this->tenses = tenses;
-
-    for (cjgt::Category category : this->categories) {
-        for (const verbDB::Verb* verb : category.verbs) {
-            this->verbs[verb->name] = verb;
-        }
-    }
-
 }
 
 const std::wstring* cjgt::Language::get_name() const {
@@ -54,11 +47,16 @@ std::vector<const cjgt::Tense*> cjgt::Language::get_tenses() const {
 }
 
 std::map<std::wstring, const verbDB::Verb*> cjgt::Language::get_verbs() const {
-    return this->verbs;
-}
 
-const verbDB::Verb* cjgt::Language::get_verb(const std::wstring& verb) const {
-    return this->verbs.at(verb);
+    std::map<std::wstring, const verbDB::Verb*> local_verbs;
+
+    for (cjgt::Category category : this->categories) {
+        for (const verbDB::Verb* verb : category.verbs) {
+            local_verbs[verb->name] = verb;
+        }
+    }
+
+    return local_verbs;
 }
 
 cjgt::QuizData cjgt::Language::get_random_quiz_data(

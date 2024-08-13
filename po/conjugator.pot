@@ -8,13 +8,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: conjugator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-08 13:40+0200\n"
+"POT-Creation-Date: 2024-08-13 17:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/mainframe.cpp:23
@@ -62,7 +62,7 @@ msgid "Open inspector\tCtrl-I"
 msgstr ""
 
 #: src/mainframe.cpp:73
-msgid "Settings…\tCtrl-,"
+msgid "Settings\tCtrl-,"
 msgstr ""
 
 #: src/mainframe.cpp:75
@@ -77,23 +77,23 @@ msgstr ""
 msgid "Check for updates"
 msgstr ""
 
-#: src/settingspanel.cpp:11
+#: src/settingspanel.cpp:12
 msgid "Quiz language"
 msgstr ""
 
-#: src/settingspanel.cpp:23
+#: src/settingspanel.cpp:24
 msgid "Update checker"
 msgstr ""
 
-#: src/settingspanel.cpp:29
+#: src/settingspanel.cpp:30
 msgid "Check for updates on startup"
 msgstr ""
 
-#: src/settingspanel.cpp:31
+#: src/settingspanel.cpp:32
 msgid "Cancel"
 msgstr ""
 
-#: src/settingspanel.cpp:32
+#: src/settingspanel.cpp:33
 msgid "Save"
 msgstr ""
 

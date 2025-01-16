@@ -59,10 +59,10 @@ const verbDB::Verb verbDB::atteindre = {
 
         L"atteigne",
         L"atteignes",
-        L"aggeigne",
-        L"aggeigne",
+        L"atteigne",
+        L"atteigne",
         L"atteignions",
-        L"aggeigniez",
+        L"atteigniez",
         L"atteignent",
         L"atteignent",
 

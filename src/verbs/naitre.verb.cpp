@@ -5,11 +5,11 @@
 
 const verbDB::Verb verbDB::naitre = {
 
-    L"naître",
+    L"naitre",
 
     verbDB::VerbType::re,
 
-    L"naître",
+    L"naitre",
     L"geboren werden",
     L"naissant",
 
@@ -43,7 +43,7 @@ const verbDB::Verb verbDB::naitre = {
     L"suis né",
     L"es né",
     L"est né",
-    L"est né",
+    L"est née",
     L"sommes nés",
     L"êtes nés",
     L"sont nés",

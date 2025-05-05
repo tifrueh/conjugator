@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::etre = {
     L"seriez",
     L"seraient",
     L"seraient"
+
 };

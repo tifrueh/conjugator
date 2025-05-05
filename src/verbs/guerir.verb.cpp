@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::guerir = {
     L"guéririez",
     L"guériraient",
     L"guériraient"
+
 };

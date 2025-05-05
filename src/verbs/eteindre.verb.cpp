@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::eteindre = {
     L"éteindriez",
     L"éteindraient",
     L"éteindraient"
+
 };

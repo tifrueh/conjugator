@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::lancer = {
     verbDB::VerbType::er,
 
     L"lancer",
-    L"einleiten",
+    L"werfen",
     L"lançant",
 
     L"lance",
@@ -18,9 +18,9 @@ const verbDB::Verb verbDB::lancer = {
     L"lance",
     L"lance",
     L"lançons",
-    L"lançez",
-    L"lançent",
-    L"lançent",
+    L"lancez",
+    L"lancent",
+    L"lancent",
 
     L"lançais",
     L"lançais",

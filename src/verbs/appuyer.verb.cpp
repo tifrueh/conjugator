@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::appuyer = {
-    
+
     L"appuyer",
 
     verbDB::VerbType::er,
@@ -46,8 +46,8 @@ const verbDB::Verb verbDB::appuyer = {
     L"a appuyé",
     L"avons appuyé",
     L"avez appuyé",
-    L"ont appuye",
-    L"ont appuye",
+    L"ont appuyé",
+    L"ont appuyé",
 
     L"avais appuyé",
     L"avais appuyé",
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::appuyer = {
     L"appuieriez",
     L"appuieraient",
     L"appuieraient"
+
 };

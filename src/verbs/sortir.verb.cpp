@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::sortir = {
     verbDB::VerbType::ir,
 
     L"sortir",
-    L"verlassen",
+    L"hinausgehen",
     L"sortant",
 
     L"sors",

@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::envoyer = {
-    
+
     L"envoyer",
 
     verbDB::VerbType::er,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::envoyer = {
     L"enverriez",
     L"enverraient",
     L"enverraient"
+
 };

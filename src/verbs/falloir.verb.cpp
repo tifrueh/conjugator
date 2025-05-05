@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::falloir = {
     verbDB::VerbType::oir,
 
     L"falloir",
-    L"brauchen",
+    L"brauchen, müssen",
     L"",
 
     L"",
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::falloir = {
     L"",
     L"",
     L""
+
 };

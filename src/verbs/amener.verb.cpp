@@ -4,13 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::amener = {
-    
+
     L"amener",
 
     verbDB::VerbType::er,
 
     L"amener",
-    L"bringen",
+    L"mitbringen",
     L"amenant",
 
     L"amène",
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::amener = {
     L"amèneriez",
     L"amèneraient",
     L"amèneraient"
+
 };

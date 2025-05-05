@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::dormir = {
-    
+
     L"dormir",
 
     verbDB::VerbType::ir,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::dormir = {
     L"dormiriez",
     L"dormiraient",
     L"dormiraient"
+
 };

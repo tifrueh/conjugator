@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::appeler = {
     verbDB::VerbType::er,
 
     L"appeler",
-    L"anrufen",
+    L"rufen",
     L"appelant",
 
     L"appelle",
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::appeler = {
     L"appelleriez",
     L"appelleraient",
     L"appelleraient"
+
 };

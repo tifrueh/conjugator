@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::couvrir = {
-    
+
     L"couvrir",
 
     verbDB::VerbType::ir,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::couvrir = {
     L"couvririez",
     L"couvriraient",
     L"couvriraient"
+
 };

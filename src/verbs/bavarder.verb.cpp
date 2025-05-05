@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::bavarder = {
-    
+
     L"bavarder",
 
     verbDB::VerbType::er,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::bavarder = {
     L"bavarderiez",
     L"bavarderaient",
     L"bavarderaient"
+
 };

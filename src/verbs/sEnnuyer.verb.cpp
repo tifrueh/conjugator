@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::sEnnuyer = {
     L"vous ennuieriez",
     L"s'ennuieraient",
     L"s'ennuieraient"
+
 };

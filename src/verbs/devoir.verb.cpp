@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::devoir = {
-    
+
     L"devoir",
 
     verbDB::VerbType::oir,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::devoir = {
     L"devriez",
     L"devraient",
     L"devraient"
+
 };

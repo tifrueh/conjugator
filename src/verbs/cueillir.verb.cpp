@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::cueillir = {
-    
+
     L"cueillir",
 
     verbDB::VerbType::ir,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::cueillir = {
     L"cueilleriez",
     L"cueilleraient",
     L"cueilleraient"
+
 };

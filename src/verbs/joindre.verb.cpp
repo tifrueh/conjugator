@@ -19,7 +19,7 @@ const verbDB::Verb verbDB::joindre = {
     L"joint",
     L"joignons",
     L"joignez",
-    L"joignent ",
+    L"joignent",
     L"joignent",
 
     L"joignais",

@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::employer = {
-    
+
     L"employer",
 
     verbDB::VerbType::er,
@@ -74,5 +74,6 @@ const verbDB::Verb verbDB::employer = {
     L"emploierions",
     L"emploieriez",
     L"emploieraient",
-    L"emploieraient",
+    L"emploieraient"
+
 };

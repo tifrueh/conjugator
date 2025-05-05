@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::parler = {
     L"parleriez",
     L"parleraient",
     L"parleraient"
+
 };

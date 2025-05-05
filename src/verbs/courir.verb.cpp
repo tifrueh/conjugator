@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::courir = {
-    
+
     L"courir",
 
     verbDB::VerbType::ir,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::courir = {
     L"courriez",
     L"courraient",
     L"courraient"
+
 };

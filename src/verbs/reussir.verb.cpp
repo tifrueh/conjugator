@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::reussir = {
     verbDB::VerbType::ir,
 
     L"réussir",
-    L"gelingen",
+    L"Erfolg haben",
     L"réussissant",
 
     L"réussis",

@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::boire = {
-    
+
     L"boire",
 
     verbDB::VerbType::re,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::boire = {
     L"boiriez",
     L"boiraient",
     L"boiraient"
+
 };

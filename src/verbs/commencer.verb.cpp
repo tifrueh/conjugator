@@ -71,9 +71,9 @@ const verbDB::Verb verbDB::commencer = {
     L"commencerais",
     L"commencerait",
     L"commencerait",
-    L"commercerions",
-    L"commerceriez",
-    L"commerceraient",
-    L"commerceraient"
+    L"commencerions",
+    L"commenceriez",
+    L"commenceraient",
+    L"commenceraient"
 
 };

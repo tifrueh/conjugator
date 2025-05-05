@@ -17,7 +17,7 @@ const verbDB::Verb verbDB::esperer = {
     L"espères",
     L"espère",
     L"espère",
-    L"espérions",
+    L"espérons",
     L"espérez",
     L"espèrent",
     L"espèrent",
@@ -31,14 +31,14 @@ const verbDB::Verb verbDB::esperer = {
     L"espéraient",
     L"espéraient",
 
-    L"espérerai",
-    L"espéreras",
-    L"espérera",
-    L"espérera",
-    L"espérerons",
-    L"espérerez",
-    L"espéreront",
-    L"espéreront",
+    L"espèrerai",
+    L"espèreras",
+    L"espèrera",
+    L"espèrera",
+    L"espèrerons",
+    L"espèrerez",
+    L"espèreront",
+    L"espèreront",
 
     L"ai espéré",
     L"as espéré",
@@ -67,12 +67,13 @@ const verbDB::Verb verbDB::esperer = {
     L"espèrent",
     L"espèrent",
 
-    L"espérerais",
-    L"espérerais",
-    L"espérerait",
-    L"espérerait",
-    L"espérerions",
-    L"espéreriez",
-    L"espéreraient",
-    L"espéreraient"
+    L"espèrerais",
+    L"espèrerais",
+    L"espèrerait",
+    L"espèrerait",
+    L"espèrerions",
+    L"espèreriez",
+    L"espèreraient",
+    L"espèreraient"
+
 };

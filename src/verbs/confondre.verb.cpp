@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::confondre = {
-    
+
     L"confondre",
 
     verbDB::VerbType::re,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::confondre = {
     L"confondriez",
     L"confondraient",
     L"confondraient"
+
 };

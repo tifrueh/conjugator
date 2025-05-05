@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::effacer = {
-    
+
     L"effacer",
 
     verbDB::VerbType::er,
@@ -28,7 +28,7 @@ const verbDB::Verb verbDB::effacer = {
     L"effaçait",
     L"effacions",
     L"effaciez",
-    L"effaçiez",
+    L"effaciez",
     L"effaçaient",
 
     L"effacerai",
@@ -74,5 +74,6 @@ const verbDB::Verb verbDB::effacer = {
     L"effacerions",
     L"effaceriez",
     L"effaceraient",
-    L"effaceraient",
+    L"effaceraient"
+
 };

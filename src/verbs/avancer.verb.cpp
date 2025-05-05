@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::avancer = {
-    
+
     L"avancer",
 
     verbDB::VerbType::er,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::avancer = {
     L"avanceriez",
     L"avanceraient",
     L"avanceraient"
+
 };

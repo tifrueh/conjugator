@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::chercher = {
     L"chercheriez",
     L"chercheraient",
     L"chercheraient"
+
 };

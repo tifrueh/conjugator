@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::aimer = {
     L"aimeriez",
     L"aimeraient",
     L"aimeraient"
+
 };

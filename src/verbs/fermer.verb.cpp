@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::fermer = {
     L"fermeriez",
     L"fermeraient",
     L"fermeraient"
+
 };

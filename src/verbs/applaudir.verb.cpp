@@ -4,9 +4,9 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::applaudir = {
-    
+
     L"applaudir",
-    
+
     verbDB::VerbType::ir,
 
     L"applaudir",
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::applaudir = {
     L"applaudiriez",
     L"applaudiraient",
     L"applaudiraient"
+
 };

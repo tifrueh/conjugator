@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::grimper = {
-    
+
     L"grimper",
 
     verbDB::VerbType::er,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::grimper = {
     L"grimperiez",
     L"grimperaient",
     L"grimperaient"
+
 };

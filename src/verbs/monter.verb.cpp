@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::monter = {
     verbDB::VerbType::er,
 
     L"monter",
-    L"montieren",
+    L"hinaufgehen",
     L"montant",
 
     L"monte",

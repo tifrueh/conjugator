@@ -4,12 +4,12 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::disparaitre = {
-    
-    L"disparaître",
+
+    L"disparaitre",
 
     verbDB::VerbType::re,
 
-    L"disparaître",
+    L"disparaitre",
     L"verschwinden",
     L"disparaissant",
 
@@ -18,7 +18,7 @@ const verbDB::Verb verbDB::disparaitre = {
     L"disparait",
     L"disparait",
     L"disparaissons",
-    L"presentVous",
+    L"disparaissez",
     L"disparaissent",
     L"disparaissent",
 
@@ -31,14 +31,14 @@ const verbDB::Verb verbDB::disparaitre = {
     L"disparaissaient",
     L"disparaissaient",
 
-    L"disparaîtrai",
-    L"disparaîtras",
-    L"disparaîtra",
-    L"disparaîtra",
-    L"disparaîtrons",
-    L"disparaîtrez",
-    L"disparaîtront",
-    L"disparaîtront",
+    L"disparaitrai",
+    L"disparaitras",
+    L"disparaitra",
+    L"disparaitra",
+    L"disparaitrons",
+    L"disparaitrez",
+    L"disparaitront",
+    L"disparaitront",
 
     L"ai disparu",
     L"as disparu",
@@ -67,12 +67,13 @@ const verbDB::Verb verbDB::disparaitre = {
     L"disparaissent",
     L"disparaissent",
 
-    L"disparaîtrais",
-    L"disparaîtrais",
-    L"disparaîtrait",
-    L"disparaîtrait",
-    L"disparaîtrions",
-    L"disparaîtriez",
-    L"disparaîtraient",
-    L"disparaîtraient"
+    L"disparaitrais",
+    L"disparaitrais",
+    L"disparaitrait",
+    L"disparaitrait",
+    L"disparaitrions",
+    L"disparaitriez",
+    L"disparaitraient",
+    L"disparaitraient"
+
 };

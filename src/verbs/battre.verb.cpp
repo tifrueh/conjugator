@@ -4,13 +4,13 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::battre = {
-    
+
     L"battre",
 
     verbDB::VerbType::re,
 
     L"battre",
-    L"kämpfen",
+    L"schlagen",
     L"battant",
 
     L"bats",
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::battre = {
     L"battriez",
     L"battraient",
     L"battraient"
+
 };

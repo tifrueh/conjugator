@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::entendre = {
-    
+
     L"entendre",
 
     verbDB::VerbType::re,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::entendre = {
     L"entendriez",
     L"entendraient",
     L"entendraient"
+
 };

@@ -35,7 +35,7 @@ const verbDB::Verb verbDB::vouloir = {
     L"voudras",
     L"voudra",
     L"voudra",
-    L"vourons",
+    L"voudrons",
     L"voudrez",
     L"voudront",
     L"voudront",
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::vouloir = {
     L"voudriez",
     L"voudraient",
     L"voudraient"
+
 };

@@ -4,19 +4,19 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::connaitre = {
-    
-    L"connaître",
+
+    L"connaitre",
 
     verbDB::VerbType::re,
 
-    L"connaître",
+    L"connaitre",
     L"kennen",
     L"connaissant",
 
     L"connais",
     L"connais",
-    L"connaît",
-    L"connaît",
+    L"connait",
+    L"connait",
     L"connaissons",
     L"connaissez",
     L"connaissent",
@@ -31,14 +31,14 @@ const verbDB::Verb verbDB::connaitre = {
     L"connaissaient",
     L"connaissaient",
 
-    L"connaîtrai",
-    L"connaîtras",
-    L"connaîtra",
-    L"connaîtra",
-    L"connaîtrons",
-    L"connaîtrez",
-    L"connaîtront",
-    L"connaîtront",
+    L"connaitrai",
+    L"connaitras",
+    L"connaitra",
+    L"connaitra",
+    L"connaitrons",
+    L"connaitrez",
+    L"connaitront",
+    L"connaitront",
 
     L"ai connu",
     L"as connu",
@@ -67,12 +67,13 @@ const verbDB::Verb verbDB::connaitre = {
     L"connaissent",
     L"connaissent",
 
-    L"connaîtrais",
-    L"connaîtrais",
-    L"connaîtrait",
-    L"connaîtrait",
-    L"connaîtrions",
-    L"connaîtriez",
-    L"connaîtraient",
-    L"connaîtraient"
+    L"connaitrais",
+    L"connaitrais",
+    L"connaitrait",
+    L"connaitrait",
+    L"connaitrions",
+    L"connaitriez",
+    L"connaitraient",
+    L"connaitraient"
+
 };

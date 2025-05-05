@@ -71,8 +71,9 @@ const verbDB::Verb verbDB::conduire = {
     L"conduirais",
     L"conduirait",
     L"conduirait",
-    L"conduririons",
+    L"conduirions",
     L"conduiriez",
     L"conduiraient",
     L"conduiraient"
+
 };

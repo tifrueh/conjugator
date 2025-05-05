@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::seRejouir = {
     L"vous réjouiriez",
     L"se réjouiraient",
     L"se réjouiraient"
+
 };

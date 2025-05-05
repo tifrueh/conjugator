@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::sentir= {
+const verbDB::Verb verbDB::sentir = {
 
     L"sentir",
 
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::sentir= {
     L"sentiriez",
     L"sentiraient",
     L"sentiraient"
+
 };

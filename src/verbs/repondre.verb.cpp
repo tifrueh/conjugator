@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::repondre = {
     verbDB::VerbType::re,
 
     L"répondre",
-    L"beantworten",
+    L"antworten",
     L"répondant",
 
     L"réponds",
@@ -67,7 +67,7 @@ const verbDB::Verb verbDB::repondre = {
     L"répondent",
     L"répondent",
 
-    L"répondrai",
+    L"répondrais",
     L"répondrais",
     L"répondrait",
     L"répondrait",

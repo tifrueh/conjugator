@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::enlever = {
-    
+
     L"enlever",
 
     verbDB::VerbType::er,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::enlever = {
     L"enlèveriez",
     L"enlèveraient",
     L"enlèveraient"
+
 };

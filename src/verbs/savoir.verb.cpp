@@ -3,7 +3,7 @@
 
 #include "verb.db.hpp"
 
-const verbDB::Verb verbDB::savoir= {
+const verbDB::Verb verbDB::savoir = {
 
     L"savoir",
 
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::savoir= {
     L"sauriez",
     L"sauraient",
     L"sauraient"
+
 };

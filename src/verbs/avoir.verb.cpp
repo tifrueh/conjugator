@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::avoir = {
-    
+
     L"avoir",
 
     verbDB::VerbType::oir,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::avoir = {
     L"auriez",
     L"auraient",
     L"auraient"
+
 };

@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::donner = {
-    
+
     L"donner",
 
     verbDB::VerbType::er,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::donner = {
     L"donneriez",
     L"donneraient",
     L"donneraient"
+
 };

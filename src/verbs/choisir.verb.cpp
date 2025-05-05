@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::choisir = {
-    
+
     L"choisir",
 
     verbDB::VerbType::ir,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::choisir = {
     L"choisiriez",
     L"choisiraient",
     L"choisiraient"
+
 };

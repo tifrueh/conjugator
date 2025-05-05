@@ -4,8 +4,8 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::decevoir = {
-    
-    L"decevoir",
+
+    L"décevoir",
 
     verbDB::VerbType::oir,
 
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::decevoir = {
     L"décevriez",
     L"décevraient",
     L"décevraient"
+
 };

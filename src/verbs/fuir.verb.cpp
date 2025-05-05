@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::fuir = {
     L"fuiriez",
     L"fuiraient",
     L"fuiraient"
+
 };

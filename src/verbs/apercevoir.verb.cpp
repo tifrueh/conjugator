@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::apercevoir = {
-    
+
     L"apercevoir",
 
     verbDB::VerbType::oir,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::apercevoir = {
     L"apercevriez",
     L"apercevraient",
     L"apercevraient"
+
 };

@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::essayer = {
     L"essaieriez",
     L"essaieraient",
     L"essaieraient"
+
 };

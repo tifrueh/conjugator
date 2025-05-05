@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::servir = {
     L"serviriez",
     L"serviraient",
     L"serviraient"
+
 };

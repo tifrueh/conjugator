@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::atteindre = {
-    
+
     L"atteindre",
 
     verbDB::VerbType::re,
@@ -60,10 +60,10 @@ const verbDB::Verb verbDB::atteindre = {
 
     L"atteigne",
     L"atteignes",
-    L"aggeigne",
-    L"aggeigne",
+    L"atteigne",
+    L"atteigne",
     L"atteignions",
-    L"aggeigniez",
+    L"atteigniez",
     L"atteignent",
     L"atteignent",
 
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::atteindre = {
     L"atteindriez",
     L"atteindraient",
     L"atteindraient"
+
 };

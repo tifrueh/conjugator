@@ -4,7 +4,7 @@
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::demolir = {
-    
+
     L"démolir",
 
     verbDB::VerbType::ir,
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::demolir = {
     L"démoliriez",
     L"démoliraient",
     L"démoliraient"
+
 };

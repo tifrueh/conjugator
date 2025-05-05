@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::habiter = {
     L"habiteriez",
     L"habiteraient",
     L"habiteraient"
+
 };

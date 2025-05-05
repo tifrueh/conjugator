@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::voir = {
     L"verriez",
     L"verraient",
     L"verraient"
+
 };

@@ -32,7 +32,7 @@ const verbDB::Verb verbDB::seTaire = {
     L"se taisaient",
 
     L"me tairai",
-    L"te tairais",
+    L"te tairas",
     L"se taira",
     L"se taira",
     L"nous tairons",
@@ -43,7 +43,7 @@ const verbDB::Verb verbDB::seTaire = {
     L"me suis tu",
     L"t'es tu",
     L"s'est tu",
-    L"s'est tues",
+    L"s'est tue",
     L"nous sommes tus",
     L"vous êtes tus",
     L"se sont tus",
@@ -75,4 +75,5 @@ const verbDB::Verb verbDB::seTaire = {
     L"vous tairiez",
     L"se tairaient",
     L"se tairaient"
+
 };

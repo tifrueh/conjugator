@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::rendre = {
     verbDB::VerbType::re,
 
     L"rendre",
-    L"gestalten",
+    L"zurückgeben",
     L"rendant",
 
     L"rends",

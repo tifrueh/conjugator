@@ -6,7 +6,7 @@
 const verbDB::Verb verbDB::battre = {
 
     L"battre",
-    L"kämpfen",
+    L"schlagen",
 
     {
         L"battre",

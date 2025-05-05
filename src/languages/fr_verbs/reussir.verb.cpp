@@ -6,7 +6,7 @@
 const verbDB::Verb verbDB::reussir = {
 
     L"réussir",
-    L"gelingen",
+    L"Erfolg haben",
 
     {
         L"réussir",

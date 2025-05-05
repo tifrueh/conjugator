@@ -5,11 +5,11 @@
 
 const verbDB::Verb verbDB::apparaitre = {
 
-    L"apparaître",
+    L"apparaitre",
     L"erscheinen",
 
     {
-        L"apparaître",
+        L"apparaitre",
         L"apparaissant",
 
         L"apparais",
@@ -30,14 +30,14 @@ const verbDB::Verb verbDB::apparaitre = {
         L"apparaissaient",
         L"apparaissaient",
 
-        L"apparaîtrai",
-        L"apparaîtras",
-        L"apparaîtra",
-        L"apparaîtra",
-        L"apparaîtrons",
-        L"apparaîtrez",
-        L"apparaîtront",
-        L"apparaîtront",
+        L"apparaitrai",
+        L"apparaitras",
+        L"apparaitra",
+        L"apparaitra",
+        L"apparaitrons",
+        L"apparaitrez",
+        L"apparaitront",
+        L"apparaitront",
 
         L"ai apparu",
         L"as apparu",
@@ -66,13 +66,13 @@ const verbDB::Verb verbDB::apparaitre = {
         L"apparaissent",
         L"apparaissent",
 
-        L"apparaîtrais",
-        L"apparaîtrais",
-        L"apparaîtrait",
-        L"apparaîtrait",
-        L"apparaîtrions",
-        L"apparaîtriez",
-        L"apparaîtraient",
-        L"apparaîtraient"
+        L"apparaitrais",
+        L"apparaitrais",
+        L"apparaitrait",
+        L"apparaitrait",
+        L"apparaitrions",
+        L"apparaitriez",
+        L"apparaitraient",
+        L"apparaitraient"
     }
 };

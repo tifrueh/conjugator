@@ -6,7 +6,7 @@
 const verbDB::Verb verbDB::craindre = {
 
     L"craindre",
-    L"befürchten",
+    L"fürchten",
 
     {
         L"craindre",

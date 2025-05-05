@@ -55,7 +55,7 @@ const verbDB::Verb verbDB::sInquieter = {
         L"nous étions inquiétés",
         L"vous étiez inquiétés",
         L"s'étaient inquiétés",
-        L"s'étaient inquiétés",
+        L"s'étaient inquiétées",
 
         L"m'inquiète",
         L"t'inquiètes",

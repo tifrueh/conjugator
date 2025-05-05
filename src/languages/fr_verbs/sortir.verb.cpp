@@ -6,7 +6,7 @@
 const verbDB::Verb verbDB::sortir = {
 
     L"sortir",
-    L"verlassen",
+    L"hinausgehen",
 
     {
         L"sortir",

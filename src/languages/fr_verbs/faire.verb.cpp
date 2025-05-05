@@ -6,7 +6,7 @@
 const verbDB::Verb verbDB::faire = {
 
     L"faire",
-    L"tun",
+    L"tun, machen",
 
     {
         L"faire",

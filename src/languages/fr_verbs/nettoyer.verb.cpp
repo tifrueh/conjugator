@@ -36,7 +36,7 @@ const verbDB::Verb verbDB::nettoyer = {
         L"nettoiera",
         L"nettoierons",
         L"nettoierez",
-        L"netteroiront",
+        L"nettoieront",
         L"nettoieront",
 
         L"ai nettoyé",
@@ -70,9 +70,9 @@ const verbDB::Verb verbDB::nettoyer = {
         L"nettoierais",
         L"nettoierait",
         L"nettoierait",
-        L"nettoyerions",
-        L"nettoyeriez",
-        L"nettoyeraient",
-        L"nettoyeraient"
+        L"nettoierions",
+        L"nettoieriez",
+        L"nettoieraient",
+        L"nettoieraient"
     }
 };

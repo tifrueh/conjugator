@@ -66,13 +66,13 @@ const verbDB::Verb verbDB::mourir = {
         L"meurent",
         L"meurent",
 
-        L"mourirais",
-        L"mourirais",
-        L"mourirait",
-        L"mourirait",
-        L"mouririons",
-        L"mouririez",
-        L"mouriraient",
-        L"mouriraient"
+        L"mourrais",
+        L"mourrais",
+        L"mourrait",
+        L"mourrait",
+        L"mourrions",
+        L"mourriez",
+        L"mourraient",
+        L"mourraient"
     }
 };

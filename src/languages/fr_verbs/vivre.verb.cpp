@@ -57,7 +57,7 @@ const verbDB::Verb verbDB::vivre = {
         L"avaient vécu",
         L"avaient vécu",
 
-        L"viv",
+        L"vive",
         L"vives",
         L"vive",
         L"vive",

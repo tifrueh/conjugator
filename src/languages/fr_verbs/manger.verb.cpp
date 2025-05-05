@@ -61,7 +61,7 @@ const verbDB::Verb verbDB::manger = {
         L"manges",
         L"mange",
         L"mange",
-        L"mengions",
+        L"mangions",
         L"mangiez",
         L"mangent",
         L"mangent",

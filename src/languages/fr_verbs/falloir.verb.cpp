@@ -6,7 +6,7 @@
 const verbDB::Verb verbDB::falloir = {
 
     L"falloir",
-    L"brauchen",
+    L"brauchen, müssen",
 
     {
         L"falloir",

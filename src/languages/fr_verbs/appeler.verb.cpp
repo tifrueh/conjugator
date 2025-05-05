@@ -6,7 +6,7 @@
 const verbDB::Verb verbDB::appeler = {
 
     L"appeler",
-    L"anrufen",
+    L"rufen",
 
     {
         L"appeler",

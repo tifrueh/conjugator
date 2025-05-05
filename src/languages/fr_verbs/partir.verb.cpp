@@ -6,7 +6,7 @@
 const verbDB::Verb verbDB::partir = {
 
     L"partir",
-    L"gehen",
+    L"weggehen",
 
     {
         L"partir",
@@ -37,14 +37,14 @@ const verbDB::Verb verbDB::partir = {
         L"partirons",
         L"partirez",
         L"partiront",
-        L"partirons",
+        L"partiront",
 
         L"suis parti",
         L"es parti",
         L"est parti",
         L"est partie",
-        L"sommes parti",
-        L"êtes parti",
+        L"sommes partis",
+        L"êtes partis",
         L"sont partis",
         L"sont parties",
 

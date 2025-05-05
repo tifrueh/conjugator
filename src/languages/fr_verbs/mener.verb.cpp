@@ -6,7 +6,7 @@
 const verbDB::Verb verbDB::mener = {
 
     L"mener ",
-    L"durchführen",
+    L"führen",
 
     {
         L"mener ",
@@ -66,7 +66,7 @@ const verbDB::Verb verbDB::mener = {
         L"mènent",
         L"mènent",
 
-        L"mènerai",
+        L"mènerais",
         L"mènerais",
         L"mènerait",
         L"mènerait",

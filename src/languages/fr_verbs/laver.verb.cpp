@@ -48,7 +48,7 @@ const verbDB::Verb verbDB::laver = {
         L"ont lavé",
         L"ont lavé",
 
-        L"avias lavé",
+        L"avais lavé",
         L"avais lavé",
         L"avait lavé",
         L"avait lavé",

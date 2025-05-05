@@ -45,8 +45,8 @@ const verbDB::Verb verbDB::appuyer = {
         L"a appuyé",
         L"avons appuyé",
         L"avez appuyé",
-        L"ont appuye",
-        L"ont appuye",
+        L"ont appuyé",
+        L"ont appuyé",
 
         L"avais appuyé",
         L"avais appuyé",

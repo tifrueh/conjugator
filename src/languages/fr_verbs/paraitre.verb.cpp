@@ -5,17 +5,17 @@
 
 const verbDB::Verb verbDB::paraitre = {
 
-    L"paraître",
-    L"erscheinen",
+    L"paraitre",
+    L"scheinen",
 
     {
-        L"paraître",
+        L"paraitre",
         L"paraissant",
 
         L"parais",
         L"parais",
-        L"paraît",
-        L"paraît",
+        L"parait",
+        L"parait",
         L"paraissons",
         L"paraissez",
         L"paraissent",
@@ -30,14 +30,14 @@ const verbDB::Verb verbDB::paraitre = {
         L"paraissaient",
         L"paraissaient",
 
-        L"paraîtrai",
-        L"paraîtras",
-        L"paraîtra",
-        L"paraîtra",
-        L"paraîtrons",
-        L"paraîtrez",
-        L"paraîtront",
-        L"paraîtrons",
+        L"paraitrai",
+        L"paraitras",
+        L"paraitra",
+        L"paraitra",
+        L"paraitrons",
+        L"paraitrez",
+        L"paraitront",
+        L"paraitront",
 
         L"ai paru",
         L"as paru",
@@ -66,13 +66,13 @@ const verbDB::Verb verbDB::paraitre = {
         L"paraissent",
         L"paraissent",
 
-        L"paraîtrais",
-        L"paraîtrais",
-        L"paraîtrait",
-        L"paraîtrait",
-        L"paraîtrions",
-        L"paraîtriez",
-        L"paraîtraient",
-        L"paraîtraient"
+        L"paraitrais",
+        L"paraitrais",
+        L"paraitrait",
+        L"paraitrait",
+        L"paraitrions",
+        L"paraitriez",
+        L"paraitraient",
+        L"paraitraient"
     }
 };

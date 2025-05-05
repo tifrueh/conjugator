@@ -6,7 +6,7 @@
 const verbDB::Verb verbDB::rendre = {
 
     L"rendre",
-    L"gestalten",
+    L"zurückgeben",
 
     {
         L"rendre",

@@ -6,7 +6,7 @@
 const verbDB::Verb verbDB::amener = {
 
     L"amener",
-    L"bringen",
+    L"mitbringen",
 
     {
         L"amener",

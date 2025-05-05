@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::peser = {
         L"pèseraient",
         L"pèseraient "
     }
-
 };

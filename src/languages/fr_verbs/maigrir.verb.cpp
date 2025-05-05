@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::maigrir = {
         L"maigriraient",
         L"maigriraient"
     }
-
 };

@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::sortir = {
         L"sortiraient",
         L"sortiraient"
     }
-
 };

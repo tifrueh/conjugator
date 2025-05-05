@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::mettre = {
         L"mettraient",
         L"mettraient"
     }
-
 };

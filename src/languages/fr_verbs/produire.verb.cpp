@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::produire = {
         L"produiraient ",
         L"produiraient "
     }
-
 };

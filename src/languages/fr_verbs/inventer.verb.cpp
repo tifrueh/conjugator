@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::inventer = {
         L"inventeraient",
         L"inventeraient"
     }
-
 };

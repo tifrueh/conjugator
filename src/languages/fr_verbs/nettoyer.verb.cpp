@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::nettoyer = {
         L"nettoyeraient",
         L"nettoyeraient"
     }
-
 };

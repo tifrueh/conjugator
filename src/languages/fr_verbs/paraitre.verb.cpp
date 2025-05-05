@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::paraitre = {
         L"paraîtraient",
         L"paraîtraient"
     }
-
 };

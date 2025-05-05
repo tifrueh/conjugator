@@ -73,6 +73,6 @@ const verbDB::Verb verbDB::employer = {
         L"emploierions",
         L"emploieriez",
         L"emploieraient",
-        L"emploieraient",
+        L"emploieraient"
     }
 };

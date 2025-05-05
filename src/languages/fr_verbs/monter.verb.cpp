@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::monter = {
         L"monteraient",
         L"monteraient"
     }
-
 };

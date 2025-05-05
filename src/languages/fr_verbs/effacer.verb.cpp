@@ -73,6 +73,6 @@ const verbDB::Verb verbDB::effacer = {
         L"effacerions",
         L"effaceriez",
         L"effaceraient",
-        L"effaceraient",
+        L"effaceraient"
     }
 };

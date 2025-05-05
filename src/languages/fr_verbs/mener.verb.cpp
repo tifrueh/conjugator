@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::mener = {
         L"mèneraient",
         L"mèneraient"
     }
-
 };

@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::lancer = {
         L"lanceraient",
         L"lanceraient"
     }
-
 };

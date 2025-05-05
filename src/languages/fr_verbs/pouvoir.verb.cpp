@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::pouvoir = {
         L"pourraient",
         L"pourraient"
     }
-
 };

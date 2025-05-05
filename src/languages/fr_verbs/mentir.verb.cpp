@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::mentir = {
         L"mentiraient",
         L"mentiraient"
     }
-
 };

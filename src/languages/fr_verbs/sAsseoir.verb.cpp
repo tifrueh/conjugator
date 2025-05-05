@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::sAsseoir = {
         L"s'assoiraient",
         L"s'assoiraient"
     }
-
 };

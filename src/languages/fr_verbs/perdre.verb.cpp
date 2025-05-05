@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::perdre = {
         L"perdraient",
         L"perdraient"
     }
-
 };

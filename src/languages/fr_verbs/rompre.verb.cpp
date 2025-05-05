@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::rompre = {
         L"rompraient",
         L"rompraient"
     }
-
 };

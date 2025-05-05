@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::rendre = {
         L"rendraient",
         L"rendraient"
     }
-
 };

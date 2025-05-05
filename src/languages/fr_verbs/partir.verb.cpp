@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::partir = {
         L"partiraient",
         L"partiraient"
     }
-
 };

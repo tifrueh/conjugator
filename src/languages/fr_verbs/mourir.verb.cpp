@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::mourir = {
         L"mouriraient",
         L"mouriraient"
     }
-
 };

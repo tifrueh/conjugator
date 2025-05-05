@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::peindre = {
         L"peindraient",
         L"pendraient"
     }
-
 };

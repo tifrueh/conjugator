@@ -75,5 +75,4 @@ const verbDB::Verb verbDB::entrer = {
         L" entreraient",
         L"entreraient"
     }
-
 };

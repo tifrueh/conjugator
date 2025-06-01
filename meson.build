@@ -6,7 +6,7 @@ project(
     license: 'GPL-3.0-or-later',
     license_files: 'LICENSE.md',
     meson_version: '>=1.1',
-    version: '1.0.4'
+    version: '1.0.4-git'
 )
 
 # Try to get version string from git or use project version if that fails.

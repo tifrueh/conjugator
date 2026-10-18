@@ -28,7 +28,7 @@ const verbDB::Verb verbDB::effacer = {
     L"effaçait",
     L"effacions",
     L"effaciez",
-    L"effaciez",
+    L"effaçaient",
     L"effaçaient",
 
     L"effacerai",

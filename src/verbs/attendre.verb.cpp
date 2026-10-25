@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::attendre = {
     L"attendriez",
     L"attendraient",
     L"attendraient"
-
 };

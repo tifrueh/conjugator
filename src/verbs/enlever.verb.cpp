@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::enlever = {
     L"enlèveriez",
     L"enlèveraient",
     L"enlèveraient"
-
 };

@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::souffrir = {
     L"souffririez",
     L"souffriraient",
     L"souffriraient"
-
 };

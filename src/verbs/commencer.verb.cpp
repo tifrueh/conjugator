@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::commencer = {
     L"commenceriez",
     L"commenceraient",
     L"commenceraient"
-
 };

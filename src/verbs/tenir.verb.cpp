@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::tenir = {
     L"tiendriez",
     L"tiendraient",
     L"tiendraient"
-
 };

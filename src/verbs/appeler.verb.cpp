@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::appeler = {
     L"appelleriez",
     L"appelleraient",
     L"appelleraient"
-
 };

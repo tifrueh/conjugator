@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::avoir = {
     L"auriez",
     L"auraient",
     L"auraient"
-
 };

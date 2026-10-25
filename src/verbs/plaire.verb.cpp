@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::plaire = {
     L"plairiez",
     L"plairaient",
     L"plairaient "
-
 };

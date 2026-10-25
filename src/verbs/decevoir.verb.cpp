@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::decevoir = {
     L"décevriez",
     L"décevraient",
     L"décevraient"
-
 };

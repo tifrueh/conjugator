@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::proteger = {
     L"protégeriez",
     L"protégeraient",
     L"protégeraient"
-
 };

@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::sInquieter = {
     L"vous inquiéteriez",
     L"s'inquiéteraient",
     L"s'inquiéteraient"
-
 };

@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::boire = {
     L"boiriez",
     L"boiraient",
     L"boiraient"
-
 };

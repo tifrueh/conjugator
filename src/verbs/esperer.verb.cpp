@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::esperer = {
     L"espèreriez",
     L"espèreraient",
     L"espèreraient"
-
 };

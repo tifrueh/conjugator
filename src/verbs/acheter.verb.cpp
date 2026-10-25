@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::acheter = {
     L"achèteriez",
     L"achèteraient",
     L"achèteraient"
-
 };

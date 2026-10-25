@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::connaitre = {
     L"connaitriez",
     L"connaitraient",
     L"connaitraient"
-
 };

@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::exagerer = {
     L"exagèreriez",
     L"exagèreraient",
     L"exagèreraient"
-
 };

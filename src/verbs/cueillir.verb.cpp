@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::cueillir = {
     L"cueilleriez",
     L"cueilleraient",
     L"cueilleraient"
-
 };

@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::traduire = {
     L"traduiriez",
     L"traduiraient",
     L"traduiraient"
-
 };

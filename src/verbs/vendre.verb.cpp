@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::vendre = {
     L"vendriez",
     L"vendraient",
     L"vendraient"
-
 };

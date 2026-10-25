@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::grimper = {
     L"grimperiez",
     L"grimperaient",
     L"grimperaient"
-
 };

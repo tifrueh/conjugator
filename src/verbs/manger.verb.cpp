@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::manger = {
     L"mangeriez",
     L"mangeront",
     L"mangeront"
-
 };

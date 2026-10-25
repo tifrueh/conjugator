@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::entendre = {
     L"entendriez",
     L"entendraient",
     L"entendraient"
-
 };

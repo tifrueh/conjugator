@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::laver = {
     L"laveriez",
     L"laveraient",
     L"laveraient"
-
 };

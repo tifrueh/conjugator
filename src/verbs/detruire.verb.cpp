@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::detruire = {
     L"détruiriez",
     L"détruiraient",
     L"détruiraient"
-
 };

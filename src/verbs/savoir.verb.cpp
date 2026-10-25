@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::savoir = {
     L"sauriez",
     L"sauraient",
     L"sauraient"
-
 };

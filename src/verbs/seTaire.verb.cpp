@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::seTaire = {
     L"vous tairiez",
     L"se tairaient",
     L"se tairaient"
-
 };

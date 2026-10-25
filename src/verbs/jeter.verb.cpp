@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::jeter = {
     L"jetteriez",
     L"jetteraient",
     L"jetteraient"
-
 };

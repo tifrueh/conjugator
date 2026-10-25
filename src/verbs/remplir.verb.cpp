@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::remplir = {
     L"rempliriez",
     L"rempliraient",
     L"rempliraient"
-
 };

@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::envoyer = {
     L"enverriez",
     L"enverraient",
     L"enverraient"
-
 };

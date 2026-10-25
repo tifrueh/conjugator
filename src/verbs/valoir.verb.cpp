@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::valoir = {
     L"vaudriez",
     L"vaudraient",
     L"vaudraient"
-
 };

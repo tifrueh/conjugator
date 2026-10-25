@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::ouvrir = {
     L"ouvririez",
     L"ouvriraient",
     L"ouvriraient"
-
 };

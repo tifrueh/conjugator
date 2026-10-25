@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::repondre = {
     L"répondriez",
     L"répondraient",
     L"répondraient"
-
 };

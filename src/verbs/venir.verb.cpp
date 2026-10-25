@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::venir = {
     L"viendriez",
     L"viendraient",
     L"viendraient"
-
 };

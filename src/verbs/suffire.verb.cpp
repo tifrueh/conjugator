@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::suffire = {
     L"suffiriez",
     L"suffiraient",
     L"suffiraient"
-
 };

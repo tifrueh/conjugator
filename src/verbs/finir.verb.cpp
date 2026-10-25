@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::finir = {
     L"finiriez",
     L"finiraient",
     L"finiraient"
-
 };

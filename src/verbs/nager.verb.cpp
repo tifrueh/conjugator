@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::nager = {
     L"nageriez",
     L"nageraient",
     L"nageraient"
-
 };

@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::rire = {
     L"ririez",
     L"riraient",
     L"riraient"
-
 };

@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::confondre = {
     L"confondriez",
     L"confondraient",
     L"confondraient"
-
 };

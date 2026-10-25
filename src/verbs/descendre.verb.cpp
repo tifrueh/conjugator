@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::descendre = {
     L"descendriez",
     L"descendraient",
     L"descendraient"
-
 };

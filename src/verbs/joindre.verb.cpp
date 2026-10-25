@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::joindre = {
     L"joindriez",
     L"joindraient",
     L"joindraient"
-
 };

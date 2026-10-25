@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::couvrir = {
     L"couvririez",
     L"couvriraient",
     L"couvriraient"
-
 };

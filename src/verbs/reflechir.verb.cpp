@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::reflechir = {
     L"réfléchiriez",
     L"réfléchiraient",
     L"réfléchiraient"
-
 };

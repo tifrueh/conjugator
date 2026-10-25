@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::offrir = {
     L"offririez",
     L"offriraient",
     L"offriraient"
-
 };

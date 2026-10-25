@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::applaudir = {
     L"applaudiriez",
     L"applaudiraient",
     L"applaudiraient"
-
 };

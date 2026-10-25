@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::aller = {
     L"iriez",
     L"iraient",
     L"iraient"
-
 };

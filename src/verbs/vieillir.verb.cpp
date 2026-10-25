@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::vieillir = {
     L"vieilliriez",
     L"vieilliraient",
     L"vieilliraient "
-
 };

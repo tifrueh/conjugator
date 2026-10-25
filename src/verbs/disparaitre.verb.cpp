@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::disparaitre = {
     L"disparaitriez",
     L"disparaitraient",
     L"disparaitraient"
-
 };

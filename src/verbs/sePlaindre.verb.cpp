@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::sePlaindre = {
     L"vous plaindriez",
     L"se plaindraient",
     L"se plaindraient"
-
 };

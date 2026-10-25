@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::naitre = {
     L"naitriez",
     L"naitraient",
     L"naitraient"
-
 };

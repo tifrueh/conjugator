@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::obeir = {
     L"obéiriez",
     L"obéiraient",
     L"obéiraient"
-
 };

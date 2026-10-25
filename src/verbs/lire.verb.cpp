@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::lire = {
     L"liriez",
     L"liraient",
     L"liraient"
-
 };

@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::battre = {
     L"battriez",
     L"battraient",
     L"battraient"
-
 };

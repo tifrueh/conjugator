@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::falloir = {
     L"",
     L"",
     L""
-
 };

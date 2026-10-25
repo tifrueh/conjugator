@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::choisir = {
     L"choisiriez",
     L"choisiraient",
     L"choisiraient"
-
 };

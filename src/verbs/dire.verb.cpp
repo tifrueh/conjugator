@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::dire = {
     L"diriez",
     L"diraient",
     L"diraient"
-
 };

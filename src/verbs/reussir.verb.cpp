@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::reussir = {
     L"réussiriez",
     L"réussiraient",
     L"réussiraient"
-
 };

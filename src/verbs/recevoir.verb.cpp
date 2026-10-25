@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::recevoir = {
     L"recevriez",
     L"recevraient",
     L"recevraient"
-
 };

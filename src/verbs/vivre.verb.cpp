@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::vivre = {
     L"vivriez",
     L"vivraient",
     L"vivraient"
-
 };

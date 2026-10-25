@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::pleuvoir = {
     L"",
     L"",
     L""
-
 };

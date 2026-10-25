@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::agir = {
     L"agiriez",
     L"agiraient",
     L"agiraient"
-
 };

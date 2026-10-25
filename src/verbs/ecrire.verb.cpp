@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::ecrire = {
     L"écririez",
     L"écriraient",
     L"écriraient"
-
 };

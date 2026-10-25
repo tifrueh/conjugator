@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::amener = {
     L"amèneriez",
     L"amèneraient",
     L"amèneraient"
-
 };

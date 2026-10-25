@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::dormir = {
     L"dormiriez",
     L"dormiraient",
     L"dormiraient"
-
 };

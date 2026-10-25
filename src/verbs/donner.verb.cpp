@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::donner = {
     L"donneriez",
     L"donneraient",
     L"donneraient"
-
 };

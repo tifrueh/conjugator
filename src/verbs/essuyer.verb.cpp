@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::essuyer = {
     L"essuieriez",
     L"essuieraient",
     L"essuieraient"
-
 };

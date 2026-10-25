@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::secher = {
     L"sécheriez",
     L"sécheraient",
     L"sécheraient"
-
 };

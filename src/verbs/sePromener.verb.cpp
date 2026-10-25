@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::sePromener = {
     L"vous promèneriez",
     L"se promèneraient",
     L"se promèneraient"
-
 };

@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::devoir = {
     L"devriez",
     L"devraient",
     L"devraient"
-
 };

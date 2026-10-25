@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::reduire = {
     L"réduiriez",
     L"réduiraient",
     L"réduiraient"
-
 };

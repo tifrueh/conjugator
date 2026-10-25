@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::atteindre = {
     L"atteindriez",
     L"atteindraient",
     L"atteindraient"
-
 };

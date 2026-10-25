@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::bavarder = {
     L"bavarderiez",
     L"bavarderaient",
     L"bavarderaient"
-
 };

@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::payer = {
     L"paieriez",
     L"paieraient",
     L"paieraient"
-
 };

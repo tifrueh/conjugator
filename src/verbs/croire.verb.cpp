@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::croire = {
     L"croiriez",
     L"croiraient",
     L"croiraient"
-
 };

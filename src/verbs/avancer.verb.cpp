@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::avancer = {
     L"avanceriez",
     L"avanceraient",
     L"avanceraient"
-
 };

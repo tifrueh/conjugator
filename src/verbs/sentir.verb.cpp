@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::sentir = {
     L"sentiriez",
     L"sentiraient",
     L"sentiraient"
-
 };

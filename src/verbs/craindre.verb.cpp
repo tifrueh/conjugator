@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::craindre = {
     L"craindriez",
     L"craindraient",
     L"craindraient"
-
 };

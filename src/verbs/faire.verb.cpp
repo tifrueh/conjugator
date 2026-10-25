@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::faire = {
     L"feriez",
     L"feraient",
     L"feraient"
-
 };

@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::demolir = {
     L"démoliriez",
     L"démoliraient",
     L"démoliraient"
-
 };

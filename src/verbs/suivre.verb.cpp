@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::suivre = {
     L"suivriez",
     L"suivraient",
     L"suivraient"
-
 };

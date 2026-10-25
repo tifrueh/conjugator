@@ -72,5 +72,4 @@ const verbDB::Verb verbDB::prendre = {
     L"prendriez",
     L"prendraient",
     L"prendraient"
-
 };

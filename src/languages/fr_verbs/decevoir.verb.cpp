@@ -49,7 +49,7 @@ const verbDB::Verb verbDB::decevoir = {
         L"avais déçu",
         L"avait déçu",
         L"avait déçu",
-        L"avons déçu",
+        L"avions déçu",
         L"aviez déçu",
         L"avaient déçu",
         L"avaient déçu",

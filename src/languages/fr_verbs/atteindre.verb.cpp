@@ -20,8 +20,8 @@ const verbDB::Verb verbDB::atteindre = {
 
         L"atteignais",
         L"atteignais",
-        L"attegnait",
-        L"attegnait",
+        L"atteignait",
+        L"atteignait",
         L"atteignions",
         L"atteigniez",
         L"atteignaient",

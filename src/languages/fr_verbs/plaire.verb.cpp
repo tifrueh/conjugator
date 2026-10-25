@@ -51,7 +51,7 @@ const verbDB::Verb verbDB::plaire = {
         L"avait plu",
         L"avions plu",
         L"aviez plu",
-        L"aviaent plu",
+        L"avaient plu",
         L"avaient plu",
 
         L"plaise",
@@ -70,6 +70,6 @@ const verbDB::Verb verbDB::plaire = {
         L"plairions",
         L"plairiez",
         L"plairaient",
-        L"plairaient "
+        L"plairaient"
     }
 };

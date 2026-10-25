@@ -34,7 +34,7 @@ const verbDB::Verb verbDB::courir = {
         L"courrons",
         L"courrez",
         L"courront",
-        L"courrent",
+        L"courront",
 
         L"ai couru",
         L"as couru",
@@ -43,7 +43,7 @@ const verbDB::Verb verbDB::courir = {
         L"avons couru",
         L"avez couru",
         L"ont couru",
-        L"couru",
+        L"ont couru",
 
         L"avais couru",
         L"avais couru",

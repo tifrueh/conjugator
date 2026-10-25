@@ -19,9 +19,9 @@ const verbDB::Verb verbDB::manger = {
         L"mangent",
 
         L"mangeais",
-        L"mengeais",
+        L"mangeais",
         L"mangeait",
-        L"mengeait",
+        L"mangeait",
         L"mangions",
         L"mangiez",
         L"mangeaient",
@@ -69,7 +69,7 @@ const verbDB::Verb verbDB::manger = {
         L"mangerait",
         L"mangerions",
         L"mangeriez",
-        L"mangeront",
-        L"mangeront"
+        L"mangeraient",
+        L"mangeraient"
     }
 };

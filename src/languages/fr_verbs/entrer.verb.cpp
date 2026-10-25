@@ -58,18 +58,18 @@ const verbDB::Verb verbDB::entrer = {
         L"entres",
         L"entre",
         L"entre",
-        L"entrions ",
+        L"entrions",
         L"entriez",
         L"entrent",
         L"entrent",
 
-        L"entrerais ",
+        L"entrerais",
         L"entrerais",
         L"entrerait",
         L"entrerait",
         L"entrerions",
         L"entreriez",
-        L" entreraient",
+        L"entreraient",
         L"entreraient"
     }
 };

@@ -32,7 +32,7 @@ const verbDB::Verb verbDB::conduire = {
         L"conduira",
         L"conduira",
         L"conduirons",
-        L"conduirons",
+        L"conduirez",
         L"conduiront",
         L"conduiront",
 

@@ -2,11 +2,11 @@
 
 const verbDB::Verb verbDB::mener = {
 
-    L"mener ",
+    L"mener",
     L"führen",
 
     {
-        L"mener ",
+        L"mener",
         L"menant",
 
         L"mène",

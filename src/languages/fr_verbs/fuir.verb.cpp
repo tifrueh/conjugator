@@ -50,7 +50,7 @@ const verbDB::Verb verbDB::fuir = {
         L"avait fui",
         L"avait fui",
         L"avions fui",
-        L"avaiez fui",
+        L"aviez fui",
         L"avaient fui",
         L"avaient fui",
 

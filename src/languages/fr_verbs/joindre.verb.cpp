@@ -54,7 +54,7 @@ const verbDB::Verb verbDB::joindre = {
         L"avaient joint",
         L"avaient joint",
 
-        L"joigne ",
+        L"joigne",
         L"joignes",
         L"joigne",
         L"joigne",
@@ -67,7 +67,7 @@ const verbDB::Verb verbDB::joindre = {
         L"joindrais",
         L"joindrait",
         L"joindrait",
-        L"joindrions ",
+        L"joindrions",
         L"joindriez",
         L"joindraient",
         L"joindraient"

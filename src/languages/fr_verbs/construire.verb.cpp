@@ -32,7 +32,7 @@ const verbDB::Verb verbDB::construire = {
         L"construira",
         L"construira",
         L"construirons",
-        L"construisez",
+        L"construirez",
         L"construiront",
         L"construiront",
 

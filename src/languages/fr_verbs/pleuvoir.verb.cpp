@@ -2,11 +2,11 @@
 
 const verbDB::Verb verbDB::pleuvoir = {
 
-    L"pleuvoir ",
+    L"pleuvoir",
     L"regnen",
 
     {
-        L"pleuvoir ",
+        L"pleuvoir",
         L"pleuvant",
 
         L"",
@@ -20,7 +20,7 @@ const verbDB::Verb verbDB::pleuvoir = {
 
         L"",
         L"",
-        L"pleuvait ",
+        L"pleuvait",
         L"",
         L"",
         L"",

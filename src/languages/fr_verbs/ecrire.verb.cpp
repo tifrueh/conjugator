@@ -27,7 +27,7 @@ const verbDB::Verb verbDB::ecrire = {
         L"écrivaient",
         L"écrivaient",
 
-        L"écriras",
+        L"écrirai",
         L"écriras",
         L"écrira",
         L"écrira",

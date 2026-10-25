@@ -29,11 +29,11 @@ const verbDB::Verb verbDB::commencer = {
 
         L"commencerai",
         L"commenceras",
-        L"commercera",
-        L"commercera",
-        L"commercerons",
-        L"commercerez",
-        L"commerceront",
+        L"commencera",
+        L"commencera",
+        L"commencerons",
+        L"commencerez",
+        L"commenceront",
         L"commenceront",
 
         L"ai commencé",

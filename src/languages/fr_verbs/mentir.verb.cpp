@@ -54,7 +54,7 @@ const verbDB::Verb verbDB::mentir = {
         L"avaient menti",
         L"avaient menti",
 
-        L"mente ",
+        L"mente",
         L"mentes",
         L"mente",
         L"mente",

@@ -24,8 +24,8 @@ const verbDB::Verb verbDB::produire = {
         L"produisait",
         L"produisions",
         L"produisiez",
-        L"produisaient ",
-        L"produisaient ",
+        L"produisaient",
+        L"produisaient",
 
         L"produirai",
         L"produiras",
@@ -38,7 +38,7 @@ const verbDB::Verb verbDB::produire = {
 
         L"ai produit",
         L"as produit",
-        L"a produit ",
+        L"a produit",
         L"a produit",
         L"avons produit",
         L"avez produit",
@@ -51,25 +51,25 @@ const verbDB::Verb verbDB::produire = {
         L"avait produit",
         L"avions produit",
         L"aviez produit",
-        L"avaient produit ",
-        L"avaient produit ",
+        L"avaient produit",
+        L"avaient produit",
 
-        L"produise ",
+        L"produise",
         L"produises",
         L"produise",
         L"produise",
         L"produisions",
         L"produisiez",
         L"produisent",
-        L"produisent ",
+        L"produisent",
 
         L"produirais",
         L"produirais",
         L"produirait",
         L"produirait",
         L"produirions",
-        L"produiriez ",
-        L"produiraient ",
-        L"produiraient "
+        L"produiriez",
+        L"produiraient",
+        L"produiraient"
     }
 };

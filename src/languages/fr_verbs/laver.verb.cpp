@@ -22,7 +22,7 @@ const verbDB::Verb verbDB::laver = {
         L"lavais",
         L"lavait",
         L"lavait",
-        L"lavions ",
+        L"lavions",
         L"laviez",
         L"lavaient",
         L"lavaient",

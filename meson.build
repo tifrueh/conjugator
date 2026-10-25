@@ -48,6 +48,9 @@ conf_data.set(
   'config_filename', 'conjugateur.conf'
 )
 
+# Execute meson.build in the 'configuration-files' subdir.
+subdir('configuration-files')
+
 # Define the wxWidgets dependency depending on the 'static_wxwidgets' option.
 if get_option('static_wxwidgets') == 'auto'
   wx = dependency('wxwidgets')
@@ -112,9 +115,6 @@ elif host_machine.system() == 'windows'
   srcs += resources
     
 endif
-
-# Execute meson.build in the 'configuration-files' subdir.
-subdir('configuration-files')
 
 # Execute meson.build in  the 'src' subdir.
 subdir('src')

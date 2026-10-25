@@ -1,6 +1,3 @@
-// Copyright (C) 2023-2025 Timo Früh
-// The full copyright notice can be found in ../main.cpp
-
 #include "verb.db.hpp"
 
 const verbDB::Verb verbDB::secher = {

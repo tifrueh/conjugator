@@ -56,8 +56,8 @@ const verbDB::Verb verbDB::lancer = {
     L"avaient lancé",
 
     L"lance",
-    L"lances ",
-    L"lance ",
+    L"lances",
+    L"lance",
     L"lance",
     L"lancions",
     L"lanciez",

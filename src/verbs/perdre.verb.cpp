@@ -10,7 +10,7 @@ const verbDB::Verb verbDB::perdre = {
     L"verlieren",
     L"perdant",
 
-    L"perds ",
+    L"perds",
     L"perds",
     L"perd",
     L"perd",
@@ -47,7 +47,7 @@ const verbDB::Verb verbDB::perdre = {
     L"ont perdu",
 
     L"avais perdu",
-    L"avais perdu ",
+    L"avais perdu",
     L"avait perdu",
     L"avait perdu",
     L"avions perdu",

@@ -23,7 +23,7 @@ const verbDB::Verb verbDB::paraitre = {
     L"paraissais",
     L"paraissait",
     L"paraissait",
-    L"parraissions",
+    L"paraissions",
     L"paraissiez",
     L"paraissaient",
     L"paraissaient",

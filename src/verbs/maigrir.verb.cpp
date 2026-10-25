@@ -56,7 +56,7 @@ const verbDB::Verb verbDB::maigrir = {
     L"avaient maigri",
 
     L"maigrisse",
-    L"maigrisses ",
+    L"maigrisses",
     L"maigrisse",
     L"maigrisse",
     L"maigrissions",

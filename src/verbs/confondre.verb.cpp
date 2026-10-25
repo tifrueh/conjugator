@@ -65,7 +65,7 @@ const verbDB::Verb verbDB::confondre = {
     L"confondent",
 
     L"confondrais",
-    L"confrondrais",
+    L"confondrais",
     L"confondrait",
     L"confondrait",
     L"confondrions",

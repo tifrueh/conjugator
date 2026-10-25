@@ -20,7 +20,7 @@ const verbDB::Verb verbDB::naitre = {
     L"naissent",
 
     L"naissais",
-    L"naissais ",
+    L"naissais",
     L"naissait",
     L"naissait",
     L"naissions",

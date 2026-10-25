@@ -47,9 +47,9 @@ const verbDB::Verb verbDB::aller = {
     L"sont allées",
 
     L"étais allé",
-    L"etais allé",
-    L"etait allé",
-    L"etait allée",
+    L"étais allé",
+    L"était allé",
+    L"était allée",
     L"étions allés",
     L"étiez allés",
     L"étaient allés",

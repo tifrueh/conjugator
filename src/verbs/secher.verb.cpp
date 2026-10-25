@@ -61,8 +61,8 @@ const verbDB::Verb verbDB::secher = {
     L"sèche",
     L"séchions",
     L"séchiez",
-    L"séchent",
-    L"séchent",
+    L"sèchent",
+    L"sèchent",
 
     L"sécherais",
     L"sécherais",

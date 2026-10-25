@@ -53,7 +53,7 @@ const verbDB::Verb verbDB::sAsseoir = {
     L"nous étions assis",
     L"vous étiez assis",
     L"s'étaient assis",
-    L"s'étaient assise",
+    L"s'étaient assises",
 
     L"m'assoie",
     L"t'assoies",

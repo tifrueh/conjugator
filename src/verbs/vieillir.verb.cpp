@@ -66,10 +66,10 @@ const verbDB::Verb verbDB::vieillir = {
 
     L"vieillirais",
     L"vieillirais",
-    L"viellirait",
+    L"vieillirait",
     L"vieillirait",
     L"vieillirions",
     L"vieilliriez",
     L"vieilliraient",
-    L"vieilliraient "
+    L"vieilliraient"
 };

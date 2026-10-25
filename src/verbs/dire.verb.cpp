@@ -50,7 +50,7 @@ const verbDB::Verb verbDB::dire = {
     L"avais dit",
     L"avait dit",
     L"avait dit",
-    L"avions dit ",
+    L"avions dit",
     L"aviez dit",
     L"avaient dit",
     L"avaient dit",

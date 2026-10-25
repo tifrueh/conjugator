@@ -28,14 +28,14 @@ const verbDB::Verb verbDB::exagerer = {
     L"exagéraient",
     L"exagéraient",
 
-    L"exagèrerai",
-    L"exagèreras",
-    L"exagèrera",
-    L"exagèrera",
-    L"exagèrerons",
-    L"exagèrerez",
-    L"exagèreront",
-    L"exagèreront",
+    L"exagérerai",
+    L"exagéreras",
+    L"exagérera",
+    L"exagérera",
+    L"exagérerons",
+    L"exagérerez",
+    L"exagéreront",
+    L"exagéreront",
 
     L"ai exagéré",
     L"as exagéré",
@@ -64,12 +64,12 @@ const verbDB::Verb verbDB::exagerer = {
     L"exagèrent",
     L"exagèrent",
 
-    L"exagèrerais",
-    L"exagèrerais",
-    L"exagèrerait",
-    L"exagèrerait",
-    L"exagèrerions",
-    L"exagèreriez",
-    L"exagèreraient",
-    L"exagèreraient"
+    L"exagérerais",
+    L"exagérerais",
+    L"exagérerait",
+    L"exagérerait",
+    L"exagérerions",
+    L"exagéreriez",
+    L"exagéreraient",
+    L"exagéreraient"
 };

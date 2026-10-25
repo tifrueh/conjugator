@@ -33,9 +33,9 @@ const verbDB::Verb verbDB::detruire = {
     L"détruira",
     L"détruira",
     L"détruirons",
-    L"détruisiez",
-    L"détruisaient",
-    L"détruisaient",
+    L"détruirez",
+    L"détruiront",
+    L"détruiront",
 
     L"ai détruit",
     L"as détruit",

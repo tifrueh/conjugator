@@ -109,8 +109,7 @@ if host_machine.system() == 'windows'
   resources = windows.compile_resources(
     meson.current_build_dir() + '/configuration-files/resources.rc',
     args: wx_windres_args,
-    depend_files: [ meson.project_source_root() + '/resources/conjugator.ico', 
-      meson.project_source_root() + '/resources/inspecteur.ico' ]
+    depend_files: [ meson.project_source_root() + '/resources/conjugator.ico' ]
   )
 
   srcs += resources

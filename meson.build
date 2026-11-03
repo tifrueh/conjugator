@@ -83,13 +83,14 @@ if host_machine.system() == 'darwin'
   conf_data.set(
     'config_filename', 'ch.tifrueh.conjugator.conf'
   )
+endif
 
 # Execute meson.build in the 'configuration-files' subdir.
 subdir('configuration-files')
 
 # Configuration only needed on Windows.
-elif host_machine.system() == 'windows' 
-  
+if host_machine.system() == 'windows'
+
   # Initialise variable to hold the necessary resource compiler arguments for
   # wxWidgets.
   raw_wx_windres_args = wx.get_variable(configtool: 'rescomp').split()

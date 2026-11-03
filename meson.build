@@ -48,9 +48,6 @@ conf_data.set(
   'config_filename', 'conjugator.conf'
 )
 
-# Execute meson.build in the 'configuration-files' subdir.
-subdir('configuration-files')
-
 # Define the wxWidgets dependency depending on the 'static_wxwidgets' option.
 if get_option('static_wxwidgets') == 'auto'
   wx = dependency('wxwidgets')
@@ -86,6 +83,9 @@ if host_machine.system() == 'darwin'
   conf_data.set(
     'config_filename', 'ch.tifrueh.conjugator.conf'
   )
+
+# Execute meson.build in the 'configuration-files' subdir.
+subdir('configuration-files')
 
 # Configuration only needed on Windows.
 elif host_machine.system() == 'windows' 

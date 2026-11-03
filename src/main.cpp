@@ -41,11 +41,11 @@ wxIMPLEMENT_APP(Conjugateur);
 // main top-level frame.
 bool Conjugateur::OnInit() {
 
-    locale = new wxLocale();
+    wxTranslations *translations = new wxTranslations();
+    translations->SetLanguage(wxLANGUAGE_FRENCH);
+    translations->AddStdCatalog();
 
-    locale->Init(wxLANGUAGE_FRENCH);
-
-    locale->AddCatalog(wxT("wxstd"));
+    wxTranslations::Set(translations);
 
     verbDB::initTypeVectors();
 

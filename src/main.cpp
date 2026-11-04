@@ -15,6 +15,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #include <wx/wxprec.h>
+#include <wx/uilocale.h>
+#include <wx/translation.h>
  
 #ifndef WX_PRECOMP
     #include <wx/wx.h>

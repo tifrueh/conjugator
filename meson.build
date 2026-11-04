@@ -171,7 +171,7 @@ endif
 if host_machine.system() == 'windows'
   run_target(
     'bundle_win',
-    command: [ 'iscc', '${MESON_BUILD_ROOT}/configuration-files/conjugator.iss' ],
+    command: [ 'iscc', '${MESON_BUILD_ROOT}/configuration-files/conjugateur.iss' ],
     depends: [ conjugateur ],
     env: env
   )

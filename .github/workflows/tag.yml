@@ -50,14 +50,24 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v7
-      - name: Install wxWidgets
-        run: msys2bash.cmd pacman -S wxwidgets3.3-msw
-      - name: Install meson
-        run: msys2bash.cmd pacman -S meson
+      - name: Set up MSYS2 with all dependencies
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: UCRT64
+          update: true
+          path-type: inherit
+          install: >-
+            mingw-w64-ucrt-x86_64-toolchain
+            mingw-w64-ucrt-x86_64-git
+            mingw-w64-ucrt-x86_64-meson
+            mingw-w64-ucrt-x86_64-ninja
+            mingw-w64-ucrt-x86_64-pkgconf
+            mingw-w64-ucrt-x86_64-wxwidgets3.3-msw
       - name: Build bundle
+        shell: msys2 {0}
         run: |
-          msys2bash.cmd meson setup --buildtype release -D cpp_args=-static -D cpp_link_args=-static -D static_wxwidgets=enabled -D prefer_static=true build
-          msys2bash.cmd meson compile -C build bundle_windows
+          meson setup --buildtype release -D cpp_args=-static -D cpp_link_args=-static -D static_wxwidgets=enabled -D prefer_static=true build
+          meson compile -C build bundle_windows
       - name: Upload bundle
         uses: actions/upload-artifact@v7
         with:

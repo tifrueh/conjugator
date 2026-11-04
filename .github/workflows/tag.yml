@@ -7,15 +7,35 @@ jobs:
   build_macos:
     name: Build for macOS
     runs-on: macos-latest
+    env:
+      WX_VERSION: "3.3.4"
+      WX_PREFIX: ${{ github.workspace }}/../wx
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v7
-      - name: Install wxWidgets
-        run: brew install tifrueh/custom/wxwidgets-static
+      - name: Setup wxWidgets cache
+        id: cache-wx
+        uses: actions/cache@v6
+        with:
+          path: ${{ env.WX_PREFIX }}
+          key: wx-${{ env.WX_VERSION }}-${{ runner.os }}-${{ runner.arch }}
+      - name: Build wxWidgets
+        if: steps.cache-wx.outputs.cache-hit != 'true'
+        run: |
+          PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+          mkdir ../wx-build
+          cd ../wx-build
+          curl -fsSL "https://github.com/wxWidgets/wxWidgets/releases/download/v${{ env.WX_VERSION }}/wxWidgets-${{ env.WX_VERSION }}.tar.bz2" | tar xj
+          cd "wxWidgets-${WX_VERSION}"
+          ./configure \
+            --prefix "${WX_PREFIX}" \
+            --disable-shared
+          make install
       - name: Install meson
         run: brew install meson
       - name: Build bundle
         run: |
+          PATH="${WX_PREFIX}/bin:${PATH}"
           meson setup --buildtype release -D static_wxwidgets=enabled -D prefer_static=true build
           meson compile -C build bundle_mac
       - name: Upload bundle
@@ -27,15 +47,35 @@ jobs:
   build_macos_intel:
     name: Build for macOS (Intel)
     runs-on: macos-26-intel
+    env:
+      WX_VERSION: "3.3.4"
+      WX_PREFIX: ${{ github.workspace }}/../wx
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v7
-      - name: Install wxWidgets
-        run: brew install tifrueh/custom/wxwidgets-static
+      - name: Setup wxWidgets cache
+        id: cache-wx
+        uses: actions/cache@v6
+        with:
+          path: ${{ env.WX_PREFIX }}
+          key: wx-${{ env.WX_VERSION }}-${{ runner.os }}-${{ runner.arch }}
+      - name: Build wxWidgets
+        if: steps.cache-wx.outputs.cache-hit != 'true'
+        run: |
+          PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+          mkdir ../wx-build
+          cd ../wx-build
+          curl -fsSL "https://github.com/wxWidgets/wxWidgets/releases/download/v${{ env.WX_VERSION }}/wxWidgets-${{ env.WX_VERSION }}.tar.bz2" | tar xj
+          cd "wxWidgets-${WX_VERSION}"
+          ./configure \
+            --prefix "${WX_PREFIX}" \
+            --disable-shared
+          make install
       - name: Install meson
         run: brew install meson
       - name: Build bundle
         run: |
+          PATH="${WX_PREFIX}/bin:${PATH}"
           meson setup --buildtype release -D static_wxwidgets=enabled -D prefer_static=true build
           meson compile -C build bundle_mac
       - name: Upload bundle

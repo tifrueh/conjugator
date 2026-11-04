@@ -42,6 +42,9 @@ conf_data.set(
   'project_source_root', meson.project_source_root()
 )
 conf_data.set(
+  'project_build_root', meson.project_build_root()
+)
+conf_data.set(
   'resources_dir', meson.project_source_root() + '/resources'
 )
 conf_data.set(
@@ -161,5 +164,15 @@ if host_machine.system() == 'darwin'
         'scripts/dmg_mac.sh', conf_data.get('version')],
       depends: [ conjugateur ],
       env: env
+  )
+endif
+
+# Windows-exclusive custom targets (see scripts/).
+if host_machine.system() == 'windows'
+  run_target(
+    'bundle_win',
+    command: [ 'iscc', '${MESON_BUILD_ROOT}/configuration-files/conjugator.iss' ],
+    depends: [ conjugateur ],
+    env: env
   )
 endif

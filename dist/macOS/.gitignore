@@ -1,7 +1,0 @@
-*
-!.gitignore
-
-!README.md
-!bundle.sh
-!package.sh
-!sign.sh

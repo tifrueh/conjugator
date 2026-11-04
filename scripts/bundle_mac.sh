@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# IMPORTANT: This script should only ever be run as a meson target, never
+# directly.
+
 # Change to the meson build directory.
 cd "${MESON_BUILD_ROOT}"
 

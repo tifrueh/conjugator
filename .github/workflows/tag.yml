@@ -11,7 +11,7 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v7
       - name: Install wxWidgets
-        run: brew install wxwidgets
+        run: brew install tifrueh/custom/wxwidgets-static
       - name: Install meson
         run: brew install meson
       - name: Build bundle
@@ -31,7 +31,7 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v7
       - name: Install wxWidgets
-        run: brew install wxwidgets
+        run: brew install tifrueh/custom/wxwidgets-static
       - name: Install meson
         run: brew install meson
       - name: Build bundle

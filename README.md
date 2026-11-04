@@ -58,19 +58,6 @@ release](https://github.com/tifrueh/conjugateur/releases/latest).
 
 3. Follow the installer's instructions
 
-### macOS (DMG install)
-
-If you'd rather not use an installer package, you can also download the
-application packaged in a DMG for macOS (`>=12`) from the [latest
-release](https://github.com/tifrueh/conjugateur/releases/latest).
-
-1. Download the DMG
-
-2. Double-click the DMG
-
-3. Drag the application to the location where you want to have it (e. g.
-   `~/Applications` or `/Applications`)
-
 ### Windows
 
 An installer executable for x86_64 Windows can be downloaded from the [latest

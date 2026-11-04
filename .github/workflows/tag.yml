@@ -67,7 +67,7 @@ jobs:
         shell: msys2 {0}
         run: |
           meson setup --buildtype release -D cpp_args=-static -D cpp_link_args=-static -D static_wxwidgets=enabled -D prefer_static=true build
-          meson compile -C build bundle_windows
+          meson compile -C build bundle_win
       - name: Upload bundle
         uses: actions/upload-artifact@v7
         with:

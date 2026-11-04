@@ -1,0 +1,65 @@
+on:
+  push:
+    tags:
+      - v1.*
+
+jobs:
+  build_macos:
+    name: Build for macOS
+    runs-on: macos-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v7
+      - name: Install wxWidgets
+        run: brew install wxwidgets
+      - name: Install meson
+        run: brew install meson
+      - name: Build bundle
+        run: |
+          meson setup --buildtype release -D static_wxwidgets=enabled -D prefer_static=true build
+          meson compile -C build bundle_mac
+      - name: Upload bundle
+        uses: actions/upload-artifact@v7
+        with:
+          name: Conjugateur-${{ github.ref_name }}-macOS-arm64.app
+          path: build/Conjugateur.app
+
+  build_macos_intel:
+    name: Build for macOS (Intel)
+    runs-on: macos-26-intel
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v7
+      - name: Install wxWidgets
+        run: brew install wxwidgets
+      - name: Install meson
+        run: brew install meson
+      - name: Build bundle
+        run: |
+          meson setup --buildtype release -D static_wxwidgets=enabled -D prefer_static=true build
+          meson compile -C build bundle_mac
+      - name: Upload bundle
+        uses: actions/upload-artifact@v7
+        with:
+          name: Conjugateur-${{ github.ref_name }}-macOS-x86_64.app
+          path: build/Conjugateur.app
+
+  build_windows:
+    name: Build for Windows
+    runs-on: windows-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v7
+      - name: Install wxWidgets
+        run: msys2bash.cmd pacman -S wxwidgets3.3-msw
+      - name: Install meson
+        run: msys2bash.cmd pacman -S meson
+      - name: Build bundle
+        run: |
+          msys2bash.cmd meson setup --buildtype release -D cpp_args=-static -D cpp_link_args=-static -D static_wxwidgets=enabled -D prefer_static=true build
+          msys2bash.cmd meson compile -C build bundle_windows
+      - name: Upload bundle
+        uses: actions/upload-artifact@v7
+        with:
+          name: Conjugateur-${{ github.ref_name }}-setup-w64-x86_64.exe
+          path: build/Conjugateur-setup.exe

@@ -41,6 +41,8 @@ wxIMPLEMENT_APP(Conjugateur);
 // main top-level frame.
 bool Conjugateur::OnInit() {
 
+    wxUILocale::UseDefault();
+
     wxTranslations *translations = new wxTranslations();
     translations->SetLanguage(wxLANGUAGE_FRENCH);
     translations->AddStdCatalog();

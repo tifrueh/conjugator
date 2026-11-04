@@ -50,6 +50,9 @@ conf_data.set(
 conf_data.set(
   'config_filename', 'conjugateur.conf'
 )
+conf_data.set(
+  'copyright_year', '2026'
+)
 
 # Define the wxWidgets dependency depending on the 'static_wxwidgets' option.
 if get_option('static_wxwidgets') == 'auto'

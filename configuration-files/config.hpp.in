@@ -1,2 +1,3 @@
 #define TAG_STR "@tag@"
 #define CONFIG_FILENAME "@config_filename@"
+#define COPYRIGHT_YEAR "@copyright_year@"

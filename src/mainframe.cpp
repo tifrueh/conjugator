@@ -9,7 +9,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title) {
     SetIcon(wxICON(conjugateur));
 
     info.SetName(wxT("Conjugateur"));
-    info.SetCopyright(wxT("Copyright © 2023-2024 Timo Früh"));
+    info.SetCopyright(wxT("Copyright © 2023-" COPYRIGHT_YEAR " Timo Früh"));
     
     // Set version in the app info to TAG_STR only if not on macOS.
     #ifndef __WXOSX__
